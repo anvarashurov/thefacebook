@@ -1,15 +1,15 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.string first_name, null: false
-      t.string last_name, null: false
-      t.string phone_number, null: false, array:true, default: []
-      t.string email_address, null: false
-      t.string password_digest, null: false
-      t.string session_token, null: false 
-      t.date birth_date, null: false
-      t.string gender, null: false
-      t.boolean confirmed, null: false
+      t.string :first_name, null: false
+      t.string :last_name, null: false
+      t.string :phone_number, null: false, array:true, default: []
+      t.string :email_address, null: false
+      t.string :password_digest, null: false
+      t.string :session_token, null: false 
+      t.date :birth_date, null: false
+      t.string :gender, null: false
+      t.boolean :confirmed, null: false
      
       # t.string life_events, array: true, default: []
       # t.string about_you
