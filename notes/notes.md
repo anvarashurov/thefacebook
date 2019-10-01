@@ -11,3 +11,30 @@
   
   - User Authentication
     - 
+
+remove debuggers
+etc
+
+node js
+ruby 
+
+pacakge json:
+
+under scripts:
+
+"postinstall": "webpack"
+top level key
+  "engines" : {
+    "node": "10.13.0"
+    "npm": "6.11.3"
+  }
+
+  commit all changes
+
+  heroku login (pres any key to login on browser)
+
+  heroku git: remote -a flipper-aa
+
+  git push -u heroku master
+
+  //
