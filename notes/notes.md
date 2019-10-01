@@ -10,3 +10,4 @@
   https://open.appacademy.io/learn/full-stack-in-person/react/rails-react-redux-configuration-checklist
   
   - User Authentication
+    - 
