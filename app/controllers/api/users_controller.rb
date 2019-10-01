@@ -1,3 +1,5 @@
+# need to change 'render' lines
+
 class UsersController < ApplicationController
   def new
   end
