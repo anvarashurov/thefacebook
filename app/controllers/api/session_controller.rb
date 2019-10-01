@@ -1,3 +1,5 @@
+# need to chagne the 'render' lines
+
 class SessionsController < ApplicationController
   def create
     # what about phone // ignore phone ...
