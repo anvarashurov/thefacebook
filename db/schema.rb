@@ -18,17 +18,12 @@ ActiveRecord::Schema.define(version: 2019_10_01_161623) do
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "phone_number", default: [], null: false, array: true
     t.string "email_address", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.date "birth_date", null: false
-    t.string "gender", null: false
-    t.boolean "confirmed", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email_address"], name: "index_users_on_email_address"
-    t.index ["phone_number"], name: "index_users_on_phone_number"
   end
 
 end

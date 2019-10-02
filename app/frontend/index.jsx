@@ -1,8 +1,8 @@
 // import React from 'react';
 import ReactDOM from 'react-dom';
-// import { createStore } from 'redux';
+import { configureStore } from './store/store'
 
 document.addEventListener("DOMContentLoaded", () => {
-  // const store = configureStore();
-  ReactDOM.render(<Root />, document.getElementById('root'))
+  const store = configureStore();
+  ReactDOM.render(<Root store={store}/>, document.getElementById('root'))
 })
