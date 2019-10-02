@@ -1,19 +1,17 @@
 # need to change 'render' lines
 
-class UsersController < ApplicationController
-  def new
-  end
-
+class Api::UsersController < ApplicationController
   def create
     # create a new user with given params
     @user = User.new(user_params)
     if @user.save
+      login!(@user)
       #success register / possibly verify
-      render json: @user
+      render "api/users/show"
       # render json: "Success Register"
     else
       # render json: "Error"
-      render json: @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 401
     end
   end
 
