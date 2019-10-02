@@ -5,12 +5,10 @@ import React from 'react';
 import LoginFormContainer from "./session_form/LoginFormContainer";
 import SignupFormContainer from "./session_form/SignupFormContainer";
 
-// Greeating container???
-
 const App = () => (
   <div>
     <header>
-      <h1>Helllo</h1>
+      <h1>thefacebook</h1>
       <GreetingContainer />
     </header>
     <Route path="/login" component={LoginFormContainer} />

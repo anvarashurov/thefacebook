@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/sesssion_actions';
+import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 //currentUser: state.entities.users[Object.keys(state.entities.users).slice(-1)[0]]

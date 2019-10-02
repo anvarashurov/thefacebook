@@ -16,6 +16,4 @@ const Root = ({ store }) => (
 // Provider allows store to be accessed by other child components
 // How about HashRouter?
 
-//
-
 export default Root;
