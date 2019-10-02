@@ -1,3 +1,0 @@
-// fetchUsers
-// fetchUser
-
