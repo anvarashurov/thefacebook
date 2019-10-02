@@ -1,5 +1,5 @@
 //to keep track of all of our users.
-import { RECEIVE_CURRENT_USER } from "../actions/sesssion_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const UsersReducer = (oldState = {}, action) => {
   // oldState is a slice of state.

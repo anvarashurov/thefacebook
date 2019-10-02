@@ -1,7 +1,7 @@
 import {
-  RECEIVE_ERRORS,
+  RECEIVE_SESSION_ERRORS,
   RECEIVE_CURRENT_USER
-} from "../actions/sesssion_actions";
+} from "../actions/session_actions";
 
 const defaultState = {
   session: []
@@ -10,7 +10,7 @@ const defaultState = {
 const sessionErrorsReducer = (errorState = defaultState, action) => {
   Object.freeze(errorState);
   switch (action.type) {
-    case RECEIVE_ERRORS: {
+    case RECEIVE_SESSION_ERRORS: {
       let newErrorState = Object.assign({}, errorState);
       newErrorState["session"] = action.errors;
       return newErrorState;
