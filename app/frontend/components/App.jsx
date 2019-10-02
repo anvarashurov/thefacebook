@@ -2,15 +2,15 @@
 import GreetingContainer from "./greeting/greeting_container";
 import { Route } from 'react-router-dom';
 import React from 'react';
-import LoginFormContainer from "./greeting/LoginFormContainer";
-import SignupFormContainer from "./greeting/SignupFormContainer";
+import LoginFormContainer from "./session_form/LoginFormContainer";
+import SignupFormContainer from "./session_form/SignupFormContainer";
 
 // Greeating container???
 
 const App = () => (
   <div>
     <header>
-      <h1>Log In Form</h1>
+      <h1>Helllo</h1>
       <GreetingContainer />
     </header>
     <Route path="/login" component={LoginFormContainer} />
