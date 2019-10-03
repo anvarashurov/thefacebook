@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     # create a new user with given params
     @user = User.new(user_params)
     birthday = params[:user][:birthday][:month] + "/" + params[:user][:birthday][:day] + "/" + params[:user][:birthday][:year]
-    debugger
+    # debugger
     if @user.save
       @user.update(birthday: birthday)
       login!(@user)

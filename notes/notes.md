@@ -82,4 +82,7 @@ Difference between Function vs Class components
   Radio Button Click Twice To Make It Work 
     Remove PreventDefault
 
+  Heroku RESTART DATABASE (delete) :
+    https://gist.github.com/zulhfreelancer/ea140d8ef9292fa9165e
+
   
