@@ -7,11 +7,17 @@ import Root from './components/root';
 document.addEventListener("DOMContentLoaded", () => {
 
   let preLoadedState = undefined;
-  debugger
+  // debugger
   if(window.currentUser) {
+    // debugger
     preLoadedState = {
       session: {
         currentUserId: window.currentUser.id
+      },
+      entities: {
+        users: {
+          [window.currentUser.id]: window.currentUser
+        }
       }
     }
   }

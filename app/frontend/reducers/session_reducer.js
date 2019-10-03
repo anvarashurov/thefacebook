@@ -7,7 +7,7 @@ const _nullUser = Object.freeze({
 const sessionReducer = (state = _nullUser, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, action.user);
+      return Object.assign({}, {currentUserId: action.user.id});
     case LOGOUT_CURRENT_USER:
       return _nullUser;
     default: 

@@ -2,6 +2,3 @@
 
 
 QUESTIONS:
-
-- What to do with Errors? How to show them on page?
-- Sign up on Heroku (Uninitialized constant BCrypt)
