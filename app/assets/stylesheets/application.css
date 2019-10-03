@@ -63,11 +63,14 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+/* parent of all components in landing page */
+.landing_page {}
+
 .welcome_page_header {
     /* border: 1px solid black; */
     display: flex;
     height: 82px;
-    width: auto;
+    width: 100%;
     background-color: #385898;
     font-family: Helvetica, Arial, sans-serif;
     /* center my children (which is just 1 div tag) */
@@ -162,3 +165,7 @@ input[type="submit"] {
 .login_form td {
     padding-right: 14px;
 }
+
+/* --------------------------------------------- */
+/* LandingPage with Nav, Sign up, children */
+

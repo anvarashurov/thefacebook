@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import LandingPageHeader from './landingPageHeader';
+import Header from './header';
 import SignupFormContainer from '../signup/SignupFormContainer';
 
 // import Link
@@ -23,7 +23,7 @@ class Greeting extends React.Component {
     else {
       outcome = (
         <div className="landing_page">
-          <LandingPageHeader />
+          <Header />
           <SignupFormContainer />
           <div className="create_page_message">
             <p>

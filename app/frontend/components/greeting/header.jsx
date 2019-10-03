@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginFormContainer from '../login/LoginFormContainer';
-const LandingPageHeader = () => {
+const Header = () => {
   return (
     <nav className="welcome_page_header">
       <div className="welcome_page_menu_bar">
@@ -13,4 +13,4 @@ const LandingPageHeader = () => {
   )
 }
 
-export default LandingPageHeader;
+export default Header;
