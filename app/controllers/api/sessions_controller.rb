@@ -30,3 +30,5 @@ end
 # user.last_name = "Ashurov"
 # user.email_address = "an@gmail.com"
 # user.password = "000000"
+# user.birthday = "Oct 10 1995"
+# user.gender = "Male"

@@ -73,3 +73,13 @@ Difference between Function vs Class components
   The ID of a form input element has nothing to do with the data contained within the element. IDs are for hooking the element with JavaScript and CSS. The name attribute, however, is used in the HTTP request sent by your browser to the server as a variable name associated with the data contained in the value attribute.
 
   Source: https://teamtreehouse.com/community/what-is-the-difference-between-id-and-name-attributes-in-form-elements
+
+  Permit NESTED Params: https://stackoverflow.com/questions/18436741/rails-4-strong-parameters-nested-objects
+
+  How To Pick Only One Radio Button ? 
+    Give them the same name. The same name assures only 1 radio button within a group of them is picked. 
+
+  Radio Button Click Twice To Make It Work 
+    Remove PreventDefault
+
+  

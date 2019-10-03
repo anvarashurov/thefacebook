@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import LandingPageHeader from './landingPageHeader';
+import SignupFormContainer from '../signup/SignupFormContainer';
+
 // import Link
 
 
@@ -20,8 +22,14 @@ class Greeting extends React.Component {
     } 
     else {
       outcome = (
-        <div>
+        <div className="landing_page">
           <LandingPageHeader />
+          <SignupFormContainer />
+          <div className="create_page_message">
+            <p>
+              <a href="#">Create a Page</a>  for a celebrity, band or business.
+            </p> 
+          </div>
         </div>
       )
     }

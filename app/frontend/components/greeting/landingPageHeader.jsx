@@ -1,6 +1,5 @@
 import React from 'react';
 import LoginFormContainer from '../login/LoginFormContainer';
-import SignupFormContainer from '../signup/SignupFormContainer';
 const LandingPageHeader = () => {
   return (
     <header className="welcome-page-header">
@@ -8,7 +7,6 @@ const LandingPageHeader = () => {
         thefacebook
       </span>
       <LoginFormContainer />
-      <SignupFormContainer />
     </header>
   )
 }

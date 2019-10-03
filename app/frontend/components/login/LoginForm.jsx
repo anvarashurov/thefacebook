@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
   handleLogin(e) {
     // debugger
     e.preventDefault();
-    debugger
+    // debugger
     return this.props.login(this.state);
   }
 

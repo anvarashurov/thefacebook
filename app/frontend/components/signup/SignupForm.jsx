@@ -52,24 +52,29 @@ class SignupForm extends React.Component {
     return this.setState({ birthday: e.target.value })
   }
   updateGender(e) {
-    e.preventDefault();
     return this.setState({ gender: e.target.value })
   }
   updateMonth(field) {
-    debugger
-    return e => this.setState({birthday: Object.assign({}, this.state.birthday, {[field]: e.target.value})})
+    // debugger
+    return e => this.setState({ birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
   updateDay(field) {
-    return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value }) })
+    // debugger
+    return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
   updateYear(field) {
-    return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value }) })
+    // debugger
+    return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
 
   render() {
     return (
       <form className="signup_form">
       <div className="landing_page_signup_form">
+        <div className="sign_up_message">
+            <h3>Sign Up</h3>
+            <p>It's quick and easy.</p>
+          </div>
         <div className="name_container">
           <input className="first_name" type="text" name="firstName" placeholder="First name" value={this.state.first_name} onChange={this.updateFirstName} />
           <input className="last_name" type="text" name="lastName" placeholder="Last name" value={this.state.last_name} onChange={this.updateLastName} />
@@ -148,10 +153,17 @@ class SignupForm extends React.Component {
         </label>
         <div className="gender_container">
           <label htmlFor="gender">gender
-            <input type="radio" name="female" id="gender_female" onChange={this.updateGender} value="female"/>Female
-            <input type="radio" name="male" id="gender_male" onChange={this.updateGender} value="male"/>Male
-            <input type="radio" name="customer" id="gender_custom" onChange={this.updateGender} value="custom"/>Custom
+            <input type="radio" name="gender_radio" id="gender_female" onChange={this.updateGender} value="female"/>Female
+            <input type="radio" name="gender_radio" id="gender_male" onChange={this.updateGender} value="male"/>Male
+            <input type="radio" name="gender_radio" id="gender_custom" onChange={this.updateGender} value="custom"/>Custom
           </label>
+        </div>
+        <div className="terms_and_policies_message">
+          <p>
+            By clicking Sign Up, you agree to our Terms, Data Policy and 
+            Cookies Policy. You may receive SMS Notifications from us and 
+            can opt out any time.
+          </p>
         </div>
       </div>
       <input type="submit" id="signup_button" value="Sign Up" onClick={this.handleSignup} />

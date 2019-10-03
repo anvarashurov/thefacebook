@@ -56,6 +56,7 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'bcrypt'
+  gem 'annotate'
 end
 
 group :test do
