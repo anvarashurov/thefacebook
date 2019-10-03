@@ -107,6 +107,7 @@ class SignupForm extends React.Component {
                 </select>
               </span>
             </div>
+            {/* comment */}
             <div className="day_container">
               {/* <input className="birthday_day" type="day" name="day" value={this.state.birthday["day"]} onChange={this.updateDay("day")} /> */}
               <select name="birthday_day" id="day" title="Day" className="birthday_day" value={this.state.birthday["day"]} onChange={this.updateDay("day")}>
