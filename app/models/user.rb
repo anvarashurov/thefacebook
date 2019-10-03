@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class User < ApplicationRecord
   # model level validations
   # either phone number or email address

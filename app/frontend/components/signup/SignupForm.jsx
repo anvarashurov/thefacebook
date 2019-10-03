@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { parse } from 'querystring';
+// import { parse } from 'querystring';
 
 class SignupForm extends React.Component {
   constructor(props) {
