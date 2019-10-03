@@ -38,15 +38,15 @@ class LoginForm extends React.Component {
         <form className="login_form">
             <table>
               <tbody>
-                <tr>
+                <tr> 
                   <td>
-                    <span> 
-                      Email or Phone
+                    <span>
+                      <p>Email or Phone</p> 
                     </span>
                   </td>
                   <td>
                     <span>
-                      Password
+                      <p>Password</p>
                     </span>
                   </td>
                 </tr>
@@ -55,10 +55,10 @@ class LoginForm extends React.Component {
                   <input type="text" name="email" id="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email}/>
                   </td>
                   <td>
-                    <input type="password" name="password" id="password" className="login_password" onChange={this.updatePassword} value={this.state.password}/>
+                    <input type="password" name="password" id="password" className="login_input_password" onChange={this.updatePassword} value={this.state.password}/>
                   </td>
                   <td>
-                  <input type="submit" id="login_button" value="Log In" onClick={this.handleLogin}/>
+                  <input type="submit" id="login_button" value="Log In" className="login_button" onClick={this.handleLogin}/>
                   </td>
                 </tr>
                 <tr>

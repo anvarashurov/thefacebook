@@ -12,6 +12,153 @@
  *
  *= require_tree .
  *= require_self
- */
+ */ 
 
- 
+ /* PHASE 0: Reset */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.welcome_page_header {
+    /* border: 1px solid black; */
+    display: flex;
+    height: 82px;
+    width: auto;
+    background-color: #385898;
+    font-family: Helvetica, Arial, sans-serif;
+    /* center my children (which is just 1 div tag) */
+    justify-content: center;
+}
+
+.welcome_page_menu_bar {
+    /* border: 1px solid black; */
+    display: flex;
+    width: 980px;
+    height: 78px;
+    /* center my children (which are span and div from loginformcont*/
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.thefacebook {
+    /* font-family: inherit; */
+    /* border: 1px solid black; */
+    font-size: 41px;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    letter-spacing: -1px;
+    margin-top: 25px;
+}
+
+.login_container {
+    /* border: 1px solid black; */
+    color: white;
+    width: 392px;
+    height: 65px;
+    margin-top: 10px;
+}
+
+.login_container span {
+    font-size: 12px;
+}
+
+.login_input_email {
+    width: 150px;
+    height: 23px;
+    /* padding-left: 4px; */
+    border: 1px solid black;
+    background-color: white;
+    padding: 4px 3px 4px 3px;
+    box-sizing: border-box
+}
+
+.login_input_password {
+    width: 150px;
+    height: 23px;
+    /* padding-left: 5px; */
+    border: 1px solid black;
+    background-color: white;
+    padding: 4px 3px 4px 3px;
+    box-sizing: border-box
+}
+
+.login_button {
+    font-size: 12px;
+    width: 50px;
+    height: 24px;
+    font-weight: bold;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    /* This will ensure padding is included in width/height spec */
+    box-sizing: border-box;
+    border: 1px solid #1D3C78;
+    background-color: rgb(36, 95, 173);
+    border-radius: 2px;
+
+}
+
+.login_button:hover {
+    background-color: #2851A3;
+
+}
+
+/* .login_form_label_field {
+    padding: 0px;
+} */
+
+.login_form_label_field div a {
+    font-size: 12px;
+    color: #9CB4D8;
+}
+
+.login_form td {
+    padding-right: 14px;
+}
