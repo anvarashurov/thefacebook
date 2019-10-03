@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   # model level validations
   # either phone number or email address
-  validates :first_name, :last_name, :phone_number, :email_address, 
-  :password_digest, :session_token, :birth_date, :gender,
-  presence: true
+  validates :first_name, :last_name, :email_address,
+  :birthday, :gender, :password_digest, :session_token, presence: true
   # phone number is optional
   validates :email_address, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
@@ -11,20 +10,23 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
   
-  def self.find_by_credentials(username, password)
-    @user = User.find(username.id)
-    if @user
-      if @user.is_password?(password)
-        # need to show user page (where feed lives)
-        render json: "User Exists"
-      else
-        # password is not correct
-        render json: "Either username or password is incorrect" 
-      end
-    else
-      # need to try logging in again
-      render json: "User with such details does not exist"
-    end
+  def self.find_by_credentials(email, password)
+    @user = User.find_by(email_address: email)
+    #   if @user.is_password?(password)
+    #     # need to show user page (where feed lives)
+    #     render json: ["User Exists"]
+    #   else
+    #     # password is not correct
+    #     render json: ["Either email or password is incorrect"], status: 401
+    #   end
+    # else
+    #   debugger
+    #   # need to try logging in again
+    #   render json: ["User with such details does not exist"], status: 401
+    # end
+    return nil unless @user
+    @user.is_password?(password) ? @user : nil
+
   end
 
   def is_password?(password)

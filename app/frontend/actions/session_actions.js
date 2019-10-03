@@ -20,6 +20,7 @@ const receiveSessionErrors = (errors) => ({
 
 export const login = (user) => (dispatch) => {
   // this takes it to reducer
+  debugger
   return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
 }
 
