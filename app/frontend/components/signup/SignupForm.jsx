@@ -66,7 +66,7 @@ class SignupForm extends React.Component {
     // debugger
     return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
-
+  // so there you go
   render() {
     return (
       <form className="signup_form">
