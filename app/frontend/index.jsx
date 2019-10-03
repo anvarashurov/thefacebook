@@ -6,13 +6,24 @@ import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const store = configureStore();
+  let preLoadedState = undefined;
+  debugger
+  if(window.currentUser) {
+    preLoadedState = {
+      session: {
+        currentUserId: window.currentUser.id
+      }
+    }
+  }
+  
+  const store = configureStore(preLoadedState);
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  // window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
