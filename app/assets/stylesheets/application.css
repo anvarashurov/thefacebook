@@ -215,6 +215,7 @@ LEFT BLANK INTENTIONALLY
     /* This is aligning children to the right */
     /* align-items: flex-end; */
     width: 1000px;
+    height: 624px;
 }
 
 .body_upper_part {
