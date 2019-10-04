@@ -63,16 +63,42 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+
+.birthday_month {
+    border: none;
+}
+
+.birthday_day {
+    border: none;
+}
+
+.birthday_year {
+    border: none;
+}
 /* Apply border-boxing to all */
 
 * {
     box-sizing: border-box;
 }
 
+/*
+
+
+
+LEFT BLANK INTENTIONALLY
+
+
+
+
+*/
+
+
 /* parent of all components in landing page */
 .landing_page {
     display: flex;
     flex-direction: column;
+    /* justify-content: center;
+    align-content: center; */
     background-color: rgb(237, 240, 245);
 }
 
@@ -181,15 +207,17 @@ input[type="submit"] {
 
 .landing_page_body {
     margin-top: 20px;
-    margin-right: 120px;
-    align-self: flex-end;
-    width: 700px;
-
+    /* Align my children in center */
+    display: flex;
+    flex-direction: column;
+    /* This is aligning children to the right */
+    align-items: flex-end;
+    align-self: center;
+    width: 1000px;
 }
 
 .landing_page_signup_form {
-    width: 500px;
-
+    
 }
 
 .signup_message {
@@ -289,6 +317,18 @@ select {
     margin: 10px 0 5px 0;
 }
 
+.birthday_day {
+    border: 1px solid rgb(189, 199, 216);
+}
+
+.birthday_month {
+    border: 1px solid rgb(189, 199, 216);
+}
+
+.birthday_year {
+    border: 1px solid rgb(189, 199, 216);
+}
+
 .gender_container span {
     position: relative;
     top: 3px;
@@ -338,6 +378,7 @@ select {
 }
 
 .create_page_message {
+    font-family: Helvetica, Arial, sans-serif;
     width: 399px;
     height: 33.2px;
     box-sizing: border-box;

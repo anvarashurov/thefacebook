@@ -25,7 +25,10 @@ class Greeting extends React.Component {
         <div className="landing_page">
           <Header />
           <div className="landing_page_body">
-            <SignupFormContainer />
+            <div className="body_upper_part">
+              <SignupFormContainer />
+              {/* Here goes the Left Child of Body */}
+            </div>
             <div className="create_page_message">
               <p>
                 <a href="#">Create a Page</a>  for a celebrity, band or business.
