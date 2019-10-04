@@ -181,16 +181,15 @@ input[type="submit"] {
 
 .landing_page_body {
     margin-top: 20px;
+    margin-right: 120px;
     align-self: flex-end;
     width: 700px;
 
 }
 
 .landing_page_signup_form {
-}
-
-.signup_form {
     width: 500px;
+
 }
 
 .signup_message {

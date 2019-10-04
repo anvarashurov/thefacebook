@@ -70,6 +70,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="landing_page_signup_form">
+        {/* Is This Redundant? I think so */}
         <form className="signup_form">
           <div className="signup_message">
               <h3>Sign Up</h3>
