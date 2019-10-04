@@ -137,14 +137,14 @@ LEFT BLANK INTENTIONALLY
 
 .login_container {
     /* border: 1px solid black; */
-    color: white;
     width: 392px;
     height: 65px;
     margin-top: 10px;
 }
 
-.login_container span {
+.login_container p {
     font-size: 12px;
+    color: white;
 }
 
 .login_input_email {
