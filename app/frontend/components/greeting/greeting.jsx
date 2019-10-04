@@ -33,7 +33,7 @@ class Greeting extends React.Component {
                  <tbody>
                   <tr>
                     <td className="top_left_row">
-                      <span className="img1">
+                      <span className="img1.png">
                         <img src={window.top_left_1} />
                       </span>
                       {/* REMOVE IF NOT NEEDED */}
@@ -44,7 +44,7 @@ class Greeting extends React.Component {
                   </tr>
                   <tr>
                     <td className="top_left_row">
-                      <span className="img2">
+                      <span className="img2.png">
                         <img src={window.top_left_2} />
                       </span> 
                         <span className="body_upper_left_text_span">
@@ -54,7 +54,7 @@ class Greeting extends React.Component {
                   </tr>
                   <tr>
                       <td className="top_left_row">
-                        <span className="img3">
+                        <span className="img3.png">
                           <img src={window.top_left_3} />
                         </span> 
                         <span className="body_upper_left_text_span">
