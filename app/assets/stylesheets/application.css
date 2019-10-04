@@ -182,7 +182,7 @@ LEFT BLANK INTENTIONALLY
     border: 1px solid #1D3C78;
     background-color: rgb(36, 95, 173);
     border-radius: 2px;
-
+    color: white;
 }
 
 .login_button:hover {
