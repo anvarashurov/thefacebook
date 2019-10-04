@@ -63,8 +63,18 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+/* Apply border-boxing to all */
+
+* {
+    box-sizing: border-box;
+}
+
 /* parent of all components in landing page */
-.landing_page {}
+.landing_page {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 240, 245);
+}
 
 .welcome_page_header {
     /* border: 1px solid black; */
@@ -169,3 +179,169 @@ input[type="submit"] {
 /* --------------------------------------------- */
 /* LandingPage with Nav, Sign up, children */
 
+.landing_page_body {
+    margin-top: 20px;
+    align-self: flex-end;
+    width: 700px;
+
+}
+
+.landing_page_signup_form {
+}
+
+.signup_form {
+    width: 500px;
+}
+
+.signup_message {
+    display: inline-block;
+    width: 399px;
+    height: 43px;
+}
+
+.signup_message h3 {
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 5px;
+    /* position: relative; */
+}
+
+.signup_message p {
+    font-size: 19px;
+    /* margin-bottom: 20px; */
+    /* position: relative; */
+}
+
+.name_container {
+    flex-direction: row;
+    /* position: relative; */
+    top: 40px;
+}
+
+.name_container input {
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    padding: 8px 10px 8px 10px;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    width: 194px;
+    height: 39px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.email_container {
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    padding: 8px 10px 8px 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    width: 399px;
+    height: 39px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.password_container {
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    padding: 8px 10px 8px 10px;
+    margin-right: 10px;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    width: 399px;
+    height: 39px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.label_birthday {
+    color: rgb(144, 148, 156);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input, select {
+    background-color: white;
+}
+
+select {
+    width: 69px;
+    height: 30px
+}
+
+.birthday_container {
+    width: 399px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.gender_container p {
+    color: rgb(144, 148, 156);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;  
+    margin: 10px 0 5px 0;
+}
+
+.gender_container span {
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gender_container input {
+    margin-right: 5px;
+}
+
+.terms_and_policies_message {
+    width: 399px;
+    height: 42px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #777;
+    font-size: 11px;
+}
+
+.terms_and_policies_message p {
+    margin-right: 20px;
+}
+
+#signup_button {
+    width: 194px;
+    height: 39px;
+    font-size: 19px;
+    color: white;
+    background-color: #69A74E;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    box-shadow: rgb(164, 227, 136);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgb(59, 110, 34);
+}
+
+#signup_button:hover {
+    background-color: rgb(98, 156, 73);
+}
+
+.create_page_message {
+    width: 399px;
+    height: 33.2px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    border-top: 1px solid rgb(189, 199, 216);
+}

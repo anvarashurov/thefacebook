@@ -15,7 +15,7 @@ class Greeting extends React.Component {
     if (typeof this.props.currentUser !== 'undefined') {
       outcome = (
         <div>
-          <h1> Welcome! {this.props.currentUser.username} </h1>
+          <h1> Welcome! {this.props.currentUserId} :D </h1>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
       )
@@ -24,11 +24,13 @@ class Greeting extends React.Component {
       outcome = (
         <div className="landing_page">
           <Header />
-          <SignupFormContainer />
-          <div className="create_page_message">
-            <p>
-              <a href="#">Create a Page</a>  for a celebrity, band or business.
-            </p> 
+          <div className="landing_page_body">
+            <SignupFormContainer />
+            <div className="create_page_message">
+              <p>
+                <a href="#">Create a Page</a>  for a celebrity, band or business.
+              </p> 
+            </div>
           </div>
         </div>
       )
