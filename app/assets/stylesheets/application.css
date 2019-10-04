@@ -107,7 +107,8 @@ LEFT BLANK INTENTIONALLY
     display: flex;
     height: 82px;
     width: 100%;
-    background-color: #385898;
+    /* background-color: #385898; */
+    background-image: linear-gradient(to bottom, #385898, #4A4D9B);
     font-family: Helvetica, Arial, sans-serif;
     /* center my children (which is just 1 div tag) */
     justify-content: center;
@@ -382,26 +383,30 @@ select {
 }
 
 .birthday_day {
+    padding: 5px;
     border: 1px solid rgb(189, 199, 216);
 }
 
 .birthday_month {
+    padding: 5px;
     border: 1px solid rgb(189, 199, 216);
 }
 
 .birthday_year {
+    padding: 5px;
     border: 1px solid rgb(189, 199, 216);
 }
 
 .gender_container span {
     position: relative;
     top: 3px;
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .gender_container input {
+    margin-left: 5px;
     margin-right: 5px;
 }
 
