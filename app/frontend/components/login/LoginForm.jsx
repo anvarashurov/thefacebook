@@ -11,12 +11,19 @@ class LoginForm extends React.Component {
     this.updatePassword = this.updatePassword.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   handleLogin(e) {
     // debugger
     e.preventDefault();
     // debugger
+    return this.props.login(this.state);
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.setState({email: "demouser@gmail.com", password: "000000"})
     return this.props.login(this.state);
   }
 
@@ -52,13 +59,16 @@ class LoginForm extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                  <input type="text" name="email" id="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email}/>
+                    <input type="text" name="email" id="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email}/>
                   </td>
                   <td>
                     <input type="password" name="password" id="password" className="login_input_password" onChange={this.updatePassword} value={this.state.password}/>
                   </td>
                   <td>
-                  <input type="submit" id="login_button" value="Log In" className="login_button" onClick={this.handleLogin}/>
+                    <input type="submit" id="login_button" value="Log In" className="login_button" onClick={this.handleLogin}/>
+                  </td>
+                  <td>
+                  <input type="submit" id="demo_button" value="Demo" className="login_button" onClick={this.handleDemoLogin} />
                   </td>
                 </tr>
                 <tr>
