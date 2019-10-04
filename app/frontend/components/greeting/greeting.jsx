@@ -33,8 +33,8 @@ class Greeting extends React.Component {
                  <tbody>
                   <tr>
                     <td className="top_left_row">
-                      <span className="img1.png">
-                        <img src={window.top_left_1} />
+                      <span className="img1">
+                        <img src={window.topone} />
                       </span>
                       {/* REMOVE IF NOT NEEDED */}
                       <span className="body_upper_left_text_span">
@@ -44,8 +44,8 @@ class Greeting extends React.Component {
                   </tr>
                   <tr>
                     <td className="top_left_row">
-                      <span className="img2.png">
-                        <img src={window.top_left_2} />
+                      <span className="img2">
+                        <img src={window.toptwo} />
                       </span> 
                         <span className="body_upper_left_text_span">
                           <h4>Share what's new</h4> <p>in your life on your Timeline.</p>
@@ -54,8 +54,8 @@ class Greeting extends React.Component {
                   </tr>
                   <tr>
                       <td className="top_left_row">
-                        <span className="img3.png">
-                          <img src={window.top_left_3} />
+                        <span className="img3">
+                          <img src={window.topthree} />
                         </span> 
                         <span className="body_upper_left_text_span">
                         <h4 >Find more</h4> <p> of what you're looking for with Facebook Search.</p>
