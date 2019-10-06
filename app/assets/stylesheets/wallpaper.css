@@ -1,0 +1,31 @@
+/* wallpaper, pp, and the buttons */
+
+* {
+    box-sizing: border-box;
+}
+
+.body_content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+/* 'a' tag is involved because it contains 2 things */
+.wallpaper_overlay, .wallpaper_overlay a {
+    display: flex;
+    flex-direction: row;
+}
+
+.edit_profile_log_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.activity_log {
+    display: flex;
+    flex-direction: row;
+}
+
+.bar > ul, .bar a  {
+    display: flex;
+    flex-direction: row;
+}

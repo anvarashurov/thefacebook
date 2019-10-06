@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './Header';
+import BodyContent from './BodyContent';
 
-class Profile extends React.Component{
+class Profile extends React.Component {
 
 // facebook top header part
 
@@ -15,6 +16,7 @@ class Profile extends React.Component{
         return (
             <div className="main_container">
                 <Header currentUser={this.props.currentUser}/>
+                <BodyContent currentUser={this.props.currentUser}/>
             </div>
         )
     }
