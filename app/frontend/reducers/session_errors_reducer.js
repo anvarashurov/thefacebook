@@ -3,23 +3,23 @@ import {
   RECEIVE_CURRENT_USER
 } from "../actions/session_actions";
 
-const defaultState = {
-  session: []
-};
+// const defaultState = {
+//   session: []
+// };
 
-const sessionErrorsReducer = (errorState = defaultState, action) => {
+const sessionErrorsReducer = (errorState = [], action) => {
   Object.freeze(errorState);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS: {
-      let newErrorState = Object.assign({}, errorState);
-      newErrorState["session"] = action.errors;
-      return newErrorState;
+      return action.errors;
     }
     case RECEIVE_CURRENT_USER:
-      return (Object.assign({}, errorState)["session"] = []);
+      return [];
     default:
       return errorState;
   }
 };
+
+// this reducer's return value is pointed to by key 'session' inside our errors slice of state.
 
 export default sessionErrorsReducer;

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Header from './header';
 import SignupFormContainer from '../signup/SignupFormContainer';
-
+import ProfileContainer from '../profile/ProfileContainer';
 // import Link
 
 
@@ -15,7 +15,8 @@ class Greeting extends React.Component {
     if (typeof this.props.currentUser !== 'undefined') {
       outcome = (
         <div>
-          <h1> Welcome! {this.props.currentUserId} :D </h1>
+          <ProfileContainer />
+          <h1> Welcome! {this.props.currentUser.id} :D </h1>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
       )

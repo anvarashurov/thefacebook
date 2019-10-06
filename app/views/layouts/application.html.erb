@@ -4,15 +4,20 @@
     <title>thefacebook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
     <script type="text/javascript">
       window.topone = "<%= image_url('topone.png') %>";
       window.toptwo = "<%= image_url('toptwo.png') %>";
       window.topthree = "<%= image_url('topthree.png') %>";
-    </script>
-    
+      window.facebookIcon = "<%= image_url('facebook_icon.png') %>"
+      window.friendIcon = "<%= image_url('friend_icon.png') %>";
+      window.messageIcon = "<%= image_url('message_icon') %>";
+      window.notIcon = "<%= image_url('not_icon.png') %>";
+      window.questionIcon = "<%= image_url('question_icon.png') %>";
+      window.dropdownIcon = "<%= image_url('dropdown_icon.png') %>";
+    </script>    
   </head>
 
   <body>

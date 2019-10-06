@@ -21,7 +21,11 @@ const receiveSessionErrors = (errors) => ({
 export const login = (user) => (dispatch) => {
   // this takes it to reducer
   // debugger
-  return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
+  // receive the promise that failed ... .responseJSON
+  return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)), ({responseJSON}) => {
+    // debugger
+    dispatch(receiveSessionErrors(responseJSON)) }
+  );
 }
 
 export const logout = () => (dispatch) => {
@@ -30,4 +34,9 @@ export const logout = () => (dispatch) => {
 
 export const signup = (user) => (dispatch) => {
   return APIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
+}
+
+export const fetchUser = (userId) => (dispatch) => {
+  // debugger
+  return APIUtil.fetchUser(userId).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
 }

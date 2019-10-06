@@ -1,0 +1,155 @@
+.main_nav {
+    display: flex;
+    background-image: linear-gradient(to bottom, #385898, #4A4D9B);
+    justify-content: center;
+    height: 42px;
+    box-sizing: border-box;
+
+}
+
+.profile_nav {
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    width: 1000px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+/* this contains LOGO */
+.profile_nav_logo {
+    box-sizing: border-box;
+    align-items: center;
+    padding: 2px;
+    margin-right: 3px;
+}
+/* this is LOGO */
+.profile_nav img {
+    width: 22px;
+    height: 22px;
+    margin: 2px;
+}
+
+.profile_nav_search > form > input {
+    width: 400px;
+    height: 22px;
+    background-color: #ffffff;
+    padding: 0px 48px 0px 5px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px; 
+}
+
+.profile_nav_search > form {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_nav_search button {
+    background-color: white;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.profile_nav_search img {
+    width: 16px;
+    height: 16px;
+}
+
+/* this contains all of the right side */
+.profile_nav_navigation {
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    align-items: center;
+    margin-left: 40px;
+}
+
+/* this wraps profile pic AND name */
+.profile_icon_name_wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 65px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.profile_icon_name_wrapper img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.user_first_name {
+    /* box-sizing: border-box; */
+    margin-right: 12px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profile_nav_home_find_create {
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.home {
+    padding: 0px 12px 0px 12px;
+    border-left: 1px solid black;
+}
+
+.find_friends {
+    padding: 0px 12px 0px 12px;
+    border-left: 1px solid black;
+}
+
+.create {
+    padding: 0px 12px 0px 12px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.friends_messages_nots {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin-left: 8px;
+}
+
+.friends_messages_nots span {
+    margin: 0px 4px 0px 4px;
+}
+
+.friends_messages_nots img {
+    width: 18px;
+    height: 18px;
+}
+
+.question_and_more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.question_and_more span {
+    margin: 0px 0px 0px 4px;
+}
+
+.question_and_more img {
+    width: 18px;
+    height: 18px;
+}
+
+.dropdown img {
+    width: 8px;
+    height: 5px;
+}

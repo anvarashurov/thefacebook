@@ -475,3 +475,19 @@ select {
 .terms_and_policies_message a {
     color: #385898;
 }
+
+/* 
+
+
+ERRORS
+
+
+
+*/
+
+.errors_login {
+    display: inline-block;
+    list-style-type: none;
+    color: inherit;
+    border: 1px solid red
+}

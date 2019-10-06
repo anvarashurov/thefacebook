@@ -12,19 +12,34 @@ class LoginForm extends React.Component {
     this.updateEmail = this.updateEmail.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   handleLogin(e) {
     // debugger
     e.preventDefault();
     // debugger
+
+    // if(this.props.errors.length > 0) {
+    //   return this.handleErrors();
+    // }
+
     return this.props.login(this.state);
   }
 
   handleDemoLogin(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({email: "demouser@gmail.com", password: "000000"})
     return this.props.login(this.state);
+  }
+
+  handleErrors(){
+    // array of html els to render later
+    return (
+      this.props.errors.map((error) => {
+        return <li className="errors_login">{error}</li>
+      })
+    )
   }
 
   updateEmail(e) {
@@ -40,6 +55,9 @@ class LoginForm extends React.Component {
   }
 
   render() {
+
+    // map over empty array, not gonna return any li's
+
     return (
       <div className="login_container">
         <form className="login_form">
@@ -82,6 +100,7 @@ class LoginForm extends React.Component {
               </tbody>
             </table>
         </form>
+        {this.handleErrors()}
       </div>
     )
   }

@@ -18,6 +18,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show 
+    # debugger
+    @user = User.find(params[:id])
+    # debugger
+    if @user
+      render "api/users/show"
+    end
+  end
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :password, :gender, :email_address, :birthday => [:month, :day, :year])
     # , :birthday => [:month, :day, :year]
