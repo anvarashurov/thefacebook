@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BodyContent = ({ currentUser }) => {
+const Wallpaper = ({ currentUser }) => {
     return (
         <div className="body_content">
             <div className="wallpaper_container">
@@ -71,4 +71,4 @@ const BodyContent = ({ currentUser }) => {
     )
 }
 
-export default BodyContent;
+export default Wallpaper;

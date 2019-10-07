@@ -4,6 +4,10 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
+export const RECEIVE_POSTS = "RECEIVE_POSTS";
+export const RECEIVE_POST = "RECEIVE_POST";
+export const REMOVE_POST = "REMOVE_POST";
+
 const receiveCurrentUser = (user) => ({
   type: RECEIVE_CURRENT_USER,
   user
@@ -16,6 +20,22 @@ const logoutCurrentUser = () => ({
 const receiveSessionErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
+})
+// **************
+
+const receivePost = post => ({
+  type: RECEIVE_POST,
+  post
+})
+
+const receivePosts = posts => ({
+  type: RECEIVE_POSTS,
+  posts
+})
+
+const removePost = postId => ({
+  type: REMOVE_POST,
+  postId
 })
 
 export const login = (user) => (dispatch) => {
@@ -39,4 +59,21 @@ export const signup = (user) => (dispatch) => {
 export const fetchUser = (userId) => (dispatch) => {
   // debugger
   return APIUtil.fetchUser(userId).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
+}
+
+// ********************************************
+
+//  RECEIVE SESSION ERROR?????
+
+export const createPost = post => dispatch => {
+  return APIUtil.createPost(post).then(post => dispatch(receivePost(post)))
+}
+export const fetchPosts = posts => dispatch => {
+  return APIUtil.fetchPosts(posts).then(posts => dispatch(receivePosts(posts)))
+}
+export const fetchPost = postId => dispatch => {
+  return APIUtil.fetchPost(postId).then(post => dispatch(receivePost(post)))
+}
+export const deletePost = postId => dispatch => {
+  return APIUtil.deletePost(postId).then((post) => dispatch(removePost()))
 }
