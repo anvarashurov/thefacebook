@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
     this.updatePassword = this.updatePassword.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
@@ -29,18 +29,29 @@ class LoginForm extends React.Component {
 
   handleDemoLogin(e) {
     // e.preventDefault();
-    this.setState({email: "demouser@gmail.com", password: "000000"})
+    this.setState({email: "demouser@gmail.com", password: "000000"});
     return this.props.login(this.state);
   }
 
   handleErrors(){
     // array of html els to render later
-    return (
-      this.props.errors.map((error) => {
-        return <li className="errors_login">{error}</li>
-      })
-    )
+    debugger
+    const options = ['First', 'Last', 'Email', 'Gender', 'Password'];
+    const index = ['first_name', 'last_name', 'email', 'gender', 'password'];
+    let errors = this.props.errors.forEach((error) => {
+        let i = options.indexOf(error.split(" ")[0]);
+        debugger
+        if( i >= 0 ) {
+          debugger
+          document.getElementById(index[i]).style.border = "1px solid red";
+        }      
+    })
   }
+   // })
+      // return (<div className="session_errors">
+      //   {errors}
+      // </div>
+      // )
 
   updateEmail(e) {
     // debugger
@@ -77,10 +88,11 @@ class LoginForm extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                    <input type="text" name="email" id="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email}/>
+                    {/* REMOVED ID FROM IT NOT TO CONFUSED BORDER RED */}
+                    <input type="text" name="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email} required/>
                   </td>
                   <td>
-                    <input type="password" name="password" id="password" className="login_input_password" onChange={this.updatePassword} value={this.state.password}/>
+                    <input type="password" name="password" className="login_input_password" onChange={this.updatePassword} value={this.state.password} required/>
                   </td>
                   <td>
                     <input type="submit" id="login_button" value="Log In" className="login_button" onClick={this.handleLogin}/>

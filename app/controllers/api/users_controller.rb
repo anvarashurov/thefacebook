@@ -18,6 +18,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  #  month = params[:user][:birthday][:month] 
+  #   day = params[:user][:birthday][:day] 
+  #   year = params[:user][:birthday][:year]
+  #   debugger
+  #   if((month && day) && year)
+  #     @user.birthday = month + "/" + day + "/" + year
+  #   end
+
+
   def show 
     # debugger
     @user = User.find(params[:id])

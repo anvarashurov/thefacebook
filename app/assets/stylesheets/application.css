@@ -325,7 +325,7 @@ LEFT BLANK INTENTIONALLY
     margin-right: 10px;
 }
 
-.email_container {
+#email {
     border: 1px solid rgb(189, 199, 216);
     border-radius: 5px;
     padding: 8px 10px 8px 10px;
@@ -338,7 +338,7 @@ LEFT BLANK INTENTIONALLY
     background-color: white;
 }
 
-.password_container {
+#password {
     border: 1px solid rgb(189, 199, 216);
     border-radius: 5px;
     padding: 8px 10px 8px 10px;
@@ -381,6 +381,9 @@ select {
     display: flex;
     flex-direction: row;  
     margin: 10px 0 5px 0;
+    width: 100%;
+    border: 1px;
+    border-radius: 4px;
 }
 
 .birthday_day {
@@ -485,18 +488,21 @@ ERRORS
 
 */
 
-.errors_login {
-    display: inline-block;
-    list-style-type: none;
-    color: inherit;
-    border: 1px solid red
+.session_errors {
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-
-
-
+.session_errors li {   
+    color: red;
+    list-style: none;
+    /* border: 1px solid red; */
+    z-index: 10;
+    position: relative;
+    right: -400px;
+    top: 20px;
+    width: 100%;
+}
 
 /* 
 

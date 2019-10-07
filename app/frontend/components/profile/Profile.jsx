@@ -18,8 +18,10 @@ class Profile extends React.Component {
             <div className="main_container">
                 <Header currentUser={this.props.currentUser} logout={this.props.logout}/>
                 <Wallpaper currentUser={this.props.currentUser} />
-                <Intro currentUser={this.props.currentUser} />
-                <CreatePost currentUser={this.props.currentUser} />
+                <div className="profile_lower_body">
+                    <Intro currentUser={this.props.currentUser} />
+                    <CreatePost currentUser={this.props.currentUser} />
+                </div>
             </div>
         )
     }

@@ -86,3 +86,13 @@ Difference between Function vs Class components
     https://gist.github.com/zulhfreelancer/ea140d8ef9292fa9165e
 
   
+
+
+
+
+  BUGGGZ BUNNY: 
+
+
+  So, when I save DOB custom made, it is saving "/ /" in 
+  case no DOB submitted. WHICH PASSES THE VALIDATION!!!!
+  

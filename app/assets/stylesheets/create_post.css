@@ -1,0 +1,107 @@
+.create_post_container {
+    width: 516px;
+    height: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+   
+    border: 1px solid rgb(220, 220, 223);
+    border-radius: 3px;
+
+    margin-left: 15px;
+}
+
+.top_part li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 16px;
+    color: #4B4F56;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 5px 5px 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+#pen {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+#pen_text {
+    border-right: 1px solid rgb(220, 220, 223);
+    padding-right: 15px;
+}
+
+.top_part {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(220, 220, 223);
+}
+
+#second {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 5px;
+}
+
+#second img {
+    margin-right: 12px;
+}
+
+/* CREATE POST AREA */
+
+.create_post_area {
+    display: flex;
+    flex-direction: row;
+    border-bottom:  1px solid rgb(220, 220, 223);
+    height: 77px;
+    align-items: center;
+}
+
+.create_post_area img {
+    width: 60px;
+    height: 60px; 
+    /* position: relative; */
+    /* top: 50px; */
+    /* left: -15px; */
+    overflow: hidden;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border:  1px solid rgb(220, 220, 223);
+    /* margin-left: 40px; */
+    z-index: 1;
+    margin-left: 9px;
+}
+
+.create_post_area textarea {
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 420px;
+    resize: none;
+    outline: none;
+    text-align: left;
+    cursor: text;
+    overflow-wrap: break-word;
+    padding-top: 15px;
+}
+
+#create_post_button {
+    background-color: rgb(79, 113, 182);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border-radius: 2px;
+    border: 1pxs solid rgb(56, 88, 152);
+    height: 20px;
+    width: 50px;
+    text-align: center;
+    margin-left: 463px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
