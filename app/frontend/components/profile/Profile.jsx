@@ -15,8 +15,8 @@ class Profile extends React.Component {
         // debugger
         return (
             <div className="main_container">
-                <Header currentUser={this.props.currentUser}/>
-                <BodyContent currentUser={this.props.currentUser}/>
+                <Header currentUser={this.props.currentUser} logout={this.props.logout}/>
+                <BodyContent currentUser={this.props.currentUser} />
             </div>
         )
     }

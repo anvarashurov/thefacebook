@@ -14,8 +14,8 @@ class Greeting extends React.Component {
     
     if (typeof this.props.currentUser !== 'undefined') {
       outcome = (
-        <div>
-          <ProfileContainer />
+        <div className="profile_body_greeting">
+          <ProfileContainer logout={this.props.logout}/>
           <h1> Welcome! {this.props.currentUser.id} :D </h1>
           <button onClick={this.props.logout}>Log Out</button>
         </div>

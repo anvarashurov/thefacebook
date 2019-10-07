@@ -76,6 +76,7 @@
     width: 65px;
     box-sizing: border-box;
     align-items: center;
+    margin-bottom: 3px;
 }
 
 .profile_icon_name_wrapper img {
@@ -105,7 +106,12 @@
 .home {
     padding: 0px 12px 0px 12px;
     border-left: 1px solid black;
+
 }
+/* 
+.home:hover {
+    background-color: #33518b;
+} */
 
 .find_friends {
     padding: 0px 12px 0px 12px;
@@ -153,3 +159,12 @@
     width: 8px;
     height: 5px;
 }
+
+
+
+/* 
+
+ALL HEIGHT 42px;
+
+*/
+

@@ -5,12 +5,33 @@
 }
 
 .body_content {
+    /* background-color: rgb(233, 235, 238); */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
+    align-items: center;
+    background-color: rgb(233, 235, 238)
 }
+
+.wallpaper_container {
+    width: 981px;
+    margin-left: 70px;
+    align-items: center;
+}
+
 /* 'a' tag is involved because it contains 2 things */
-.wallpaper_overlay, .wallpaper_overlay a {
+.wallpaper_overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 840px;
+    align-items: baseline;
+    position: relative;
+    top: -200px;
+    left: -40px;
+}
+
+.wallpaper_overlay a {
     display: flex;
     flex-direction: row;
 }
@@ -18,6 +39,18 @@
 .edit_profile_log_container {
     display: flex;
     flex-direction: row;
+    width: 277px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    /* right: -75px; */
+}
+
+.picture_and_name {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    height: 170px;
 }
 
 .activity_log {
@@ -28,4 +61,187 @@
 .bar > ul, .bar a  {
     display: flex;
     flex-direction: row;
+}
+
+/* styling of individuals */
+
+.profile_picture {
+    position: relative;
+    top: 50px;
+    left: -15px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 4px solid white;
+    margin-left: 40px;
+    z-index: 1;
+}
+
+.profile_name {
+    position: relative;
+    /* left: -150px; */
+    top: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+    z-index: 1;
+}
+
+.edit_profile_log_container img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.edit_profile_container {
+    /* border: 1px solid black; */
+    background-color: #F5F6F7;
+    width: 105px;
+    height: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #4B4F56;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 1px;
+}
+
+.edit_profile_container a {
+    width: 100px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_profile_container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.activity_log {
+    /* border: 1px solid black; */
+    background-color: #F5F6F7;
+    width: 140px;
+    height: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #4B4F56;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 1px;
+}
+
+.activity_log:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.activity_log a {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid #e9eaed;
+    padding-top: 5px;
+}
+
+.activity_log button {
+    width: 35px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+/* 
+
+THE BAR RIGHT BELOW WALLPAPER
+
+*/
+
+
+.bar {
+    width: 850.99px;
+    height: 43px;
+    position: relative;
+    top: -185px;
+    right: 30px;
+    padding-left: 225px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #385898;
+    cursor: pointer;
+    border-bottom: 1px solid #dcdcdf;
+    border-right: 1px solid #dcdcdf;
+    border-left: 1px solid #dcdcdf;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: white;
+}
+
+.bar li:hover {
+    color: #2d477a;
+    background-color: rgb(245, 246, 247);
+}
+
+.bar li {
+    background-color: white;
+    padding: 0px 10px 0px 10px;
+    border-left: 1px solid #e9eaed;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    justify-content: center;
+
+}
+
+.bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar img {
+    margin: 5px;
+    width: 8px;
+    height: 5px;
+}
+
+.timeline {
+    width: 105.55px;
+    /* height: 42px; */
+    display: flex;
+}
+
+.about {
+    width: 75.44px;
+    /* height: 42px; */
+}
+.friends {
+    width: 91.58px;
+    /* height: 42px; */
+}
+
+.photos {
+    width: 82.45px;
+    /* height: 42px; */
+}
+.archive {
+    width: 106.36px;
+    /* height: 42px; */
+}
+.more {
+    width: 82.45px;
+    /* height: 42px; */
+    border-right: 1px solid #e9eaed; 
 }
