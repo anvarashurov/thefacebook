@@ -1,8 +1,10 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
+        # debugger
+        @post.author_id = current_user.id
         if @post.save
-            render '/api/posts'
+            render '/api/posts/show'
         else
             render ['Unable to create post'], status: 401
         end
@@ -32,6 +34,6 @@ class PostsController < ApplicationController
     # def edit
     # end
     def post_params 
-        params.require(:user).permit(:content)
+        params.require(:post).permit(:content)
     end
 end

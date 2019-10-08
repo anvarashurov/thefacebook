@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Wallpaper from './Wallpaper';
 import Intro from './Intro';
-import CreatePost from './CreatePost';
+// import CreatePost from '../post/CreatePost';
+import CreatePostContainer from '../post/CreatePostContainer';
 class Profile extends React.Component {
 
 // facebook top header part
@@ -20,7 +21,7 @@ class Profile extends React.Component {
                 <Wallpaper currentUser={this.props.currentUser} />
                 <div className="profile_lower_body">
                     <Intro currentUser={this.props.currentUser} />
-                    <CreatePost currentUser={this.props.currentUser} />
+                    <CreatePostContainer currentUser={this.props.currentUser} />
                 </div>
             </div>
         )

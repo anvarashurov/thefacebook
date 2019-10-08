@@ -35,14 +35,14 @@ class LoginForm extends React.Component {
 
   handleErrors(){
     // array of html els to render later
-    debugger
+    // debugger
     const options = ['First', 'Last', 'Email', 'Gender', 'Password'];
     const index = ['first_name', 'last_name', 'email', 'gender', 'password'];
     let errors = this.props.errors.forEach((error) => {
         let i = options.indexOf(error.split(" ")[0]);
-        debugger
+        // debugger
         if( i >= 0 ) {
-          debugger
+          // debugger
           document.getElementById(index[i]).style.border = "1px solid red";
         }      
     })

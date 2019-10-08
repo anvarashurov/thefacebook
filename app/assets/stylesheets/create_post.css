@@ -1,5 +1,5 @@
 .create_post_container {
-    width: 516px;
+    width: 510px;
     height: 130px;
 
     display: flex;
@@ -100,7 +100,7 @@
     height: 20px;
     width: 50px;
     text-align: center;
-    margin-left: 463px;
+    margin-left: 457px;
     margin-top: 2px;
     margin-bottom: 2px;
     margin-right: 2px;
