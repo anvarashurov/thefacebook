@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import { parse } from 'querystring';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -28,10 +27,7 @@ class SignupForm extends React.Component {
   }
 
   handleErrors() {
-    // array of html els to render later
-    debugger
     let errors = this.props.errors.map((error, idx) => {
-      debugger
       return <li key={idx}>{error}</li>
     })
     return (<div className="session_errors">
@@ -39,11 +35,11 @@ class SignupForm extends React.Component {
     </div>
     )
   }
-
-
+  
   handleSignup(e) {
     e.preventDefault();
-    return this.props.signup(this.state);
+    this.props.signup(this.state);
+    // this.props.history.push(`users/${currentUser.id}/`)
   }
 
   updateFirstName(e) {
@@ -70,22 +66,17 @@ class SignupForm extends React.Component {
     return this.setState({ gender: e.target.value })
   }
   updateMonth(field) {
-    // debugger
     return e => this.setState({ birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
   updateDay(field) {
-    // debugger
     return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
   updateYear(field) {
-    // debugger
     return e => this.setState({birthday: Object.assign({}, this.state.birthday, { [field]: e.target.value })})
   }
-  // so there you go
   render() {
     return (
       <div className="landing_page_signup_form">
-        {/* Is This Redundant? I think so */}
         <form className="signup_form">
           <div className="signup_message">
               <h3>Sign Up</h3>
@@ -104,7 +95,6 @@ class SignupForm extends React.Component {
           <label className="label_birthday" htmlFor="birthday">Birthday </label>
             <div className="birthday_container" id="birthday">
               <div className="month_container">
-                {/* <input className="birthday_month" type="text" name="month" value={this.state.birthday["month"]} onChange={this.updateMonth("month")}/> */}
                 <span>
                   <select name="birthday_month" id="month" title="Month" className="birthday_month" value={this.state.birthday["month"]} onChange={this.updateMonth("month")} required>
                     <option value="0">Month</option>

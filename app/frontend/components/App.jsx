@@ -1,11 +1,17 @@
 // import GreetingContainer from "./greeting/greeting_container";
-import GreetingContainer from "./greeting/greeting_container";
-import { Route } from 'react-router-dom';
+// import GreetingContainer from "./greeting/greeting_container";
+// import { Route } from 'react-router-dom';
 import React from 'react';
+import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import LandingPageContainer from './landing_page/landing_page_container';
+import ProfileContainer from '../components/profile/profile_container';
 
+debugger
 const App = () => (
   <div>
-    <GreetingContainer />
+    <Route path="/" component={LandingPageContainer} />
+    <ProtectedRoute path="/users/:id" component={ProfileContainer}/>
   </div>
 );
 

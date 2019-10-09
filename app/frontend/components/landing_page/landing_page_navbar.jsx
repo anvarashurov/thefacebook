@@ -1,6 +1,7 @@
 import React from 'react';
-import LoginFormContainer from '../login/LoginFormContainer';
-const Header = () => {
+import LoginFormContainer from './login/login_form_container';
+
+const LandingPageNavbar = () => {
   return (
     <nav className="welcome_page_header">
       <div className="welcome_page_menu_bar">
@@ -15,4 +16,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default LandingPageNavbar;

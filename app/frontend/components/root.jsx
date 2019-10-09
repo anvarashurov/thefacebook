@@ -1,12 +1,14 @@
 import React from 'react';
+
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import App from './App';
-//why
+
 const Root = ({ store }) => (
   <Provider store={store}>
+    {/* this means router methods available inside child components */}
     <HashRouter>
-      <App />
+      <Route path="/" component={App} />
     </HashRouter>
   </Provider>
 )

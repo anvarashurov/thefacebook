@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Wallpaper = ({ currentUser }) => {
+const ProfileWallpaper = ({ profileOwner }) => {
     return (
         <div className="body_content">
             <div className="wallpaper_container">
@@ -12,7 +12,7 @@ const Wallpaper = ({ currentUser }) => {
                         <img src={window.profile} alt="profile picture" style={{ width: '168px', height: '168px' }} />
                     </div>
                     <div className="profile_name">
-                        <span>{currentUser[1] + " " + currentUser[2]}</span>
+                        <span>{profileOwner.first_name + " " + profileOwner.last_name}</span>
                     </div>
                 </div>
                 <div className="edit_log_button">
@@ -71,4 +71,4 @@ const Wallpaper = ({ currentUser }) => {
     )
 }
 
-export default Wallpaper;
+export default ProfileWallpaper;

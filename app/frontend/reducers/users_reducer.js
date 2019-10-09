@@ -6,6 +6,7 @@ const UsersReducer = (oldState = {}, action) => {
   // defaultState is figured out from the State Shape...
   // What is default state?
   if (action.type === RECEIVE_CURRENT_USER) {
+    // debugger
     return Object.assign({}, oldState, { [action.user.id]: action.user });
   } else {
     return oldState;

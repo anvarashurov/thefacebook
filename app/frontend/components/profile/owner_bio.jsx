@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Intro = ({ currentUser }) => {
+const OwnerBio = ({ currentUser }) => {
     return (
         <div className="intro_container">
             <div className="world_icon_and_text">
@@ -28,4 +28,4 @@ const Intro = ({ currentUser }) => {
     )
 }
 
-export default Intro;
+export default OwnerBio;

@@ -8,10 +8,13 @@ export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
-const receiveCurrentUser = (user) => ({
-  type: RECEIVE_CURRENT_USER,
-  user
-})
+const receiveCurrentUser = (user) => {
+  debugger
+  return {
+    type: RECEIVE_CURRENT_USER,
+    user
+  }
+}
 
 const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,

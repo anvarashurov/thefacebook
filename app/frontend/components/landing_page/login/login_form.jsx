@@ -16,59 +16,39 @@ class LoginForm extends React.Component {
   }
 
   handleLogin(e) {
-    // debugger
     e.preventDefault();
-    // debugger
-
-    // if(this.props.errors.length > 0) {
-    //   return this.handleErrors();
-    // }
-
+    // this.props.history.push(`users/${currentUser.id}/`)
     return this.props.login(this.state);
   }
 
   handleDemoLogin(e) {
-    // e.preventDefault();
     this.setState({email: "demouser@gmail.com", password: "000000"});
     return this.props.login(this.state);
+    // this.props.history.push(`users/${currentUser.id}/`)
   }
 
   handleErrors(){
-    // array of html els to render later
-    // debugger
     const options = ['First', 'Last', 'Email', 'Gender', 'Password'];
     const index = ['first_name', 'last_name', 'email', 'gender', 'password'];
     let errors = this.props.errors.forEach((error) => {
         let i = options.indexOf(error.split(" ")[0]);
-        // debugger
         if( i >= 0 ) {
-          // debugger
           document.getElementById(index[i]).style.border = "1px solid red";
         }      
     })
   }
-   // })
-      // return (<div className="session_errors">
-      //   {errors}
-      // </div>
-      // )
 
   updateEmail(e) {
-    // debugger
     e.preventDefault();
     return this.setState({ email: e.target.value })
   }
 
   updatePassword(e) {
-    // debugger
     e.preventDefault();
     return this.setState({ password: e.target.value })
   }
 
   render() {
-
-    // map over empty array, not gonna return any li's
-
     return (
       <div className="login_container">
         <form className="login_form">
@@ -88,7 +68,6 @@ class LoginForm extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                    {/* REMOVED ID FROM IT NOT TO CONFUSED BORDER RED */}
                     <input type="text" name="email" className="login_input_email" onChange={this.updateEmail} value={this.state.email} required/>
                   </td>
                   <td>

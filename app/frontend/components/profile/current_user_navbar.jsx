@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Header = ({currentUser}) => {
+const CurrentUserNavbar = ({currentUser}) => {
     // debugger
     return (
         <div className="main_nav">
@@ -11,7 +12,7 @@ const Header = ({currentUser}) => {
                 </span>
                 <div className="profile_nav_search">
                     <form action="GET">
-                        <input type="text" className="profile_nav_search" name="search" placeholder={currentUser[1] + " " + currentUser[2]}/>
+                        <input type="text" className="profile_nav_search" name="search" placeholder={currentUser.first_name + " " + currentUser.last_name}/>
                         <button>
                             <img src={window.questionIcon} />
                         </button>
@@ -19,15 +20,15 @@ const Header = ({currentUser}) => {
                 </div>
                 <div className="profile_nav_navigation">
                     <div className="profile_icon_name_wrapper">
-                        <a href="#">
+                        <Link to={`/users/${currentUser.id}`}>
                             <span className="profile_nav_image_icon">
                                 <img src={window.questionIcon} alt="tiny profile picture"/>
                             </span>
-                        </a>
-                        <a href="">
+                        </Link>
+                            <a href={`#users/${currentUser.id}`}>
                             <span className="user_first_name">
                                 {/* Name of person */}
-                                {currentUser[1]}
+                                {currentUser.first_name}
                             </span>
                         </a>
                     </div>
@@ -76,4 +77,4 @@ const Header = ({currentUser}) => {
     )
 }
 
-export default Header;
+export default CurrentUserNavbar;
