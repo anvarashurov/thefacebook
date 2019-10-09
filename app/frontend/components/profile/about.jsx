@@ -4,6 +4,19 @@ import {withRouter, Link} from 'react-router-dom';
 class About extends React.Component {
 
     // debugger;
+
+// <ul>
+//     <li>
+//         Add a workplace
+//                             </li>
+//     <li>
+//         Add a school
+//                             </li>
+//     <li>
+//         These will come from DB.
+//         I won't implement Button's / Forms.
+//                             </li>
+// </ul>
     
     render() {
         // debugger
@@ -24,18 +37,7 @@ class About extends React.Component {
                         */}
                     </div>
                     <div className="menu_content">
-                        <ul>
-                            <li>
-                                Add a workplace
-                            </li>
-                            <li>
-                                Add a school
-                            </li>
-                            <li>
-                                These will come from DB.
-                                I won't implement Button's / Forms.
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>
