@@ -9,7 +9,7 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
 const receiveCurrentUser = (user) => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_CURRENT_USER,
     user

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const ProfileWallpaper = ({ profileOwner }) => {
     return (
@@ -39,13 +40,15 @@ const ProfileWallpaper = ({ profileOwner }) => {
             <div className="bar">
                 <ul>
                     <li className="timeline">
-                        <a href="#">
-                            Timeline 
-                            <img src={window.dropdownIcon} alt="dropdown"/>
-                        </a>
+                        {/* <a href="#"> */}
+                        <Link to={`/users/${profileOwner.id}`}>
+                                Timeline 
+                                <img src={window.dropdownIcon} alt="dropdown"/>
+                            </Link>
+                        {/* </a> */}
                     </li>
                     <li className="about">
-                        <a href="#">About</a>
+                        <Link to={`/users/${profileOwner.id}/about`}>About</Link>
                     </li>
                     <li className="friends">
                         <a href="#">Friends</a>

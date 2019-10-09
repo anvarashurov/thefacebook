@@ -1,16 +1,17 @@
 import React from 'react';
-import { withRouter, Route } from 'react-router-dom';
-import { ProtectedRoute } from '../../util/route_util';
+import { withRouter, Route, Switch } from 'react-router-dom';
+// import { ProtectedRoute } from '../../util/route_util';
 import LandingPageNavbar from './landing_page_navbar';
 import LandingPageBody from './landing_page_body';
-import ProfileContainer from '../profile/profile_container';
+// import ProfileContainer from '../profile/profile_container';
 import HomePage from '../main_page/home_page';
+import About from '../profile/about';
 
 class LandingPage extends React.Component {
     render() {
-
+        // debugger
         // can implement Ternary to get around it with condition being currentUser exists.
-
+        
         let page;
         if (typeof this.props.currentUser !== 'undefined') {
             page = (
@@ -18,6 +19,7 @@ class LandingPage extends React.Component {
                 <HomePage logout={this.props.logout} currentUser={this.props.currentUser}/>
             )
         } else {
+            // debugger
             page = (
                 <div className="landing_page">
                     <LandingPageNavbar />

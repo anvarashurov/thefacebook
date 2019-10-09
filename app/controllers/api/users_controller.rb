@@ -3,7 +3,7 @@
 class Api::UsersController < ApplicationController
   def create
     # create a new user with given params
-    debugger
+    # debugger
     @user = User.new(user_params)
     birthday = params[:user][:birthday][:month] + "/" + params[:user][:birthday][:day] + "/" + params[:user][:birthday][:year]
     # debugger

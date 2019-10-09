@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LandingPageContainer from './landing_page/landing_page_container';
 import ProfileContainer from '../components/profile/profile_container';
 
-debugger
+// debugger
 const App = () => (
   <div>
     <Route path="/" component={LandingPageContainer} />

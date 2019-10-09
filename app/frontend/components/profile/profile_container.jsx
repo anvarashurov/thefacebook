@@ -1,9 +1,9 @@
 import { fetchUser } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-debugger
+// debugger
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         // user: state.entities.users[ownProps.match.params.userId],
         currentUser: state.entities.users[state.session.currentUserId],

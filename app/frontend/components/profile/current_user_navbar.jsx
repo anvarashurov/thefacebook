@@ -6,10 +6,12 @@ const CurrentUserNavbar = ({currentUser}) => {
     return (
         <div className="main_nav">
             <div className="profile_nav">
+                <a href="/">
                 <span className="profile_nav_logo">
                     {/* here goes facebook's F logo */}
                     <img src={window.facebookIcon} alt="facebook logo"/>
                 </span>
+                </a>
                 <div className="profile_nav_search">
                     <form action="GET">
                         <input type="text" className="profile_nav_search" name="search" placeholder={currentUser.first_name + " " + currentUser.last_name}/>

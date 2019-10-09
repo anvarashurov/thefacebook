@@ -13,14 +13,14 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
-    debugger
+    // debugger
     return (
         <Route path={path} exact={exact} render={(props) => {
             if(loggedIn) {
-                debugger
+                // debugger
                 return <Component {...props} />
             } else {
-                debugger
+                // debugger
                 return <Redirect to="/login" />
             }
         }} />
@@ -29,7 +29,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => {
 
 
 const mapStateToProps = state => {
-    debugger
+    // debugger
     return { 
         // state.session.id
         loggedIn: Boolean(state.session.currentUserId) 
