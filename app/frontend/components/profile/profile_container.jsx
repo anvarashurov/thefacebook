@@ -1,4 +1,4 @@
-import { fetchUser } from '../../actions/session_actions';
+import { fetchUser, fetchPosts, fetchPost, deletePost } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 // debugger
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: (userId) => dispatch(fetchUser(userId))
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    fetchPosts: () => dispatch(fetchPosts()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

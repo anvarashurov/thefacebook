@@ -10,6 +10,7 @@ class CreatePost extends React.Component {
         this.state = {content: ""};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        
     }
 
     handleSubmit(e) {

@@ -3,18 +3,26 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
         # debugger
         @post.author_id = current_user.id
+        debugger
         if @post.save
+            debugger
+            user = User.find(current_user.id)
+            user.authored_posts << @post.id
+            # debugger
+            user.save
             render '/api/posts/show'
         else
             render ['Unable to create post'], status: 401
         end
     end
     def index
+        debugger
         @posts = Post.all
         if @posts
             render '/api/posts/index'
         end
     end
+    
     def show
         @post = Post.find(params[:id])
         if @post

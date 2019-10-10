@@ -28,14 +28,21 @@ class LoginForm extends React.Component {
   }
 
   handleErrors(){
-    const options = ['First', 'Last', 'Email', 'Gender', 'Password'];
-    const index = ['first_name', 'last_name', 'email', 'gender', 'password'];
-    let errors = this.props.errors.forEach((error) => {
-        let i = options.indexOf(error.split(" ")[0]);
-        if( i >= 0 ) {
-          document.getElementById(index[i]).style.border = "1px solid red";
-        }      
+    let errors = this.props.errors.map((error, idx) => {
+      return <li key={idx}>{error}</li>
     })
+    return (<div className="session_errors">
+      {errors}
+    </div>
+    )
+    // const options = ['First', 'Last', 'Email', 'Gender', 'Password'];
+    // const index = ['first_name', 'last_name', 'email', 'gender', 'password'];
+    // let errors = this.props.errors.forEach((error) => {
+    //     let i = options.indexOf(error.split(" ")[0]);
+    //     if( i >= 0 ) {
+    //       document.getElementById(index[i]).style.border = "1px solid red";
+    //     }      
+    // })
   }
 
   updateEmail(e) {
