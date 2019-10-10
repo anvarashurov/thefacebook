@@ -96,3 +96,7 @@ Difference between Function vs Class components
   So, when I save DOB custom made, it is saving "/ /" in 
   case no DOB submitted. WHICH PASSES THE VALIDATION!!!!
   
+
+Giving Exactly the same Route path 
+but Link changes the URL to the one withou /#/
+so Refreshing the page causes "GET: blah blah NO SUHC ROUTE" error

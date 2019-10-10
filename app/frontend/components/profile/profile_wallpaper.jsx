@@ -42,13 +42,14 @@ const ProfileWallpaper = ({ profileOwner }) => {
                     <li className="timeline">
                         {/* <a href="#"> */}
                         <Link to={`/users/${profileOwner.id}`}>
-                                Timeline 
-                                <img src={window.dropdownIcon} alt="dropdown"/>
-                            </Link>
+                            Timeline 
+                            <img src={window.dropdownIcon} alt="dropdown"/>
+                        </Link>
                         {/* </a> */}
                     </li>
                     <li className="about">
                         <Link to={`/users/${profileOwner.id}/about`}>About</Link>
+                        <span className="triangle"></span>
                     </li>
                     <li className="friends">
                         <a href="#">Friends</a>

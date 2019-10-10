@@ -54,13 +54,15 @@
 }
 
 .about_menu a {
-    margin: 5px;
+    padding: 12px 4px 12px 16px;
 }
 
 .about_menu a:focus {
     font-weight: bold;
-    color: black;
-    border-left: 5px solid black;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    border-left: 3px solid#385898;
 }
 
 .menu_content {
@@ -68,6 +70,19 @@
     height: 260px;
     padding: 30px 24px 0px 30px;
     box-sizing: border-box;
+}
+
+.menu_content ul {
+    width: 300px;
+}
+
+.menu_content li {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 3px;
+    padding-top: 15px;
+    border-bottom: 1px solid #ebedf0;
+
 }
 
 
