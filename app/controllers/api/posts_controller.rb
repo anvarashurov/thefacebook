@@ -12,13 +12,13 @@ class Api::PostsController < ApplicationController
     def index
         @posts = Post.all
         if @posts
-            render '/api/posts'
+            render '/api/posts/index'
         end
     end
     def show
         @post = Post.find(params[:id])
         if @post
-            render '/api/posts/'
+            render '/api/posts/show'
         else
             render ["Post does not exist"], status: 404
         end

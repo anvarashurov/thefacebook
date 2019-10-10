@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const ProfileWallpaper = ({ profileOwner }) => {
+const ProfileWallpaper = ({ profileOwner, currentUser }) => {
     return (
         <div className="body_content">
             <div className="wallpaper_container">
@@ -19,21 +19,21 @@ const ProfileWallpaper = ({ profileOwner }) => {
                 <div className="edit_log_button">
                     <div className="edit_profile_log_container">
                         <div className="edit_profile_container">
-                            <a href="#">
-                                <img src={window.edit} alt="edit_pen"/>
+                            <Link to={`/users/${currentUser.id}/about/edit`}>
+                                <img src={window.edit} alt="log" />
                                 Edit Profile
-                            </a>
+                            </Link>
                         </div>
-                        <div className="activity_log">
-                            <a href="#">
+                        {/* <div className="activity_log">
+                            <Link to={`/users/${currentUser.id}/about/edit`}>
                                 <img src={window.edit} alt="log"/>
-                                Activity Log
-                            </a>
-                            <button>
-                                {/* <img src={window.edit} alt="..."/> */}
+                                Edit Profile
+                            </Link>
+                            {/* <button>
+                                <img src={window.edit} alt="..."/>
                                 ...
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

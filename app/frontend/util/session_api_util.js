@@ -61,3 +61,16 @@ export const fetchPost = (postId) => {
     url: `api/posts/${postId}`,
   })
 }
+
+
+// USER DETAILS UPDATE
+
+
+export const updateUser = user => {
+  debugger
+  return $.ajax({
+    method: "PATCH",
+    url: `api/users/${user.id}`,
+    data: user,
+  })
+}

@@ -19,7 +19,7 @@ class UserProfile extends React.Component {
                             <OwnerBio currentUser={this.props.currentUser} />
                             <CreatePostContainer currentUser={this.props.currentUser} />
                         </Route>
-                        <Route exact path={`/users/${this.props.currentUser.id}/about`}>
+                        <Route path={`/users/${this.props.currentUser.id}/about`}>
                             <About currentUser={this.props.currentUser} />
                         </Route>
                     </Switch>

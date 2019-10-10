@@ -1,7 +1,33 @@
 import React from 'react';
-import { BrowserRouter, Switch, withRouter, Link, Route, userParams} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, withRouter, Link, Route, userParams} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateUser } from '../../actions/session_actions';
 
 class About extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: this.props.currentUser.id,
+            first_name: this.props.currentUser.first_name,
+            last_name: this.props.currentUser.last_name,            
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateField = this.updateField.bind(this);
+    }
+
+    updateField(field) {
+        debugger
+        return e => {
+            this.setState({[field]: e.target.value})
+        }
+    }
+
+    handleSubmit(e) {
+        debugger
+        e.preventDefault();
+        return this.props.updateUser(this.state);
+    }
 
     render() {
         debugger
@@ -12,25 +38,29 @@ class About extends React.Component {
                     <p>About</p>
                 </div>
                 <div className="about_body_container">
-                    <BrowserRouter>
                     <div className="about_menu">
                         <Link to={`/users/${this.props.currentUser.id}/about`}>Overview</Link>
                         <Link to={`/users/${this.props.currentUser.id}/about/work`}>Work and Education</Link>
                         <Link to={`/users/${this.props.currentUser.id}/about/lived`}>Places You've Lived</Link>
-                        {/* When user clicks one of the above, 
-                            the appropriate section on the right side 
-                            need to be updated
-                        */}
-                        
+                        <Link to={`/users/${this.props.currentUser.id}/about/edit`}>Edit Profile</Link>    
                     </div>
                     <div className="menu_content">
-                        <Switch>
-                            <Route exact path={`/users/${this.props.currentUser.id}/about`} children={<Overview/>}/>
-                            <Route exact path={`/users/${this.props.currentUser.id}/about/work/`} children={<Workplace/>}/>
-                            <Route exact path={`/users/${this.props.currentUser.id}/about/lived/`} children={<Lived />}/>
-                        </Switch>
+                        <Route exact path={`${this.props.match.url}`} component={Overview}/>
+                        <Route path={`${this.props.match.url}/work`} component={Workplace}/>
+                        <Route path={`${this.props.match.url}/lived`} component={Lived}/>
+                        <Route path={`/users/${this.props.currentUser.id}/about/edit/`}>
+                            <div className="edit_user">    
+                                <form onSubmit={this.handleSubmit} className="edit_user">
+                                    <label>First name</label>
+                                    <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
+                                    <label>Last name</label>
+                                    <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                                    {/* <input type="text" value={this.state.bio} */}
+                                    <input type="submit" value="Save" id="save_button"/>
+                                </form>
+                            </div>
+                        </Route>
                     </div>
-                    </BrowserRouter>
                 </div>
             </div>
         )
@@ -38,6 +68,7 @@ class About extends React.Component {
 }
 
 function Workplace() {
+    // debugger
     return (
         <ul>
             <li>WORK</li>
@@ -46,6 +77,7 @@ function Workplace() {
 }
 
 function Overview() {
+    // debugger
     return (
         <ul>
             <li>WORK </li>
@@ -58,6 +90,7 @@ function Overview() {
 }
 
 function Lived() {
+    // debugger
     return (
         <ul>
             <li>CITY</li>
@@ -65,4 +98,11 @@ function Lived() {
         </ul>
     )
 }
-export default withRouter(About);
+
+const mapDispatchToProps = dispatch => ({
+    updateUser: (user) => dispatch(updateUser(user))
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(About));
+
+//withRouter(About);

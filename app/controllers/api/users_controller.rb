@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  #  month = params[:user][:birthday][:month] 
+  #   month = params[:user][:birthday][:month] 
   #   day = params[:user][:birthday][:day] 
   #   year = params[:user][:birthday][:year]
   #   debugger
@@ -29,11 +29,26 @@ class Api::UsersController < ApplicationController
 
 
   def show 
-    # debugger
     @user = User.find(params[:id])
-    # debugger
     if @user
       render "api/users/show"
+    end
+  end
+
+  def update
+    # debugger
+    @user = User.find(params[:id])
+    
+    if @user
+      @user.first_name = params[:first_name]
+      @user.last_name = params[:last_name]  
+      if @user.save 
+        render "api/users/show"
+      else
+        render ["Unable to update user details"], status: 401
+      end
+    else
+      render ["User not found"], status: 404
     end
   end
 

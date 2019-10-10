@@ -27,12 +27,14 @@ const CurrentUserNavbar = ({currentUser}) => {
                                 <img src={window.questionIcon} alt="tiny profile picture"/>
                             </span>
                         </Link>
-                            <a href={`#users/${currentUser.id}`}>
+                        <Link to={`/users/${currentUser.id}`}>
+                            {/* <a href={`#users/${currentUser.id}`}> */}
                             <span className="user_first_name">
                                 {/* Name of person */}
                                 {currentUser.first_name}
                             </span>
-                        </a>
+                        {/* </a> */}
+                        </Link>
                     </div>
                     <div className="profile_nav_home_find_create">
                         <span className="home">

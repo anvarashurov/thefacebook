@@ -85,8 +85,38 @@
 
 }
 
-
 .about_body_container {
     display: flex;
     flex-direction: row;
+}
+
+.edit_user {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_user input {
+    margin: 5px;
+    border: 1px solid #bdc0c5;
+    border-radius: 2px;
+    margin-left: 5px;
+    padding: 3px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 350px;
+    cursor: text;
+}
+
+.edit_user label {
+    padding-left: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#save_button {
+    color: white;
+    width: 50px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #385898, #4A4D9B);
 }

@@ -8,6 +8,8 @@ export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
+// export const UPDATE_USER = "UPDATE_USER";
+
 const receiveCurrentUser = (user) => {
   // debugger
   return {
@@ -40,6 +42,12 @@ const removePost = postId => ({
   type: REMOVE_POST,
   postId
 })
+// *************
+
+// const updateUser = user => ({
+//   type: UPDATE_USER,
+//   user
+// })
 
 export const login = (user) => (dispatch) => {
   // this takes it to reducer
@@ -62,6 +70,13 @@ export const signup = (user) => (dispatch) => {
 export const fetchUser = (userId) => (dispatch) => {
   // debugger
   return APIUtil.fetchUser(userId).then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error)));
+}
+
+// USER UPDATE
+
+export const updateUser = user => dispatch => {
+  debugger
+  return APIUtil.updateUser(user).then(user => dispatch(receiveCurrentUser(user)))
 }
 
 // ********************************************
