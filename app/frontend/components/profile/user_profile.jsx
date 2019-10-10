@@ -3,7 +3,7 @@ import React from 'react';
 import ProfileWallpaper from './profile_wallpaper';
 import OwnerBio from './owner_bio';
 // import CreatePost from '../post/CreatePost';
-import CreatePostContainer from '../post/CreatePostContainer';
+import CreatePostContainer from '../post/create_post_container';
 import About from './about';
 import {Route, Switch, withRouter} from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import {fetchPosts, fetchPost, createPost, deletePost} from '../../actions/session_actions';
 import { connect } from 'react-redux';
-import CreatePost from './CreatePost';
+import CreatePost from './create_post';
 
 const mapStateToProps = state => {
     // debugger
