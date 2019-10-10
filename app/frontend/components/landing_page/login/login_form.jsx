@@ -22,8 +22,8 @@ class LoginForm extends React.Component {
   }
 
   handleDemoLogin(e) {
-    this.setState({email: "demouser@gmail.com", password: "000000"});
-    return this.props.login(this.state);
+    e.preventDefault();
+    return this.props.login({ email: "demouser@gmail.com", password: "000000" });
     // this.props.history.push(`users/${currentUser.id}/`)
   }
 
