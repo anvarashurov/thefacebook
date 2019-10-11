@@ -49,7 +49,7 @@ class CreatePost extends React.Component {
                 </ul>
                 <form onSubmit={this.handleSubmit}>
                     <div className="create_post_area">
-                        <img src={window.profile} alt="P"/>
+                        <img src={window.profile} alt="P" style={{ width: '60px', height: '60px' }}/>
                         <textarea onChange={this.handleChange()} placeholder="What's on your mind?"></textarea>
                     </div>
                     <input id="create_post_button" type="submit" value="Post"/>

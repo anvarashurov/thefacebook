@@ -35,6 +35,8 @@
 #pen_text {
     border-right: 1px solid rgb(220, 220, 223);
     padding-right: 15px;
+    margin-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 .top_part {
