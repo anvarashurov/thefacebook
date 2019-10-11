@@ -13,7 +13,7 @@ const CurrentUserNavbar = ({currentUser, logout}) => {
                 </span>
                 </a>
                 <div className="profile_nav_search">
-                    <form action="GET">
+                    <form>
                         <input type="text" className="profile_nav_search" name="search" placeholder={currentUser.first_name + " " + currentUser.last_name}/>
                         <button>
                             <img src={window.questionIcon} />
