@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
   }
   
   handleSignup(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.signup(this.state);
     // this.props.history.push(`users/${currentUser.id}/`)
   }

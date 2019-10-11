@@ -38,8 +38,8 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id])
         if @post 
             @post.destroy
-            @posts = Post.all
-            render '/api/posts/index'
+            # @posts = Post.all
+            render '/api/posts/show'
         else
             render json ["Post does not exist."]
         end

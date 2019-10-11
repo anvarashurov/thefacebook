@@ -67,7 +67,7 @@ export const fetchPost = (postId) => {
 
 
 export const updateUser = user => {
-  debugger
+  // debugger
   return $.ajax({
     method: "PATCH",
     url: `api/users/${user.id}`,

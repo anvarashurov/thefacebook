@@ -1,6 +1,8 @@
 //to keep track of all of our users.
 import { RECEIVE_CURRENT_USER, RECEIVE_POST } from "../actions/session_actions";
-import merge from 'lodash';
+import {merge} from 'lodash';
+
+// lodash wrapper
 
 const UsersReducer = (oldState = {}, action) => {
   // oldState is a slice of state.

@@ -16,14 +16,14 @@ class LoginForm extends React.Component {
   }
 
   handleLogin(e) {
-    // e.preventDefault();
+    e.preventDefault();
     // this.props.history.push(`users/${currentUser.id}/`)
-    return this.props.login(this.state);
+    this.props.login(this.state);
   }
 
   handleDemoLogin(e) {
-    // e.preventDefault();
-    return this.props.login({ email: "demouser@gmail.com", password: "000000" });
+    e.preventDefault();
+    this.props.login({ email: "demouser@gmail.com", password: "000000" });
     // this.props.history.push(`users/${currentUser.id}/`)
   }
 

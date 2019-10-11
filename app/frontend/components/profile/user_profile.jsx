@@ -10,7 +10,7 @@ import PostIndexItemContainer from '../post/post_index_item_container';
 
 class UserProfile extends React.Component {
     render() {
-        debugger
+        // debugger
         return (
             <div className="main_container">
                 <ProfileWallpaper profileOwner={this.props.currentUser} currentUser={this.props.currentUser} />

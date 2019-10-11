@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {deletePost} from '../../actions/session_actions';
 const PostIndexItem = (props) => {
-    debugger
+    // debugger
     return (
         <div className="one_post">
             <div>

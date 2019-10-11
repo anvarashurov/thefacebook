@@ -6,6 +6,7 @@ import LandingPage from './landing_page';
 //or just .pop()
 
 const mapStateToProps = state => {
+    // debugger
     // find currentuser from list of users. 
     return { currentUser: state.entities.users[state.session.currentUserId] }
 }

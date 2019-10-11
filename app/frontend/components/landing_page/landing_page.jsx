@@ -8,8 +8,10 @@ import HomePage from '../main_page/home_page';
 import About from '../profile/about';
 
 class LandingPage extends React.Component {
+
     render() {
-        debugger
+        // debugger
+
         // can implement Ternary to get around it with condition being currentUser exists.
         let page;
         if (typeof this.props.currentUser !== 'undefined') {

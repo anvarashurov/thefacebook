@@ -93,6 +93,6 @@ export const fetchPost = postId => dispatch => {
   return APIUtil.fetchPost(postId).then(post => dispatch(receivePost(post)))
 }
 export const deletePost = postId => dispatch => {
-  debugger
-  return APIUtil.deletePost(postId).then((post) => dispatch(removePost()))
+  // debugger
+  return APIUtil.deletePost(postId).then((post) => dispatch(removePost(post.id)))
 }
