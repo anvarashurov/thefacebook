@@ -99,7 +99,7 @@ Difference between Function vs Class components
 
 Giving Exactly the same Route path 
 but Link changes the URL to the one withou /#/
-so Refreshing the page causes "GET: blah blah NO SUHC ROUTE" error
+so Refreshing the page causes "GET: blah blah NO SUCH ROUTE" error
   - the whole problem was the part that renders ABOUT
   - has path set up EXACT hence and following paths 
   - are not being rendered
