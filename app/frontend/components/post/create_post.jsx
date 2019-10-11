@@ -15,6 +15,7 @@ class CreatePost extends React.Component {
 
     handleSubmit(e) {
         // debugger
+        // e.preventDefault();
         return this.props.createPost(this.state);
     }
 
@@ -50,7 +51,7 @@ class CreatePost extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="create_post_area">
                         <img src={window.profile} alt="P" style={{ width: '60px', height: '60px' }}/>
-                        <textarea onChange={this.handleChange()} placeholder="What's on your mind?"></textarea>
+                        <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
                     </div>
                     <input id="create_post_button" type="submit" value="Post"/>
                 </form>

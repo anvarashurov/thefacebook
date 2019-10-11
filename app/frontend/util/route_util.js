@@ -21,7 +21,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => {
                 return <Component {...props} />
             } else {
                 // debugger
-                return <Redirect to="/login" />
+                return <Redirect to="/" />
             }
         }} />
     )
