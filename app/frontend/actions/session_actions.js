@@ -75,7 +75,7 @@ export const fetchUser = (userId) => (dispatch) => {
 // USER UPDATE
 
 export const updateUser = user => dispatch => {
-  debugger
+  // debugger
   return APIUtil.updateUser(user).then(user => dispatch(receiveCurrentUser(user)))
 }
 
@@ -93,5 +93,6 @@ export const fetchPost = postId => dispatch => {
   return APIUtil.fetchPost(postId).then(post => dispatch(receivePost(post)))
 }
 export const deletePost = postId => dispatch => {
+  debugger
   return APIUtil.deletePost(postId).then((post) => dispatch(removePost()))
 }

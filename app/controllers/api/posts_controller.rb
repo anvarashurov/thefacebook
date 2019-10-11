@@ -3,20 +3,20 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
         # debugger
         @post.author_id = current_user.id
-        debugger
+        #debugger
         if @post.save
-            debugger
-            user = User.find(current_user.id)
-            user.authored_posts << @post.id
+            #debugger
+            #user = User.find(current_user.id)
+            #user.authored_posts << @post.id
             # debugger
-            user.save
+            #user.save
             render '/api/posts/show'
         else
             render ['Unable to create post'], status: 401
         end
     end
     def index
-        debugger
+        # debugger
         @posts = Post.all
         if @posts
             render '/api/posts/index'
@@ -34,9 +34,14 @@ class Api::PostsController < ApplicationController
     # def update
     # end
     def destroy
+        # debugger
         @post = Post.find(params[:id])
         if @post 
             @post.destroy
+            @posts = Post.all
+            render '/api/posts/index'
+        else
+            render json ["Post does not exist."]
         end
     end
     # def edit

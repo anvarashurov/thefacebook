@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, fetchPosts, deletePost } from '../../actions/session_actions';
 import LandingPage from './landing_page';
 
 //currentUser: state.entities.users[Object.keys(state.entities.users).slice(-1)[0]]
@@ -11,7 +11,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchPosts: () => dispatch(fetchPosts()),
+    deletePost: (postId) => dispatch(deletePost(postId)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

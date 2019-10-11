@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const OwnerBio = ({ currentUser }) => {
     return (
@@ -14,7 +15,8 @@ const OwnerBio = ({ currentUser }) => {
                     about yourself.
                 </span>
                 {/* <button>Add Bio</button> */}
-                <a id="add_bio" src="#">Add Bio</a>
+                <Link to={`/users/${currentUser.id}/about/edit`}>Add Bio</Link>
+                {/* <a id="add_bio" src="#">Add Bio</a> */}
             </div>
             {/* <ul>
                 <li> Lives in </li>

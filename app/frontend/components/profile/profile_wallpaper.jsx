@@ -13,7 +13,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser }) => {
                         <img src={window.profile} alt="profile picture" style={{ width: '168px', height: '168px' }} />
                     </div>
                     <div className="profile_name">
-                        <span>{profileOwner.first_name + " " + profileOwner.last_name}</span>
+                        <Link to={`/users/${profileOwner.id}/`}>{profileOwner.first_name + " " + profileOwner.last_name}</Link>
                     </div>
                 </div>
                 <div className="edit_log_button">

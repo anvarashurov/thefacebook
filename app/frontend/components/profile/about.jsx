@@ -17,20 +17,20 @@ class About extends React.Component {
     }
 
     updateField(field) {
-        debugger
+        // debugger
         return e => {
             this.setState({[field]: e.target.value})
         }
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         return this.props.updateUser(this.state);
     }
 
     render() {
-        debugger
+        // debugger
         return(
             <div className="about_container">
                 <div className="about_title_container">

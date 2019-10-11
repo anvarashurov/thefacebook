@@ -32,9 +32,10 @@ class CreatePost extends React.Component {
                     <li>
                         <img src={window.createPostPen} alt="PEN"id="pen"/>
                         <span id="pen_text">
-                            <a href="#">
+                            {/* <a href="#">
                                 Create Post
-                            </a> 
+                            </a>  */}
+                            <input type="submit" value="Create Post" onClick={this.handleSubmit} /> 
                         </span> 
                     </li>
                     <li id="second">

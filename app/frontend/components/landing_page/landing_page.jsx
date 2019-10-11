@@ -9,14 +9,13 @@ import About from '../profile/about';
 
 class LandingPage extends React.Component {
     render() {
-        // debugger
+        debugger
         // can implement Ternary to get around it with condition being currentUser exists.
-        
         let page;
         if (typeof this.props.currentUser !== 'undefined') {
             page = (
                 // <ProfileContainer logout={this.props.logout} />
-                <HomePage logout={this.props.logout} currentUser={this.props.currentUser}/>
+                <HomePage deletePost={this.props.deletePost} pathname={this.props.location.pathname} logout={this.props.logout} currentUser={this.props.currentUser} fetchPosts={this.props.fetchPosts}/>
             )
         } else {
             // debugger

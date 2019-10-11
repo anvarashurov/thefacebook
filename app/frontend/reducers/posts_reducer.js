@@ -5,7 +5,7 @@ import { merge } from 'lodash';
 const PostsReducer = (oldState = {}, action) => {
     switch(action.type) {
         case RECEIVE_POSTS:
-            return action.post;
+            return action.posts;
         case RECEIVE_POST:
             return merge({}, oldState, {[action.post.id]: action.post});
         case REMOVE_POST: 

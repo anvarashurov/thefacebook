@@ -49,7 +49,7 @@
     color: rgb(66, 74, 94);
 }
 
-#add_bio {
+.thought_icon_and_text a {
     color: #3578E5;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;

@@ -7,11 +7,18 @@ class PostIndex extends React.Component {
     componentDidMount() {
         return this.props.fetchPosts();
     }
-
     render() {
+        let myId = this.props.postOwner.id;
+        let myPosts = [];
+        let allPosts = this.props.posts;
 
-        const posts = this.props.posts.map((post) => {
-            return <PostIndexItem post={post} deletePost={this.props.deletePost} key={post.id} />
+        for(let i = 0; i < allPosts.length; i++) {
+            if (allPosts[i].authorId === parseInt(myId)) {
+                myPosts.push(allPosts[i]);
+            }
+        }
+        const posts = myPosts.slice(0).reverse().map((post) => {
+            return <PostIndexItem post={post} key={post.id} postOwner={this.props.postOwner}/>
         })
 
         return (

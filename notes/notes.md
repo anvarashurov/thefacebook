@@ -100,3 +100,47 @@ Difference between Function vs Class components
 Giving Exactly the same Route path 
 but Link changes the URL to the one withou /#/
 so Refreshing the page causes "GET: blah blah NO SUHC ROUTE" error
+  - the whole problem was the part that renders ABOUT
+  - has path set up EXACT hence and following paths 
+  - are not being rendered
+
+RECEIVE_POST is updating the FE but in order for Assoc to work and 
+return proper Array of ids inside User, we need to render user too...
+  --> We update User's array of post Ids based on RECEIVE POST action inside User's Reducer.
+
+Login/Signup/Demo/Edit Profile WILL NOT render proper
+components, only refresh does so. 
+
+-----------------------------------------
+
+Doable:
+
+- Post with Picture
+- Upload Profile Picture
+- Upload Wallpaper
+- Edit Post
+- Delete Post
+- Pin Post
+
+- CAN WE IMPLEMENT SEARCH?
+  - Any user in the DB that matches search
+  - Fetch All Users and look through them
+  - Do not go to DB every time.
+----------------------------------------------
+
+Comment: 
+
+if you click comment, input spot with "comment" appears
+post has many comments
+
+Like Post: 
+
+You click button Like, it increments the number of 
+likes by 1. Likes table stores user_id, post_id, num of likes.
+
+post has many likers
+user like belongs to post
+like
+unlike
+
+FEATURES:

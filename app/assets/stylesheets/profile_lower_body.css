@@ -2,10 +2,9 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
-    align-self: center;
-    align-items: center;
+    /* align-self: center; */
+    align-items: initial;
     justify-content: center;
-    position: relative;
     min-width: 851px;
     position: relative;
     left: -30px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CurrentUserNavbar = ({currentUser}) => {
+const CurrentUserNavbar = ({currentUser, logout}) => {
     // debugger
     return (
         <div className="main_nav">
@@ -24,7 +24,7 @@ const CurrentUserNavbar = ({currentUser}) => {
                     <div className="profile_icon_name_wrapper">
                         <Link to={`/users/${currentUser.id}`}>
                             <span className="profile_nav_image_icon">
-                                <img src={window.questionIcon} alt="tiny profile picture"/>
+                                <img src={window.profile} alt="tiny profile picture"/>
                             </span>
                         </Link>
                         <Link to={`/users/${currentUser.id}`}>
@@ -38,42 +38,43 @@ const CurrentUserNavbar = ({currentUser}) => {
                     </div>
                     <div className="profile_nav_home_find_create">
                         <span className="home">
-                            <a href="#">Home</a>
+                            <Link to={`/`}>Home</Link>
                         </span>
                         <span className="find_friends">
-                            <a href="#">Find Friends</a></span>
+                            <Link to={`/users/${currentUser.id}/`}>Find Friends</Link></span>
                         <span className="create">
-                            <a href="#">Create</a>
+                            <Link to={`/users/${currentUser.id}/`}>Create</Link>
                         </span>
                     </div>
                     <div className="friends_messages_nots">
                         <span> 
-                            <a href="#">
+                            <Link to={`/users/${currentUser.id}/`}>
                                 <img src={window.friendIcon} alt="friends icon"/>
-                            </a>
+                            </Link>
                         </span>
                         <span> 
-                            <a href="#">
+                            <Link to={`/users/${currentUser.id}/`}>
                                 <img src={window.messageIcon} alt="messages icon"/>
-                            </a>
+                            </Link>
                         </span>
                         <span className="not"> 
-                            <a href="#">
+                            <Link to={`/users/${currentUser.id}/`}>
                                 <img src={window.notIcon} alt="nots icon"/>
-                            </a>
+                            </Link>
                         </span>
                     </div>
                     <div className="question_and_more">
                         <span className="question"> 
-                            <a href="#">
+                            <Link to={`/users/${currentUser.id}/`}>
                                 <img src={window.questionIcon} alt="question icon"/>
-                            </a>
+                            </Link>
                         </span>
                         <span className="dropdown"> 
-                            <a href="#">
+                            <Link to={`/users/${currentUser.id}/`}>
                                 <img src={window.dropdownIcon} alt="drop down icon"/>
-                            </a>
+                            </Link>
                         </span>
+                        <input type="submit" id="demo_button" value="L" className="login_button" onClick={logout}/>
                     </div>
                 </div>
             </div>

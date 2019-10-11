@@ -24,11 +24,12 @@
     padding: 2px;
     margin-right: 3px;
 }
+
 /* this is LOGO */
 .profile_nav img {
     width: 22px;
     height: 22px;
-    margin: 2px;
+    margin: 2px 4px 2px 2px;
 }
 
 .profile_nav_search > form > input {
@@ -80,9 +81,10 @@
 }
 
 .profile_icon_name_wrapper img {
-    width: 18px;
-    height: 18px;
+    border-radius: 50%;
+    margin-top: 2px;
     margin-right: 5px;
+
 }
 
 .user_first_name {
@@ -105,25 +107,20 @@
 
 .home {
     padding: 0px 12px 0px 12px;
-    border-left: 1px solid black;
-
+    border-right: 0.5px solid rgba(75, 95, 136, 0.863);
 }
-/* 
-.home:hover {
-    background-color: #33518b;
-} */
+
 
 .find_friends {
     padding: 0px 12px 0px 12px;
-    border-left: 1px solid black;
+    border-right: 0.5px solid rgba(75, 95, 136, 0.863);
 }
 
 .create {
     padding: 0px 12px 0px 12px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-right: 0.5px solid rgba(75, 95, 136, 0.863);
+    border-right: 0.5px solid rgba(75, 95, 136, 0.863);
 }
-
 .friends_messages_nots {
     display: flex;
     flex-direction: row;
@@ -138,6 +135,17 @@
 .friends_messages_nots img {
     width: 18px;
     height: 18px;
+}
+
+.friends_messages_nots img:hover {
+    color: white;
+    animation: glow 1.5s linear infinite alternate;
+}
+
+@keyframes glow{
+  to {
+    box-shadow: 0px 0px 10px 10px #535FED;
+  }
 }
 
 .question_and_more {
