@@ -17,20 +17,17 @@ class About extends React.Component {
     }
 
     updateField(field) {
-        // debugger
         return e => {
             this.setState({[field]: e.target.value})
         }
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         return this.props.updateUser(this.state);
     }
 
     render() {
-        // debugger
         return(
             <div className="about_container">
                 <div className="about_title_container">
@@ -55,7 +52,6 @@ class About extends React.Component {
                                     <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
                                     <label>Last name</label>
                                     <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
-                                    {/* <input type="text" value={this.state.bio} */}
                                     <input type="submit" value="Save" id="save_button"/>
                                 </form>
                             </div>
@@ -68,7 +64,6 @@ class About extends React.Component {
 }
 
 function Workplace() {
-    // debugger
     return (
         <ul>
             <li>WORK</li>
@@ -77,7 +72,6 @@ function Workplace() {
 }
 
 function Overview() {
-    // debugger
     return (
         <ul>
             <li>WORK </li>
@@ -90,7 +84,6 @@ function Overview() {
 }
 
 function Lived() {
-    // debugger
     return (
         <ul>
             <li>CITY</li>
@@ -104,5 +97,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(About));
-
-//withRouter(About);

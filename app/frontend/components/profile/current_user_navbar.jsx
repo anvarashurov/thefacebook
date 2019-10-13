@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CurrentUserNavbar = ({currentUser, logout}) => {
-    // debugger
     return (
         <div className="main_nav">
             <div className="profile_nav">

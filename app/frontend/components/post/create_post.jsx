@@ -1,7 +1,5 @@
 import React from 'react';
 
-//({ currentUser })
-
 class CreatePost extends React.Component {
 
     constructor(props) {
@@ -14,13 +12,10 @@ class CreatePost extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
-        // e.preventDefault();
         return this.props.createPost(this.state);
     }
 
     handleChange() {
-        // debugger
         return e => {
             this.setState({content: e.target.value});
         };
@@ -39,14 +34,14 @@ class CreatePost extends React.Component {
                             <input type="submit" value="Create Post" onClick={this.handleSubmit} /> 
                         </span> 
                     </li>
-                    {/* <li id="second">
+                    <li id="second">
                         <img src={window.camera} alt="Ph"/>
                         <span>
                             <a href="#">
                             Photo/Video
                             </a>
                         </span> 
-                    </li> */}
+                    </li>
                 </ul>
                 <form onSubmit={this.handleSubmit}>
                     <div className="create_post_area">
