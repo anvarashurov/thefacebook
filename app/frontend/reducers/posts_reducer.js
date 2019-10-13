@@ -1,5 +1,5 @@
-//to keep track of all of our users.
-import { RECEIVE_POST, RECEIVE_POSTS, REMOVE_POST } from "../actions/session_actions";
+import { RECEIVE_POST, RECEIVE_POSTS, REMOVE_POST } from "../actions/post_actions";
+
 import { merge } from 'lodash';
 
 const PostsReducer = (oldState = {}, action) => {
@@ -11,9 +11,7 @@ const PostsReducer = (oldState = {}, action) => {
             return merge({}, oldState, {[action.post.id]: action.post});
         case REMOVE_POST: 
             let newState = Object.assign({}, oldState);
-            // debugger
             delete newState[action.postId];
-            // debugger
             return newState;
         default:
             return oldState;

@@ -1,12 +1,10 @@
-import {fetchPosts, fetchPost, createPost, deletePost} from '../../actions/session_actions';
+import {fetchPosts, createPost, deletePost} from '../../actions/post_actions';
 import { connect } from 'react-redux';
 import CreatePost from './create_post';
 
 const mapStateToProps = state => {
-    // debugger
     return {
-    currentUser: Object.values(state.entities.users[state.session.currentUserId]),
-    // post: {content: ""}
+        currentUser: Object.values(state.entities.users[state.session.currentUserId]),
     }
 }
 

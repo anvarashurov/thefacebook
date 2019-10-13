@@ -1,8 +1,3 @@
-//ajax requests
-//login
-//logout
-//signup
-
 export const login = (user) => {
   return $.ajax ({
     method: "POST",
@@ -23,54 +18,5 @@ export const logout = () => {
   return $.ajax ({
     method: "DELETE",
     url: "api/session",
-  })
-}
-/************************************/
-export const fetchUser = (userId) => {
-  // debugger
-  return $.ajax ({
-    method: "GET",
-    url: `api/users/${userId}`,
-  })
-}
-
-/********************************* */
-
-export const createPost = post => {
-  return $.ajax ({
-    method: "POST",
-    url: 'api/posts',
-    data: {post: post}
-  })
-} 
-export const deletePost = postId => {
-  return $.ajax ({
-    method: "DELETE",
-    url: `api/posts/${postId}`,
-  })
-}
-export const fetchPosts = () => {
-  return $.ajax ({
-    method: "GET",
-    url: `api/posts/`,
-  })
-}
-export const fetchPost = (postId) => {
-  return $.ajax ({
-    method: "GET",
-    url: `api/posts/${postId}`,
-  })
-}
-
-
-// USER DETAILS UPDATE
-
-
-export const updateUser = user => {
-  // debugger
-  return $.ajax({
-    method: "PATCH",
-    url: `api/users/${user.id}`,
-    data: user,
   })
 }

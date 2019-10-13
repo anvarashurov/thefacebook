@@ -1,5 +1,6 @@
 //to keep track of all of our users.
-import { RECEIVE_CURRENT_USER, RECEIVE_POST } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_POST } from "../actions/post_actions";
 import {merge} from 'lodash';
 
 // lodash wrapper

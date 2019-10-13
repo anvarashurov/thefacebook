@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 
 import PostIndex from './post_index';
-import {fetchPost, fetchPosts, deletePost} from '../../actions/session_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, postOwner) => {
+    
     let owner;
+    
     if(typeof postOwner.postOwner.id !== 'undefined') {
         owner = postOwner.postOwner.id;
-    } else {
+    } 
+    else {
         owner = postOwner.postOwner;
     }
 
-    // debugger
     return {
         posts: Object.values(state.entities.posts),
         postOwner: state.entities.users[owner],
