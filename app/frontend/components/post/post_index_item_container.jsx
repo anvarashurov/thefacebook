@@ -9,7 +9,7 @@ const mapStateToProps = (state, postOwner) => {
     
     if(typeof postOwner.postOwner.id !== 'undefined') {
         owner = postOwner.postOwner.id;
-    } 
+    }
     else {
         owner = postOwner.postOwner;
     }

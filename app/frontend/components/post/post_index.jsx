@@ -17,13 +17,16 @@ class PostIndex extends React.Component {
                 myPosts.push(allPosts[i]);
             }
         }
+
         const posts = myPosts.slice(0).reverse().map((post) => {
             return <PostIndexItem post={post} key={post.id} postOwner={this.props.postOwner}/>
         })
 
         return (
             <div>
-                <ul>{posts}</ul>
+                <ul>
+                    {posts}
+                </ul>
             </div>
         );
     }

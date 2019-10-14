@@ -12,13 +12,17 @@ class CreatePost extends React.Component {
     }
 
     handleSubmit(e) {
-        return this.props.createPost(this.state);
+        return this.props.createPost(this.state).then(() => this.clearForm());
     }
 
     handleChange() {
         return e => {
             this.setState({content: e.target.value});
         };
+    }
+
+    clearForm() {
+        this.setState({ content: '' });
     }
 
     render() {
