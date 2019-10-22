@@ -20,12 +20,15 @@ class CommentIndex extends React.Component {
         let allComments = this.props.comments;
 
         for (let i = 0; i < allComments.length; i++) {
-            if (allComments[i].authorId === parseInt(myId)) {
+            if (allComments[i].authorId === parseInt(myId) && allComments[i].postId === this.props.postId) {
                 myComments.push(allComments[i]);
             }
         }
 
-        const comments = myComments.slice(0).reverse().map((comment) => {
+        // figure out why there is no need for .reverse() in
+        // const comments = myComments.slice(0).reverse().map((comment) => {
+
+        const comments = myComments.slice(0).map((comment) => {
             return <CommentIndexItem comment={comment} key={comment.id} commentOwner={this.props.commentOwner} />
         })
 

@@ -15,6 +15,7 @@ const UsersReducer = (oldState = {}, action) => {
       return oldState;
       // return merge({}, oldState, { [action.user.id]: action.user });
     case RECEIVE_COMMENT:
+      debugger
       oldState[action.comment.authorId].authoredCommentIds.push(action.comment.id);
       return oldState;
     default:

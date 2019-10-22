@@ -111,6 +111,9 @@ return proper Array of ids inside User, we need to render user too...
 Login/Signup/Demo/Edit Profile WILL NOT render proper
 components, only refresh does so. 
 
+Each post contains ALL the comments made by the same user. That is just a straight up logical flow. 
+I need to make sure each comment is under the post that it belongs to.
+
 -----------------------------------------
 
 Doable:

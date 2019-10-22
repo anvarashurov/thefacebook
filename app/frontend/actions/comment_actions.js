@@ -24,7 +24,7 @@ const receiveComment = comment => ({
 })
 
 const receiveComments = comments => ({
-    type: RECEIVE_COMMENT,
+    type: RECEIVE_COMMENTS,
     comments
 })
 

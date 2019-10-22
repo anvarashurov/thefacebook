@@ -18,7 +18,7 @@ const PostIndexItem = (props) => {
                 <span className="post_content">{props.post.content}</span>
                 {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
             </div>
-            <CommentIndexItemContainer />
+            <CommentIndexItemContainer postId={props.post.id}/>
             <CreateCommentContainer postId={props.post.id}/>
         </>
     )
