@@ -1,0 +1,118 @@
+.one_comment {
+    width: 514px;
+    height: 65px;
+    padding: 8px 9px 4px;
+    box-sizing: border-box;
+}
+
+/* img and right side */
+.comment_body{
+    display: flex;
+    flex-direction: row;
+}
+
+.comment_body img {
+    border-radius: 50%;
+    margin: 5px;
+    border:  1px solid rgb(220, 220, 223);
+}
+
+.content_and_footer_container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment_footer a {
+    margin-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #385898;
+    font-weight: bold;
+    margin-left: 14px;
+
+}
+
+.comment_footer span {
+    color: #8b8c8d;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: 14px;
+}
+
+/* right side author name */
+.comment_author {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #385898;
+    font-weight: bold;
+}
+
+.author_and_comment_content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    width: fit-content;
+    border-radius: 15px;
+    background-color: #f2f3f5;
+    padding: 8px 10px;
+}
+
+.author_and_comment_content span {
+    margin-left: 3px;
+    /* overflow-wrap: break-word; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    /* text-align: left;
+    resize: none;
+    outline: none;
+    text-align: left;
+    cursor: text;
+    overflow-wrap: break-word; */
+}
+
+
+.comment_form {
+    display: flex;
+    flex-direction: row;
+    height: 44px;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 5px 10px 5px 13px;
+}
+
+.comment_form img {
+    border-radius: 50%;
+    margin: 5px;
+    /* border:  1px solid rgb(220, 220, 223); */
+}
+
+/*  textarea */
+
+.comment_form input {
+    width: 514px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid rgb(204, 208, 213);
+    background-color: #f2f3f5;
+    
+    resize: none;
+    cursor: text;
+    overflow-wrap: break-word;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    outline: none;
+
+    margin-right: 5px;
+}
+
+.trippledots {
+    position: relative;
+    right: -360px;
+    top: -15px;
+}

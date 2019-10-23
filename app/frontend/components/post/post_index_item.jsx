@@ -6,20 +6,68 @@ import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
 
 const PostIndexItem = (props) => {
+    debugger
+    const numComments = props.post.commentIds.length;
+    let output;
+
+    if (numComments === 1) {
+        output = numComments + " " + "Comment";
+    } else if (numComments > 1) {
+        output = numComments + " " + "Comments";
+    }
+
+    // convert to Date object
+    let timeOfPost = new Date(props.post.extra);
+    // to save it as a string (only date part)
+    timeOfPost = timeOfPost.toDateString();
+    // to get Oct 22 2019
+    timeOfPost = timeOfPost.slice(4, timeOfPost.length);
+
+    debugger
     return (
         <>
             <div className="one_post">
                 <div>
-                    <img src={window.profile}/>
                     <Link to={`/users/${props.postOwner.id}`}>
-                        <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name}</span>
+                        <img className="post_author_profile" src={window.profile}/>
                     </Link>
+                    <div className="name_date_container">
+                        <Link to={`/users/${props.postOwner.id}`}>
+                            <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name}</span>
+                        </Link>
+                        <span>
+                            {timeOfPost}
+                        </span>
+                    </div>
+                    <div className="triple">
+                        <img className="trippledots" src={window.trippledots} alt="T"/>
+                    </div>
+                    {/* {dropdown} */}
                 </div>
                 <span className="post_content">{props.post.content}</span>
                 {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
+                <div className="num_comments">
+                    {output} 
+                </div>
+            
+                <div className="post_footer">
+                    <div className="like_comment_container">
+                        <li>
+                            <img src={window.like}/>                            
+                            <span>Like</span>
+                        </li>
+                        <li>
+                            <img src={window.comment}/>
+                            <span>
+                                Comment
+                            </span>
+                        </li>
+                    </div>
+                </div>
+                <CommentIndexItemContainer postId={props.post.id}/>
+                <CreateCommentContainer postId={props.post.id}/>
             </div>
-            <CommentIndexItemContainer postId={props.post.id}/>
-            <CreateCommentContainer postId={props.post.id}/>
+        
         </>
     )
 };

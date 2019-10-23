@@ -15,7 +15,7 @@ class CommentForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         if (this.state.content.length > 0) {
             this.props.action(this.state).then(() => {this.clearForm()});
@@ -29,11 +29,12 @@ class CommentForm extends React.Component {
     render() {
         return (
             <form className='comment_form' onSubmit={this.handleSubmit}>
+                <img className="comment_form_profile" src={window.profile} style={{ width: '32px', height: '32px' }}/>
                 <input
                     id={`${this.state.post_id}`}
                     value={this.state.content}
                     onChange={this.update}
-                    placeholder='Write a comment'
+                    placeholder='Write a comment...'
                 />
             </form>
         );

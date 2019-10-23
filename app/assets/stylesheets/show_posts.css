@@ -12,7 +12,9 @@
     margin-bottom: 5px;
     border: 1px solid rgb(220, 220, 223);
     margin-left: 15px;
-    border-radius: 3px;    
+    border-radius: 3px; 
+    display: flex;
+    flex-direction: column;   
 }
 
 .one_post > div {
@@ -20,13 +22,15 @@
     flex-direction: row;
     align-items: center;
     margin-left: 5px;
+    margin-top: 5px;
 }
 
-.one_post img {
+.post_author_profile {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin: 5px;
+    border:  1px solid rgb(220, 220, 223);
 }
 
 .post_author {
@@ -41,9 +45,76 @@
     font-size: 21px;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 10px;
+    margin-right: 10px;
     padding-left: 5px;
     padding-bottom: 5px;
     display: inline-block;
     overflow-wrap: break-word;
     word-wrap: break-word; 
+}
+
+.name_date_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.name_date_container > span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #616770;
+}
+
+.num_comments {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #616770;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.post_footer {
+    border-bottom: 1px solid rgb(220, 220, 223);
+    margin: 0px;
+    padding: 0px;
+}
+
+.like_comment_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px 0 10px;
+    width: 100%;
+    border-top: 1px solid rgb(220, 220, 223);
+
+}
+
+.like_comment_container li span {
+    width: 160px;
+    color: rgb(96, 103, 112);
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.like_comment_container li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 42px;
+}
+
+.like_comment_container > li {
+    margin-left: 50px;
+}
+
+.like_comment_container img {
+    width: 17px;
+    height: 17px;
+    border-radius: 0px;
+    padding: 7px;
+    /* border: 1px solid rgb(220, 220, 223);     */
+}
+
+.comment_form_profile {
+    border: 1px solid rgb(220, 220, 223);
 }

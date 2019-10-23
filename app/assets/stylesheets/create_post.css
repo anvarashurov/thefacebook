@@ -26,6 +26,11 @@
     padding: 0px 10px 0px 10px;
 }
 
+/* .top_part li input {
+    padding-right: 15px;
+    border-right: 1px solid rgb(220, 220, 223);
+} */
+
 #pen {
     width: 16px;
     height: 16px;
@@ -33,7 +38,6 @@
 }
 
 #pen_text {
-    border-right: 1px solid rgb(220, 220, 223);
     padding-right: 15px;
     margin-bottom: 10px;
     /* padding-bottom: 10px; */

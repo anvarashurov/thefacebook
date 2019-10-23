@@ -10,7 +10,7 @@ import CommentIndex from './comment_index';
 import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         comments: Object.values(state.entities.comments),
         commentOwner: state.entities.users[state.session.currentUserId],
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return {
         fetchComments: () => dispatch(fetchComments()),
         deleteComment: (commentId) => dispatch(deleteComment(commentId)),

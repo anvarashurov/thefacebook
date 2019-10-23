@@ -5,7 +5,7 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 export const createComment = comment => dispatch => {
-    debugger
+    // debugger
     return APICommentUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 }
 export const fetchComments = comments => dispatch => {
