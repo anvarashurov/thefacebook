@@ -155,3 +155,8 @@ FEATURES:
 
 --------------------------------------------
 
+Dropdown:
+
+- Can use React
+- Can use CSS class name (two different class names)
+one having display: none and the other showing the component.
