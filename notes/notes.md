@@ -160,3 +160,14 @@ Dropdown:
 - Can use React
 - Can use CSS class name (two different class names)
 one having display: none and the other showing the component.
+
+# RESUME WORKSHOP
+
++ Don't forget NY, NY at header
++ Live Links All That Work
++ No blank 2nd page
++ 1 Page
++ Edit Access
++ Not Enough Expr
+  - part time / volunteer
++ skill comes before projects sections
