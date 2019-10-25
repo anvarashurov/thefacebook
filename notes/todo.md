@@ -27,3 +27,9 @@ Set up AWS.
 
 ASK about routing the lower part of the Profile. 
 How to switch between ABOUT, FRIENDS, PHOTOS, etc?
+
+================================
+
+How to implement Drop-down for log out button?
+
+Have a slice of state separated for each drop down
