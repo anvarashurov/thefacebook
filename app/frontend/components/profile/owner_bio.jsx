@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const OwnerBio = ({ currentUser }) => {
+const OwnerBio = ({ profileOwner }) => {
     return (
         <div className="intro_container">
             <div className="world_icon_and_text">
@@ -15,7 +15,7 @@ const OwnerBio = ({ currentUser }) => {
                     about yourself.
                 </span>
                 {/* <button>Add Bio</button> */}
-                <Link to={`/users/${currentUser.id}/about/edit`}>Add Bio</Link>
+                <Link to={`/users/${profileOwner.id}/about/edit`}>Add Bio</Link>
                 {/* <a id="add_bio" src="#">Add Bio</a> */}
             </div>
             {/* <ul>

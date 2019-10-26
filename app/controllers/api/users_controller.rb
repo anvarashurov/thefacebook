@@ -27,8 +27,15 @@ class Api::UsersController < ApplicationController
   #     @user.birthday = month + "/" + day + "/" + year
   #   end
 
+  def index
+    @users = User.all
+    if @users 
+      render "api/users/index"
+    end
+  end
 
-  def show 
+
+  def show
     @user = User.find(params[:id])
     if @user
       render "api/users/show"

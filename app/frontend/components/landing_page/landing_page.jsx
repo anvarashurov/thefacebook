@@ -9,6 +9,11 @@ import About from '../profile/about';
 
 class LandingPage extends React.Component {
 
+    componentDidMount() {
+        debugger
+        return this.props.fetchAllUsers();
+    }
+
     render() {
         // debugger
 

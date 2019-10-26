@@ -1,17 +1,24 @@
 import { fetchPosts, fetchPost, deletePost } from '../../actions/post_actions';
+import { fetchAllUsers } from '../../actions/user_actions';
+
 import { connect } from 'react-redux';
-import UserProfile from './user_profile';
+import Profile from './profile';
+
 
 const mapStateToProps = (state, ownProps) => {
-        return {
+    debugger
+    return {
+        // users: state.entities.users,
         currentUser: state.entities.users[state.session.currentUserId],
         profileOwner: state.entities.users[ownProps.match.params.id]
+    }   
+}
+
+const mapDispatchToProps = dispatch => {
+    debugger
+    return {
+        fetchPosts: () => dispatch(fetchPosts()),
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    // fetchUser: (userId) => dispatch(fetchUser(userId)),
-    fetchPosts: () => dispatch(fetchPosts()),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

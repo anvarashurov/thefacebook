@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import { updateUser } from '../../actions/session_actions';
 
 class About extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            id: this.props.currentUser.id,
-            first_name: this.props.currentUser.first_name,
-            last_name: this.props.currentUser.last_name,            
+            id: this.props.profileOwner.id,
+            first_name: this.props.profileOwner.first_name,
+            last_name: this.props.profileOwner.last_name,            
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
@@ -36,16 +35,16 @@ class About extends React.Component {
                 </div>
                 <div className="about_body_container">
                     <div className="about_menu">
-                        <Link to={`/users/${this.props.currentUser.id}/about`}>Overview</Link>
-                        <Link to={`/users/${this.props.currentUser.id}/about/work`}>Work and Education</Link>
-                        <Link to={`/users/${this.props.currentUser.id}/about/lived`}>Places You've Lived</Link>
-                        <Link to={`/users/${this.props.currentUser.id}/about/edit`}>Edit Profile</Link>    
+                        <Link to={`/users/${this.props.profileOwner.id}/about`}>Overview</Link>
+                        <Link to={`/users/${this.props.profileOwner.id}/about/work`}>Work and Education</Link>
+                        <Link to={`/users/${this.props.profileOwner.id}/about/lived`}>Places You've Lived</Link>
+                        <Link to={`/users/${this.props.profileOwner.id}/about/edit`}>Edit Profile</Link>    
                     </div>
                     <div className="menu_content">
                         <Route exact path={`${this.props.match.url}`} component={Overview}/>
                         <Route path={`${this.props.match.url}/work`} component={Workplace}/>
                         <Route path={`${this.props.match.url}/lived`} component={Lived}/>
-                        <Route path={`/users/${this.props.currentUser.id}/about/edit/`}>
+                        <Route path={`/users/${this.props.profileOwner.id}/about/edit/`}>
                             <div className="edit_user">    
                                 <form onSubmit={this.handleSubmit} className="edit_user">
                                     <label>First name</label>

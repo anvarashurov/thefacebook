@@ -2,6 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const ProfileWallpaper = ({ profileOwner, currentUser }) => {
+
+    let editProfile;
+
+    profileOwner.id === currentUser.id ? editProfile = "Edit Profile" : editProfile = "Add Friend";
+
     return (
         <div className="body_content">
             <div className="wallpaper_container">
@@ -19,9 +24,9 @@ const ProfileWallpaper = ({ profileOwner, currentUser }) => {
                 <div className="edit_log_button">
                     <div className="edit_profile_log_container">
                         <div className="edit_profile_container">
-                            <Link to={`/users/${currentUser.id}/about/edit`}>
+                            <Link to={`/users/${profileOwner.id}/about/edit`}>
                                 <img src={window.edit} alt="log" />
-                                Edit Profile
+                                {editProfile}
                             </Link>
                         </div>
                         {/* <div className="activity_log">

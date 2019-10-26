@@ -6,6 +6,7 @@
 // }
 
 export const fetchAllUsers = () => {
+    debugger
     return $.ajax ({
         method: "GET",
         url: "api/users/",
