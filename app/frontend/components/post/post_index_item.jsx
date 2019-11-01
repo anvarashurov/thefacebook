@@ -23,7 +23,13 @@ const PostIndexItem = (props) => {
     // to get Oct 22 2019
     timeOfPost = timeOfPost.slice(4, timeOfPost.length);
 
-    debugger
+
+    let url;
+    
+    if(props.post.photoURL) {
+        url = <img src={props.post.photoURL} alt="T" />
+    }
+    
     return (
         <>
             <div className="one_post">
@@ -45,6 +51,7 @@ const PostIndexItem = (props) => {
                     {/* {dropdown} */}
                 </div>
                 <span className="post_content">{props.post.content}</span>
+                {url}
                 {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
                 <div className="num_comments">
                     {output} 

@@ -10,4 +10,7 @@ class Post < ApplicationRecord
         class_name: "Comment",
         foreign_key: :post_id,
         primary_key: :id
+
+    # has one or has many assoc
+    has_one_attached :photo
 end
