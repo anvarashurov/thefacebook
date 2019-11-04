@@ -4,11 +4,12 @@ import { signup, login, logout } from './util/session_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import {createFriendRequest} from './util/friend_api_util';
+import {createPost} from './util/post_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
 
   window.createFriendRequest = createFriendRequest;
-
+  window.createPost = createPost;
   let preLoadedState = undefined;
   // debugger
   if(window.currentUser) {

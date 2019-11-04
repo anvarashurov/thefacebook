@@ -11,19 +11,25 @@ class Profile extends React.Component {
         super(props);
     }
 
-    // componentDidMount() {
-    //     debugger
-    //     return this.props.fetchAllUsers();
-    // }
+    componentDidMount() {
+        debugger
+        return this.props.fetchAllUsers();
+    }
 
     render() {
 
+        if(this.props.users.length === 1) { 
+            debugger
+            return null;
+        }
+        
         let users = this.props.users;
         
         debugger
         return (
             <div className="main_container">
-                <ProfileWallpaper profileOwner={this.props.profileOwner} currentUser={this.props.currentUser} />
+                {/* We also need createFriendRequest */}
+                <ProfileWallpaper profileOwner={this.props.profileOwner} currentUser={this.props.currentUser} createFriendRequest = {this.props.createFriendRequest}/>
                 <div className="profile_lower_body">
                     <Switch>
                         <Route exact path={`/users/${this.props.profileOwner.id}`}>

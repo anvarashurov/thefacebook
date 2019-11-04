@@ -28,7 +28,7 @@ class User < ApplicationRecord
     
   has_many :friend_requests_received,
         class_name: "Friend",
-        foreign_key: :friend_received,
+        foreign_key: :friend_receiver,
         primary_key: :id
   
   def self.find_by_credentials(email, password)

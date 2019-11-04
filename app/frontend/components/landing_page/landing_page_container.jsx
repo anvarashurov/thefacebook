@@ -5,7 +5,9 @@ import { logout } from '../../actions/session_actions';
 import LandingPage from './landing_page';
 
 const mapStateToProps = state => { 
-    return { currentUser: state.entities.users[state.session.currentUserId] }
+    return {
+        currentUser: state.entities.users[state.session.currentUserId] 
+    }
 }
 
 const mapDispatchToProps = dispatch => ({

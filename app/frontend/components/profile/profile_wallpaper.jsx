@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
-const ProfileWallpaper = ({ profileOwner, currentUser }) => {
+const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) => {
 
-    let editProfile;
+    let buttonText = "Add Friend"
+ 
+    currentUser.friendRequestSentToIds.forEach((friendSentArr) => {
+        if(friendSentArr[0] === profileOwner.id) {
+            buttonText = friendSentArr[1];
+        }
+    })
 
-    profileOwner.id === currentUser.id ? editProfile = "Edit Profile" : editProfile = "Add Friend";
+    const [friendText, setFriendText] = useState(buttonText);
+
+    function handleClick() {
+        return (e) => {
+            if(friendText === 'Add Friend') {
+                createFriendRequest(currentUser.id, profileOwner.id).then(() => setFriendText('PENDING'));      
+            }
+        }
+    }
+
+    let editProfileOrAddFriend;
+
+    if(profileOwner.id === currentUser.id) {
+        editProfileOrAddFriend = (
+            <Link to={`/users/${profileOwner.id}/about/edit`}>
+                <img src={window.edit} alt="log" />
+                Edit Profile
+            </Link>
+        )
+    } else {
+        // otherwise, it is a button that onClick needs to send a 
+        // request to add friend (createFriendRequest action to be dispatched)
+        editProfileOrAddFriend = (
+            // () => createFriendRequest(currentUser.id, profileOwner.id)
+            <button onClick={handleClick()}>
+                {friendText}
+            </button>
+        )
+    }
 
     return (
         <div className="body_content">
@@ -24,21 +58,22 @@ const ProfileWallpaper = ({ profileOwner, currentUser }) => {
                 <div className="edit_log_button">
                     <div className="edit_profile_log_container">
                         <div className="edit_profile_container">
-                            <Link to={`/users/${profileOwner.id}/about/edit`}>
+                            {/* <Link to={`/users/${profileOwner.id}/about/edit`}>
                                 <img src={window.edit} alt="log" />
                                 {editProfile}
-                            </Link>
+                            </Link> */}
+                            {editProfileOrAddFriend}
                         </div>
                         {/* <div className="activity_log">
-                            <Link to={`/users/${currentUser.id}/about/edit`}>
+                            <Link to={`/users/${profileOwner.id}/about/edit`}>
                                 <img src={window.edit} alt="log"/>
                                 Edit Profile
-                            </Link>
+                            </Link> */}
                             {/* <button>
                                 <img src={window.edit} alt="..."/>
                                 ...
-                            </button>
-                        </div> */}
+                            </button> */}
+                        {/* </div> */}
                     </div>
                 </div>
             </div>

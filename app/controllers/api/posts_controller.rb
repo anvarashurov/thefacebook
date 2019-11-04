@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def create
-        debugger
+        # debugger
         @post = Post.new(post_params)
         @post.author_id = current_user.id
         if @post.save
@@ -39,7 +39,7 @@ class Api::PostsController < ApplicationController
     # def edit
     # end
     def post_params 
-        debugger
+        # debugger
         params.require(:post).permit(:content, :photo)
     end
 end
