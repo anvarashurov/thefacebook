@@ -11,6 +11,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
         }
     })
 
+    // testing new brach commits
     const [friendText, setFriendText] = useState(buttonText);
 
     function handleClick() {
