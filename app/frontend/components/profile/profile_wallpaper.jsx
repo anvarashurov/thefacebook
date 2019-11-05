@@ -31,8 +31,6 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
             </Link>
         )
     } else {
-        // otherwise, it is a button that onClick needs to send a 
-        // request to add friend (createFriendRequest action to be dispatched)
         editProfileOrAddFriend = (
             // () => createFriendRequest(currentUser.id, profileOwner.id)
             <button onClick={handleClick()}>
