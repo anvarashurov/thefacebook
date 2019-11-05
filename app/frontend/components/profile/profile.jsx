@@ -36,6 +36,8 @@ class Profile extends React.Component {
                     currentUser={this.props.currentUser}
                     // current user SENDS to profile owner
                     createFriendRequest = {this.props.createFriendRequest}
+                    openModal={this.props.openModal}
+                    closeModal={this.props.closeModal}
                 />
 
                 <div className="profile_lower_body">

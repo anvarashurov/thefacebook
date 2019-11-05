@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) => {
+const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest, openModal }) => {
 
     let buttonText = "Add Friend"
  
@@ -26,10 +26,13 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
 
     if(profileOwner.id === currentUser.id) {
         editProfileOrAddFriend = (
-            <Link to={`/users/${profileOwner.id}/about/edit`}>
-                <img src={window.edit} alt="log" />
-                Edit Profile
-            </Link>
+            // <Link to={`/users/${profileOwner.id}/about/edit`}>
+            //     <img src={window.edit} alt="log" />
+            //     Edit Profile
+            // </Link>
+
+            <button onClick={()=> openModal("edit_profile") }>Edit Profile</button>
+
         )
     } else {
         editProfileOrAddFriend = (
@@ -43,6 +46,11 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
     return (
         <div className="body_content">
             <div className="wallpaper_container">
+
+
+                {/* <img className="camera_icon" src={window.camera} alt="camera" style={{width: '26px', height: '21px'}}/> */}
+                
+                
                 <img src={window.wallpaper} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
             </div>
             <div className="wallpaper_overlay">
