@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter, Route, Link} from 'react-router-dom';
-import CurrentUserNavbar from '../profile/current_user_navbar';
+import UserNavbar from '../profile/user_navbar';
 import CreatePostContainer from '../post/create_post_container';
 import {fetchPosts, logout, deletePost} from '../../actions/session_actions';
 // import { connect } from 'react-redux';
@@ -27,7 +27,7 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
     }
     return (
         <div className="home_page_items">
-            <CurrentUserNavbar currentUser={currentUser} logout={logout} />
+            <UserNavbar currentUser={currentUser} logout={logout} />
             {pages}
         </div>
     );

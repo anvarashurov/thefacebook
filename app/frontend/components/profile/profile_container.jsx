@@ -1,14 +1,11 @@
-import { fetchPosts, fetchPost, deletePost } from '../../actions/post_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
+import { fetchPosts } from '../../actions/post_actions';
 import { createFriendRequest } from '../../actions/friend_actions';
-// import { fetchAllUsers } from '../../actions/user_actions';
-
 import { connect } from 'react-redux';
+
 import Profile from './profile';
 
-
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         users: Object.values(state.entities.users),
         currentUser: state.entities.users[state.session.currentUserId],

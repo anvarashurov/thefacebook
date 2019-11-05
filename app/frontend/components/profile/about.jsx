@@ -41,9 +41,9 @@ class About extends React.Component {
                         <Link to={`/users/${this.props.profileOwner.id}/about/edit`}>Edit Profile</Link>    
                     </div>
                     <div className="menu_content">
-                        <Route exact path={`${this.props.match.url}`} component={Overview}/>
-                        <Route path={`${this.props.match.url}/work`} component={Workplace}/>
-                        <Route path={`${this.props.match.url}/lived`} component={Lived}/>
+                        <Route exact path={`${this.props.match.url}`} component={Overview} profileOwner={this.props.profileOwner}/>
+                        <Route path={`${this.props.match.url}/work`} component={Workplace} profileOwner={this.props.profileOwner}/>
+                        <Route path={`${this.props.match.url}/lived`} component={Lived} profileOwner={this.props.profileOwner}/>
                         <Route path={`/users/${this.props.profileOwner.id}/about/edit/`}>
                             <div className="edit_user">    
                                 <form onSubmit={this.handleSubmit} className="edit_user">
@@ -62,7 +62,8 @@ class About extends React.Component {
     };
 }
 
-function Workplace() {
+const Workplace = () => {
+    debugger
     return (
         <ul>
             <li>WORK</li>

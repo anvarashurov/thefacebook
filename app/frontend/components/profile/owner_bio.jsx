@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const OwnerBio = ({ profileOwner }) => {
+const OwnerBio = ({ profileOwner, currentUser }) => {
+
+
+
     return (
         <div className="intro_container">
             <div className="world_icon_and_text">

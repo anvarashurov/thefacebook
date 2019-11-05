@@ -44,7 +44,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
     return (
         <div className="body_content">
             <div className="wallpaper_container">
-                <img src={window.wallpaper} alt="wallpaper" style={{width:'851px', height:'205px'}}/>
+                <img src={window.wallpaper} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
             </div>
             <div className="wallpaper_overlay">
                 <div className="picture_and_name">
@@ -97,7 +97,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
                     <li className="photos">
                         <a href="#">Photos</a>
                     </li>
-                    <li className="archive">
+                    {/* <li className="archive">
                         <a href="#">
                             <img src={window.dropdownIcon} alt="lock" />
                             Archive
@@ -108,7 +108,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest }) =>
                             More
                             <img src={window.dropdownIcon} alt="dropdown"/>
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
             </div> 
         </div>
