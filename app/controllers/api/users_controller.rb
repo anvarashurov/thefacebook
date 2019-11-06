@@ -43,8 +43,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    # debugger
-    @user = User.find(params[:id])
+    debugger
+    @user = User.find(current_user.id)
     
     if @user
       @user.first_name = params[:first_name]
@@ -60,8 +60,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :password, :gender, :email_address, :birthday => [:month, :day, :year],
-    :profilePhoto, :coverPhoto)
+    params.require(:user).permit(:first_name, :last_name, :password, :gender, :email_address, :profilePhoto, :coverPhoto, :birthday => [:month, :day, :year])
     # , :birthday => [:month, :day, :year]
   end
 end

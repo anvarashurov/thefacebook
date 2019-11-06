@@ -15,7 +15,8 @@ class EditProfile extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
-        this.handleFile = this.handleFile.bind(this);       
+        this.handleProfileFile = this.handleProfileFile.bind(this);
+        this.handleCoverFile = this.handleCoverFile.bind(this);       
     }
 
     updateField(field) {
@@ -87,7 +88,7 @@ class EditProfile extends React.Component {
             formData.append('user[coverPhoto]', this.state.coverPhoto);
         }
         formData.append('user[first_name]', this.state.first_name);
-        formData.append('user[last_name]', this.state.last_name);
+        formData.append('user[last_name]', this.state.lasct_name);
         // this.props.action(formData).then(() => this.clearForm());
         // formData.append('post[photo]', this.state.photoFile);
         // debugger
@@ -110,6 +111,11 @@ class EditProfile extends React.Component {
                 <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
                 <label>Last name</label>
                 <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                <label htmlFor="file">Update Profile Photo</label>
+                {/* style={{ visibility: "hidden" }}  */}
+                <input id="file" type="file" onChange={this.handleProfileFile} /> 
+                <label htmlFor="file">Update Cover Photo</label>
+                <input id="file" type="file" onChange={this.handleCoverFile} />
                 <input type="submit" value="Save" id="save_button" />
             </form>
         )
