@@ -14,7 +14,7 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
             <div className="home_page_body">
                 <div className="name_and_create_post">
                     <div className="img_and_name">
-                        <img src={window.profile}/>
+                        <img src={currentUser.profilePhotoUrl}/>
                         <Link to={`/users/${currentUser.id}`}>{currentUser.first_name + " " + currentUser.last_name}</Link>
                     </div>
                     <CreatePostContainer deletePost={deletePost} />

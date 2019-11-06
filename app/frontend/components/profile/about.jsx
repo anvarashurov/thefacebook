@@ -6,6 +6,7 @@ import { updateUser } from '../../actions/session_actions';
 class About extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {
             id: this.props.profileOwner.id,
             first_name: this.props.profileOwner.first_name,
@@ -30,7 +31,7 @@ class About extends React.Component {
         return(
             <div className="about_container">
                 <div className="about_title_container">
-                    <img src={window.profile} alt="Profile"/>
+                    <img src={this.props.profileOwner.profilePhotoUrl} alt="Profile"/>
                     <p>About</p>
                 </div>
                 <div className="about_body_container">
@@ -90,9 +91,16 @@ function Lived() {
         </ul>
     )
 }
+const msp = (state, ownProps) => {
+    debugger 
+    return {
+        profileOwner: ownProps.profileOwner 
+        // state.entities.users[ownProps.match.params.id]
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
     updateUser: (user) => dispatch(updateUser(user))
 })
 
-export default withRouter(connect(null, mapDispatchToProps)(About));
+export default withRouter(connect(msp, mapDispatchToProps)(About));

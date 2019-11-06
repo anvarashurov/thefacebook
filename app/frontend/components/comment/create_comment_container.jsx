@@ -3,15 +3,16 @@ import CommentForm from './comment_form';
 import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    debugger
     const comment = {
         content: '',
         post_id: ownProps.postId,
-        author_id: state.session.id
+        author_id: state.session.currentUserId
     };
 
     return {
         comment,
+        commentOwner: state.entities.users[state.session.currentUserId],
     };
 };
 

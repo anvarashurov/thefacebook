@@ -14,7 +14,7 @@ const CommentIndexItem = (props) => {
         <div className="one_comment">
             <div className="comment_body">
                 
-                <img src={window.profile} style={{width: '32px', height: '32px'}}/>
+                <img src={props.commentOwner.profilePhotoUrl} style={{width: '32px', height: '32px'}}/>
                 
                 <div className="content_and_footer_container">
                     

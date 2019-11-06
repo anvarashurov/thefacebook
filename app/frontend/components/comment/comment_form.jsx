@@ -9,7 +9,7 @@ class CommentForm extends React.Component {
         this.update = this.update.bind(this);
         this.state = this.props.comment;
     }
-
+    
     update(e) {
         this.setState({ content: e.target.value });
     }
@@ -29,7 +29,7 @@ class CommentForm extends React.Component {
     render() {
         return (
             <form className='comment_form' onSubmit={this.handleSubmit}>
-                <img className="comment_form_profile" src={window.profile} style={{ width: '32px', height: '32px' }}/>
+                <img className="comment_form_profile" src={this.props.commentOwner.profilePhotoUrl} style={{ width: '32px', height: '32px' }}/>
                 <input
                     id={`${this.state.post_id}`}
                     value={this.state.content}

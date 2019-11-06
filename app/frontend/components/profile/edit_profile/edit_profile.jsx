@@ -93,7 +93,8 @@ class EditProfile extends React.Component {
         // this.props.action(formData).then(() => this.clearForm());
         // formData.append('post[photo]', this.state.photoFile);
         // debugger
-        return this.props.updateUser(formData, currentUser);
+        this.props.updateUser(formData, currentUser);
+        return this.props.closeModal;
         // .then(() => this.clearForm());
     }
 

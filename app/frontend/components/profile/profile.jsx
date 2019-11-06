@@ -19,6 +19,8 @@ class Profile extends React.Component {
 
     render() {
 
+        debugger
+
         // This is a way to render all users
         if(this.props.users.length === 1) { 
             return null;

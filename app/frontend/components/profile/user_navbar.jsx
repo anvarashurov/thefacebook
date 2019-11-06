@@ -22,7 +22,7 @@ const UserNavbar = ({currentUser, logout}) => {
                     <div className="profile_icon_name_wrapper">
                         <Link to={`/users/${currentUser.id}`}>
                             <span className="profile_nav_image_icon">
-                                <img src={window.profile} alt="tiny profile picture"/>
+                                <img src={currentUser.profilePhotoUrl} alt="tiny profile picture"/>
                             </span>
                         </Link>
                         <Link to={`/users/${currentUser.id}`}>

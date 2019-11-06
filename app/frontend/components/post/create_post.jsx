@@ -65,7 +65,7 @@ class CreatePost extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div className="create_post_container">
                 <form onSubmit={this.handleSubmit}>
@@ -105,7 +105,7 @@ class CreatePost extends React.Component {
                 </ul>
                 {/* <form onSubmit={this.handleSubmit}> */}
                     <div className="create_post_area">
-                        <img src={window.profile} alt="P" style={{ width: '60px', height: '60px' }}/>
+                        <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
                         <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
                     </div>
                     <input id="create_post_button" type="submit" value="Post"/>

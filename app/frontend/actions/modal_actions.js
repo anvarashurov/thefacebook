@@ -9,6 +9,7 @@ export const openModal = modal => {
 };
 
 export const closeModal = () => {
+    debugger
     return {
         type: CLOSE_MODAL
     };

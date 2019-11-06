@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import CreatePost from './create_post';
 
 const mapStateToProps = state => {
+    debugger
     return {
-        currentUser: Object.values(state.entities.users[state.session.currentUserId]),
+        currentUser: state.entities.users[state.session.currentUserId],
     }
 }
 

@@ -35,7 +35,7 @@ const PostIndexItem = (props) => {
             <div className="one_post">
                 <div>
                     <Link to={`/users/${props.postOwner.id}`}>
-                        <img className="post_author_profile" src={window.profile}/>
+                        <img className="post_author_profile" src={props.postOwner.profilePhotoUrl}/>
                     </Link>
                     <div className="name_date_container">
                         <Link to={`/users/${props.postOwner.id}`}>
