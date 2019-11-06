@@ -142,14 +142,26 @@ class EditProfile extends React.Component {
                         Edit Name
                     </div>
                     <div className="edit_names">
-                        <span>
-                            <label>First name</label>
-                            <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
-                        </span>
-                        <span>
-                            <label>Last name</label>
-                            <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
-                        </span>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label>First name</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Last name</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <div className="name_border"></div>
                     </div>
                 </div>
@@ -159,26 +171,51 @@ class EditProfile extends React.Component {
                     <input type="text"/>
 
                     <div className="edit_other_info">
-                        <span>
-                            <label>Current City</label>
-                            <input type="text" value={this.state.current_city} onChange={this.updateField("current_city")} />
-                        </span>
-                        <span>
-                            <label>Workplace</label>
-                            <input type="text" value={this.state.workplace} onChange={this.updateField("workplace")} />
-                        </span>
-                        <span>
-                            <label>School</label>
-                            <input type="text" value={this.state.school} onChange={this.updateField("school")} />
-                        </span>
-                        <span>
-                            <label>Hometown</label>
-                            <input type="text" value={this.state.hometown} onChange={this.updateField("hometown")} />
-                        </span>
-                        <span>
-                            <label>Relationship Status</label>
-                            <input type="text" value={this.state.rel_status} onChange={this.updateField("rel_status")} />
-                        </span>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label>Current City</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.current_city} onChange={this.updateField("current_city")} />
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>
+                                        <label>Workplace</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.workplace} onChange={this.updateField("workplace")} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>School</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.school} onChange={this.updateField("school")} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Hometown</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.hometown} onChange={this.updateField("hometown")} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Relationship Status</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" value={this.state.rel_status} onChange={this.updateField("rel_status")} />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                         <div className="name_border"></div>
                 </div>

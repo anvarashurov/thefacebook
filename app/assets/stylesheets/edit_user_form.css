@@ -130,7 +130,7 @@
     margin-left: 20px;
     /* justify-content: center; */
     align-items: center;
-    border-right: 1px solid #e5e5e5;
+    /* border-right: 1px solid #e5e5e5; */
     /* margin-top: 5px; */
 }
 
@@ -156,7 +156,7 @@
 
 .name_border {
     width: 650px;
-    border-right: 1px solid #e5e5e5;
+    /* border-right: 1px solid #e5e5e5; */
     border-bottom: 1px solid #e5e5e5;
     border-radius: 3px 3px 0 0;
     padding: 10px 12px; 
@@ -174,7 +174,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-bottom: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    /* border-right: 1px solid #e5e5e5; */
     border-radius: 3px 3px 0 0;
     height: 38px;
     padding-top: 10px;
@@ -224,4 +224,12 @@
 
 .edit_names input:hover {
     border: 1px solid #3578E5;
+}
+
+.edit_names td {
+    width: 25px;
+}
+
+.edit_other_info td {
+    width: 25px;
 }
