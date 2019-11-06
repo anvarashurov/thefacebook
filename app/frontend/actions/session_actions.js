@@ -25,8 +25,9 @@ export const logout = () => (dispatch) => {
     error => dispatch(receiveSessionErrors(error)));
 }
 
-export const updateUser = user => dispatch => {
-  return APIUserUtil.updateUser(user).then(
+export const updateUser = (formData, user) => dispatch => {
+  debugger
+  return APIUserUtil.updateUser(formData, currentUser).then(
     user => dispatch(receiveCurrentUser(user)),
     error => dispatch(receiveSessionErrors(error)));
 }

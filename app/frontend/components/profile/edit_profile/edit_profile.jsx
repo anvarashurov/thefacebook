@@ -77,6 +77,7 @@ class EditProfile extends React.Component {
     handleSubmit(e) {
 
         debugger
+
         e.preventDefault();
 
         const formData = new FormData();
@@ -88,11 +89,12 @@ class EditProfile extends React.Component {
             formData.append('user[coverPhoto]', this.state.coverPhoto);
         }
         formData.append('user[first_name]', this.state.first_name);
-        formData.append('user[last_name]', this.state.lasct_name);
+        formData.append('user[last_name]', this.state.last_name);
         // this.props.action(formData).then(() => this.clearForm());
         // formData.append('post[photo]', this.state.photoFile);
         // debugger
-        return this.props.updateUser(formData).then(() => this.clearForm());
+        return this.props.updateUser(formData, currentUser);
+        // .then(() => this.clearForm());
     }
 
     render() {

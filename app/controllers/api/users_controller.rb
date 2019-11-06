@@ -44,19 +44,27 @@ class Api::UsersController < ApplicationController
 
   def update
     debugger
-    @user = User.find(current_user.id)
-    
-    if @user
-      @user.first_name = params[:first_name]
-      @user.last_name = params[:last_name]  
-      if @user.save 
+
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
         render "api/users/show"
-      else
-        render ["Unable to update user details"], status: 401
-      end
-    else
-      render ["User not found"], status: 404
-    end
+    else 
+      render json: @user.errors.full_messages 
+    end 
+
+    # @user = User.find(current_user.id)
+    
+    # if @user
+    #   @user.first_name = params[:first_name]
+    #   @user.last_name = params[:last_name]  
+    #   if @user.save 
+    #     render "api/users/show"
+    #   else
+    #     render ["Unable to update user details"], status: 401
+    #   end
+    # else
+    #   render ["User not found"], status: 404
+    # end
   end
 
   def user_params
