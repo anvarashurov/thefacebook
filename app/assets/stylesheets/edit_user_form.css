@@ -1,10 +1,14 @@
 .edit_user_form {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    background-color: #bdc0c5;
-}
+    width: 700px;
+    height: 1000px;
+    background-color: #F5F6F7;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 
+}
+/* 
 .edit_user_form input {
     margin: 5px;
     border: 1px solid #bdc0c5;
@@ -22,4 +26,90 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: bold;
+} */
+
+.edit_profile_container_modal {
+    width: 650px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px 3px 0 0;
+    padding: 10px 12px; 
+}
+
+.edit_profile_text_modal {
+    color: #1D2129;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    /* margin: 7px 5px 7px 5px; */
+}
+
+.edit_profile_button_modal {
+    color: #385898;
+    width: 12px;
+    height: 12px;
+    font-size: 14px;
+}
+
+/* ----------------------------- */
+
+.camera_icon_container {
+    position: relative;
+    z-index: 10;
+    height: 0px;
+    /* top: 70px;
+    left: 20px; */
+}
+
+.camera_icon_container > img {
+    width: 34px;
+    height: 29px;
+}
+
+.camera_icon_container > input {
+    display: none;
+}
+
+.cover_photo_modal {
+    width: 650px;
+    height: 275px;
+}
+
+.profile_photo_modal {
+    width: 134px;
+    height: 134px;
+    position: relative;
+    /* top: -50px;
+    left: -15px; */
+    overflow: hidden;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    /* margin-left: 40px; */
+    z-index: 1;
+
+    top: -145px;
+    left: 15px;
+}
+
+.profile_photo_container {
+    height: 0px;
+}
+
+/*  */
+
+.camera1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.camera2 {
+    position: relative;
+    top: -55px;
+    left: 65px;
 }

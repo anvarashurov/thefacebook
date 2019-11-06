@@ -10,8 +10,8 @@ class EditProfile extends React.Component {
             last_name: this.props.currentUser.last_name,
             profilePhoto: null,
             coverPhoto: null,
-            profilePhotoUrl: null,
-            coverPhotoUrl: null,
+            profilePhotoUrl: this.props.currentUser.profilePhotoUrl,
+            coverPhotoUrl: this.props.currentUser.coverPhotoUrl,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
@@ -110,15 +110,50 @@ class EditProfile extends React.Component {
             //     </div>
             // </div>
             <form onSubmit={this.handleSubmit} className="edit_user_form">
-                <label>First name</label>
-                <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
-                <label>Last name</label>
-                <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
-                <label htmlFor="file">Update Profile Photo</label>
+                <div className="edit_profile_container_modal">
+                    <span className="edit_profile_text_modal"> Edit Profile </span>
+                    <button className="edit_profile_button_modal" onClick={this.props.closeModal}>&#10006;</button>
+                </div>
+                <div className="photos_container_modal">
+                    <div className="cover_photo_container">
+                        <div className="camera_icon_container" role="button">
+                            <img className="camera1" src={window.camera}/>
+                            <input id="file" type="file" onChange={this.handleCoverFile} />
+                        </div>
+                        <img className="cover_photo_modal" src={this.state.coverPhotoUrl} alt=""/>
+                    </div>
+                    <div className="profile_photo_container">
+                        <div className="camera_icon_container" role="button">
+                            <img className="camera2" src={window.camera} alt=""/>
+                            <input id="file" type="file" onChange={this.handleProfileFile} />
+                        </div>
+                        <img className="profile_photo_modal" src={this.state.profilePhotoUrl} alt=""/>
+                    </div>
+                </div>
+                <div className="edit_name_container">
+                    <div className="edit_name_text">    
+                        Edit Name
+                    </div>
+                    <div className="">
+                        <div>
+                            <label>First name</label>
+                            <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
+                        </div>
+                        <div>
+                            <label>Last name</label>
+                            <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                        </div>
+                    </div>
+                </div>
+                {/* <label htmlFor="file">Update Profile Photo</label> */}
                 {/* style={{ visibility: "hidden" }}  */}
-                <input id="file" type="file" onChange={this.handleProfileFile} /> 
-                <label htmlFor="file">Update Cover Photo</label>
-                <input id="file" type="file" onChange={this.handleCoverFile} />
+                {/* <input id="file" type="file" onChange={this.handleProfileFile} />  */}
+                {/* <label htmlFor="file">Update Cover Photo</label> */}
+                {/* <input id="file" type="file" onChange={this.handleCoverFile} /> */}
+                <div> Edit Bio </div>
+                <div>
+                    <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                </div>
                 <input type="submit" value="Save" id="save_button" />
             </form>
         )

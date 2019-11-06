@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 
@@ -13,5 +13,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  width: 500px;
+  width: 630px;
+  height: 900px;
+  box-sizing: border-box;
+}
+
+.modal_child {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
 }
