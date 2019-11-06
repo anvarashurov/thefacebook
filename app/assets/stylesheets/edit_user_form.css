@@ -177,6 +177,7 @@
     /* border-right: 1px solid #e5e5e5; */
     border-radius: 3px 3px 0 0;
     height: 38px;
+    margin-top: 10px;
     padding-top: 10px;
     padding-left: 12px;
     box-sizing: border-box;
@@ -212,6 +213,8 @@
     background-color: white;
     width: 650px;
     height: 50px;
+    text-align: center;
+    overflow-wrap: break-word;
 }
 
 .edit_bio_container > input:hover {
@@ -227,9 +230,19 @@
 }
 
 .edit_names td {
-    width: 25px;
+    width: 100px;
 }
 
 .edit_other_info td {
-    width: 25px;
+    width: 100px;
+}
+
+.edit_names label, .edit_other_info label {
+    margin-left: 10px;
+}
+
+#save_button {
+    position: relative;
+    top: 100px;
+    left: 15px;
 }

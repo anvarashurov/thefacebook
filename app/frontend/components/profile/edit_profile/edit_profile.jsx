@@ -168,7 +168,8 @@ class EditProfile extends React.Component {
                 <div className="edit_bio_container">
 
                     <div className="edit_bio_text"> Edit Bio </div>
-                    <input type="text"/>
+                    <input type="text" value={this.state.bio} onChange={this.updateField("bio")} maxLength="101"/>
+                    
 
                     <div className="edit_other_info">
                         <table>
@@ -217,9 +218,10 @@ class EditProfile extends React.Component {
                             </tbody>
                         </table>
                     </div>
-                        <div className="name_border"></div>
+                    <div className="name_border">
+                    </div>
                 </div>
-                {/* <input type="submit" value="Save" id="save_button" /> */}
+                <input type="submit" value="Save" id="save_button" onClick={this.props.handleSubmit} />                
             </form>
         )
     }
