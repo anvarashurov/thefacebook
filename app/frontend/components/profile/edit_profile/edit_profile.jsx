@@ -8,6 +8,13 @@ class EditProfile extends React.Component {
             id: this.props.currentUser.id,
             first_name: this.props.currentUser.first_name,
             last_name: this.props.currentUser.last_name,
+            bio: this.props.currentUser.bio,
+            current_city: this.props.currentUser.current_city,
+            workplace: this.props.currentUser.workplace,
+            school: this.props.currentUser.current_city,
+            hometown: this.props.currentUser.current_city,
+            rel_status: this.props.currentUser.current_city,
+
             profilePhoto: null,
             coverPhoto: null,
             profilePhotoUrl: this.props.currentUser.profilePhotoUrl,
@@ -134,27 +141,48 @@ class EditProfile extends React.Component {
                     <div className="edit_name_text">    
                         Edit Name
                     </div>
-                    <div className="">
-                        <div>
+                    <div className="edit_names">
+                        <span>
                             <label>First name</label>
                             <input type="text" value={this.state.first_name} onChange={this.updateField("first_name")} />
-                        </div>
-                        <div>
+                        </span>
+                        <span>
                             <label>Last name</label>
                             <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
-                        </div>
+                        </span>
+                        <div className="name_border"></div>
                     </div>
                 </div>
-                {/* <label htmlFor="file">Update Profile Photo</label> */}
-                {/* style={{ visibility: "hidden" }}  */}
-                {/* <input id="file" type="file" onChange={this.handleProfileFile} />  */}
-                {/* <label htmlFor="file">Update Cover Photo</label> */}
-                {/* <input id="file" type="file" onChange={this.handleCoverFile} /> */}
-                <div> Edit Bio </div>
-                <div>
-                    <input type="text" value={this.state.last_name} onChange={this.updateField("last_name")} />
+                <div className="edit_bio_container">
+
+                    <div className="edit_bio_text"> Edit Bio </div>
+                    <input type="text"/>
+
+                    <div className="edit_other_info">
+                        <span>
+                            <label>Current City</label>
+                            <input type="text" value={this.state.current_city} onChange={this.updateField("current_city")} />
+                        </span>
+                        <span>
+                            <label>Workplace</label>
+                            <input type="text" value={this.state.workplace} onChange={this.updateField("workplace")} />
+                        </span>
+                        <span>
+                            <label>School</label>
+                            <input type="text" value={this.state.school} onChange={this.updateField("school")} />
+                        </span>
+                        <span>
+                            <label>Hometown</label>
+                            <input type="text" value={this.state.hometown} onChange={this.updateField("hometown")} />
+                        </span>
+                        <span>
+                            <label>Relationship Status</label>
+                            <input type="text" value={this.state.rel_status} onChange={this.updateField("rel_status")} />
+                        </span>
+                    </div>
+                        <div className="name_border"></div>
                 </div>
-                <input type="submit" value="Save" id="save_button" />
+                {/* <input type="submit" value="Save" id="save_button" /> */}
             </form>
         )
     }
