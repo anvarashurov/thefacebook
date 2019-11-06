@@ -30,6 +30,9 @@ class User < ApplicationRecord
         class_name: "Friend",
         foreign_key: :friend_receiver,
         primary_key: :id
+
+  has_one_attached :profilePhoto
+  has_one_attached :coverPhoto
   
   def self.find_by_credentials(email, password)
     @user = User.find_by(email_address: email)

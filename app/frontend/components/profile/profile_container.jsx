@@ -2,6 +2,7 @@ import { fetchAllUsers } from '../../actions/user_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { createFriendRequest } from '../../actions/friend_actions';
 import { connect } from 'react-redux';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 import Profile from './profile';
 
@@ -19,6 +20,8 @@ const mapDispatchToProps = dispatch => {
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         fetchPosts: () => dispatch(fetchPosts()),
         createFriendRequest: (senderId, receiverId) => dispatch(createFriendRequest(senderId, receiverId)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal()),
     }
 }
 

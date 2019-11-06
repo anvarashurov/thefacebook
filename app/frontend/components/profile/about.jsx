@@ -63,7 +63,6 @@ class About extends React.Component {
 }
 
 const Workplace = () => {
-    debugger
     return (
         <ul>
             <li>WORK</li>
