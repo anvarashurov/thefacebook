@@ -14,11 +14,11 @@ class Api::FriendController < ApplicationController
     end
 
     def destroy
-        # @friend = current_user.friend_requests_sent.find_by(friend_sender: params[:id]) ||
-        #           current_user.friend_requests_received.find_by(friend_receiver: params[:id])
-        # @friend.destroy
-        # @user = current_user
-        # render 'api/users/show'
+        @friend = current_user.friend_requests_sent.find_by(friend_sender: params[:id]) ||
+                  current_user.friend_requests_received.find_by(friend_receiver: params[:id])
+        @friend.destroy
+        @user = current_user
+        render 'api/users/show'
     end
 
     def friend_params

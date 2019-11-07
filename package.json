@@ -40,8 +40,8 @@
     "url": "https://github.com/antox7/thefacebook/issues"
   },
   "engines": {
-    "node": "12.10.0",
-    "npm": "6.10.3"
+    "node": "12.11.1",
+    "npm": "6.11.3"
   },
   "homepage": "https://github.com/antox7/thefacebook#readme"
 }
