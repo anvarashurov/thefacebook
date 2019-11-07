@@ -50,12 +50,18 @@
     left: 20px; */
 }
 
-.camera_icon_container > img {
-    width: 34px;
-    height: 29px;
+.camera_icon_container img {
+    width: 28px;
+    height: 24px;
 }
 
-.camera_icon_container > input {
+.camera_icon_container img:hover {
+    /* background-color: black;
+    border: 1px solid black;
+    border-radius: px; */
+}
+
+.camera_icon_container input {
     display: none;
 }
 
@@ -78,7 +84,7 @@
     z-index: 1;
 
     top: -145px;
-    left: 15px;
+    left: 7px;
 }
 
 .profile_photo_container {
@@ -92,12 +98,14 @@
     top: 10px;
     left: 10px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .camera2 {
     position: relative;
     top: -55px;
-    left: 65px;
+    left: 60px;
+    cursor: pointer;
 }
 
 .edit_name_container {
@@ -248,4 +256,21 @@
     left: 530px;
     width: 100px;
     height: 30px;
+}
+
+/* 
+
+*/
+/* 
+
+<div class="image-upload">
+  <label for="file-input">
+    <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"/>
+  </label>
+
+  <input id="file-input" type="file" />
+</div> */
+
+.camera_icon_container input {
+    display: none;
 }

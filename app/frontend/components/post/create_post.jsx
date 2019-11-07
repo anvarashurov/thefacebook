@@ -1,4 +1,5 @@
 import React from 'react';
+import { create } from 'domain';
 
 class CreatePost extends React.Component {
 
@@ -66,6 +67,20 @@ class CreatePost extends React.Component {
 
     render() {
         // console.log(this.state);
+    
+        let createPostImg;
+        
+        if(this.state.photoUrl !== null) {
+            debugger
+            createPostImg = (
+                <div className="create_post_img">
+                    <img src={this.state.photoUrl} />
+                </div>
+            )
+        } else {
+            createPostImg = null;
+        }
+
         return (
             <div className="create_post_container">
                 <form onSubmit={this.handleSubmit}>
@@ -108,6 +123,7 @@ class CreatePost extends React.Component {
                         <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
                         <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
                     </div>
+                    {createPostImg}
                     <input id="create_post_button" type="submit" value="Post"/>
                 </form>
             </div>

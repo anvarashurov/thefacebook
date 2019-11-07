@@ -9,7 +9,7 @@
 }
 
 .modal_child {
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-.modal_child {
+/* .modal_child {
     max-height: calc(100vh - 210px);
     overflow-y: auto;
-}
+} */

@@ -97,11 +97,17 @@ class EditProfile extends React.Component {
         }
         formData.append('user[first_name]', this.state.first_name);
         formData.append('user[last_name]', this.state.last_name);
+        formData.append('user[current_city]', this.state.current_city);
+        formData.append('user[workplace]', this.state.workplace);
+        formData.append('user[hometown]', this.state.hometown);
+        formData.append('user[rel_status]', this.state.rel_status);
+        // formData.append('user[bio]', this.state.bio);
+        // formData.append('user[bio]', this.state.bio);
         // this.props.action(formData).then(() => this.clearForm());
         // formData.append('post[photo]', this.state.photoFile);
         // debugger
-        this.props.updateUser(formData, currentUser);
-        return this.props.closeModal;
+        this.props.closeModal();
+        return this.props.updateUser(formData, currentUser);
         // .then(() => this.clearForm());
     }
 
@@ -124,15 +130,23 @@ class EditProfile extends React.Component {
                 <div className="photos_container_modal">
                     <div className="cover_photo_container">
                         <div className="camera_icon_container" role="button">
-                            <img className="camera1" src={window.camera}/>
-                            <input id="file" type="file" onChange={this.handleCoverFile} />
+
+                            <label htmlFor="file1">
+                                <img className="camera1" src={window.camera}/>
+                            </label>
+                            <input id="file1" type="file" onChange={this.handleCoverFile} />
+
                         </div>
                         <img className="cover_photo_modal" src={this.state.coverPhotoUrl} alt=""/>
                     </div>
                     <div className="profile_photo_container">
                         <div className="camera_icon_container" role="button">
-                            <img className="camera2" src={window.camera} alt=""/>
-                            <input id="file" type="file" onChange={this.handleProfileFile} />
+
+                            <label htmlFor="file2">
+                                <img className="camera2" src={window.camera} alt=""/>
+                            </label>
+                            <input id="file2" type="file" onChange={this.handleProfileFile} />
+    
                         </div>
                         <img className="profile_photo_modal" src={this.state.profilePhotoUrl} alt=""/>
                     </div>
