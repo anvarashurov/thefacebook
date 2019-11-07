@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createFriendRequest = createFriendRequest;
   window.createPost = createPost;
   let preLoadedState = undefined;
-  // debugger
+  
   if(window.currentUser) {
-    // debugger
+    
     preLoadedState = {
       session: {
         currentUserId: window.currentUser.id

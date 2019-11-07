@@ -7,7 +7,7 @@ import {fetchPosts, logout, deletePost} from '../../actions/session_actions';
 import PostIndexItemContainer from '../post/post_index_item_container';
 
 const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
-    // debugger
+    // 
     let pages;
     if (pathname === "/") {
         pages = (
@@ -34,7 +34,7 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
 };
 
 // const mdp = dispatch => {
-//     debugger
+//     
 //     return {
 //         fetchPosts: () => dispatch(fetchPosts()),
 //         logout: () => dispatch(logout()),

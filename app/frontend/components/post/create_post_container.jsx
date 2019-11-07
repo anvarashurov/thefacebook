@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import CreatePost from './create_post';
 
 const mapStateToProps = state => {
-    // debugger
+    // 
     return {
         currentUser: state.entities.users[state.session.currentUserId],
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    // debugger
+    // 
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         fetchPost: postId => dispatch(fetchPost(postId)),

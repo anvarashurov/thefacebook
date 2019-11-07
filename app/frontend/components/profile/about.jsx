@@ -6,7 +6,7 @@ import { updateUser } from '../../actions/session_actions';
 class About extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
+        // 
         this.state = {
             id: this.props.profileOwner.id,
             first_name: this.props.profileOwner.first_name,
@@ -92,7 +92,7 @@ function Lived() {
     )
 }
 const msp = (state, ownProps) => {
-    // debugger 
+    //  
     return {
         profileOwner: ownProps.profileOwner 
         // state.entities.users[ownProps.match.params.id]

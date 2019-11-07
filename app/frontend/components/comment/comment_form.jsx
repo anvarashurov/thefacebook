@@ -15,7 +15,6 @@ class CommentForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         if (this.state.content.length > 0) {
             this.props.action(this.state).then(() => {this.clearForm()});

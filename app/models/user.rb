@@ -8,9 +8,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   attr_reader :password
   after_initialize :ensure_session_token
-  
-  # debugger
-  
+    
   has_many :authored_post,
     class_name: "Post",
     foreign_key: :author_id,
@@ -44,7 +42,6 @@ class User < ApplicationRecord
     #     render json: ["Either email or password is incorrect"], status: 401
     #   end
     # else
-    #   debugger
     #   # need to try logging in again
     #   render json: ["User with such details does not exist"], status: 401
     # end

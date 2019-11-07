@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import LoginForm from './login_form';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   // this is sending an array
   if(typeof state.errors.session.responseJSON !== 'undefined') {
     return { 

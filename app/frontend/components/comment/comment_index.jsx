@@ -7,13 +7,11 @@ class CommentIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         return this.props.fetchComments();
     }
 
     render() {
 
-        // debugger
 
         let myId = this.props.commentOwner.id;
         let myComments = [];

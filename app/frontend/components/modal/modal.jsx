@@ -19,10 +19,10 @@ const Modal = ({ modal, closeModal }) => {
             return null;    
     }
     // if(modal === 'edit_profile') {
-    //     debugger
+    //     
     //     component = <EditProfileContainer />
     // } else {
-    //     debugger
+    //     
     //     return null;
     // }
 

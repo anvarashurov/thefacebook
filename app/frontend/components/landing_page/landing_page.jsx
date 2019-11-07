@@ -10,12 +10,11 @@ import About from '../profile/about';
 class LandingPage extends React.Component {
 
     componentDidMount() {
-        debugger
         return this.props.fetchAllUsers();
     }
 
     render() {
-        // debugger
+        
 
         // can implement Ternary to get around it with condition being currentUser exists.
         let page;
@@ -25,7 +24,7 @@ class LandingPage extends React.Component {
                 <HomePage deletePost={this.props.deletePost} pathname={this.props.location.pathname} logout={this.props.logout} currentUser={this.props.currentUser} fetchPosts={this.props.fetchPosts}/>
             )
         } else {
-            // debugger
+            
             page = (
                 <div className="landing_page">
                     <LandingPageNavbar />

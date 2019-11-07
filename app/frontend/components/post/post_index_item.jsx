@@ -6,7 +6,7 @@ import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
 
 const PostIndexItem = (props) => {
-    // debugger
+    // 
     const numComments = props.post.commentIds.length;
     let output;
 
