@@ -123,8 +123,8 @@ class CreatePost extends React.Component {
                         <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
                         <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
                     </div>
-                    {createPostImg}
                     <input id="create_post_button" type="submit" value="Post"/>
+                    {/* {createPostImg} */}
                 </form>
             </div>
         )
