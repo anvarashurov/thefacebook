@@ -10,7 +10,6 @@
     background-color: #F5F6F7;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .edit_profile_container_modal {
@@ -239,7 +238,7 @@
 }
 
 .edit_names td {
-    width: 100px;
+    width: 110px;
 }
 
 .edit_other_info td {

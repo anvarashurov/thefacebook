@@ -11,9 +11,9 @@ class EditProfile extends React.Component {
             bio: this.props.currentUser.bio,
             current_city: this.props.currentUser.current_city,
             workplace: this.props.currentUser.workplace,
-            school: this.props.currentUser.current_city,
-            hometown: this.props.currentUser.current_city,
-            rel_status: this.props.currentUser.current_city,
+            school: this.props.currentUser.school,
+            hometown: this.props.currentUser.hometown,
+            rel_status: this.props.currentUser.rel_status,
 
             profilePhoto: null,
             coverPhoto: null,
@@ -101,6 +101,8 @@ class EditProfile extends React.Component {
         formData.append('user[workplace]', this.state.workplace);
         formData.append('user[hometown]', this.state.hometown);
         formData.append('user[rel_status]', this.state.rel_status);
+        formData.append('user[school]', this.state.school);
+
         // formData.append('user[bio]', this.state.bio);
         // formData.append('user[bio]', this.state.bio);
         // this.props.action(formData).then(() => this.clearForm());
