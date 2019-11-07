@@ -7,7 +7,7 @@ const CommentIndexItem = (props) => {
 
     let commentCreatedAt = new Date(props.comment.createdAt);
     commentCreatedAt = commentCreatedAt.toDateString();
-    debugger
+    // debugger
     commentCreatedAt = commentCreatedAt.slice(4, commentCreatedAt.length);
 
     return (

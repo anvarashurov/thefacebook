@@ -3,10 +3,8 @@
 class Api::UsersController < ApplicationController
   def create
     # create a new user with given params
-    # debugger
     @user = User.new(user_params)
     birthday = params[:user][:birthday][:month] + "/" + params[:user][:birthday][:day] + "/" + params[:user][:birthday][:year]
-    # debugger
     if @user.save
       @user.update(birthday: birthday)
       login!(@user)
@@ -22,7 +20,6 @@ class Api::UsersController < ApplicationController
   #   month = params[:user][:birthday][:month] 
   #   day = params[:user][:birthday][:day] 
   #   year = params[:user][:birthday][:year]
-  #   debugger
   #   if((month && day) && year)
   #     @user.birthday = month + "/" + day + "/" + year
   #   end

@@ -1,5 +1,4 @@
 export const createFriendRequest = (senderId, receiverId) => {
-    debugger
     return $.ajax({
         method: "POST",
         url: 'api/friend',
@@ -11,11 +10,3 @@ export const createFriendRequest = (senderId, receiverId) => {
         }
     })
 }
-
-// export const fetchAllFriendRequests = (userId) => {
-//     // debugger
-//     return $.ajax({
-//         method: "GET",
-//         url: "api/users/",
-//     })
-// }

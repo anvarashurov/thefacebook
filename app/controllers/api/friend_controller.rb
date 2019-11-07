@@ -1,7 +1,6 @@
 # Do we retrieve friend requests sent via assoc?
 class Api::FriendController < ApplicationController
     def create
-        # debugger
         # friend_sender = current_user.id
         @friend = Friend.new(friend_params)
         # @friend.friend_sender = friend_sender 
@@ -23,7 +22,6 @@ class Api::FriendController < ApplicationController
     end
 
     def friend_params
-        # debugger
         params.require(:friend).permit(:friend_sender, :friend_receiver, :status)
     end
 end

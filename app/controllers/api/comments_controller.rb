@@ -1,9 +1,7 @@
 class Api::CommentsController < ApplicationController
 
     def create
-        # debugger
         @comment = Comment.new(comment_params)
-        # debugger
         @comment.author_id = current_user.id
         if @comment.save
             render 'api/comments/show'
@@ -33,7 +31,6 @@ class Api::CommentsController < ApplicationController
     # end
 
     def comment_params
-        # debugger
         params.require(:comment).permit( :content, :post_id)
     end
 

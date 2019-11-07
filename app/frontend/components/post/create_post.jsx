@@ -21,7 +21,7 @@ class CreatePost extends React.Component {
     handleFile(e) {
         // e.preventDefault();
         // this.setState({photoFile: e.currentTarget.files[0]})
-        debugger
+        // debugger
 
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
@@ -41,7 +41,7 @@ class CreatePost extends React.Component {
 
     handleSubmit(e) {
         
-        debugger
+        // debugger
         e.preventDefault();
         
         const formData = new FormData();
@@ -71,7 +71,7 @@ class CreatePost extends React.Component {
         let createPostImg;
         
         if(this.state.photoUrl !== null) {
-            debugger
+            // debugger
             createPostImg = (
                 <div className="create_post_img">
                     <img src={this.state.photoUrl} />

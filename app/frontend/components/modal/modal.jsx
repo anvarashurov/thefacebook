@@ -12,9 +12,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'edit_profile':
             component = <EditProfileContainer />
             break;
-        case 'view_photo':
-            component = <ViewPhoto />
-            break;
+        // case 'view_photo':
+        //     component = <ViewPhoto />
+        //     break;
         default:
             return null;    
     }

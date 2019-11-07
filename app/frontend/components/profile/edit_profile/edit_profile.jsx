@@ -3,7 +3,7 @@ import React from 'react';
 class EditProfile extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        
         this.state = {
             id: this.props.currentUser.id,
             first_name: this.props.currentUser.first_name,
@@ -36,7 +36,7 @@ class EditProfile extends React.Component {
     handleProfileFile(e) {
         // e.preventDefault();
         // this.setState({photoFile: e.currentTarget.files[0]})
-        debugger
+        
 
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
@@ -58,7 +58,7 @@ class EditProfile extends React.Component {
     handleCoverFile(e) {
         // e.preventDefault();
         // this.setState({photoFile: e.currentTarget.files[0]})
-        debugger
+        
 
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
@@ -83,7 +83,7 @@ class EditProfile extends React.Component {
 
     handleSubmit(e) {
 
-        debugger
+        
 
         e.preventDefault();
 
@@ -107,14 +107,14 @@ class EditProfile extends React.Component {
         // formData.append('user[bio]', this.state.bio);
         // this.props.action(formData).then(() => this.clearForm());
         // formData.append('post[photo]', this.state.photoFile);
-        // debugger
+        // 
         this.props.closeModal();
         return this.props.updateUser(formData, currentUser);
         // .then(() => this.clearForm());
     }
 
     render() {
-        debugger
+        
         return (
             // <div className="edit-profile-container">
             //     <div className="upload-wallpaper-container">

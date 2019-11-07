@@ -10,7 +10,6 @@ const PostsReducer = (oldState = {}, action) => {
         case RECEIVE_POST:
             return merge({}, oldState, {[action.post.id]: action.post});
         case RECEIVE_COMMENT: 
-            debugger   
             oldState[action.comment.postId].commentIds.push(action.comment.id);
             return oldState;
         case REMOVE_POST:

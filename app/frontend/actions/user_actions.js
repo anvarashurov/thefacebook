@@ -3,7 +3,7 @@ import * as APIUtil from '../util/user_api_util';
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 export const fetchAllUsers = () => dispatch => {
-    debugger
+    // debugger
     return APIUtil.fetchAllUsers().then(
         users => dispatch(receiveAllUsers(users)))}
 

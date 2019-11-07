@@ -6,14 +6,14 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.currentUserId],
     }
 }
 
 const mdp = dispatch => {
-    debugger
+    // debugger
     return {
         updateUser: (user) => dispatch(updateUser(user)),
         closeModal: () => dispatch(closeModal()),

@@ -5,7 +5,6 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
 export const createPost = post => dispatch => {
-    debugger
     return APIPostUtil.createPost(post).then(post => dispatch(receivePost(post)))
 }
 export const fetchPosts = posts => dispatch => {
