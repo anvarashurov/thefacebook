@@ -31,7 +31,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest, open
             //     Edit Profile
             // </Link>
 
-            <button onClick={()=> openModal("edit_profile") }>Edit Profile</button>
+            <button onClick={()=> openModal("edit_profile") }>Update Profile</button>
 
         )
     } else {

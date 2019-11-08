@@ -126,7 +126,7 @@ class EditProfile extends React.Component {
             // </div>
             <form onSubmit={this.handleSubmit} className="edit_user_form">
                 <div className="edit_profile_container_modal">
-                    <span className="edit_profile_text_modal"> Edit Profile </span>
+                    <span className="edit_profile_text_modal"> Update Profile </span>
                     <button className="edit_profile_button_modal" onClick={this.props.closeModal}>&#10006;</button>
                 </div>
                 <div className="photos_container_modal">

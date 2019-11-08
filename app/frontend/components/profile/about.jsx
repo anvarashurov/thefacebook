@@ -39,13 +39,13 @@ class About extends React.Component {
                         <Link to={`/users/${this.props.profileOwner.id}/about`}>Overview</Link>
                         <Link to={`/users/${this.props.profileOwner.id}/about/work`}>Work and Education</Link>
                         <Link to={`/users/${this.props.profileOwner.id}/about/lived`}>Places You've Lived</Link>
-                        <Link to={`/users/${this.props.profileOwner.id}/about/edit`}>Edit Profile</Link>    
+                        {/* <Link to={`/users/${this.props.profileOwner.id}/about/edit`}>Edit Profile</Link>     */}
                     </div>
                     <div className="menu_content">
                         <Route exact path={`${this.props.match.url}`} component={Overview} profileOwner={this.props.profileOwner}/>
                         <Route path={`${this.props.match.url}/work`} component={Workplace} profileOwner={this.props.profileOwner}/>
                         <Route path={`${this.props.match.url}/lived`} component={Lived} profileOwner={this.props.profileOwner}/>
-                        <Route path={`/users/${this.props.profileOwner.id}/about/edit/`}>
+                        {/* <Route path={`/users/${this.props.profileOwner.id}/about/edit/`}>
                             <div className="edit_user">    
                                 <form onSubmit={this.handleSubmit} className="edit_user">
                                     <label>First name</label>
@@ -55,7 +55,7 @@ class About extends React.Component {
                                     <input type="submit" value="Save" id="save_button"/>
                                 </form>
                             </div>
-                        </Route>
+                        </Route> */}
                     </div>
                 </div>
             </div>
