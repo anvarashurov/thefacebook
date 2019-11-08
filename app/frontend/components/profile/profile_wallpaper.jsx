@@ -51,13 +51,13 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest, open
                 {/* <img className="camera_icon" src={window.camera} alt="camera" style={{width: '26px', height: '21px'}}/> */}
                 
                 {/* {window.wallpaper} */}
-                <img src={currentUser.coverPhotoUrl} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
+                <img src={profileOwner.coverPhotoUrl} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
             </div>
             <div className="wallpaper_overlay">
                 <div className="picture_and_name">
                     <div className="profile_picture">
                         {/* {window.profile} */}
-                        <img src={currentUser.profilePhotoUrl} alt="profile picture" style={{ width: '168px', height: '168px' }} />
+                        <img src={profileOwner.profilePhotoUrl} alt="profile picture" style={{ width: '168px', height: '168px' }} />
                     </div>
                     <div className="profile_name">
                         <Link to={`/users/${profileOwner.id}/`}>{profileOwner.first_name + " " + profileOwner.last_name}</Link>
