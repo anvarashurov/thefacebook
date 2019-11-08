@@ -12,8 +12,6 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
     hometown = profileOwner.hometown;
     relStatus = profileOwner.rel_status;
 
-    currCity 
-
     // let bioEle;
     
     // if(bio.length === 0) {
@@ -30,6 +28,9 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
     //         </span>
     //     ) 
     // }
+
+    // if user info is length 0, then we need to switch
+    // the tags with just a span with text in it as a placeholder
 
     return (
         <div className="intro_container">
@@ -93,7 +94,7 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
                             <img src={window.relStatus}/>
                         </td>
                         <td>
-                            <span>
+                            <span id="rel_status">
                                 {relStatus}
                             </span>
                         </td>

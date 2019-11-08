@@ -68,12 +68,15 @@
 .intro_container tr {
     display: flex;
     flex-direction: row;
-    justify-content: baseline;
+    align-items: center;
 }
 
 .intro_container td  {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+    /* baseline here applies to Text and User Info */
+    display: flex;
+    justify-content: baseline;
 }
 
 
@@ -81,6 +84,7 @@
     width: 16px;
     height: 18px;
     margin-bottom: 3px;
+    margin-right: 5px;
 }
 
 .intro_container table td span {
@@ -89,4 +93,8 @@
     color: #385898;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#rel_status {
+    margin: 0px;
 }
