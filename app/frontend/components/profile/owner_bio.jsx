@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const OwnerBio = ({ profileOwner, currentUser }) => {
+const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
 
     let bio, currCity, workplace, school, hometown, relStatus;
 
-    currCity = profileOwner.current_city
     bio = profileOwner.bio;
+    currCity = profileOwner.current_city
     workplace = profileOwner.workplace;
     school = profileOwner.school;
     hometown = profileOwner.hometown;
@@ -31,6 +31,105 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
 
     // if user info is length 0, then we need to switch
     // the tags with just a span with text in it as a placeholder
+    let workTag, cityTag, homeTag, schoolTag, relTag;
+
+    if(workplace.length === 0) {
+        workTag = (
+            <td className="default_text">
+                Workplace
+            </td>
+        )
+    } else {
+        workTag = (
+            <td> Works at
+                <span>
+                    {workplace}
+                </span>
+            </td>
+        )
+    }
+    if (currCity.length === 0) {
+        cityTag = (
+            <td className="default_text">
+                City
+            </td>
+        )
+    } else {
+        cityTag = (
+            <td> Lives in
+                <span>
+                    {currCity}
+                </span>
+            </td>
+        )
+    }
+    if (school.length === 0) {
+        schoolTag = (
+            <td className="default_text">
+                School
+            </td>
+        )
+    } else {
+        schoolTag = (
+            <td> Studied at
+                <span>
+                    {school}
+                </span>
+            </td>
+        )
+    }
+    if(hometown.length === 0) {
+        homeTag = (
+            <td className="default_text">
+                Hometown
+            </td>
+        )
+    } else {
+        homeTag = (
+            <td> Works at
+                <span>
+                    {hometown}
+                </span>
+            </td>
+        )
+    }
+    if (relStatus.length === 0) {
+        relTag = (
+            <td className="default_text">
+                Relationship Status
+            </td>
+        )
+    } else {
+        relTag = (
+            <td> Works at
+                <span>
+                    {relStatus}
+                </span>
+            </td>
+        )
+    }
+
+    let introButton, introText;
+
+    if(bio.length === 0) {
+        if(currentUser.id === profileOwner.id) {
+            introButton = "Add Bio";
+        }
+        introText = (
+            <span className="add_bio_message">
+                Update Profile to add more info about yourself.
+            </span>
+            )
+    } else {
+        if(currentUser.id === profileOwner.id) {
+            introButton = "Edit Bio"
+        }
+        introText = ( 
+            <span id="bio_message">
+                { profileOwner.bio }
+            </span>
+        )
+    }
 
     return (
         <div className="intro_container">
@@ -40,10 +139,9 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
             </div>
             <div className="thought_icon_and_text">
                 <img src={window.commentIcon} alt="C"/>
-                <span className="add_bio_message">
-                    Update Profile to add more info about yourself.
-                </span>
-                <Link to={`/users/${profileOwner.id}/about/edit`}>Add Bio</Link>
+                {introText}
+                <button id="intro_button" onClick={() => openModal("edit_profile")}>{introButton}</button>
+                {/* <Link to={`/users/${profileOwner.id}/about/edit`}>Add Bio</Link> */}
             </div>
             <div className="add_bio_upper_border"></div>
             <table>
@@ -52,52 +150,31 @@ const OwnerBio = ({ profileOwner, currentUser }) => {
                         <td>
                             <img src={window.workplace} />
                         </td>
-                        <td> Works at
-                            <span>
-                                {workplace}
-                            </span>
-                        </td>
+                        {workTag}
                     </tr>
                     <tr>
                         <td>
                             <img src={window.school}/>
                         </td>
-                        <td> Studied at
-                            <span>
-                                {school}
-                            </span>
-                        </td>
+                        {schoolTag}
                     </tr>
                     <tr>
                         <td>
                             <img src={window.currCity} />
                         </td>
-                        <td>
-                            Lives in 
-                            <span>
-                                {currCity}
-                            </span>
-                        </td>
+                        {cityTag}
                     </tr>
                     <tr>
                         <td>
                             <img src={window.hometown} />
                         </td>
-                        <td> From
-                            <span>
-                                {hometown}
-                            </span>
-                        </td>
+                        {homeTag}
                     </tr>
                     <tr>
                         <td>
                             <img src={window.relStatus}/>
                         </td>
-                        <td>
-                            <span id="rel_status">
-                                {relStatus}
-                            </span>
-                        </td>
+                        {relTag}
                     </tr>                    
                 </tbody>
             </table>

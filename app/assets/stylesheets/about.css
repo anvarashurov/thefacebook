@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: start;
     box-sizing: border-box;
+    
+    margin-left: 12px;
 }
 
 .about_title_container {

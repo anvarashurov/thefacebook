@@ -46,6 +46,7 @@ class Profile extends React.Component {
                             <OwnerBio 
                                 profileOwner={this.props.profileOwner}
                                 currentUser={this.props.currentUser}
+                                openModal={this.props.openModal}
                             />
                             <div className="create_and_show_posts">
                                 <CreatePostContainer profileOwner={this.props.profileOwner} fetchPosts={this.props.fetchPosts} />

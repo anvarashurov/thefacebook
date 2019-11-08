@@ -27,6 +27,7 @@ class EditProfile extends React.Component {
     }
 
     updateField(field) {
+        debugger
         return e => {
             this.setState({ [field]: e.target.value })
         }
@@ -102,6 +103,8 @@ class EditProfile extends React.Component {
         formData.append('user[hometown]', this.state.hometown);
         formData.append('user[rel_status]', this.state.rel_status);
         formData.append('user[school]', this.state.school);
+        formData.append('user[bio]', this.state.bio);
+
 
         // formData.append('user[bio]', this.state.bio);
         // formData.append('user[bio]', this.state.bio);
