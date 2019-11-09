@@ -7,12 +7,7 @@ const mapStateToProps = (state, postOwner) => {
     
     let owner;
     
-    if(typeof postOwner.postOwner.id !== 'undefined') {
-        owner = postOwner.postOwner.id;
-    }
-    else {
-        owner = postOwner.postOwner;
-    }
+    typeof postOwner.postOwner.id !== 'undefined' ? owner = postOwner.postOwner.id : owner = postOwner.postOwner;
 
     return {
         posts: Object.values(state.entities.posts),

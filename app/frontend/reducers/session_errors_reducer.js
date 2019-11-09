@@ -3,10 +3,6 @@ import {
   RECEIVE_CURRENT_USER
 } from "../actions/session_actions";
 
-// const defaultState = {
-//   session: []
-// };
-
 const sessionErrorsReducer = (errorState = [], action) => {
   Object.freeze(errorState);
   switch (action.type) {
@@ -19,7 +15,5 @@ const sessionErrorsReducer = (errorState = [], action) => {
       return errorState;
   }
 };
-
-// this reducer's return value is pointed to by key 'session' inside our errors slice of state.
 
 export default sessionErrorsReducer;

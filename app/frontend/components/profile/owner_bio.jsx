@@ -12,25 +12,6 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
     hometown = profileOwner.hometown;
     relStatus = profileOwner.rel_status;
 
-    // let bioEle;
-    
-    // if(bio.length === 0) {
-    //     bioEle = (
-    //         <span className="add_bio_message">
-    //             Add a short bio to tell people more
-    //             about yourself.
-    //         </span>
-    //     ) 
-    // } else {
-    //     bioEle = (
-    //         <span className="add_bio_message">
-    //             {profileOwner.bio}
-    //         </span>
-    //     ) 
-    // }
-
-    // if user info is length 0, then we need to switch
-    // the tags with just a span with text in it as a placeholder
     let workTag, cityTag, homeTag, schoolTag, relTag;
 
     if(workplace.length === 0) {
@@ -141,7 +122,6 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
                 <img src={window.commentIcon} alt="C"/>
                 {introText}
                 <button id="intro_button" onClick={() => openModal("edit_profile")}>{introButton}</button>
-                {/* <Link to={`/users/${profileOwner.id}/about/edit`}>Add Bio</Link> */}
             </div>
             <div className="add_bio_upper_border"></div>
             <table>

@@ -6,7 +6,6 @@ import { updateUser } from '../../actions/session_actions';
 class About extends React.Component {
     constructor(props) {
         super(props);
-        // 
         this.state = {
             id: this.props.profileOwner.id,
             first_name: this.props.profileOwner.first_name,
@@ -39,7 +38,6 @@ class About extends React.Component {
                         <Link to={`/users/${this.props.profileOwner.id}/about`}>Overview</Link>
                         <Link to={`/users/${this.props.profileOwner.id}/about/work`}>Work and Education</Link>
                         <Link to={`/users/${this.props.profileOwner.id}/about/lived`}>Places You've Lived</Link>
-                        {/* <Link to={`/users/${this.props.profileOwner.id}/about/edit`}>Edit Profile</Link>     */}
                     </div>
                     <div className="menu_content">
                         <Route exact path={`${this.props.match.url}`} component={Overview} profileOwner={this.props.profileOwner}/>
@@ -92,10 +90,8 @@ function Lived() {
     )
 }
 const msp = (state, ownProps) => {
-    //  
     return {
         profileOwner: ownProps.profileOwner 
-        // state.entities.users[ownProps.match.params.id]
     }
 }
 

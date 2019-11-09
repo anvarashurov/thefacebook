@@ -6,7 +6,6 @@ import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
 
 const PostIndexItem = (props) => {
-    // 
     const numComments = props.post.commentIds.length;
     let output;
 
@@ -48,11 +47,9 @@ const PostIndexItem = (props) => {
                     <div className="triple">
                         <img className="trippledots" src={window.trippledots} alt="T"/>
                     </div>
-                    {/* {dropdown} */}
                 </div>
                 <span className="post_content">{props.post.content}</span>
                 {url}
-                {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
                 <div className="num_comments">
                     {output} 
                 </div>

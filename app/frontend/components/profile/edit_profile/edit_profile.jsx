@@ -33,12 +33,8 @@ class EditProfile extends React.Component {
         }
     }
 
-    // Updates state with the file grabbed from user input
     handleProfileFile(e) {
-        // e.preventDefault();
-        // this.setState({photoFile: e.currentTarget.files[0]})
-        
-
+       
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
 
@@ -55,12 +51,8 @@ class EditProfile extends React.Component {
 
     }
 
-    // Updates state with the file grabbed from user input
     handleCoverFile(e) {
-        // e.preventDefault();
-        // this.setState({photoFile: e.currentTarget.files[0]})
-        
-
+      
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
 
@@ -77,19 +69,10 @@ class EditProfile extends React.Component {
 
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     return this.props.updateUser(this.state);
-    // }
-
     handleSubmit(e) {
-
-        
-
         e.preventDefault();
 
         const formData = new FormData();
-        // formData.append('user[profilePhotoUrl]', this.state.profilePhotoUrl);
         if (this.state.profilePhoto) {
             formData.append('user[profilePhoto]', this.state.profilePhoto);
         }
@@ -105,28 +88,14 @@ class EditProfile extends React.Component {
         formData.append('user[school]', this.state.school);
         formData.append('user[bio]', this.state.bio);
 
-
-        // formData.append('user[bio]', this.state.bio);
-        // formData.append('user[bio]', this.state.bio);
-        // this.props.action(formData).then(() => this.clearForm());
-        // formData.append('post[photo]', this.state.photoFile);
-        // 
         this.props.closeModal();
         return this.props.updateUser(formData, currentUser);
-        // .then(() => this.clearForm());
     }
 
     render() {
         
         return (
-            // <div className="edit-profile-container">
-            //     <div className="upload-wallpaper-container">
-            //         <p>Hi there</p>
-            //     </div>
-            //     <div className="upload-profile-picture-container">
-            //         <p> Hello buddy </p>
-            //     </div>
-            // </div>
+           
             <form onSubmit={this.handleSubmit} className="edit_user_form">
                 <div className="edit_profile_container_modal">
                     <span className="edit_profile_text_modal"> Update Profile </span>

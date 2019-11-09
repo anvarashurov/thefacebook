@@ -3,7 +3,6 @@ import {withRouter, Route, Link} from 'react-router-dom';
 import UserNavbar from '../profile/user_navbar';
 import CreatePostContainer from '../post/create_post_container';
 import {fetchPosts, logout, deletePost} from '../../actions/session_actions';
-// import { connect } from 'react-redux';
 import PostIndexItemContainer from '../post/post_index_item_container';
 
 const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
@@ -33,13 +32,4 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
     );
 };
 
-// const mdp = dispatch => {
-//     
-//     return {
-//         fetchPosts: () => dispatch(fetchPosts()),
-//         logout: () => dispatch(logout()),
-//     }
-// }
-
 export default withRouter(HomePage);
-

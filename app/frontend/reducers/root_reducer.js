@@ -11,6 +11,6 @@ export const rootReducer = combineReducers({
   errors: errorsReducer,
 })
 
-// later we add likes, comments, friends, posts, etc
+// TODO: later we add likes, comments, friends, posts, etc
 
 export default rootReducer;
