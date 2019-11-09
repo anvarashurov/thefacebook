@@ -56,6 +56,7 @@ class CreatePost extends React.Component {
     }
 
     handleChange() {
+        debugger
         return e => {
             this.setState({content: e.target.value});
         };
@@ -121,7 +122,7 @@ class CreatePost extends React.Component {
                 {/* <form onSubmit={this.handleSubmit}> */}
                     <div className="create_post_area">
                         <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
-                        <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
+                        <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal("create_post")}></textarea>
                     </div>
                     <input id="create_post_button" type="submit" value="Post"/>
                     {/* {createPostImg} */}

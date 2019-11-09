@@ -43,11 +43,15 @@ class Profile extends React.Component {
                 <div className="profile_lower_body">
                     <Switch>
                         <Route exact path={`/users/${this.props.profileOwner.id}`}>
-                            <OwnerBio 
-                                profileOwner={this.props.profileOwner}
-                                currentUser={this.props.currentUser}
-                                openModal={this.props.openModal}
-                            />
+                            <div className="sidebar">
+                                <OwnerBio 
+                                    profileOwner={this.props.profileOwner}
+                                    currentUser={this.props.currentUser}
+                                    openModal={this.props.openModal}
+                                />
+                                <div>Photos</div>
+                                <div>Friends</div>
+                            </div>
                             <div className="create_and_show_posts">
                                 <CreatePostContainer profileOwner={this.props.profileOwner} fetchPosts={this.props.fetchPosts} />
                                 <PostIndexItemContainer postOwner={this.props.profileOwner.id} />                                

@@ -1,6 +1,7 @@
 import React from 'react';
 // import { closeModal } from '../../actions/modal_actions';
 import EditProfileContainer from '../profile/edit_profile/edit_profile_container';
+import CreatePostContainer from '../post/create_post_container';
 // import ViewPhoto from '../profile/view_photo';
 
 const Modal = ({ modal, closeModal }) => {
@@ -12,9 +13,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'edit_profile':
             component = <EditProfileContainer />
             break;
-        // case 'view_photo':
-        //     component = <ViewPhoto />
-        //     break;
+        case 'create_post':
+            component = <CreatePostContainer />
+            break;
         default:
             return null;    
     }
