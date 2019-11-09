@@ -11,10 +11,18 @@ const Modal = ({ modal, closeModal }) => {
     let component;
     switch(modal) {
         case 'edit_profile':
-            component = <EditProfileContainer />
+            component = (
+                <div className="edit_profile_modal" onClick={e => e.stopPropagation()}>
+                    <EditProfileContainer />
+                </div>
+            )
             break;
         case 'create_post':
-            component = <CreatePostContainer />
+            component = ( 
+                <div className="create_post_modal" onClick={e => e.stopPropagation()}>
+                    <CreatePostContainer />
+                </div>
+            )
             break;
         default:
             return null;    
@@ -29,9 +37,10 @@ const Modal = ({ modal, closeModal }) => {
 
     return (
         <div className="modal_background" onClick={closeModal}>
-            <div className="modal_child" onClick={e => e.stopPropagation()}>
+            {/* <div className="modal_child" onClick={e => e.stopPropagation()}>
                 {component}
-            </div>
+            </div> */}
+            {component}
         </div>
     );
 }

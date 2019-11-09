@@ -8,9 +8,19 @@
   z-index: 10;
 }
 
-.modal_child {
+.edit_profile_modal {
   top: 55%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  width: 630px;
+  height: 900px;
+  box-sizing: border-box;
+}
+
+.create_post_modal {
+  top: 93%;
+  left: 60%;
   transform: translate(-50%, -50%);
   position: relative;
   width: 630px;
