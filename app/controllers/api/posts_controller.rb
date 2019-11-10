@@ -15,6 +15,16 @@ class Api::PostsController < ApplicationController
         end
     end
     
+    def update
+        @post = Post.find(params[:id])
+        if @post 
+            @post.update_attributes(params[:post][:content])
+            render "api/posts/show"
+        else
+            render json: @post.errors.full_messages
+        end
+    end
+
     def show
         @post = Post.find(params[:id])
         if @post

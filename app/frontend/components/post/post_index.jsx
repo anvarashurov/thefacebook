@@ -8,6 +8,9 @@ class PostIndex extends React.Component {
         return this.props.fetchPosts();
     }
     render() {
+
+        debugger 
+
         let myId = this.props.postOwner.id;
         let myPosts = [];
         let allPosts = this.props.posts;
@@ -19,7 +22,15 @@ class PostIndex extends React.Component {
         }
 
         const posts = myPosts.slice(0).reverse().map((post) => {
-            return <PostIndexItem post={post} key={post.id} postOwner={this.props.postOwner}/>
+            return <PostIndexItem 
+                post={post} 
+                key={post.id} 
+                postOwner={this.props.postOwner}
+                currentUser = {this.props.currentUser}
+                deletePost = {this.props.deletePost}
+                closeModal = {this.props.closeModal}
+                openModal = {this.props.openModal}
+                />
         })
 
         return (

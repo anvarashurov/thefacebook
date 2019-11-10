@@ -1,10 +1,18 @@
-export const SHOW_DROPDOWN = "SHOW_DROPDOWN"
+export const SHOW_DROPDOWN = "SHOW_DROPDOWN";
+export const HIDE_DROPDOWN = "HIDE_DROPDOWN";
 
-const showDropdown = bool => ({
-    type: SHOW_DROPDOWN,
-    show: bool
-})
+export const showDropdown = (component, componentId) => {
+    return {
+        type: SHOW_DROPDOWN,
+        displayed: true,
+        component,
+        componentId
+    }
+}
 
-export const logoutDropdown = dispatch => {
-    return dispatch(showDropdown(show))
+export const hideDropdown = () => {
+    return {
+        type: HIDE_DROPDOWN,
+        displayed: false,
+    }
 }

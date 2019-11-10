@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-import modal from './modal_reducer';
+import modalReducer from './modal_reducer';
+import dropdownsReducer from './dropdowns_reducer';
 
-export default combineReducers({
-    modal
+const ui = combineReducers({
+    modal: modalReducer,
+    dropdown: dropdownsReducer,
 });
+
+export default ui;

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
+import DropdownContainer from '../dropdown/dropdown_container';
 
 const PostIndexItem = (props) => {
     const numComments = props.post.commentIds.length;
@@ -24,10 +25,35 @@ const PostIndexItem = (props) => {
 
 
     let url;
-    
     if(props.post.photoURL) {
         url = <img src={props.post.photoURL} alt="T" />
     }
+
+    // let postOptions;
+
+    // if(props.currentUser.id !== props.postOwner.id) {
+    //     postOptions = null;
+    // } else {
+    //     <div className="triple">
+    //         <img className="trippledots" src={window.trippledots} alt="T" />
+    //         {this.props.dropdownDisplayed && <DropdownContainer />}
+    //     </div>
+    // }
+
+    let postOptions;
+    debugger
+    if(props.currentUser.id === props.postOwner.id) {
+        postOptions = (
+        <div>
+            <button onClick={props.openModal('edit_post')}>
+                <img src={window.edit} alt=""/>
+            </button>
+            <button onClick={() => props.deletePost(props.post.id)}>
+                <img src={window.bin} alt=""/>
+            </button>
+        </div>
+        )
+    } else { postOptions = null }
     
     return (
         <>
@@ -44,9 +70,10 @@ const PostIndexItem = (props) => {
                             {timeOfPost}
                         </span>
                     </div>
-                    <div className="triple">
+                    {/* <div className="triple">
                         <img className="trippledots" src={window.trippledots} alt="T"/>
-                    </div>
+                    </div> */}
+                    { postOptions }
                 </div>
                 <span className="post_content">{props.post.content}</span>
                 {url}
