@@ -42,6 +42,7 @@ class CreatePost extends React.Component {
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
+        // TODO: Close Modal implementation here
         return this.props.createPost(formData).then(() => this.clearForm());
     }
 

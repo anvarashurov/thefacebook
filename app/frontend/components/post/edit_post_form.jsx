@@ -2,6 +2,7 @@ import React from 'react';
 
 class EditPostForm extends React.Component {
     constructor(props) {
+        debugger
         super(props);
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,7 @@ class EditPostForm extends React.Component {
     render() {
 
         debugger
-        
+
         return (
             <div className='edit-post-form-wrapper'>
                 <form className='content-item form' onSubmit={this.handleSubmit}>

@@ -38,9 +38,11 @@ const UserNavbar = ({currentUser, logout}) => {
                     </div>
                     <div className="friends_messages_nots">
                         <span> 
-                            <Link to={`/users/${currentUser.id}/`}> 
+                            {/* <Link to={`/users/${currentUser.id}/`}>  */}
+                            <Link to={`/users/${currentUser.id}/friendships`}>
                                 <img src={window.friendIcon} alt="friends icon"/>
                             </Link>
+                            {/* </Link> */}
                         </span>
                         <span> 
                             <Link to={`/users/${currentUser.id}/`}>
