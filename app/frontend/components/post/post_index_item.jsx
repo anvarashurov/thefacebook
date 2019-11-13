@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
-import DropdownContainer from '../dropdown/dropdown_container';
+// import DropdownContainer from '../dropdown/dropdown_container';
 
 const PostIndexItem = (props) => {
     const numComments = props.post.commentIds.length;
