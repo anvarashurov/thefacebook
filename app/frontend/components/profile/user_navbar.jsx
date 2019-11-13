@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserNavbar = ({currentUser, logout}) => {
+
+    // const handleClick = () => {
+    //     debugger
+    //     document.getElementById("friendship_tab").style.display = 'block';
+    // }
+
     return (
         <div className="main_nav">
             <div className="profile_nav">
@@ -39,9 +45,12 @@ const UserNavbar = ({currentUser, logout}) => {
                     <div className="friends_messages_nots">
                         <span> 
                             {/* <Link to={`/users/${currentUser.id}/`}>  */}
-                            <Link to={`/users/${currentUser.id}/friendships`}>
-                                <img src={window.friendIcon} alt="friends icon"/>
-                            </Link>
+                            {/* <Link to={`/users/${currentUser.id}/friendships`}> */}
+                                {/* TODO: Button will remove Display: none  */}
+                                {/* <button onClick={handleClick()}> */}
+                                    <img src={window.friendIcon} alt="friends icon"/>
+                                {/* </button> */}
+                            {/* </Link> */}
                             {/* </Link> */}
                         </span>
                         <span> 

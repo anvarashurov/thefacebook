@@ -27,11 +27,13 @@ const mapStateToProps = (state, ownProps) => {
     })
     debugger
     return {
+
         currentUser: state.entities.users[state.session.currentUserId],
         profileOwner: state.entities.users[ownProps.match.params.id],
         users: Object.values(state.entities.users),
         friendSent,
         friendReceived,
+        
     }
 }
 

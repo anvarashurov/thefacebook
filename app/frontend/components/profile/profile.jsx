@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
-
+import FriendContainer from './friend/friend_container';
 // components
 import ProfileWallpaper from './profile_wallpaper';
 import OwnerBio from './owner_bio';
@@ -26,6 +26,9 @@ class Profile extends React.Component {
     
         return (
             <div className="main_container">
+
+                {/* <FriendContainer /> */}
+
                 
                 <ProfileWallpaper
                     // coming from URL

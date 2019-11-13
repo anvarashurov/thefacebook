@@ -6,18 +6,18 @@ class Friend extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        debugger
-        return this.props.fetchAllUsers();
-    }
+    // componentDidMount() {
+    //     debugger
+    //     return this.props.fetchAllUsers();
+    // }
 
     render() {
 
-        debugger
+        // debugger
 
-        if(this.props.users.length === 1) {
-            return null;
-        }
+        // if(this.props.users.length === 1) {
+        //     return null;
+        // }
 
         // let allFriendships = [];
         
@@ -34,19 +34,36 @@ class Friend extends React.Component {
         //     )
         // })
 
-        const allFriendships = this.props.friendReceived.map((arr) => {
-            
-            return <FriendItem 
-                user = {arr[0]}
-                status={arr[1]} 
+        const allFriendships = this.props.friendReceived.map((arr, idx) => {
+            // [ [user, status] ]
+            debugger
+            return <FriendItem key={idx}
+                user = {arr[0] ? arr[0] : null}
+                // url = {arr[0] ? arr[0].profilePhotoUrl : null}
+                status={arr[1]}
                 />
-
         })
-
+        // okay closing windows..
+        
         debugger
-
+// my cpu is lagging
+//  - Mr. Robert Ku ladies and gentlemen
         return (
-            {allFriendships}
+            <div id="friendship_tab" style={{width: '300px', height: '300px', display: 'none'}}>
+                <div className="friendship_tab_text">
+                    <span>
+                        Friend Requests
+                    </span> 
+                    {/* TODO: Find Friends */}
+                </div>
+                {allFriendships}
+                <div>
+                    People You Know Know
+                </div>
+                <div>
+                    {/* TODO: Add other users */}
+                </div>
+            </div>
         )
     }
 }

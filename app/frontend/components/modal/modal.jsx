@@ -1,7 +1,7 @@
 import React from 'react';
 import EditProfileContainer from '../profile/edit_profile/edit_profile_container';
 import CreatePostContainer from '../post/create_post_container';
-import EditPostFormContainer from '../post/edit_post_form_container';
+// import EditPostFormContainer from '../post/edit_post_form_container';
 
 const Modal = ({ modal, closeModal }) => {
     debugger
@@ -24,12 +24,12 @@ const Modal = ({ modal, closeModal }) => {
                 </div>
             )
             break;
-        case 'edit_post':
-            component = (
-                <div className="create_post_modal" onClick={e => e.stopPropagation()}>
-                    <EditPostFormContainer />
-                </div>
-            )
+        // case 'edit_post':
+        //     component = (
+        //         <div className="create_post_modal" onClick={e => e.stopPropagation()}>
+        //             <EditPostFormContainer />
+        //         </div>
+        //     )
         default:
             return null;    
     }
