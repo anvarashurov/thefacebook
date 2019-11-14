@@ -19,7 +19,8 @@ const mapStateToProps = (state, postOwner) => {
 const mapDispatchToProps = dispatch => ({
     fetchPosts: () => dispatch(fetchPosts()),
     deletePost: (postId) => dispatch(deletePost(postId)),
-    openModal: () => (str) => dispatch(openModal(str)),
+    openModal: (str) => dispatch(openModal(str)),
+    // openModal: () => (str) => dispatch(openModal(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);

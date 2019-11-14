@@ -75,29 +75,29 @@ class CreatePost extends React.Component {
         return (
             <div className="create_post_container">
                 <form onSubmit={this.handleSubmit}>
-                <ul className="top_part">
-                    <li>
-                        <img src={window.createPostPen} alt="PEN"id="pen"/>
-                        <span id="pen_text">
-                            <input type="submit" value="Create Post" onClick={this.handleSubmit} /> 
-                        </span> 
-                    </li>
-                    <li id="second">
-                        <img src={window.camera} alt="Ph"/>
-                        <span>
-                            <label htmlFor="file">Add Photo</label>
-                            <input id="file" style={{visibility: "hidden"}} type="file" onChange={this.handleFile} /> 
-                        </span>
-                    </li>
-                </ul>
-                    <div className="create_post_area">
-                        <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
-                        <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal("create_post")}></textarea>
-                    </div>
-                    <input id="create_post_button" type="submit" value="Post"/>
-                    
-                    {/* TODO: Work on Displaying Image before posting */}
-                    {/* {createPostImg} */}
+                    <ul className="top_part">
+                        <li>
+                            <img src={window.createPostPen} alt="PEN"id="pen"/>
+                            <span id="pen_text">
+                                <input type="submit" value="Create Post" onClick={this.handleSubmit} /> 
+                            </span> 
+                        </li>
+                        <li id="second">
+                            <img src={window.camera} alt="Ph"/>
+                            <span>
+                                <label htmlFor="file">Add Photo</label>
+                                <input id="file" style={{visibility: "hidden"}} type="file" onChange={this.handleFile} /> 
+                            </span>
+                        </li>
+                    </ul>
+                        <div className="create_post_area">
+                            <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
+                            <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal("create_post")}></textarea>
+                        </div>
+                        <input id="create_post_button" type="submit" value="Post"/>
+                        
+                        {/* TODO: Work on Displaying Image before posting */}
+                        {/* {createPostImg} */}
 
 
                 </form>

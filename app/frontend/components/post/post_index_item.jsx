@@ -45,7 +45,7 @@ const PostIndexItem = (props) => {
     if(props.currentUser.id === props.postOwner.id) {
         postOptions = (
         <div>
-            <button onClick={props.openModal('edit_post')}>
+            <button onClick={() => props.openModal({type: 'edit_post', post: props.post})}>
                 <img src={window.edit} alt=""/>
             </button>
             <button onClick={() => props.deletePost(props.post.id)}>

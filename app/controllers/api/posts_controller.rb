@@ -15,15 +15,16 @@ class Api::PostsController < ApplicationController
         end
     end
     
-    def update
-        @post = Post.find(params[:id])
-        if @post 
-            @post.update_attributes(params[:post][:content])
-            render "api/posts/show"
-        else
-            render json: @post.errors.full_messages
-        end
-    end
+    # def update
+    #     debugger
+    #     @post = Post.find(params[:id])
+    #     if @post 
+    #         @post.update_attributes(params[:post][:content])
+    #         render "api/posts/show"
+    #     else
+    #         render json: @post.errors.full_messages
+    #     end
+    # end
 
     def show
         @post = Post.find(params[:id])
@@ -33,8 +34,16 @@ class Api::PostsController < ApplicationController
             render ['Post does not exist'], status: 404
         end
     end
-    # def update
-    # end
+    
+    def update
+        @post = Post.find(params[:id])
+        if @post.update_attributes(post_params)
+            render '/api/posts/show'
+        else 
+            render json: @post.errors.full_messages, status: 422
+        end
+    end
+
     def destroy
         @post = Post.find(params[:id])
         if @post 
@@ -45,8 +54,7 @@ class Api::PostsController < ApplicationController
             render json ['Post does not exist.']
         end
     end
-    # def edit
-    # end
+
     def post_params 
         params.require(:post).permit(:content, :photo)
     end
