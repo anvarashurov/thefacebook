@@ -4,6 +4,7 @@ import UserNavbar from '../profile/user_navbar';
 import CreatePostContainer from '../post/create_post_container';
 import {fetchPosts, logout, deletePost} from '../../actions/session_actions';
 import PostIndexItemContainer from '../post/post_index_item_container';
+// import DropdownContainer from '../dropdown/dropdown_container';
 
 const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDropdown}) => {
     // 
@@ -26,7 +27,7 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDr
     }
     return (
         <div className="home_page_items">
-            <UserNavbar showDropdown={showDropdown} currentUser={currentUser} logout={logout} />
+            <UserNavbar />
             {pages}
         </div>
     );

@@ -25,7 +25,7 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest, open
 
     if(profileOwner.id === currentUser.id) {
         editProfileOrAddFriend = (
-            <button onClick={()=> openModal("edit_profile") }>Update Profile</button>
+            <button onClick={()=> openModal({type: "edit_profile", profileOwner: null})}>Update Profile</button>
         )
     } else {
         editProfileOrAddFriend = (

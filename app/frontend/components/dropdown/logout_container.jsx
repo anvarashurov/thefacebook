@@ -1,16 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { hideDropdown } from '../../actions/dropdowns_actions';
 
 class LogoutContainer extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.handleLogout = this.handleLogout.bind(this);
+        // this.state = {clicked: false};
+    }
 
-    // TODO: Write handleLogout function that 
-    // hides dropdown and logs out.
+    //  TODO: Click out side 
+
+    handleLogout() {
+        this.props.hideDropdown();
+        return this.props.logout();
+    }
 
     render() {
         debugger
         return (
-            <button onClick={this.props.logout}>
+            <button id="logout_button" onClick={this.handleLogout}>
                 Log out
             </button>
         )
@@ -20,6 +31,7 @@ class LogoutContainer extends React.Component {
 const mdp = dispatch => {
     return {
         logout: () => dispatch(logout()),
+        hideDropdown: () => dispatch(hideDropdown()),
     }
 }
 

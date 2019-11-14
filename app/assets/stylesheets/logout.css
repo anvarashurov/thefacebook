@@ -1,0 +1,28 @@
+.logout_dropdown {
+    min-width: 100px;
+    height: 30px; 
+    position: relative;
+    z-index: 20;
+    top: 50px;
+    left: 300px;
+    box-sizing: border-box;
+    background-color: #F2F3F5;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#logout_button {
+    color: #1D2129;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    width: 100px;
+    height: 24px;
+    text-align: center;
+}
+
+#logout_button:hover {
+    background-color: #4267b2;
+    color: white;
+}

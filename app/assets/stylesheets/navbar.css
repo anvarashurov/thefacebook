@@ -11,10 +11,13 @@
     display: flex;
     flex-direction: row;
     height: 42px;
-    width: 1000px;
+    min-width: 1000px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+
+    /* TODO: Added this so it won't move on component dropdown */
+    position: absolute;
 }
 
 /* this contains LOGO */

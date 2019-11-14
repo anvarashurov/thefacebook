@@ -8,30 +8,36 @@ import React from 'react';
 class Dropdown extends React.Component {
     constructor(props) {
         super(props);
-        this.renderDropdown = this.renderDropdown.bind(this);
+        // this.renderDropdown = this.renderDropdown.bind(this);
     }
 
     handleClickOutside() {
         this.props.hideDropdown();
     }
 
-    renderDropdown() {
-        switch(this.props.component) {
-            case 'logout':
-                debugger
-                return <LogoutContainer />;
-            default: 
-                return null;
-        }
-    }
-
     render() {
+
+        let component;
+        
+        switch (this.props.component) {
+            case 'logout':
+                component = (
+                    <div className="logout_dropdown">
+                        <LogoutContainer />
+                    </div>)
+                break;
+            // case 'friend'
+
+            // case comment .. now? haha
+            default:
+                component = null;
+                break;
+        }
+  
         return (
-            <div className="dropdown">
-                {  
-                    this.renderDropdown() 
-                }
-            </div>
+            <>
+                {component}
+            </>
         )
     }
 }
