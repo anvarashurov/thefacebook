@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DropdownContainer from '../dropdown/dropdown_container';
 
-const UserNavbar = ({currentUser, logout}) => {
+//  TODO: Understand where to show Container so it renders
 
-    // const handleClick = () => {
-    //     debugger
-    //     document.getElementById("friendship_tab").style.display = 'block';
-    // }
+const UserNavbar = ({currentUser, logout, showDropdown}) => {
+
+    const handleClick = () => {
+        debugger
+        return showDropdown('logout', currentUser.id);
+    }
+
+    debugger
 
     return (
         <div className="main_nav">
@@ -44,14 +49,15 @@ const UserNavbar = ({currentUser, logout}) => {
                     </div>
                     <div className="friends_messages_nots">
                         <span> 
-                            {/* <Link to={`/users/${currentUser.id}/`}>  */}
+                            <Link to={`/users/${currentUser.id}/`}> 
                             {/* <Link to={`/users/${currentUser.id}/friendships`}> */}
                                 {/* TODO: Button will remove Display: none  */}
                                 {/* <button onClick={handleClick()}> */}
+                                {/* <button onClick={handleClick}> */}
                                     <img src={window.friendIcon} alt="friends icon"/>
                                 {/* </button> */}
                             {/* </Link> */}
-                            {/* </Link> */}
+                            </Link>
                         </span>
                         <span> 
                             <Link to={`/users/${currentUser.id}/`}>
@@ -61,14 +67,15 @@ const UserNavbar = ({currentUser, logout}) => {
                     </div>
                     <div className="question_and_more">
                         <span className="dropdown"> 
-                            <Link to={`/users/${currentUser.id}/`}>
+                            <button onClick={handleClick}>
                                 <img src={window.dropdownIcon} alt="drop down icon"/>
-                            </Link>
+                            </button>
                         </span>
                         <input type="submit" id="demo_button" value="L" className="login_button" onClick={logout}/>
                     </div>
                 </div>
             </div>
+            <DropdownContainer />
         </div>
     )
 }

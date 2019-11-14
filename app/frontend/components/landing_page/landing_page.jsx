@@ -21,10 +21,9 @@ class LandingPage extends React.Component {
         if (typeof this.props.currentUser !== 'undefined') {
             page = (
                 // <ProfileContainer logout={this.props.logout} />
-                <HomePage deletePost={this.props.deletePost} pathname={this.props.location.pathname} logout={this.props.logout} currentUser={this.props.currentUser} fetchPosts={this.props.fetchPosts}/>
+                <HomePage showDropdown={this.props.showDropdown} deletePost={this.props.deletePost} pathname={this.props.location.pathname} logout={this.props.logout} currentUser={this.props.currentUser} fetchPosts={this.props.fetchPosts}/>
             )
         } else {
-            
             page = (
                 <div className="landing_page">
                     <LandingPageNavbar />

@@ -7,6 +7,7 @@ const defaultState = {
 };
 
 const dropdownsReducer = (state = defaultState, action) => {
+    debugger
     Object.freeze(state);
     switch(action.type) {
         case SHOW_DROPDOWN:

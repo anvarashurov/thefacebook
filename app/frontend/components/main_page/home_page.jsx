@@ -5,7 +5,7 @@ import CreatePostContainer from '../post/create_post_container';
 import {fetchPosts, logout, deletePost} from '../../actions/session_actions';
 import PostIndexItemContainer from '../post/post_index_item_container';
 
-const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
+const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDropdown}) => {
     // 
     let pages;
     if (pathname === "/") {
@@ -26,7 +26,7 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost}) => {
     }
     return (
         <div className="home_page_items">
-            <UserNavbar currentUser={currentUser} logout={logout} />
+            <UserNavbar showDropdown={showDropdown} currentUser={currentUser} logout={logout} />
             {pages}
         </div>
     );
