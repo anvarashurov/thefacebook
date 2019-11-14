@@ -41,7 +41,7 @@ class UserNavbar extends React.Component {
                     </a>
                     <div className="profile_nav_search">
                         <form>
-                            <input type="text" className="profile_nav_search" name="search" placeholder={currentUser.first_name + " " + currentUser.last_name}/>
+                            <input type="text" className="profile_nav_search" name="search" placeholder={this.props.currentUser.first_name + " " + this.props.currentUser.last_name}/>
                             <button>
                                 <img src={window.questionIcon} />
                             </button>
@@ -49,14 +49,14 @@ class UserNavbar extends React.Component {
                     </div>
                     <div className="profile_nav_navigation">
                         <div className="profile_icon_name_wrapper">
-                            <Link to={`/users/${currentUser.id}`}>
+                            <Link to={`/users/${this.props.currentUser.id}`}>
                                 <span className="profile_nav_image_icon">
-                                    <img src={currentUser.profilePhotoUrl} alt="tiny profile picture"/>
+                                    <img src={this.props.currentUser.profilePhotoUrl} alt="tiny profile picture"/>
                                 </span>
                             </Link>
-                            <Link to={`/users/${currentUser.id}`}>
+                            <Link to={`/users/${this.props.currentUser.id}`}>
                                 <span className="user_first_name">
-                                    {currentUser.first_name}
+                                    {this.props.currentUser.first_name}
                                 </span>
                             </Link>
                         </div>
@@ -67,18 +67,18 @@ class UserNavbar extends React.Component {
                         </div>
                         <div className="friends_messages_nots">
                             <span> 
-                                <Link to={`/users/${currentUser.id}/`}> 
-                                {/* <Link to={`/users/${currentUser.id}/friendships`}> */}
+                                {/* <Link to={`/users/${this.props.currentUser.id}/`}>  */}
+                                {/* <Link to={`/users/${this.props.currentUser.id}/friendships`}> */}
                                     {/* TODO: Button will remove Display: none  */}
                                     {/* <button onClick={handleClick()}> */}
-                                    <button onClick={this.handleClick('friend', currentUser.id)}>
+                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)}>
                                         <img src={window.friendIcon} alt="friends icon"/>
                                     </button>
                                 {/* </Link> */}
-                                </Link>
+                                {/* </Link> */}
                             </span>
                             <span> 
-                                <Link to={`/users/${currentUser.id}/`}>
+                                <Link to={`/users/${this.props.currentUser.id}/`}>
                                     <img src={window.messageIcon} alt="messages icon"/>
                                 </Link>
                             </span>

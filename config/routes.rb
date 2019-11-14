@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:index, :show, :create, :update, :destroy, :edit]
     resources :comments, except: [:new, :edit]
-    resources :friend, only: [:create, :update, :destroy]
+    resources :friends, only: [:create, :update, :destroy]
   end
 end
