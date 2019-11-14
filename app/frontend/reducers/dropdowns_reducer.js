@@ -12,7 +12,7 @@ const dropdownsReducer = (state = defaultState, action) => {
     switch(action.type) {
         case SHOW_DROPDOWN:
             debugger
-            return { 
+            return {
                 component: action.component, componentId: action.componentId, displayed: true
             }
         case HIDE_DROPDOWN:

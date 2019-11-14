@@ -2,6 +2,7 @@
 
 // import onClickOutside from "react-onclickoutside";
 import LogoutContainer from './logout_container';
+import FriendContainer from '../profile/friend/friend_container';
 
 import React from 'react';
 
@@ -21,15 +22,23 @@ class Dropdown extends React.Component {
         
         switch (this.props.component) {
             case 'logout':
+                debugger
                 component = (
                     <div className="logout_dropdown">
                         <LogoutContainer />
                     </div>)
                 break;
-            // case 'friend'
-
+            case 'friend':
+                debugger
+                component = (
+                    <div className="friend_dropdown">
+                        <FriendContainer />
+                    </div>
+                )
+                break;
             // case comment .. now? haha
             default:
+                debugger
                 component = null;
                 break;
         }

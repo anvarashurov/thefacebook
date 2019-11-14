@@ -6,11 +6,6 @@ class Friend extends React.Component {
         super(props);
     }
 
-    // componentDidMount() {
-    //     debugger
-    //     return this.props.fetchAllUsers();
-    // }
-
     render() {
 
         // debugger
@@ -41,6 +36,9 @@ class Friend extends React.Component {
                 user = {arr[0] ? arr[0] : null}
                 // url = {arr[0] ? arr[0].profilePhotoUrl : null}
                 status={arr[1]}
+                updateFriendRequest={this.props.updateFriendRequest}
+                deleteFriendsRequest={this.props.deleteFriendsRequest}
+                currentUser={this.props.currentUser}
                 />
         })
         // okay closing windows..
@@ -49,20 +47,20 @@ class Friend extends React.Component {
 // my cpu is lagging
 //  - Mr. Robert Ku ladies and gentlemen
         return (
-            <div id="friendship_tab" style={{width: '300px', height: '300px', display: 'none'}}>
+            <div className="friendship_tab">
                 <div className="friendship_tab_text">
                     <span>
                         Friend Requests
                     </span> 
-                    {/* TODO: Find Friends */}
                 </div>
                 {allFriendships}
-                <div>
+                {/* <div>
                     People You Know Know
-                </div>
-                <div>
-                    {/* TODO: Add other users */}
-                </div>
+                #TODO
+                </div> */}
+                {/* <div>
+                #TODO
+                </div> */}
             </div>
         )
     }

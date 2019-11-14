@@ -1,4 +1,5 @@
 export const createFriendRequest = (senderId, receiverId) => {
+    debugger
     return $.ajax({
         method: "POST",
         url: 'api/friend',
@@ -12,9 +13,10 @@ export const createFriendRequest = (senderId, receiverId) => {
 }
 
 export const updateFriendRequest = (senderId, receiverId) => {
+    debugger    
     return $.ajax({
         method: "PATCH",
-        url: 'api/friend',
+        url: `api/friend/${receiverId}`,
         data: {
             friend: {
                 friend_sender: senderId,
@@ -25,9 +27,10 @@ export const updateFriendRequest = (senderId, receiverId) => {
 }
 
 export const deleteFriendRequest = (senderId, receiverId) => {
+    debugger    
     return $.ajax({
         method: "DELETE",
-        url: 'api/friend',
+        url: `api/friend/${receiverId}`,
         data: {
             friend: {
                 friend_sender: senderId,

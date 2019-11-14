@@ -1,0 +1,124 @@
+.friend_dropdown {
+    height: auto; 
+    
+    position: relative;
+    z-index: 20;
+    
+    top: 110px;
+    left: 185px;
+    
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.friendship_tab {
+    background-color: #F2F3F5;
+    width: 400px;
+}
+
+.friendship_tab_text {
+    color: #333333;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 8px 12px 6px;
+    border-bottom: rgb(221, 223, 226);
+    background-color: #FFFF;
+}
+
+.single_friend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccd0d5;   
+}
+
+.single_friend_left_child {
+    display: flex;
+    flex-direction: row;
+}
+
+.single_friend_right_child {
+    display: flex;
+    flex-direction: row;
+}
+
+.friend_img_container {
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 1;
+    border:  1px solid rgb(220, 220, 223);
+    margin-right: 5px;
+}
+
+.user_full_name {
+    display: flex;
+    align-items: center;
+}
+
+.user_full_name > a {
+    color: #385898;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}
+
+.user_full_name a span {
+    margin: 3px;
+}
+
+#add_friend_button {
+    box-sizing: border-box;
+    color: white;
+    width: 98px;
+    height: 24px;
+    text-align: center;
+    background-color: #4267B2;
+    border: 1px solid #4267B2;
+    border-radius: 2px;
+    align-items: center;
+    padding: 0px 8px;
+    box-sizing: border-box;
+}
+
+#add_friend_button > span {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+ 
+#remove_friend_button {
+    box-sizing: border-box;
+    color: white;
+    width: 65px;
+    height: 24px;
+    text-align: center;
+    background-color: #F5F6F7;
+    border: 1px solid #ccd0d5;
+    border-radius: 2px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    margin: 3px;
+}
+
+#remove_friend_button > span {
+    color: #4B4F56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+

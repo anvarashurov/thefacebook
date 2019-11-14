@@ -1,5 +1,5 @@
 # Do we retrieve friend requests sent via assoc?
-class Api::FriendController < ApplicationController
+class Api::FriendsController < ApplicationController
     def create
         # friend_sender = current_user.id
         @friend = Friend.new(friend_params)
@@ -14,6 +14,7 @@ class Api::FriendController < ApplicationController
     end
 
     def update
+        debugger
         @friend = current_user.friend_requests_sent.find_by(friend_sender: params[:id])
         if @friend
             if @friend.status == "PENDING"
@@ -25,6 +26,7 @@ class Api::FriendController < ApplicationController
     end
 
     def destroy
+        debugger
         @friend = current_user.friend_requests_sent.find_by(friend_sender: params[:id]) ||
                   current_user.friend_requests_received.find_by(friend_receiver: params[:id])
         @friend.destroy

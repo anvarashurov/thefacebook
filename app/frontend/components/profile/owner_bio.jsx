@@ -121,7 +121,7 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
             <div className="thought_icon_and_text">
                 <img src={window.commentIcon} alt="C"/>
                 {introText}
-                <button id="intro_button" onClick={() => openModal("edit_profile")}>{introButton}</button>
+                <button id="intro_button" onClick={() => openModal({type: "edit_profile"})}>{introButton}</button>
             </div>
             <div className="add_bio_upper_border"></div>
             <table>

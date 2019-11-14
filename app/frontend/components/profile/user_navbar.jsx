@@ -17,12 +17,12 @@ class UserNavbar extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(component) {
+    handleClick(component, componentId) {
         //  TODO: Learn why "maximum update error" when NOT callback
         return () => {
             if(this.props.displayed === false) {
                 debugger
-                return this.props.showDropdown(component);
+                return this.props.showDropdown(component, componentId);
             } else {
                 debugger
                 return this.props.hideDropdown();
@@ -71,9 +71,9 @@ class UserNavbar extends React.Component {
                                 {/* <Link to={`/users/${currentUser.id}/friendships`}> */}
                                     {/* TODO: Button will remove Display: none  */}
                                     {/* <button onClick={handleClick()}> */}
-                                    {/* <button onClick={handleClick}> */}
+                                    <button onClick={this.handleClick('friend', currentUser.id)}>
                                         <img src={window.friendIcon} alt="friends icon"/>
-                                    {/* </button> */}
+                                    </button>
                                 {/* </Link> */}
                                 </Link>
                             </span>

@@ -142,14 +142,14 @@
 
 .friends_messages_nots img:hover {
     color: white;
-    animation: glow 1.5s linear infinite alternate;
+    /* animation: glow 1.5s linear infinite alternate; */
 }
 
-@keyframes glow{
+/* @keyframes glow{
   to {
     box-shadow: 0px 0px 10px 10px #535FED;
   }
-}
+} */
 
 .question_and_more {
     display: flex;
