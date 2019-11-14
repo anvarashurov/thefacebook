@@ -30,7 +30,7 @@ const Modal = ({ modal, closeModal }) => {
         case 'edit_post':
             debugger
             component = (
-                <div className="create_post_modal" onClick={e => e.stopPropagation()}>
+                <div className="edit_post_modal" onClick={e => e.stopPropagation()}>
                     <EditPostFormContainer post={modal.post}/>
                 </div>
             )

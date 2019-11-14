@@ -42,8 +42,7 @@ class CreatePost extends React.Component {
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        // TODO: Close Modal implementation here
-        return this.props.createPost(formData).then(() => this.clearForm());
+        return this.props.createPost(formData).then(() => this.props.closeModal());
     }
 
     handleChange() {
@@ -92,7 +91,8 @@ class CreatePost extends React.Component {
                     </ul>
                         <div className="create_post_area">
                             <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
-                            <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal("create_post")}></textarea>
+                            {/* TODO: Each click is OPEN MODAL. FIX IT. */}
+                            <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal({type: "create_post", post: null})}></textarea>
                         </div>
                         <input id="create_post_button" type="submit" value="Post"/>
                         

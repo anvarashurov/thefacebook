@@ -26,9 +26,21 @@
   width: 630px;
   height: 900px;
   box-sizing: border-box;
+
 }
+
 
 /* .modal_child {
     max-height: calc(100vh - 210px);
     overflow-y: auto;
 } */
+
+.edit_post_modal {
+  top: 93%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  width: 630px;
+  height: 900px;
+  box-sizing: border-box;
+}

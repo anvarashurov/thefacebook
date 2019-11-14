@@ -39,9 +39,9 @@ class EditPostForm extends React.Component {
                         <span>
                             Edit Post
                         </span>
-                        <span>
+                        <button onClick={this.handleExit}>
                             &#10006;
-                        </span>
+                        </button>
                     </div>
                     <div className="create_post_area">
                         <img src={this.props.author.profilePhotoUrl} style={{ width: '60px', height: '60px' }} />
