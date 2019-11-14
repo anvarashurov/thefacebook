@@ -21,10 +21,10 @@ class UserNavbar extends React.Component {
         //  TODO: Learn why "maximum update error" when NOT callback
         return () => {
             if(this.props.displayed === false) {
-                debugger
+                // debugger
                 return this.props.showDropdown(component, componentId);
             } else {
-                debugger
+                // debugger
                 return this.props.hideDropdown();
             }
         }
@@ -100,7 +100,7 @@ class UserNavbar extends React.Component {
 }
 
 const msp = (state) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.currentUserId],
         dropdown: state.ui.dropdown,
@@ -108,7 +108,7 @@ const msp = (state) => {
     }
 }
 const mdp = dispatch => {
-    debugger
+    // debugger
     return {
         logout: () => dispatch(logout()),
         showDropdown: (component, componentId) => dispatch(showDropdown(component, componentId)),

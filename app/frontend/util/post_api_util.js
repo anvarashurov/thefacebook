@@ -23,7 +23,7 @@ export const fetchPosts = () => {
 }
 
 export const updatePost = (post) => {
-    debugger
+    // debugger
     return $.ajax({
         method: "PATCH",
         url: `api/posts/${post.id}`,

@@ -2,7 +2,7 @@ import React from 'react';
 
 class EditPostForm extends React.Component {
     constructor(props) {
-        debugger
+        // debugger
         super(props);
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,7 +12,7 @@ class EditPostForm extends React.Component {
     }
 
     handleChange() {
-        debugger
+        // debugger
         return e => {
             this.setState({ content: e.target.value });
         };
@@ -30,7 +30,7 @@ class EditPostForm extends React.Component {
 
     render() {
 
-        debugger
+        // debugger
 
         return (
             <div className="edit_post_container">

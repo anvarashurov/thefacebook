@@ -11,13 +11,13 @@ const mapStateToProps = (state, ownProps) => {
     let friendReceived = [];
     
     // currentUser.friendRequestSentToIds.forEach((arr) => {
-    //     debugger
+    //     // debugger
     //     friendSent.push([state.entities.users[arr[0]], arr[1]]);
     // })
 
     
     currentUser.friendRequestReceivedFromIds.forEach( arr => {
-        debugger
+        // debugger
         friendReceived.push([state.entities.users[arr[0]], arr[1]]);
     })
 

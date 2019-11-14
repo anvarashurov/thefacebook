@@ -14,7 +14,9 @@ user.friend_requests_sent.each do |friend|
 end
 
 user.friend_requests_received.each do |friend|
-    friendRequestReceivedFromIds << [friend.friend_sender, friend.status] if friend.status == "PENDING"
+    if (friend.status == "PENDING") && (friend.id != current_user.id)
+        friendRequestReceivedFromIds << [friend.friend_sender, friend.status]
+    end
 end
 
 json.friendRequestSentToIds friendRequestSentToIds

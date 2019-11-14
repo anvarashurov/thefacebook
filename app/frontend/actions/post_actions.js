@@ -14,11 +14,11 @@ export const fetchPost = postId => dispatch => {
     return APIPostUtil.fetchPost(postId).then(post => dispatch(receivePost(post)))
 }
 export const deletePost = postId => dispatch => {
-    debugger
+    // debugger
     return APIPostUtil.deletePost(postId).then((post) => dispatch(removePost(post.id)))
 }
 export const updatePost = post => dispatch => {
-    debugger
+    // debugger
     return APIPostUtil.updatePost(post).then((post) => dispatch(receivePost(post)))
 }
 

@@ -5,7 +5,7 @@ import EditPostForm from './edit_post_form';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
-    debugger
+    // debugger
 
     let post = state.ui.modal.post;
     let author = state.entities.users[post.authorId];
@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return {
         updatePost: post => dispatch(updatePost(post)),
         closeModal: () => dispatch(closeModal()),

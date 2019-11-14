@@ -8,8 +8,6 @@ class Friend extends React.Component {
 
     render() {
 
-        // debugger
-
         // if(this.props.users.length === 1) {
         //     return null;
         // }
@@ -31,7 +29,7 @@ class Friend extends React.Component {
 
         const allFriendships = this.props.friendReceived.map((arr, idx) => {
             // [ [user, status] ]
-            debugger
+            // debugger
             return <FriendItem key={idx}
                 user = {arr[0] ? arr[0] : null}
                 // url = {arr[0] ? arr[0].profilePhotoUrl : null}
@@ -43,7 +41,7 @@ class Friend extends React.Component {
         })
         // okay closing windows..
         
-        debugger
+        // debugger
 // my cpu is lagging
 //  - Mr. Robert Ku ladies and gentlemen
         return (

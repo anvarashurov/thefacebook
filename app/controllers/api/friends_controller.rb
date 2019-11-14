@@ -14,7 +14,6 @@ class Api::FriendsController < ApplicationController
     end
 
     def update
-        debugger
         @friend = current_user.friend_requests_received.find_by(friend_sender: params[:id])
         if @friend
             if @friend.status == "PENDING"
@@ -28,7 +27,6 @@ class Api::FriendsController < ApplicationController
     end
 
     def destroy
-        debugger
         @friend = current_user.friend_requests_sent.find_by(friend_sender: params[:id]) ||
                   current_user.friend_requests_received.find_by(friend_receiver: params[:id])
         @friend.destroy

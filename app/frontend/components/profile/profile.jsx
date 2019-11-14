@@ -18,9 +18,14 @@ class Profile extends React.Component {
     }
 
     render() {
-        if(this.props.users.length === 1) { 
-            return null;
-        }
+
+
+        debugger
+
+
+        // if(this.props.users.length === 1) { 
+        //     return null;
+        // }
         
         let users = this.props.users;
     

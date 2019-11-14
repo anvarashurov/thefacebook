@@ -4,8 +4,10 @@
     position: relative;
     z-index: 20;
     
-    top: 110px;
+    top: 50px;
     left: 185px;
+
+    height: 0px;
     
     box-sizing: border-box;
     
@@ -17,6 +19,8 @@
 .friendship_tab {
     background-color: #F2F3F5;
     width: 400px;
+    position: relative;
+    top: 80px; 
 }
 
 .friendship_tab_text {

@@ -3,7 +3,7 @@ import { hideDropdown } from '../../actions/dropdowns_actions';
 import Dropdown from './dropdown';
 
 const msp = state => {
-    debugger
+    // debugger
     return {
         component: state.ui.dropdown.component,
         componentId: state.ui.dropdown.componentId,
@@ -11,7 +11,7 @@ const msp = state => {
 };
 
 const mdp = dispatch => {
-    debugger
+    // debugger
     return {
         hideDropdown: () => dispatch(hideDropdown())
     };

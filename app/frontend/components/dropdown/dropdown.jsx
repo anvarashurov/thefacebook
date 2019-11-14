@@ -22,14 +22,14 @@ class Dropdown extends React.Component {
         
         switch (this.props.component) {
             case 'logout':
-                debugger
+                // debugger
                 component = (
                     <div className="logout_dropdown">
                         <LogoutContainer />
                     </div>)
                 break;
             case 'friend':
-                debugger
+                // debugger
                 component = (
                     <div className="friend_dropdown">
                         <FriendContainer />
@@ -38,7 +38,7 @@ class Dropdown extends React.Component {
                 break;
             // case comment .. now? haha
             default:
-                debugger
+                // debugger
                 component = null;
                 break;
         }

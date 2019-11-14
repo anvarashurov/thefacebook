@@ -46,7 +46,7 @@ class CreatePost extends React.Component {
     }
 
     handleChange() {
-        debugger
+        // debugger
         return e => {
             this.setState({content: e.target.value});
         };

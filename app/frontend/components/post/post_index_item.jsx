@@ -41,7 +41,7 @@ const PostIndexItem = (props) => {
     // }
 
     let postOptions;
-    debugger
+    // debugger
     if(props.currentUser.id === props.postOwner.id) {
         postOptions = (
         <div>

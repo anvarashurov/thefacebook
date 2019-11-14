@@ -9,7 +9,7 @@ class PostIndex extends React.Component {
     }
     render() {
 
-        debugger 
+        // debugger 
 
         let myId = this.props.postOwner.id;
         let myPosts = [];
