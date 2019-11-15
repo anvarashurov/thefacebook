@@ -9,17 +9,6 @@ import FriendContainer from '../components/profile/friend/friend_container';
 const App = () => (
   <div>
     <ModalContainer/>
-    {/* <Route path={`/users/:id/friendships`} component={FriendContainer} /> */}
-    {/* <Switch>
-      <FriendContainer/>
-      <LandingPageContainer/>
-    </Switch> */}
-    {/* <Route path={`/users/:id/friendships`} >
-      <Navbar />
-      <FriendContainer />
-   </Route> */}
-    {/* / ==> NavBar and LandingPage */}
-    {/* /users/id/friendships ==> NavBar and FriendContainer */}
     <Route path="/" component={LandingPageContainer} />
     <ProtectedRoute path="/users/:id" component={ProfileContainer}/>
   </div>
