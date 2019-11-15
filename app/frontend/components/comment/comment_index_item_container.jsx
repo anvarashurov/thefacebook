@@ -1,27 +1,27 @@
-// // what do we need inside comment_index component?
+// what do we need inside comment_index component?
 
-// // fetch all comments
+// fetch all comments
 
-// // owner of comment
+// owner of comment
 
-// import { connect } from 'react-redux';
-// import CommentIndex from './comment_index';
+import { connect } from 'react-redux';
+import CommentIndex from './comment_index';
 
-// import { fetchComments, deleteComment } from '../../actions/comment_actions';
+import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
-// const mapStateToProps = (state, ownProps) => {
-//     return {
-//         comments: Object.values(state.entities.comments),
-//         commentOwner: state.entities.users[state.session.currentUserId],
-//         postId: ownProps.postId,
-//     }
-// }
+const mapStateToProps = (state, ownProps) => {
+    return {
+        comments: Object.values(state.entities.comments),
+        commentOwner: state.entities.users[state.session.currentUserId],
+        postId: ownProps.postId,
+    }
+}
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchComments: () => dispatch(fetchComments()),
-//         deleteComment: (commentId) => dispatch(deleteComment(commentId)),
-//     }    
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchComments: () => dispatch(fetchComments()),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+    }    
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);
