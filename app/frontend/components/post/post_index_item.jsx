@@ -136,7 +136,7 @@ debugger
                         </li>
                     </div>
                 </div>
-                <CommentIndexItemContainer postId={props.post.id}/>
+                <CommentIndexItemCwontainer postId={props.post.id}/>
                 <CreateCommentContainer postId={props.post.id}/>
             </div>
         

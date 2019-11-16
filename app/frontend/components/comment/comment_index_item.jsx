@@ -6,16 +6,30 @@ import CreateCommentContainer from '../comment/create_comment_container';
 const CommentIndexItem = (props) => {
 
     function formatHour(date) {
-        let allMonths = "January February March April May June July August September October November December".split(" ");
-        let month = allMonths[date.getMonth()];
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
-        return strTime;
+        // let allMonths = "January February March April May June July August September October November December".split(" ");
+        // let month = allMonths[date.getMonth()];
+        // let hours = date.getHours();
+        // let minutes = date.getMinutes();
+        // let ampm = hours >= 12 ? 'PM' : 'AM';
+        // hours = hours % 12;
+        // hours = hours ? hours : 12;
+        // minutes = minutes < 10 ? '0' + minutes : minutes;
+        // let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
+        // return strTime;
+        let time;
+        let d = Date.now();
+        let millis = d - date;
+        if(millis / 1000 < 60) {
+            // is less than 60 seconds
+            time = `${Math.floor(millis / 1000)}s`;
+        } else if(millis / 1000 < 3600) {
+            // is less than 1 hour
+            time = `${Math.floor(millis / 60000)}m`;
+        } else {
+            // is less than a day
+            time = `${Math.floor(millis / (1000*60*60*24))}d`
+        }
+        return time
     }
 
     // convert to Date object
