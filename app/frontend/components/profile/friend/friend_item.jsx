@@ -25,12 +25,12 @@ const FriendItem = (props) => {
                 <div className="single_friend_child_right">
                     <button id="add_friend_button" onClick={() => props.updateFriendRequest(props.currentUser.id, props.user.id)}>
                         <span>
-                            Add Friend 
-                        </span> 
+                            Add Friend
+                        </span>
                     </button>
                     <button id="remove_friend_button" onClick={() => props.deleteFriendRequest(props.currentUser.id, props.user.id)}> 
                         <span>
-                            Remove 
+                            Remove
                         </span>
                     </button>
                 </div>

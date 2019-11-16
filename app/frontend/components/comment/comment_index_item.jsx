@@ -18,16 +18,19 @@ const CommentIndexItem = (props) => {
         // return strTime;
         let time;
         let d = Date.now();
-        let millis = d - date;
-        if(millis / 1000 < 60) {
+        let sec = Math.floor((d - date) / 1000);
+        if(sec < 60) {
             // is less than 60 seconds
-            time = `${Math.floor(millis / 1000)}s`;
-        } else if(millis / 1000 < 3600) {
-            // is less than 1 hour
-            time = `${Math.floor(millis / 60000)}m`;
-        } else {
+            time = `${sec}s`;
+        } else if(sec < (60*60)) {
+            // is less than 60 mins
+            time = `${Math.floor(sec/60)}m`;
+        } else if(sec < (60*60*24)) {
+            time = `${Math.floor(sec/(60*60))}h`;
+        }        
+        else {
             // is less than a day
-            time = `${Math.floor(millis / (1000*60*60*24))}d`
+            time = `${Math.floor(sec/(60*60*24))}d`
         }
         return time
     }
