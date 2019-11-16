@@ -2,17 +2,24 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import PostIndex from './post_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
+import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = (state, postOwner) => {
+const mapStateToProps = (state, ownProps) => {
+    debugger
+
+    //  The fuck is the point of PostOwner?
+    // let owner;
     
-    let owner;
-    
-    typeof postOwner.postOwner.id !== 'undefined' ? owner = postOwner.postOwner.id : owner = postOwner.postOwner;
+    // typeof ownProps.postOwner.id !== 'undefined' ? owner = ownProps.postOwner.id : owner = ownProps.postOwner;
 
     return {
-        posts: Object.values(state.entities.posts),
-        postOwner: state.entities.users[owner],
+        //  TODO adding ownProps instead of postOwner in Args. Also see if this is legit.
+        profileOwner: state.entities.users[parseInt(ownProps.match.path.slice(7))],
         currentUser: state.entities.users[state.session.currentUserId],
+        posts: Object.values(state.entities.posts),
+        users: state.entities.users,
+        
+        // postOwner: state.entities.users[owner],
     }
 }
 
@@ -23,4 +30,4 @@ const mapDispatchToProps = dispatch => ({
     // openModal: () => (str) => dispatch(openModal(str)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));

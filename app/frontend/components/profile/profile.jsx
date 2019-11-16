@@ -19,13 +19,11 @@ class Profile extends React.Component {
 
     render() {
 
-
         debugger
 
-
-        // if(this.props.users.length === 1) { 
-        //     return null;
-        // }
+        if(this.props.users.length === 1) { 
+            return null;
+        }
         
         let users = this.props.users;
     
@@ -69,6 +67,7 @@ class Profile extends React.Component {
                                 currentUser={this.props.currentUser} 
                             />
                         </Route>
+                        {/* TODO: SHOW FRIENDS HERE JUST LIKE ABOUT SECTION */}
                     </Switch>
                 </div>
             </div>

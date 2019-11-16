@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 import Modal from './modal'
 import { closeModal } from '../../actions/modal_actions';
+import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = state => {
-    // debugger
+const mapStateToProps = (state, ownProps) => {
+    debugger
     return {
+        profileOwner: state.entities.users[parseInt(ownProps.location.pathname.slice(7))],
+        currentUser: state.entities.users[state.session.currentUserId],
         modal: state.ui.modal
     };
 };
@@ -15,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

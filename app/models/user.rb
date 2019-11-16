@@ -14,6 +14,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
+  has_many :received_post,
+    class_name: "Post",
+    foreign_key: :receiver_id,
+    primary_key: :id
+
   has_many :authored_comment,
     class_name: "Comment",
     foreign_key: :author_id,

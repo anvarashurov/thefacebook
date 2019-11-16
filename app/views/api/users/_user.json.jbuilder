@@ -1,6 +1,9 @@
-json.extract! user, :id, :first_name, :last_name, :email_address, :workplace, :bio, :school, 
-:hometown, :current_city, :rel_status
+json.extract! user, :id, :first_name, :last_name, :email_address, :workplace, :bio, :school, :hometown, :current_city, :rel_status
+
 json.authoredPostIds user.authored_post_ids
+
+json.receivedPostIds user.received_post_ids
+
 json.authoredCommentIds user.authored_comment_ids
 
 json.profilePhotoUrl user.profilePhoto.attached? ? url_for(user.profilePhoto) : nil

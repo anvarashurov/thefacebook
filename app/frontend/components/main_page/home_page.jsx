@@ -17,10 +17,11 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDr
                         <img src={currentUser.profilePhotoUrl}/>
                         <Link to={`/users/${currentUser.id}`}>{currentUser.first_name + " " + currentUser.last_name}</Link>
                     </div>
-                    <CreatePostContainer deletePost={deletePost} />
+                    {/* TODO */}
+                    {/* <CreatePostContainer deletePost={deletePost} /> */}
                 </div>
                 <div className="all_posts">
-                    <PostIndexItemContainer postOwner={currentUser} deletePost={deletePost} />
+                    {/* <PostIndexItemContainer postOwner={currentUser} deletePost={deletePost} /> */}
                 </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import { create } from 'domain';
+// import {withRouter} from 'react-router-dom';
 
 class CreatePost extends React.Component {
 
@@ -39,6 +40,12 @@ class CreatePost extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[content]', this.state.content);
+        // reeiverId is 0 meaning this post was made on their own wall.
+        if(this.props.profileOwner.id === this.props.currentUser.id) {
+            formData.append('post[receiver_id]', this.props.currentUser.id)    
+        } else {
+            formData.append('post[receiver_id]', this.props.profileOwner.id)                
+        }
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
@@ -71,6 +78,17 @@ class CreatePost extends React.Component {
             createPostImg = null;
         }
 
+        let placeholderText;
+
+        if(this.props.profileOwner.id !== this.props.currentUser.id) {
+            placeholderText = `Let's post something on ${this.props.profileOwner.first_name}'s wall :)`;
+        } else {
+            placeholderText = `What's on your mind, ${this.props.currentUser.first_name}?`;
+        }
+
+        // NEVER move the Component. Always wrap it around DIV / DIV so you can move DIV
+        // thus reusing the CSS!
+
         return (
             <div className="create_post_container">
                 <form onSubmit={this.handleSubmit}>
@@ -92,14 +110,12 @@ class CreatePost extends React.Component {
                         <div className="create_post_area">
                             <img src={this.props.currentUser.profilePhotoUrl} alt="P" style={{ width: '60px', height: '60px' }}/>
                             {/* TODO: Each click is OPEN MODAL. FIX IT. */}
-                            <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?" onClick={() => this.props.openModal({type: "create_post", post: null})}></textarea>
+                            <textarea onChange={this.handleChange()} value={this.state.content} placeholder={placeholderText} onClick={() => this.props.openModal({type: "create_post", post: null})}></textarea>
                         </div>
                         <input id="create_post_button" type="submit" value="Post"/>
                         
                         {/* TODO: Work on Displaying Image before posting */}
                         {/* {createPostImg} */}
-
-
                 </form>
             </div>
         )

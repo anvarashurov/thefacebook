@@ -42,9 +42,10 @@ const PostIndexItem = (props) => {
 
     let postOptions;
     // debugger
-    if(props.currentUser.id === props.postOwner.id) {
+    // postOwner.id previously
+    if(props.currentUser.id === props.profileOwner.id || props.currentUser.id === props.post.authorId) {
         postOptions = (
-        <div>
+        <div className="post_options">
             <button onClick={() => props.openModal({type: 'edit_post', post: props.post})}>
                 <img src={window.edit} alt=""/>
             </button>
@@ -54,21 +55,49 @@ const PostIndexItem = (props) => {
         </div>
         )
     } else { postOptions = null }
+
+    // Authors
+
+    let authors;
+    let postAuthor;
+    debugger
+    if(props.post.receiverId === props.profileOwner.id && props.post.authorId !== props.profileOwner.id) {
+        postAuthor = props.users[props.post.authorId];
+        authors = (
+            <div className="authors">
+                {/* <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name} > </span> 
+                <span className="post_author">{props.profileOwner.first_name + " " + props.profileOwner.last_name}</span> */}
+                <Link to={`/users/${postAuthor.id}`}>
+                    <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} > </span>
+                </Link>
+                <Link to={`/users/${props.profileOwner.id}`}>
+                    <span className="post_author">{props.profileOwner.first_name + " " + props.profileOwner.last_name}</span>
+                </Link>
+            </div>
+        )
+    } else {
+        postAuthor = props.profileOwner;
+        authors = (
+            <Link to={`/users/${postAuthor.id}`}>
+                <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name}</span>
+            </Link>
+        )
+    }
     
     return (
         <>
             <div className="one_post">
-                <div>
-                    <Link to={`/users/${props.postOwner.id}`}>
-                        <img className="post_author_profile" src={props.postOwner.profilePhotoUrl}/>
-                    </Link>
-                    <div className="name_date_container">
-                        <Link to={`/users/${props.postOwner.id}`}>
-                            <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name}</span>
+                <div className="one_post_left_child">
+                    <div>
+                        <Link to={`/users/${postAuthor.id}`}>
+                            <img className="post_author_profile" src={postAuthor.profilePhotoUrl}/>
                         </Link>
-                        <span>
-                            {timeOfPost}
-                        </span>
+                        <div className="name_date_container">
+                            {authors}
+                            <span>
+                                {timeOfPost}
+                            </span>
+                        </div>
                     </div>
                     {/* <div className="triple">
                         <img className="trippledots" src={window.trippledots} alt="T"/>

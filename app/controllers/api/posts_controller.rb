@@ -9,6 +9,8 @@ class Api::PostsController < ApplicationController
         end
     end
     def index
+        # TODO: Figure out the usage of "includes"
+        # debugger
         @posts = Post.all
         if @posts
             render '/api/posts/index'
@@ -56,6 +58,6 @@ class Api::PostsController < ApplicationController
     end
 
     def post_params 
-        params.require(:post).permit(:content, :photo)
+        params.require(:post).permit(:content, :receiver_id, :photo)
     end
 end

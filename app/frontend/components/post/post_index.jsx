@@ -11,12 +11,15 @@ class PostIndex extends React.Component {
 
         // debugger 
 
-        let myId = this.props.postOwner.id;
+        // let myId = parseInt(this.props.postOwner.id);
+        let myId = parseInt(this.props.profileOwner.id);
         let myPosts = [];
         let allPosts = this.props.posts;
 
+        // TODO: Bruuh seriously? the fuck is the point of authoredPostIds???? Dumbass
+
         for(let i = 0; i < allPosts.length; i++) {
-            if (allPosts[i].authorId === parseInt(myId)) {
+            if ((allPosts[i].authorId === myId && allPosts[i].receiverId === myId) || (allPosts[i].receiverId === myId && allPosts[i].authorId !== myId)) {
                 myPosts.push(allPosts[i]);
             }
         }
@@ -25,11 +28,14 @@ class PostIndex extends React.Component {
             return <PostIndexItem 
                 post={post} 
                 key={post.id} 
-                postOwner={this.props.postOwner}
+                users ={this.props.users}
+                // postOwner={this.props.postOwner}
                 currentUser = {this.props.currentUser}
+                profileOwner = {this.props.profileOwner}
+                
                 deletePost = {this.props.deletePost}
-                closeModal = {this.props.closeModal}
                 openModal = {this.props.openModal}
+                closeModal = {this.props.closeModal}
                 />
         })
 

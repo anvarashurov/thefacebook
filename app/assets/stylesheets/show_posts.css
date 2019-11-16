@@ -17,7 +17,16 @@
     flex-direction: column;   
 }
 
-.one_post > div {
+/*  */
+
+.one_post_left_child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*  */
+.one_post_left_child > div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -117,4 +126,26 @@
 
 .comment_form_profile {
     border: 1px solid rgb(220, 220, 223);
+}
+
+
+/* authors two post show */
+
+.authors {
+    display: flex;
+    flex-direction: row;
+}
+
+.authors a span {
+    margin-right: 3px;
+}
+
+.post_options {
+    margin-right: 10px;
+    position: relative;
+    top: -10px;
+}
+
+.post_options button {
+    margin-left: 7px;
 }
