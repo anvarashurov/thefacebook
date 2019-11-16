@@ -9,6 +9,10 @@ json.authoredCommentIds user.authored_comment_ids
 json.profilePhotoUrl user.profilePhoto.attached? ? url_for(user.profilePhoto) : nil
 json.coverPhotoUrl user.coverPhoto.attached? ? url_for(user.coverPhoto) : nil
 
+#careful
+
+json.photoUrls user.photos.map {|file| url_for(file)}
+
 friendRequestSentToIds = []
 friendRequestReceivedFromIds = []
 

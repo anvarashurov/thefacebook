@@ -36,6 +36,8 @@ class User < ApplicationRecord
 
   has_one_attached :profilePhoto
   has_one_attached :coverPhoto
+  
+  has_many_attached :photos
   # has_one_attached :video
   
   def self.find_by_credentials(email, password)

@@ -37,6 +37,9 @@ class Dropdown extends React.Component {
                 )
                 break;
             // case comment .. now? haha
+            // TODO : Add drop down for post options
+            // case 'post_options':
+
             default:
                 // debugger
                 component = null;
