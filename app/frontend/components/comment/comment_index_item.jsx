@@ -83,9 +83,9 @@ const CommentIndexItem = (props) => {
                             {commentCreatedAt}
                         </span>
                     </div>
-
-                    {replyContainer}
-
+                    <div>
+                        {replyContainer}
+                    </div>
                 </div>
             </div>
             {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
