@@ -1,13 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import { deleteComment } from '../../actions/comment_actions';
-// import CreateCommentContainer from '../comment/create_comment_container';
+import CreateCommentContainer from '../comment/create_comment_container';
 const CommentIndexItem = (props) => {
 
+    function formatHour(date) {
+        let allMonths = "January February March April May June July August September October November December".split(" ");
+        let month = allMonths[date.getMonth()];
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
+        return strTime;
+    }
+
+    // convert to Date object
+    // let date = new Date(props.post.extra);
+    debugger
     let commentCreatedAt = new Date(props.comment.createdAt);
-    commentCreatedAt = commentCreatedAt.toDateString();
-    commentCreatedAt = commentCreatedAt.slice(4, commentCreatedAt.length);
+    commentCreatedAt = formatHour(commentCreatedAt);
+    // commentCreatedAt = commentCreatedAt.slice(4, commentCreatedAt.length);
+
+    // let replyContainer = null;
+
+    const [replyContainer, setReplyContainer] = useState(null);
+
+    function handleReply() {
+        debugger
+        // TODO : more sophisticated reply container that disappears after commenting
+        if(replyContainer === null) {
+            setReplyContainer(
+                <div className="reply_form">
+                    <CreateCommentContainer /> 
+                </div>
+            )
+        } else {
+            setReplyContainer(null);
+        }
+    }
 
     return (
         <div className="one_comment">
@@ -25,16 +59,18 @@ const CommentIndexItem = (props) => {
                     </div>
                     
                     <div className="comment_footer">
-                        <a >
+                        <button>
                             Like
-                        </a>
-                        <a >
+                        </button>
+                        <button onClick={handleReply}>
                             Reply
-                        </a>
+                        </button>
                         <span>
                             {commentCreatedAt}
                         </span>
                     </div>
+
+                    {replyContainer}
 
                 </div>
             </div>

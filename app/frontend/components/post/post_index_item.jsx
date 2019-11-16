@@ -15,14 +15,26 @@ const PostIndexItem = (props) => {
     } else if (numComments > 1) {
         output = numComments + " " + "Comments";
     }
+debugger
+
+    function formatHour(date) {
+        let allMonths = "January February March April May June July August September October November December".split(" ");
+        let month = allMonths[date.getMonth()];
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
+        return strTime;
+    }
 
     // convert to Date object
-    let timeOfPost = new Date(props.post.extra);
-    // to save it as a string (only date part)
-    timeOfPost = timeOfPost.toDateString();
-    // to get Oct 22 2019
-    timeOfPost = timeOfPost.slice(4, timeOfPost.length);
-
+    let date = new Date(props.post.extra);
+    
+    
+    let timeOfPost = formatHour(date);
 
     let url;
     if(props.post.photoURL) {
