@@ -89,6 +89,7 @@ class EditProfile extends React.Component {
         formData.append('user[bio]', this.state.bio);
 
         this.props.closeModal();
+        // TODO: WTF is currentUser doing without anything preceding it?
         return this.props.updateUser(formData, currentUser);
     }
 

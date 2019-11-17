@@ -1,20 +1,26 @@
-// import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
-// import { updateUser } from '../../../util/user_api_util';
-// // import UploadPhoto from '';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { updateUser } from '../../../actions/session_actions';
+import UploadPhoto from './upload_photo';
+import {closeModal} from '../../../actions/modal_actions';
 
-// const msp = (state, ownProps) => {
-//     debugger
-//     return {
-//         profileOwner: state.entities.users[ownProps.match.params.id],
-//     }
-// }
+const msp = (state, ownProps) => {
+    debugger
+    let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
+    return {
+        profileOwner,
+        currentUser: state.entities.users[state.session.currentUserId],
+        // existing list of photosUrl
+        photosArr: profileOwner.photosUrl,
+    }
+}
 
-// const mdp = dispatch => {
-//     debugger 
-//     return {
-//         updateUser: (user) => dispatch(updateUser(user)),
-//     }
-// }
+const mdp = dispatch => {
+    debugger 
+    return {
+        updateUser: (formData, currentUser) => dispatch(updateUser(formData, currentUser)),
+        closeModal: () => dispatch(closeModal()),
+    }
+}
 
-// export default withRouter(connect(msp, mdp)(UploadPhoto));
+export default withRouter(connect(msp, mdp)(UploadPhoto));

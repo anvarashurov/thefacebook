@@ -8,6 +8,8 @@ import CreatePostContainer from '../post/create_post_container';
 import About from './about';
 import PostIndexItemContainer from '../post/post_index_item_container';
 
+import PhotoIndexContainer from '../profile/photos/photo_index_container';
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -53,7 +55,8 @@ class Profile extends React.Component {
                                     currentUser={this.props.currentUser}
                                     openModal={this.props.openModal}
                                 />
-                                <div>Photos</div>
+                                {/* TODO style */}
+                                <PhotoIndexContainer />
                                 <div>Friends</div>
                             </div>
                             <div className="create_and_show_posts">

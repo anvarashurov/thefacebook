@@ -6,6 +6,7 @@ export const fetchAllUsers = () => {
 }
 
 export const updateUser = (formData, currentUser) => {
+    debugger
     return $.ajax({
         method: "PATCH",
         url: `api/users/${currentUser.id}`,

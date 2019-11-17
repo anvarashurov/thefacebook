@@ -11,7 +11,9 @@ json.coverPhotoUrl user.coverPhoto.attached? ? url_for(user.coverPhoto) : nil
 
 #careful
 
-json.photoUrls user.photos.map {|file| url_for(file)}
+#debugger
+
+json.photosUrl user.photos.map {|file| url_for(file)}
 
 friendRequestSentToIds = []
 friendRequestReceivedFromIds = []
