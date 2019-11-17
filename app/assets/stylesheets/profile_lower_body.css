@@ -1,5 +1,6 @@
 .profile_lower_body {
     margin: 10px;
+    height: auto;
     display: flex;
     flex-direction: row;
     /* align-self: center; */
