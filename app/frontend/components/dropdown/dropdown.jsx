@@ -2,7 +2,7 @@
 
 // import onClickOutside from "react-onclickoutside";
 import LogoutContainer from './logout_container';
-import FriendContainer from '../profile/friend/friend_container';
+import PendingFriendContainer from '../profile/friend/pending_friend_container';
 
 import React from 'react';
 
@@ -32,7 +32,7 @@ class Dropdown extends React.Component {
                 // debugger
                 component = (
                     <div className="friend_dropdown">
-                        <FriendContainer />
+                        <PendingFriendContainer />
                     </div>
                 )
                 break;

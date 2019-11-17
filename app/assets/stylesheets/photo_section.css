@@ -27,7 +27,14 @@
 .photos_section > .photos_sidebar_container > .photos_text > a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: #1D2129;
+    color: #4B4F56;
+    font-size: 20px;
+    /* height: 24px;
+    margin-left: 9px;
+    margin-top: 5px;
+     */
+    font-weight: bold;
+
     padding: 12px 0px;
     margin: 0px 12px;
     align-self: center;

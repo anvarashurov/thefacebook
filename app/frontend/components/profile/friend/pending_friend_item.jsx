@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FriendItem = (props) => {
+const PendingFriendItem = (props) => {
     // debugger
 
     return(
@@ -39,4 +39,4 @@ const FriendItem = (props) => {
     )
 }
 
-export default FriendItem;
+export default PendingFriendItem;

@@ -30,7 +30,7 @@ class About extends React.Component {
         return(
             <div className="about_container">
                 <div className="about_title_container">
-                    <img className="tiny_pic" src={this.props.profileOwner.profilePhotoUrl} alt="Profile"/>
+                    {/* <img className="tiny_pic" src={this.props.profileOwner.profilePhotoUrl} alt="Profile"/> */}
                     <p>About</p>
                 </div>
                 <div className="about_body_container">

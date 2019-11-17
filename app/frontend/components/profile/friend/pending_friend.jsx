@@ -1,7 +1,7 @@
 import React from 'react';
-import FriendItem from './friend_item';
+import FriendItem from './pending_friend_item';
 
-class Friend extends React.Component {
+class PendingFriend extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -64,4 +64,4 @@ class Friend extends React.Component {
     }
 }
 
-export default Friend;
+export default PendingFriend;

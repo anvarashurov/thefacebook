@@ -1,10 +1,8 @@
 import { updateFriendRequest, deleteFriendReqest } from '../../../actions/friend_actions';
-         
 import { fetchAllUsers } from '../../../actions/user_actions';
-
 import { connect } from 'react-redux';
-import Friend from './friend';
-import { withRouter } from 'react-router-dom';
+import PendingFriend from './pending_friend';
+// import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     
@@ -38,4 +36,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Friend);
+export default connect(mapStateToProps, mapDispatchToProps)(PendingFriend);
