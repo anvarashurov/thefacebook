@@ -56,7 +56,7 @@ class Profile extends React.Component {
                                 />
                                 {/* TODO style, onlyNine shows 9 in profile not the other*/}
                                 
-                                <div className="profile_photos">
+                                <div className="profile_photos_container">
                                     <PhotoIndexContainer onlyNine={9}/>
                                 </div>
                                 <div>Friends</div>

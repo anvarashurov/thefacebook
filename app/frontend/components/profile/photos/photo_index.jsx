@@ -1,5 +1,6 @@
 import React from 'react';
 // import PhotoIndex from './photo_index';
+import {Link} from 'react-router-dom';
 
 class PhotoIndex extends React.Component {
 
@@ -21,10 +22,6 @@ class PhotoIndex extends React.Component {
             fotos = profileOwnerPhotos.map((photoUrl, idx) => {
                 debugger
                 return (
-                    // <PhotoIndexItem 
-                    //     photo={photo}
-                    //     profileOwner={profileOwner}
-                    //     />
                     <div className="single_photo" key={idx}>
                         {/* TODO: onclick open modal to show individual photo */}
                         {/* <button> */}
@@ -39,14 +36,14 @@ class PhotoIndex extends React.Component {
         return (
             <div className="photos_sidebar_container">
                 <div className="photos_text">
-                    <span>
-                        Photos
-                    </span> 
+                    {/* <img src={window.camera} style={{height: '24px', width: '24px'}}/> */}
+                    <Link to={`/users/${this.props.profileOwner.id}/photos`}>Photos</Link> 
                     <button onClick={() => this.props.openModal({type: "upload_photos", photos: null})}>
                         Upload Photos
                     </button>
                 </div>
                 <div className="all_photos_sidebar">
+                    {/* single_photo */}
                     {fotos}
                 </div>
             </div>
