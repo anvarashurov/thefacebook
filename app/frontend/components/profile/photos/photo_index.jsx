@@ -15,6 +15,7 @@ class PhotoIndex extends React.Component {
 
         let profileOwnerPhotos = this.props.profileOwner.photosUrl
         let fotos;
+        let tinyPic = null;
         if(this.props.onlyNine) {
             profileOwnerPhotos = profileOwnerPhotos.slice(0, this.props.onlyNine);
         }
@@ -37,6 +38,7 @@ class PhotoIndex extends React.Component {
             <div className="photos_sidebar_container">
                 <div className="photos_text">
                     {/* <img src={window.camera} style={{height: '24px', width: '24px'}}/> */}
+                    
                     <Link to={`/users/${this.props.profileOwner.id}/photos`}>Photos</Link> 
                     <button onClick={() => this.props.openModal({type: "upload_photos", photos: null})}>
                         Upload Photos

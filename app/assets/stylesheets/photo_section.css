@@ -16,10 +16,12 @@
 /* photos_sidebar_container */
 
 .photos_section > .photos_sidebar_container > .photos_text {
-    height: 70px;
+    background-color: #F5F6F7;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid rgb(220, 220, 223);
 }
 
 .photos_section > .photos_sidebar_container > .photos_text > a {
