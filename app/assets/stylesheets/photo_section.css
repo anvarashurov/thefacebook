@@ -1,68 +1,70 @@
 /* very messy styling of photos */
 
-.profile_photos_container > .photos_sidebar_container {
+.photos_section > .photos_sidebar_container {
     box-sizing: border-box;
     background-color: white;
-    margin-top: 8px;
+    /* margin-top: 15px; */
     display: flex;
     flex-direction: column;
-    width: 325px;
+    width: 850px;
     height: auto;
     border: 1px solid rgb(220, 220, 223);
     border-radius: 3px;
+    margin-left: 12px;
 }
 
 /* photos_sidebar_container */
 
-.profile_photos_container > .photos_sidebar_container > .photos_text {
-    height: 40px;
+.photos_section > .photos_sidebar_container > .photos_text {
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.profile_photos_container > .photos_sidebar_container > .photos_text > a {
+.photos_section > .photos_sidebar_container > .photos_text > a {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #1D2129;
     padding: 12px 0px;
     margin: 0px 12px;
+    align-self: center;
     text-decoration: none;
 }
 
-.profile_photos_container > .photos_sidebar_container > .photos_text > a:hover {
+.photos_section > .photos_sidebar_container > .photos_text > a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.profile_photos_container > .photos_sidebar_container > .photos_text > button {
+.photos_section > .photos_sidebar_container > .photos_text > button {
     color: #355898;
-    font-size: 14px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     margin-right: 12px;
 }
 
-.profile_photos_container > .photos_sidebar_container > .photos_text > button:hover {
+.photos_section > .photos_sidebar_container > .photos_text > button:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
 
-.profile_photos_container > .photos_sidebar_container > .all_photos_sidebar {
+.photos_section > .photos_sidebar_container > .all_photos_sidebar {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     align-items: left;
     justify-content: left;
-    margin: 2px;
+    margin: 3px;
 }
 
-.profile_photos_container > .photos_sidebar_container > div > div {
+.photos_section > .photos_sidebar_container > div > div {
     box-sizing: border-box;
-    width: 106px;
-    height: 106px;
-    padding: 2px;
+    width: 210px;
+    height: 210px;
+    padding: 3px;
 }
 
 .single_photo img {
