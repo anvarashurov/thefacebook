@@ -27,6 +27,9 @@ class PendingFriend extends React.Component {
         //     )
         // })
 
+    if( typeof this.props.friendReceived === 'undefined') {
+        return null;
+    }
         const allFriendships = this.props.friendReceived.map((arr, idx) => {
             // [ [user, status] ]
             // debugger

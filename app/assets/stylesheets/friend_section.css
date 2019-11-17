@@ -1,0 +1,82 @@
+/* very messy styling of photos */
+
+.friends_section > .all_friends {
+    box-sizing: border-box;
+    background-color: white;
+    /* margin-top: 15px; */
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: auto;
+    border: 1px solid rgb(220, 220, 223);
+    border-radius: 3px;
+    margin-left: 12px;
+}
+
+/* photos_sidebar_container */
+
+.friends_section > .all_friends > .friends_text {
+    background-color: #F5F6F7;
+    height: 43px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(220, 220, 223);
+}
+
+.friends_section > .all_friends > .friends_text > a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #4B4F56;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 0px;
+    margin: 0px 12px;
+    align-self: center;
+    text-decoration: none;
+}
+
+.friends_section > .all_friends > .friends_text > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.friends_section > .all_friends > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.friends_section > .all_friends > div > .single_friend_section {
+    margin: 10px;
+    width: 400px;
+    height: 102px;
+    border: 1px solid rgb(220, 220, 223);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+
+    align-items: center;
+}
+
+.friends_section > .all_friends > div > .single_friend_section div {
+    width: 100px;
+    height: 100px;
+}
+
+.friends_section > .all_friends > div > .single_friend_section div img {
+    width: 100%;
+    height: 100%;
+}
+
+.friends_section > .all_friends > div > .single_friend_section a span {
+    color: #385898;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin-left: 10px;
+}

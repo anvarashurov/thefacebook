@@ -1,16 +1,11 @@
 .friend_dropdown {
     height: auto; 
-    
     position: relative;
     z-index: 20;
-    
     top: 50px;
     left: 185px;
-
     height: 0px;
-    
     box-sizing: border-box;
-    
     display: flex;
     align-items: center;
     justify-content: center;

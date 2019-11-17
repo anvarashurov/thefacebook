@@ -8,6 +8,7 @@ import CreatePostContainer from '../post/create_post_container';
 import About from './about';
 import PostIndexItemContainer from '../post/post_index_item_container';
 import PhotoIndexContainer from '../profile/photos/photo_index_container';
+import FriendIndexContainer from './friend/friend_index_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -79,6 +80,14 @@ class Profile extends React.Component {
                             </div>
                         </Route>
                         {/* TODO: SHOW FRIENDS HERE JUST LIKE ABOUT SECTION */}
+                        <Route path={`/users/${this.props.profileOwner.id}/friends`}>
+                            <div className="friends_section">
+                                <FriendIndexContainer />
+                            </div>
+                        </Route>
+
+                        {/* THE ROUTES */}
+
                     </Switch>
                 </div>
             </div>
