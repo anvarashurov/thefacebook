@@ -13,15 +13,19 @@ class PhotoIndex extends React.Component {
     render() {
 
         let profileOwnerPhotos = this.props.profileOwner.photosUrl
-        
+        let fotos;
+        if(this.props.onlyNine) {
+            profileOwnerPhotos = profileOwnerPhotos.slice(0, this.props.onlyNine);
+        }
         if(profileOwnerPhotos.length !== 0) {
-            profileOwnerPhotos.map((photoUrl) => {
+            fotos = profileOwnerPhotos.map((photoUrl, idx) => {
+                debugger
                 return (
                     // <PhotoIndexItem 
                     //     photo={photo}
                     //     profileOwner={profileOwner}
                     //     />
-                    <div class="single_photo">
+                    <div className="single_photo" key={idx}>
                         {/* TODO: onclick open modal to show individual photo */}
                         {/* <button> */}
                             <img src={photoUrl} />
@@ -35,13 +39,15 @@ class PhotoIndex extends React.Component {
         return (
             <div className="photos_sidebar_container">
                 <div className="photos_text">
-                    Photos
+                    <span>
+                        Photos
+                    </span> 
                     <button onClick={() => this.props.openModal({type: "upload_photos", photos: null})}>
                         Upload Photos
                     </button>
                 </div>
                 <div className="all_photos_sidebar">
-                    {profileOwnerPhotos}
+                    {fotos}
                 </div>
             </div>
         );

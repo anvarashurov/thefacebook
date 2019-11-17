@@ -72,8 +72,9 @@ const ProfileWallpaper = ({ profileOwner, currentUser, createFriendRequest, open
                     <li className="friends">
                         <a href="#">Friends</a>
                     </li>
+                    {/* TODO make it more general wrapping with DIV tags */}
                     <li className="photos">
-                        <a href="#">Photos</a>
+                        <Link to={`/users/${profileOwner.id}/photos`}>Photos</Link>
                     </li>
                 </ul>
             </div> 

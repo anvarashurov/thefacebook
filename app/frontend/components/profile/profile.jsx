@@ -7,7 +7,6 @@ import OwnerBio from './owner_bio';
 import CreatePostContainer from '../post/create_post_container';
 import About from './about';
 import PostIndexItemContainer from '../post/post_index_item_container';
-
 import PhotoIndexContainer from '../profile/photos/photo_index_container';
 
 class Profile extends React.Component {
@@ -55,8 +54,11 @@ class Profile extends React.Component {
                                     currentUser={this.props.currentUser}
                                     openModal={this.props.openModal}
                                 />
-                                {/* TODO style */}
-                                <PhotoIndexContainer />
+                                {/* TODO style, onlyNine shows 9 in profile not the other*/}
+                                
+                                <div className="profile_photos">
+                                    <PhotoIndexContainer onlyNine={9}/>
+                                </div>
                                 <div>Friends</div>
                             </div>
                             <div className="create_and_show_posts">
@@ -69,6 +71,12 @@ class Profile extends React.Component {
                                 profileOwner={this.props.profileOwner}
                                 currentUser={this.props.currentUser} 
                             />
+                        </Route>
+                        {/* TODO Debug */}
+                        <Route path={`/users/${this.props.profileOwner.id}/photos`}>
+                            <div className="photos_section">
+                                <PhotoIndexContainer />
+                            </div>
                         </Route>
                         {/* TODO: SHOW FRIENDS HERE JUST LIKE ABOUT SECTION */}
                     </Switch>

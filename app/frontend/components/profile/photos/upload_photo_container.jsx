@@ -10,8 +10,6 @@ const msp = (state, ownProps) => {
     return {
         profileOwner,
         currentUser: state.entities.users[state.session.currentUserId],
-        // existing list of photosUrl
-        photosArr: profileOwner.photosUrl,
     }
 }
 

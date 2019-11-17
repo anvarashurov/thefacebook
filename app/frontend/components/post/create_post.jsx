@@ -19,7 +19,9 @@ class CreatePost extends React.Component {
     }
 
     handleFile(e) {
-
+        e.preventDefault();
+        // e.stopPropagation();
+        
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         

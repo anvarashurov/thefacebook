@@ -9,8 +9,13 @@ import { openModal } from '../../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     debugger 
+    let onlyNine= null;
+    if(ownProps.onlyNine) {
+        onlyNine = ownProps.onlyNine;
+    }
     return {
         profileOwner: state.entities.users[parseInt(ownProps.location.pathname.slice(7))],
+        onlyNine,
     }
 }
 
