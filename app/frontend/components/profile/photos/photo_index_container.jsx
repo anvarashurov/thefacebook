@@ -16,6 +16,7 @@ const msp = (state, ownProps) => {
     return {
         profileOwner: state.entities.users[parseInt(ownProps.location.pathname.slice(7))],
         onlyNine,
+        currentUser: state.entities.users[state.session.currentUserId],
     }
 }
 

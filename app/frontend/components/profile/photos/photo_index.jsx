@@ -25,12 +25,18 @@ class PhotoIndex extends React.Component {
                 return (
                     <div className="single_photo" key={idx}>
                         {/* TODO: onclick open modal to show individual photo */}
-                        {/* <button> */}
+                        <button onClick={() => this.props.openModal( {type: 'view_image', imageUrl: photoUrl} ) }>
                             <img src={photoUrl} />
-                        {/* </button> */}
+                        </button>
                     </div>
                 )
             })
+        }
+
+        let uploadPhotos = null;
+
+        if(this.props.profileOwner.id === this.props.currentUser.id) {
+            uploadPhotos = "Upload Photos";
         }
 
         debugger
@@ -41,7 +47,7 @@ class PhotoIndex extends React.Component {
                     
                     <Link to={`/users/${this.props.profileOwner.id}/photos`}>Photos</Link> 
                     <button onClick={() => this.props.openModal({type: "upload_photos", photos: null})}>
-                        Upload Photos
+                        {uploadPhotos}
                     </button>
                 </div>
                 <div className="all_photos_sidebar">

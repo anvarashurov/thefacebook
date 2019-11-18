@@ -69,7 +69,7 @@
     margin: 3px;
 }
 
-.photos_section > .photos_sidebar_container > div > div {
+.photos_section > .photos_sidebar_container > div > div > button {
     box-sizing: border-box;
     width: 210px;
     height: 210px;

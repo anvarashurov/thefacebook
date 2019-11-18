@@ -58,7 +58,7 @@
     margin: 2px;
 }
 
-.profile_photos_container > .photos_sidebar_container > div > div {
+.profile_photos_container > .photos_sidebar_container > div > div > button {
     box-sizing: border-box;
     width: 106px;
     height: 106px;
