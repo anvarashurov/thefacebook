@@ -150,3 +150,19 @@
 .post_options button {
     margin-left: 7px;
 }
+
+/* 
+
+
+*/
+
+.post_image {
+    width: 510px;
+    height: 380px;
+}
+
+.post_image > img {
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+}

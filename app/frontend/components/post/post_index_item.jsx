@@ -26,13 +26,12 @@ const PostIndexItem = (props) => {
         hours = hours % 12;
         hours = hours ? hours : 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
-        let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
+        let strTime = `${month} ${date.getDate()} at ${hours}:${minutes} ${ampm}`;
         return strTime;
     }
 
     // convert to Date object
     let date = new Date(props.post.extra);
-    
     
     let timeOfPost = formatHour(date);
 
@@ -41,7 +40,9 @@ const PostIndexItem = (props) => {
         // debugger
         url = (
             <button onClick={() => props.openModal({ type: 'view_image', imageUrl: props.post.photoURL })}>
-                <img src={props.post.photoURL} alt="T" />
+                <div className="post_image">
+                    <img src={props.post.photoURL} alt="T" />
+                </div>
             </button>
         )
         
