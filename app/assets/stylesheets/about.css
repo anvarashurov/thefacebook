@@ -84,7 +84,12 @@
     padding-bottom: 3px;
     padding-top: 15px;
     border-bottom: 1px solid #ebedf0;
+}
 
+.menu_content li span {
+    margin-left: 15px;
+    color: #2851A3;
+    cursor: pointer;
 }
 
 .about_body_container {

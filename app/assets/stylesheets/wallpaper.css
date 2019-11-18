@@ -224,6 +224,10 @@ THE BAR RIGHT BELOW WALLPAPER
     display: flex;
 }
 
+.timeline a:focus {
+    color: #4B4F56;
+}
+
 .about {
     width: 75.44px;
     /* height: 42px; */
@@ -234,6 +238,7 @@ THE BAR RIGHT BELOW WALLPAPER
 }
 
 .about span:focus {
+    /* TODO: Triangle thing upon click */
     background-image: url(https://files.slack.com/files-pri/T03GU501J-FP9S5MV1D/image.png);
     z-index: 2;
 }
@@ -243,14 +248,25 @@ THE BAR RIGHT BELOW WALLPAPER
     /* height: 42px; */
 }
 
+.friends a:focus {
+    color: #4B4F56;
+}
+
 .photos {
     width: 82.45px;
     /* height: 42px; */
 }
+
+.photos a:focus {
+    color: #4B4F56;
+}
+
 .archive {
     width: 106.36px;
     /* height: 42px; */
 }
+
+
 .more {
     width: 82.45px;
     /* height: 42px; */

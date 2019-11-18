@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, withRouter, Link, Route, userParams} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateUser } from '../../actions/session_actions';
+import Workplace from '../profile/user_details/workplace';
+import Lived from '../profile/user_details/lived';
+import Overview from '../profile/user_details/overview';
 
 class About extends React.Component {
     constructor(props) {
@@ -40,9 +43,17 @@ class About extends React.Component {
                         <Link to={`/users/${this.props.profileOwner.id}/about/lived`}>Places You've Lived</Link>
                     </div>
                     <div className="menu_content">
-                        <Route exact path={`${this.props.match.url}`} component={Overview} profileOwner={this.props.profileOwner}/>
-                        <Route path={`${this.props.match.url}/work`} component={Workplace} profileOwner={this.props.profileOwner}/>
-                        <Route path={`${this.props.match.url}/lived`} component={Lived} profileOwner={this.props.profileOwner}/>
+                        <Route exact path={`${this.props.match.url}`}>
+                            <Overview profileOwner={this.props.profileOwner} />
+                        </Route> 
+                        
+                        <Route path={`${this.props.match.url}/work`}>
+                            <Workplace profileOwner={this.props.profileOwner}/>
+                        </Route> 
+
+                        <Route path={`${this.props.match.url}/lived`}>
+                            <Lived profileOwner={this.props.profileOwner} />
+                        </Route>    
                         {/* <Route path={`/users/${this.props.profileOwner.id}/about/edit/`}>
                             <div className="edit_user">    
                                 <form onSubmit={this.handleSubmit} className="edit_user">
@@ -61,34 +72,6 @@ class About extends React.Component {
     };
 }
 
-const Workplace = () => {
-    return (
-        <ul>
-            <li>WORK</li>
-        </ul >
-    )
-}
-
-function Overview() {
-    return (
-        <ul>
-            <li>WORK </li>
-            <li>COLLEGE </li>
-            <li>HIGH SCHOOL</li>
-            <li>CITY</li>
-            <li>BIRTHDAY</li>
-        </ul>
-    )
-}
-
-function Lived() {
-    return (
-        <ul>
-            <li>CITY</li>
-            <li>COUNTRY</li>
-        </ul>
-    )
-}
 const msp = (state, ownProps) => {
     return {
         profileOwner: ownProps.profileOwner 
