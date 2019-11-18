@@ -12,10 +12,10 @@ class ProfileWallpaper extends React.Component {
     }
  
     handleFriendOp() {
-            if(this.state.buttonText === 'Add Friend') {
+            if(this.state === 'Add Friend') {
                 debugger
                 this.props.createFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Remove Request'));      
-            } else if(this.state.buttonText === 'Remove Request') {
+            } else if(this.state === 'Remove Request') {
                 debugger
                 this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Add Friend'));
             } else {
