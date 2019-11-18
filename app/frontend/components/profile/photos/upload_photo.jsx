@@ -28,16 +28,16 @@ class UploadPhoto extends React.Component {
         const files = e.currentTarget.files;
 
         if (files) {
-            debugger
+            // debugger
             for (let i = 0; i < files.length; i++) {
 
                 const file = files[i];
                 const fileReader = new FileReader();
 
                 if (file) {
-                    debugger
+                    // debugger
                     fileReader.readAsDataURL(file);
-                    debugger
+                    // debugger
                 }
 
                 const photos = this.state.photos;
@@ -45,25 +45,25 @@ class UploadPhoto extends React.Component {
 
                 const urls = this.state.urls;
                 urls.push(fileReader.result);
-                debugger
+                // debugger
                 this.setState({ photos, urls })
 
-                debugger
+                // debugger
             }
         }
-        debugger
+        // debugger
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         const formData = new FormData();
         const allPhotos = this.state.photos;
         for (let i = 0; i < allPhotos.length; i++) {
-            debugger
+            // debugger
             formData.append('user[photos][]', allPhotos[i]);
         }
-        debugger
+        // debugger
         let currentUser = this.state.currentUser;
         return this.props.updateUser(formData, currentUser).then(() => this.props.closeModal());
     }

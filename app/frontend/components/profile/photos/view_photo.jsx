@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ViewImage = ({imageUrl, closeModal}) => {
-    debugger
+    // debugger
     return (
         <div className="view_image">
             <button onClick={closeModal}>

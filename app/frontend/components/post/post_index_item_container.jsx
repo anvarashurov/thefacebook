@@ -5,7 +5,7 @@ import { fetchPosts, deletePost } from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
 
     //  The fuck is the point of PostOwner?
     // let owner;

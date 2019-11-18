@@ -5,7 +5,7 @@ import UploadPhoto from './upload_photo';
 import {closeModal} from '../../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
     return {
         profileOwner,
@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    debugger 
+    // debugger 
     return {
         updateUser: (formData, currentUser) => dispatch(updateUser(formData, currentUser)),
         closeModal: () => dispatch(closeModal()),

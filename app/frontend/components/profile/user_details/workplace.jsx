@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Workplace = ({ profileOwner }) => {
-    debugger
+    // debugger
     return (
         <ul>
             <li>Works at

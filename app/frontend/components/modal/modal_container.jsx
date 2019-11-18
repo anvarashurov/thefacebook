@@ -4,7 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         profileOwner: state.entities.users[parseInt(ownProps.location.pathname.slice(7))],
         currentUser: state.entities.users[state.session.currentUserId],

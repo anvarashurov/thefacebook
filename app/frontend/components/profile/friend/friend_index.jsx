@@ -17,7 +17,7 @@ class FriendIndex extends React.Component {
 
         if (profileOwnerFriends.length !== 0) {
             friends  = profileOwnerFriends.map((friend, idx) => {
-                debugger
+                // debugger
                 return (
                     <div className="single_friend_section" key={idx}>
                         <div>

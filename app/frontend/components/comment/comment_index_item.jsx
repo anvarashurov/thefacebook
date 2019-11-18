@@ -37,7 +37,7 @@ const CommentIndexItem = (props) => {
 
     // convert to Date object
     // let date = new Date(props.post.extra);
-    debugger
+    // debugger
     let commentCreatedAt = new Date(props.comment.createdAt);
     commentCreatedAt = formatHour(commentCreatedAt);
     // commentCreatedAt = commentCreatedAt.slice(4, commentCreatedAt.length);
@@ -47,7 +47,7 @@ const CommentIndexItem = (props) => {
     const [replyContainer, setReplyContainer] = useState(null);
 
     function handleReply() {
-        debugger
+        // debugger
         // TODO : more sophisticated reply container that disappears after commenting
         if(replyContainer === null) {
             setReplyContainer(

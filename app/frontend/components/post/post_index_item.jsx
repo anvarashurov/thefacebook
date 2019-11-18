@@ -15,7 +15,7 @@ const PostIndexItem = (props) => {
     } else if (numComments > 1) {
         output = numComments + " " + "Comments";
     }
-debugger
+// debugger
 
     function formatHour(date) {
         let allMonths = "January February March April May June July August September October November December".split(" ");
@@ -38,7 +38,13 @@ debugger
 
     let url;
     if(props.post.photoURL) {
-        url = <img src={props.post.photoURL} alt="T" />
+        // debugger
+        url = (
+            <button onClick={() => props.openModal({ type: 'view_image', imageUrl: props.post.photoURL })}>
+                <img src={props.post.photoURL} alt="T" />
+            </button>
+        )
+        
     }
 
     // let postOptions;

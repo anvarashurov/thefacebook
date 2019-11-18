@@ -6,24 +6,24 @@ const mapStateToProps = (state, ownProps) => {
 
     let friends = [];
 
-    debugger
+    // debugger
 
     let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
 
     profileOwner.friendRequestSentToIds.forEach((arr) => {
-        debugger
+        // debugger
         if (arr[1] === "APPROVED") {
             friends.push(state.entities.users[arr[0]]);
         }
     })
 
     profileOwner.friendRequestReceivedFromIds.forEach(arr => {
-        debugger
+        // debugger
         if (arr[1] === "APPROVED") {
             friends.push(state.entities.users[arr[0]]);
         }
     })
-debugger
+// debugger
 
     let onlyNine = null;
 
