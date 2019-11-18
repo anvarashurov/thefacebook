@@ -54,3 +54,13 @@
   height: 900px;
   box-sizing: border-box;
 }
+
+.upload_photos_modal {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  width: 500px;
+  height: 150px;
+  box-sizing: border-box;
+}

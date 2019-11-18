@@ -1,0 +1,70 @@
+.upload_photo > form {
+
+    width: 500px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    font-weight: bold;
+   
+    border: 1px solid rgb(220, 220, 223);
+    border-radius: 3px;
+
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+#upload_photo_button {
+    width: 494px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px 0px 3px 2px;
+}
+
+#upload_photo_button:hover {
+    background-color: #b1a7dd;
+    cursor: pointer;
+}
+
+.upload_photo > form > label {
+    width: 494px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px 0px 3px 2px;
+}
+
+.upload_photo > form > label:hover {
+    background-color: #b1a7dd;
+    cursor: pointer;
+}
+
+.upload_photo form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload_photo form div span {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    font-weight: normal;
+}
+
+.upload_photo form div button {
+    font-size: 20px;
+    margin: 5px;
+    font-weight: normal;
+}
+
+.upload_photo > form > input {
+    height: 3px;
+}

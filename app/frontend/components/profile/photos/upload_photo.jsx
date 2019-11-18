@@ -17,6 +17,7 @@ class UploadPhoto extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleExit = this.handleExit.bind(this);
     }
 
     //  TODO: how to write handleFile funciton for multiple photos
@@ -54,6 +55,11 @@ class UploadPhoto extends React.Component {
         // debugger
     }
 
+    handleExit(e) {
+        e.preventDefault();
+        this.props.closeModal();
+    }
+
     handleSubmit(e) {
         // debugger
         e.preventDefault();
@@ -64,27 +70,45 @@ class UploadPhoto extends React.Component {
             formData.append('user[photos][]', allPhotos[i]);
         }
         // debugger
-        let currentUser = this.state.currentUser;
-        return this.props.updateUser(formData, currentUser).then(() => this.props.closeModal());
+        // let currentUser = this.state.currentUser;
+        // push history to new location
+        return this.props.updateUser(formData, this.props.currentUser).then(() => { 
+            this.props.closeModal()
+            this.props.history.push(`/users/${this.props.currentUser.id}/photos`)
+        })
     }
 
     render() {
 
         return (
-            <div id="upload_photo">
-                {/* <img src={window.camera} alt="Ph" /> */}
-                <span>
-                    <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="file">Add Photo</label>
-                        <input
-                            id="file"
-                            style={{ visibility: "hidden" }}
-                            type="file"
-                            onChange={this.handleChange}
-                            multiple />
-                        <input type="submit" value="Upload" />
-                    </form>
-                </span>
+            <div className="upload_photo">
+                <form onSubmit={this.handleSubmit}>
+                    {/* X */}
+                    <div>
+                        <span>
+                            Upload Photos
+                        </span>
+                        <button onClick={this.handleExit}>
+                            &#10006;
+                        </button>
+                    </div>
+                    {/* Add Photo Button */}
+                    <label htmlFor="file">
+                        <span>
+                            Add Photo
+                        </span>
+                    </label>
+                    <input
+                        id="file"
+                        style={{ visibility: "hidden" }}
+                        type="file"
+                        onChange={this.handleChange}
+                        multiple 
+                    />
+                    {/* Upload Photos Button */}
+                    <input id="upload_photo_button" type="submit" value="Upload" />
+                
+                </form>
             </div>
         )
     }

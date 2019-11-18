@@ -30,25 +30,31 @@ class EditPostForm extends React.Component {
 
     render() {
 
-        // debugger
-
         return (
             <div className="edit_post_container">
+  
                 <form onSubmit={this.handleSubmit}>
+  
                     <div className="edit_post_first_row">
+                        
                         <span>
                             Edit Post
                         </span>
                         <button onClick={this.handleExit}>
                             &#10006;
                         </button>
+                    
                     </div>
+                    
                     <div className="create_post_area">
                         <img src={this.props.author.profilePhotoUrl} style={{ width: '60px', height: '60px' }} />
                         <textarea onChange={this.handleChange()} value={this.state.content} placeholder="What's on your mind?"></textarea>
                     </div>
+                    
                     <input id="create_post_button" type="submit" value="Save" />
+                
                 </form>
+
             </div>           
         );
     }
