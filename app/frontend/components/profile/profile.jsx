@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 // import PendingFriendContainer from './friend/pendingfriend_container';
 // components
-import ProfileWallpaper from './profile_wallpaper';
+import ProfileWallpaperContainer from './profile_wallpaper_container';
 import OwnerBio from './owner_bio';
 import CreatePostContainer from '../post/create_post_container';
 import About from './about';
@@ -35,7 +35,7 @@ class Profile extends React.Component {
                 {/* <FriendContainer /> */}
 
                 
-                <ProfileWallpaper
+                <ProfileWallpaperContainer
                     // coming from URL
                     profileOwner={this.props.profileOwner} 
                     // logged in user

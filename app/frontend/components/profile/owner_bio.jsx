@@ -95,12 +95,18 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
     if(bio.length === 0) {
         if(currentUser.id === profileOwner.id) {
             introButton = "Add Bio";
-        }
-        introText = (
-            <span className="add_bio_message">
-                Update Profile to add more info about yourself.
-            </span>
+            introText = (
+                <span className="add_bio_message">
+                    Update Profile to add more info about yourself.
+                </span>
+                )
+        } else {
+            introText = ( 
+                <span className="add_bio_message">
+                    They have not updated their bio yet.
+                </span>
             )
+        }
     } else {
         if(currentUser.id === profileOwner.id) {
             introButton = "Edit Bio"
