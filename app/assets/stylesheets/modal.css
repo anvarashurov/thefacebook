@@ -19,12 +19,12 @@
 }
 
 .create_post_modal {
-  top: 93%;
-  left: 60%;
+  top: 52%;
+  left: 57%;
   transform: translate(-50%, -50%);
   position: relative;
-  width: 630px;
-  height: 900px;
+  width: 510px;
+  height: 130px;
   box-sizing: border-box;
 
 }
@@ -36,12 +36,12 @@
 } */
 
 .edit_post_modal {
-  top: 93%;
-  left: 60%;
+  top: 52%;
+  left: 57%;
   transform: translate(-50%, -50%);
   position: relative;
-  width: 630px;
-  height: 900px;
+  width: 510px;
+  height: 130px;
   box-sizing: border-box;
 }
 

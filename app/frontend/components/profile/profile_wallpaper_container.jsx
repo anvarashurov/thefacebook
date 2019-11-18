@@ -2,6 +2,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createFriendRequest, deleteFriendRequest } from '../../actions/friend_actions';
 import ProfileWallpaper from './profile_wallpaper';
+import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
 

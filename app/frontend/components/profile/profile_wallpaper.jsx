@@ -33,7 +33,7 @@ class ProfileWallpaper extends React.Component {
 
         if (this.props.profileOwner.id === this.props.currentUser.id) {
             editProfileOrAddFriend = (
-                <button onClick={() => openModal({ type: "edit_profile", profileOwner: null })}>Update Profile</button>
+                <button onClick={() => this.props.openModal({ type: "edit_profile", profileOwner: null })}>Update Profile</button>
             )
         } else {
             debugger
