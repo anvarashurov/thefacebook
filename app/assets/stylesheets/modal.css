@@ -46,11 +46,11 @@
 }
 
 .view_image_modal {
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  width: 8000px;
-  height: 600px;
+  width: 630px;
+  height: 900px;
   box-sizing: border-box;
 }
