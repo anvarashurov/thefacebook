@@ -27,20 +27,22 @@ class PendingFriend extends React.Component {
         //     )
         // })
 
-    if( typeof this.props.friendReceived === 'undefined') {
-        return null;
-    }
+        if( typeof this.props.friendReceived === 'undefined') {
+            return null;
+        }
         const allFriendships = this.props.friendReceived.map((arr, idx) => {
             // [ [user, status] ]
             // debugger
-            return <FriendItem key={idx}
-                user = {arr[0] ? arr[0] : null}
-                // url = {arr[0] ? arr[0].profilePhotoUrl : null}
-                status={arr[1]}
-                updateFriendRequest={this.props.updateFriendRequest}
-                deleteFriendsRequest={this.props.deleteFriendsRequest}
-                currentUser={this.props.currentUser}
-                />
+            if(arr[1] === 'PENDING') {
+                return <FriendItem key={idx}
+                    user = {arr[0] ? arr[0] : null}
+                    // url = {arr[0] ? arr[0].profilePhotoUrl : null}
+                    status={arr[1]}
+                    updateFriendRequest={this.props.updateFriendRequest}
+                    deleteFriendsRequest={this.props.deleteFriendsRequest}
+                    currentUser={this.props.currentUser}
+                    />
+            }
         })
         // okay closing windows..
         

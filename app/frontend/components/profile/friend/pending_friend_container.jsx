@@ -3,6 +3,7 @@ import { fetchAllUsers } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
 import PendingFriend from './pending_friend';
 // import { withRouter } from 'react-router-dom';
+import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
@@ -33,6 +34,7 @@ const mapDispatchToProps = dispatch => {
         updateFriendRequest: (user1, user2) => dispatch(updateFriendRequest(user1, user2)),
         deleteFriendRequest: (user1, user2) => dispatch(deleteFriendRequest(user1, user2)),        
         fetchAllUsers: () => dispatch(fetchAllUsers()),
+        closeModal: () => dispatch(closeModal()),
     }
 }
 

@@ -1,21 +1,21 @@
 .friend_dropdown {
-    height: auto; 
-    position: relative;
+    height: auto;
     z-index: 20;
-    top: 50px;
-    left: 185px;
-    height: 0px;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
+    position: relative;
+    top: 50px;
+    left: -15px;
 }
 
 .friendship_tab {
     background-color: #F2F3F5;
     width: 400px;
-    position: relative;
-    top: 80px; 
+    position: absolute;
+    /* position: relative;
+    top: 80px;  */
 }
 
 .friendship_tab_text {

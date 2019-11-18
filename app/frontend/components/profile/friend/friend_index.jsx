@@ -10,8 +10,13 @@ class FriendIndex extends React.Component {
     render() {
 
         let friends;
-        if (this.props.friends.length !== 0) {
-            friends  = this.props.friends.map((friend, idx) => {
+        let profileOwnerFriends = this.props.friends;
+        if (this.props.onlyNine) {
+            profileOwnerFriends = profileOwnerFriends.slice(0, this.props.onlyNine);
+        }
+
+        if (profileOwnerFriends.length !== 0) {
+            friends  = profileOwnerFriends.map((friend, idx) => {
                 debugger
                 return (
                     <div className="single_friend_section" key={idx}>

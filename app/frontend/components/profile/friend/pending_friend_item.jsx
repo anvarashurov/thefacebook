@@ -1,4 +1,5 @@
 import React from 'react';
+import { closeModal } from '../../../actions/modal_actions';
 
 const PendingFriendItem = (props) => {
     // debugger
@@ -23,7 +24,8 @@ const PendingFriendItem = (props) => {
                     </span>
                 </div>
                 <div className="single_friend_child_right">
-                    <button id="add_friend_button" onClick={() => props.updateFriendRequest(props.currentUser.id, props.user.id)}>
+                    {/* TODO CLOSE THE GODDAMN MODAL */}
+                    <button id="add_friend_button" onClick={() => props.updateFriendRequest(props.currentUser.id, props.user.id).then( () => props.closeModal)}>
                         <span>
                             Add Friend
                         </span>

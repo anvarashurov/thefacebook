@@ -24,10 +24,18 @@ const mapStateToProps = (state, ownProps) => {
         }
     })
 debugger
+
+    let onlyNine = null;
+
+    if(ownProps.onlyNine) {
+        onlyNine = ownProps.onlyNine
+    }
+
     return {
         // users: Object.values(state.entities.users),
         profileOwner,
         friends,
+        onlyNine,
     }
 }
 

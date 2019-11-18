@@ -60,7 +60,9 @@ class Profile extends React.Component {
                                 <div className="profile_photos_container">
                                     <PhotoIndexContainer onlyNine={9}/>
                                 </div>
-                                <div>Friends</div>
+                                <div className="profile_friends_container">
+                                    <FriendIndexContainer onlyNine={9}/>
+                                </div>
                             </div>
                             <div className="create_and_show_posts">
                                 <CreatePostContainer profileOwner={this.props.profileOwner} fetchPosts={this.props.fetchPosts} />
