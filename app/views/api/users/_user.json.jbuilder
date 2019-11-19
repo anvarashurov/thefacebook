@@ -19,15 +19,19 @@ json.photosUrl user.photos.map {|file| url_for(file)}
 friendRequestSentToIds = []
 friendRequestReceivedFromIds = []
 
+friendIds = []
+
 user.friend_requests_sent.each do |friend|
     friendRequestSentToIds << [friend.friend_receiver, friend.status]
+    friendIds << friend.friend_receiver if friend.status == "APPROVED" 
 end
 
 user.friend_requests_received.each do |friend|
-    #if (friend.status == "PENDING") && (friend.id != current_user.id)
-        friendRequestReceivedFromIds << [friend.friend_sender, friend.status]
-    #end
+    friendRequestReceivedFromIds << [friend.friend_sender, friend.status]
+    friendIds << friend.friend_sender if friend.status == "APPROVED" 
 end
+
+json.friendIds friendIds
 
 json.friendRequestSentToIds friendRequestSentToIds
 json.friendRequestReceivedFromIds friendRequestReceivedFromIds
