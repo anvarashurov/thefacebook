@@ -9,22 +9,22 @@ class PostIndex extends React.Component {
     }
     render() {
 
-        // debugger 
+        // // debugger 
 
-        // let myId = parseInt(this.props.postOwner.id);
-        let myId = parseInt(this.props.profileOwner.id);
-        let myPosts = [];
-        let allPosts = this.props.posts;
+        // // let myId = parseInt(this.props.postOwner.id);
+        // let myId = parseInt(this.props.profileOwner.id);
+        // let myPosts = [];
+        // let allPosts = this.props.posts;
 
-        // TODO: Bruuh seriously? the fuck is the point of authoredPostIds???? Dumbass
+        // // TODO: Bruuh seriously? the fuck is the point of authoredPostIds???? Dumbass
 
-        for(let i = 0; i < allPosts.length; i++) {
-            if ((allPosts[i].authorId === myId && allPosts[i].receiverId === myId) || (allPosts[i].receiverId === myId && allPosts[i].authorId !== myId)) {
-                myPosts.push(allPosts[i]);
-            }
-        }
+        // for(let i = 0; i < allPosts.length; i++) {
+        //     if ((allPosts[i].authorId === myId && allPosts[i].receiverId === myId) || (allPosts[i].receiverId === myId && allPosts[i].authorId !== myId)) {
+        //         myPosts.push(allPosts[i]);
+        //     }
+        // }
 
-        const posts = myPosts.slice(0).reverse().map((post) => {
+        const posts = this.props.myPosts.slice(0).reverse().map((post) => {
             return <PostIndexItem 
                 post={post} 
                 key={post.id} 
