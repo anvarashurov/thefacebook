@@ -13,12 +13,43 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDr
         pages = (
             <div className="home_page_body">
                 <div className="name_and_create_post">
-                    <div className="img_and_name">
-                        <img src={currentUser.profilePhotoUrl}/>
-                        <Link to={`/users/${currentUser.id}`}>{currentUser.first_name + " " + currentUser.last_name}</Link>
+                    <div className="homepage_left_child">
+                        <Link to={`/users/${currentUser.id}`}>
+                            <img src={currentUser.profilePhotoUrl}/>
+                            <span>
+                                {currentUser.first_name + " " + currentUser.last_name}
+                            </span>
+                        </Link>
+                        <a href="#" id="newsfeed">
+                            <img src={window.newsfeed} alt=""/>
+                            <span>
+                                Feed
+                            </span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/antoxaaa7/" target='_blank'>
+                            <img src={window.linkedin} alt=""/> 
+                            <span>
+                                Likedin
+                            </span> 
+                        </a>
+                        <a href="https://angel.co/antoxaaa7" target='_blank'>
+                            <img src={window.angellist} alt=""/>
+                            <span>
+                                Angel List
+                            </span>
+                        </a>
+                        <a href="https://github.com/antox7" target='_blank'>
+                            <img src={window.github} alt=""/>
+                            <span>
+                                Github
+                            </span>
+                        </a>
+
                     </div>
-                    {/* TODO */}
-                    {/* <CreatePostContainer deletePost={deletePost} /> */}
+                    <div className="home_page_right_child">
+                        <CreatePostContainer deletePost={deletePost} profileOwner={currentUser}/>
+                    </div>
+
                 </div>
                 <div className="all_posts">
                     {/* <PostIndexItemContainer postOwner={currentUser} deletePost={deletePost} /> */}

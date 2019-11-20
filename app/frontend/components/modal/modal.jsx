@@ -27,11 +27,19 @@ class Modal extends React.Component {
                 )
                 break;
             case 'create_post':
-                component = (
-                    <div className="create_post_modal" onClick={e => e.stopPropagation()}>
-                        <CreatePostContainer profileOwner={this.props.profileOwner} currentUser={this.props.currentUser} />
-                    </div>
-                )
+                if(this.props.homepageModalClass) {
+                    component = (
+                        <div className="create_post_modal_homepage" onClick={e => e.stopPropagation()}>
+                            <CreatePostContainer profileOwner={this.props.profileOwner} currentUser={this.props.currentUser} />
+                        </div>
+                    )    
+                } else {
+                    component = (
+                        <div className="create_post_modal" onClick={e => e.stopPropagation()}>
+                            <CreatePostContainer profileOwner={this.props.profileOwner} currentUser={this.props.currentUser} />
+                        </div>
+                    )
+                }
                 break;
             case 'edit_post':
                 component = (

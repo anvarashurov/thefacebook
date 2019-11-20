@@ -81,7 +81,7 @@ class CreatePost extends React.Component {
         }
 
         let placeholderText;
-
+        debugger
         if(this.props.profileOwner.id !== this.props.currentUser.id) {
             placeholderText = `Let's post something on ${this.props.profileOwner.first_name}'s wall :)`;
         } else {

@@ -18,6 +18,16 @@
   box-sizing: border-box;
 }
 
+.create_post_modal_homepage {
+  top: 12.5%;
+  left: 44.3%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  width: 510px;
+  height: 130px;
+  box-sizing: border-box;
+}
+
 .create_post_modal {
   top: 52%;
   left: 57%;
@@ -26,7 +36,6 @@
   width: 510px;
   height: 130px;
   box-sizing: border-box;
-
 }
 
 
@@ -63,4 +72,17 @@
   width: 500px;
   height: 150px;
   box-sizing: border-box;
+}
+
+/* 
+
+TODO
+
+*/
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
