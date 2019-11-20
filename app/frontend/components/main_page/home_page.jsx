@@ -46,13 +46,13 @@ const HomePage = ({logout, currentUser, fetchPosts, pathname, deletePost, showDr
                         </a>
 
                     </div>
-                    <div className="home_page_right_child">
-                        <CreatePostContainer deletePost={deletePost} profileOwner={currentUser}/>
+                    <div className="homepage_right_child">
+                        <CreatePostContainer profileOwner = {currentUser} source="homepage" />
                     </div>
 
                 </div>
                 <div className="all_posts">
-                    {/* <PostIndexItemContainer postOwner={currentUser} deletePost={deletePost} /> */}
+                    <PostIndexItemContainer source="homepage" />
                 </div>
             </div>
         )

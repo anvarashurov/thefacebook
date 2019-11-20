@@ -5,9 +5,17 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
 
     componentDidMount() {
-        return this.props.fetchPosts();
+        this.props.fetchAllUsers();
+        this.props.fetchPosts();
     }
     render() {
+
+        debugger
+        
+        if(this.props.users.length < 2) {
+            debugger
+            return null;
+        }
 
         // // debugger 
 
@@ -24,7 +32,11 @@ class PostIndex extends React.Component {
         //     }
         // }
 
-        const posts = this.props.myPosts.slice(0).reverse().map((post) => {
+        if(this.props.postsToShow.length === 0) {
+            return null;
+        }
+
+        const posts = this.props.postsToShow.slice(0).reverse().map((post) => {
             return <PostIndexItem 
                 post={post} 
                 key={post.id} 
@@ -36,6 +48,7 @@ class PostIndex extends React.Component {
                 deletePost = {this.props.deletePost}
                 openModal = {this.props.openModal}
                 closeModal = {this.props.closeModal}
+                source = {this.props.source}
                 />
         })
 

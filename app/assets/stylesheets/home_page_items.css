@@ -65,8 +65,9 @@
     background-color: rgb(245, 246, 247);
 }
 
-/*    
 .all_posts {
+    margin-top: 10px;
     position: relative;
-    left: -115px;
-} */
+    left: -100px;
+    top: -50px;
+}

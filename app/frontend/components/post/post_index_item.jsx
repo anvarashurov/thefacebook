@@ -60,9 +60,10 @@ const PostIndexItem = (props) => {
     // }
 
     let postOptions;
-    // debugger
+    debugger
     // postOwner.id previously
-    if(props.currentUser.id === props.profileOwner.id || props.currentUser.id === props.post.authorId) {
+    // if( (props.currentUser.id === props.profileOwner.id || props.currentUser.id === props.post.authorId) && props.source !== 'homepage') {
+    if(props.post.authorId === props.currentUser.id) {
         postOptions = (
         <div className="post_options">
             <button onClick={() => props.openModal({type: 'edit_post', post: props.post})}>
@@ -81,7 +82,12 @@ const PostIndexItem = (props) => {
     let postAuthor;
     debugger
     if(props.post.receiverId === props.profileOwner.id && props.post.authorId !== props.profileOwner.id) {
-        postAuthor = props.users[props.post.authorId];
+        debugger
+        for(let i = 0; i < props.users.length; i++) {
+            if(props.users[i].id === props.post.authorId) {
+                postAuthor = props.users[i];
+            }
+        }
         authors = (
             <div className="authors">
                 {/* <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name} > </span> 
@@ -95,7 +101,14 @@ const PostIndexItem = (props) => {
             </div>
         )
     } else {
-        postAuthor = props.profileOwner;
+        // is post.author id
+
+        // postAuthor = props.profileOwner;
+        for (let i = 0; i < props.users.length; i++) {
+            if (props.users[i].id === props.post.authorId) {
+                postAuthor = props.users[i];
+            }
+        }
         authors = (
             <Link to={`/users/${postAuthor.id}`}>
                 <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name}</span>

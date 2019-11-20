@@ -3,33 +3,41 @@ import { openModal } from '../../actions/modal_actions';
 import PostIndex from './post_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
+import {fetchAllUsers} from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
-    // debugger 
-
     let currentUser = state.entities.users[state.session.currentUserId];
-    let posts = Object.values(state.entities.posts);
-    
     let profileOwner;
+    
+    let posts = Object.values(state.entities.posts);
+    let postsToShow = [];
+    let source;
 
-    if(typeof ownProps.profileOwner === 'undefined') {
-        profileOwner = state.entities.users[parseInt(ownProps.match.path.slice(7))];
-    } else {
+    if(ownProps.source === 'homepage') {     
+        // only show friend's last several posts
         profileOwner = currentUser;
+        for (let i = 0; i < posts.length; i++) {
+            if (currentUser.friendIds.includes(posts[i].authorId)) {
+                postsToShow.push(posts[i]);
+            }
+        }
+        source = 'homepage';
+    } else {
+        // otherwise, keep on with your posts
+        profileOwner = state.entities.users[parseInt(ownProps.match.path.slice(7))];
+        let myId = parseInt(profileOwner.id); 
+
+        for (let i = 0; i < posts.length; i++) {
+            if ((posts[i].authorId === myId && posts[i].receiverId === myId) ||
+                (posts[i].receiverId === myId && posts[i].authorId !== myId)) {
+                postsToShow.push(posts[i]);
+            }
+        }       
     }
     
-    let myId = parseInt(profileOwner.id);
-    let myPosts = [];
-    let allPosts = posts;
-
-    // TODO: Bruuh seriously? the fuck is the point of authoredPostIds???? Dumbass
-
-    for (let i = 0; i < allPosts.length; i++) {
-        if ((allPosts[i].authorId === myId && allPosts[i].receiverId === myId) || (allPosts[i].receiverId === myId && allPosts[i].authorId !== myId)) {
-            myPosts.push(allPosts[i]);
-        }
-    }
+    
+    
     
     // debugger
 
@@ -43,8 +51,9 @@ const mapStateToProps = (state, ownProps) => {
         profileOwner,
         currentUser,
         posts,
-        myPosts,
-        users: state.entities.users,
+        postsToShow,
+        users: Object.values(state.entities.users),
+        source,
         
         // postOwner: state.entities.users[owner],
     }
@@ -54,6 +63,7 @@ const mapDispatchToProps = dispatch => ({
     fetchPosts: () => dispatch(fetchPosts()),
     deletePost: (postId) => dispatch(deletePost(postId)),
     openModal: (str) => dispatch(openModal(str)),
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
     // openModal: () => (str) => dispatch(openModal(str)),
 })
 

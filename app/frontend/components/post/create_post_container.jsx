@@ -2,23 +2,26 @@ import {fetchPosts, createPost, deletePost} from '../../actions/post_actions';
 import { connect } from 'react-redux';
 import CreatePost from './create_post';
 import { openModal, closeModal } from '../../actions/modal_actions';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     
-    debugger
+    // debugger
     
-    let currentUser;
+    let currentUser = state.entities.users[state.session.currentUserId];
+    
+    let profileOwner;
 
-    if(typeof ownProps.currentUser !== 'undefined'){
-        currentUser = ownProps.currentUser;    
+    if(typeof ownProps.profileOwner !== 'undefined'){
+        debugger
+        profileOwner = ownProps.profileOwner;
     } else {
-        currentUser = state.entities.users[state.session.currentUserId];
+        profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
     }
 
     return {
         currentUser,
-        profileOwner: ownProps.profileOwner,
+        profileOwner,
     }
 }
 
@@ -33,4 +36,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePost);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreatePost));
