@@ -1,8 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../../actions/modal_actions';
+import {Link} from 'react-router-dom';
 
 const PendingFriendItem = (props) => {
-    // debugger
 
     return(
 
@@ -10,17 +10,19 @@ const PendingFriendItem = (props) => {
             <div className="single_friend">
                 <div className="single_friend_left_child">
                     <span className="friend_img_container">
-                        <img src={props.user.profilePhotoUrl} alt="Photo" style={{height: '50px', width: '50px'}}/>
+                        <Link to={`/users/${props.user.id}/`} >
+                            <img src={props.user.profilePhotoUrl} alt="Photo" style={{height: '50px', width: '50px'}}/>                    
+                        </Link>
                     </span>
                     <span className="user_full_name">
-                        <a href="#">
+                        <Link to={`/users/${props.user.id}/`} >
                             <span>
                                 {props.user.first_name + " "}
                             </span>
                             <span>
                                 {props.user.last_name}
                             </span>
-                        </a>
+                        </Link>
                     </span>
                 </div>
                 <div className="single_friend_child_right">

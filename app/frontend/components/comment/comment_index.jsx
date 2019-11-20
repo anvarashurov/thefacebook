@@ -7,6 +7,7 @@ class CommentIndex extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         return this.props.fetchComments();
     }
 
@@ -16,6 +17,12 @@ class CommentIndex extends React.Component {
         let myId = this.props.commentOwner.id;
         let myComments = [];
         let allComments = this.props.comments;
+
+        // a lot of fetching TODO fix it
+
+        if(allComments.length < 2) {
+            return null;
+        }
 
         for (let i = 0; i < allComments.length; i++) {
             if (allComments[i].authorId === parseInt(myId) && allComments[i].postId === this.props.postId) {

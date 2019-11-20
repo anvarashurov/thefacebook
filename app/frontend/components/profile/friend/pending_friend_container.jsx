@@ -2,29 +2,19 @@ import { updateFriendRequest, deleteFriendReqest } from '../../../actions/friend
 import { fetchAllUsers } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
 import PendingFriend from './pending_friend';
-// import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
     let friendReceived = [];
     
-    // currentUser.friendRequestSentToIds.forEach((arr) => {
-    //     // debugger
-    //     friendSent.push([state.entities.users[arr[0]], arr[1]]);
-    // })
-
-    
-    currentUser.friendRequestReceivedFromIds.forEach( arr => {
-        // debugger
-        friendReceived.push([state.entities.users[arr[0]], arr[1]]);
+    currentUser.friendRequestReceivedFromIds.forEach( senderId => {
+        friendReceived.push(state.entities.users[senderId]);
     })
 
     return {
         currentUser: state.entities.users[state.session.currentUserId],
-        // profileOwner: state.entities.users[ownProps.match.params.id],
         users: Object.values(state.entities.users),
-        // friendSent,
         friendReceived,
     }
 }

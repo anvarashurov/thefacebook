@@ -8,22 +8,16 @@ const msp = (state, ownProps) => {
 
     let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
     let currentUser = state.entities.users[state.session.currentUserId];
+    let text;
 
-    let text = "Add Friend";
-    currentUser.friendRequestSentToIds.forEach((friendSentArr) => {
-        if (friendSentArr[0] === profileOwner.id) {
-            switch (friendSentArr[1]) {
-                case 'PENDING':
-                    text = "Remove Request";
-                    break;
-                case 'APPROVED':
-                    text = "Remove Friend";
-                    break;
-            }
-        }
-    })
+    if(currentUser.friendIds.includes(profileOwner.id)) {
+        text = "Remove Friend";
+    } else if(currentUser.friendRequestSentToIds.includes(profileOwner.id)) {
+        text = "Remove Request";
+    } else {
+        text = "Add Friend";
+    }
 
-    debugger
     return {
         profileOwner,
         currentUser,
@@ -34,7 +28,6 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
         createFriendRequest: (user1, user2) => dispatch(createFriendRequest(user1, user2)),
-        // updateFriendRequest: (user1, user2) => dispatch(updateFriendRequest(user1, user2)),
         deleteFriendRequest: (user1, user2) => dispatch(deleteFriendRequest(user1, user2)),
         openModal: (str) => dispatch(openModal(str)),
     }

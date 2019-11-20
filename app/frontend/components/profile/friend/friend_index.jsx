@@ -10,7 +10,9 @@ class FriendIndex extends React.Component {
     render() {
 
         let friends;
+
         let profileOwnerFriends = this.props.friends;
+        
         if (this.props.onlyNine) {
             profileOwnerFriends = profileOwnerFriends.slice(0, this.props.onlyNine);
         }

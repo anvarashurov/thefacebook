@@ -2,10 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 class ProfileWallpaper extends React.Component {
-    
+    // TODO This needs to be dynamic 
     constructor(props) {
-        // TODO: Why is this not being hit the first time someone's profile gets pulled? QUESTION
-        debugger
         super(props);
         this.state = this.props.text;
         this.handleFriendOp = this.handleFriendOp.bind(this);
@@ -13,21 +11,17 @@ class ProfileWallpaper extends React.Component {
  
     handleFriendOp() {
             if(this.state === 'Add Friend') {
-                debugger
+    
                 this.props.createFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Remove Request'));      
             } else if(this.state === 'Remove Request') {
-                debugger
+    
                 this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Add Friend'));
             } else {
-                // they are friends
-                debugger
                 this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Add Friend' ));
             }
     }
 
     render() {
-
-        debugger
         
         let editProfileOrAddFriend;
 
@@ -36,7 +30,7 @@ class ProfileWallpaper extends React.Component {
                 <button onClick={() => this.props.openModal({ type: "edit_profile", profileOwner: null })}>Update Profile</button>
             )
         } else {
-            debugger
+
             editProfileOrAddFriend = (
                 <button onClick={this.handleFriendOp}>
                     {this.state}
