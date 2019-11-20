@@ -5,36 +5,30 @@ class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
     componentDidMount() {
-        debugger
         return this.props.fetchComments();
     }
 
     render() {
 
+        let postComments = this.props.postComments;
 
-        let myId = this.props.commentOwner.id;
-        let myComments = [];
-        let allComments = this.props.comments;
-
-        // a lot of fetching TODO fix it
-
-        if(allComments.length < 2) {
+        if(postComments.length === 0) {
             return null;
         }
 
-        for (let i = 0; i < allComments.length; i++) {
-            if (allComments[i].authorId === parseInt(myId) && allComments[i].postId === this.props.postId) {
-                myComments.push(allComments[i]);
+        const comments = postComments.slice(0).map((comment, idx) => {
+            let commentAuthor;
+            for(let i = 0; i < this.props.postAuthors.length; i++) {
+                if(comment.authorId === this.props.postAuthors[i].id) {
+                    commentAuthor = this.props.postAuthors[i];
+                }
             }
-        }
-
-        // figure out why there is no need for .reverse() in
-        // const comments = myComments.slice(0).reverse().map((comment) => {
-
-        const comments = myComments.slice(0).map((comment) => {
-            return <CommentIndexItem comment={comment} key={comment.id} commentOwner={this.props.commentOwner} />
+            return <CommentIndexItem 
+                key={idx} 
+                comment={comment} 
+                commentOwner={commentAuthor} />
         })
 
         return (

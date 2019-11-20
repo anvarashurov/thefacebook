@@ -109,6 +109,7 @@
 }
 
 .home {
+    margin-left: 10px;
     padding: 0px 12px 0px 12px;
     border-right: 0.5px solid rgba(75, 95, 136, 0.863);
 }

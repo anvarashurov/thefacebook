@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
-// import DropdownContainer from '../dropdown/dropdown_container';
 
 const PostIndexItem = (props) => {
     const numComments = props.post.commentIds.length;
@@ -15,7 +14,6 @@ const PostIndexItem = (props) => {
     } else if (numComments > 1) {
         output = numComments + " " + "Comments";
     }
-// debugger
 
     function formatHour(date) {
         let allMonths = "January February March April May June July August September October November December".split(" ");
@@ -30,14 +28,12 @@ const PostIndexItem = (props) => {
         return strTime;
     }
 
-    // convert to Date object
     let date = new Date(props.post.extra);
     
     let timeOfPost = formatHour(date);
 
     let url;
     if(props.post.photoURL) {
-        // debugger
         url = (
             <button onClick={() => props.openModal({ type: 'view_image', imageUrl: props.post.photoURL })}>
                 <div className="post_image">
@@ -47,22 +43,8 @@ const PostIndexItem = (props) => {
         )
         
     }
-
-    // let postOptions;
-
-    // if(props.currentUser.id !== props.postOwner.id) {
-    //     postOptions = null;
-    // } else {
-    //     <div className="triple">
-    //         <img className="trippledots" src={window.trippledots} alt="T" />
-    //         {this.props.dropdownDisplayed && <DropdownContainer />}
-    //     </div>
-    // }
-
     let postOptions;
-    debugger
-    // postOwner.id previously
-    // if( (props.currentUser.id === props.profileOwner.id || props.currentUser.id === props.post.authorId) && props.source !== 'homepage') {
+
     if(props.post.authorId === props.currentUser.id) {
         postOptions = (
         <div className="post_options">
@@ -76,34 +58,32 @@ const PostIndexItem = (props) => {
         )
     } else { postOptions = null }
 
-    // Authors
-
     let authors;
     let postAuthor;
+    let postReceiver;
     debugger
-    if(props.post.receiverId === props.profileOwner.id && props.post.authorId !== props.profileOwner.id) {
+    
+    if(props.post.receiverId !== props.post.authorId) {
         debugger
         for(let i = 0; i < props.users.length; i++) {
             if(props.users[i].id === props.post.authorId) {
                 postAuthor = props.users[i];
             }
+            if(props.users[i].id === props.post.receiverId) {
+                postReceiver = props.users[i];
+            }
         }
         authors = (
             <div className="authors">
-                {/* <span className="post_author">{props.postOwner.first_name + " " + props.postOwner.last_name} > </span> 
-                <span className="post_author">{props.profileOwner.first_name + " " + props.profileOwner.last_name}</span> */}
-                <Link to={`/users/${postAuthor.id}`}>
-                    <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} > </span>
+               <Link to={`/users/${postAuthor.id}`}>
+                    <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} &#62; </span>
                 </Link>
-                <Link to={`/users/${props.profileOwner.id}`}>
-                    <span className="post_author">{props.profileOwner.first_name + " " + props.profileOwner.last_name}</span>
+                <Link to={`/users/${postReceiver.id}`}>
+                    <span className="post_author">{postReceiver.first_name + " " + postReceiver.last_name}</span>
                 </Link>
             </div>
         )
     } else {
-        // is post.author id
-
-        // postAuthor = props.profileOwner;
         for (let i = 0; i < props.users.length; i++) {
             if (props.users[i].id === props.post.authorId) {
                 postAuthor = props.users[i];
@@ -131,9 +111,6 @@ const PostIndexItem = (props) => {
                             </span>
                         </div>
                     </div>
-                    {/* <div className="triple">
-                        <img className="trippledots" src={window.trippledots} alt="T"/>
-                    </div> */}
                     { postOptions }
                 </div>
                 <span className="post_content">{props.post.content}</span>

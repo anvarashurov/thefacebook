@@ -1,20 +1,27 @@
-// what do we need inside comment_index component?
-
-// fetch all comments
-
-// owner of comment
-
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
 
 import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
+    let postComments = [];
+    let postAuthors = [];
+
+    let comments = Object.values(state.entities.comments);
+    let post = state.entities.posts[ownProps.postId];
+    
+    for(let i = 0; i < comments.length; i++) {
+        if(post.commentIds.includes(comments[i].id)) {
+            postComments.push(comments[i]);
+            postAuthors.push(state.entities.users[comments[i].authorId]);
+        }
+    }
+
+    
     return {
-        comments: Object.values(state.entities.comments),
-        commentOwner: state.entities.users[state.session.currentUserId],
-        postId: ownProps.postId,
+        postComments,
+        postAuthors,
     }
 }
 

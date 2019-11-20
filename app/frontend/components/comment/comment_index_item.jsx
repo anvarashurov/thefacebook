@@ -1,54 +1,29 @@
 import React, {useState} from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-// import { deleteComment } from '../../actions/comment_actions';
 import CreateCommentContainer from '../comment/create_comment_container';
 const CommentIndexItem = (props) => {
 
     function formatHour(date) {
-        // let allMonths = "January February March April May June July August September October November December".split(" ");
-        // let month = allMonths[date.getMonth()];
-        // let hours = date.getHours();
-        // let minutes = date.getMinutes();
-        // let ampm = hours >= 12 ? 'PM' : 'AM';
-        // hours = hours % 12;
-        // hours = hours ? hours : 12;
-        // minutes = minutes < 10 ? '0' + minutes : minutes;
-        // let strTime = `${month} ${date.getDay()} at ${hours}:${minutes} ${ampm}`;
-        // return strTime;
         let time;
         let d = Date.now();
         let sec = Math.floor((d - date) / 1000);
         if(sec < 60) {
-            // is less than 60 seconds
             time = `${sec}s`;
         } else if(sec < (60*60)) {
-            // is less than 60 mins
             time = `${Math.floor(sec/60)}m`;
         } else if(sec < (60*60*24)) {
             time = `${Math.floor(sec/(60*60))}h`;
         }        
         else {
-            // is less than a day
             time = `${Math.floor(sec/(60*60*24))}d`
         }
         return time
     }
-
-    // convert to Date object
-    // let date = new Date(props.post.extra);
-    // debugger
     let commentCreatedAt = new Date(props.comment.createdAt);
     commentCreatedAt = formatHour(commentCreatedAt);
-    // commentCreatedAt = commentCreatedAt.slice(4, commentCreatedAt.length);
-
-    // let replyContainer = null;
-
     const [replyContainer, setReplyContainer] = useState(null);
 
     function handleReply() {
-        // debugger
-        // TODO : more sophisticated reply container that disappears after commenting
         if(replyContainer === null) {
             setReplyContainer(
                 <div className="reply_form">
@@ -91,20 +66,9 @@ const CommentIndexItem = (props) => {
                     </div>
                 </div>
             </div>
-            {/* <button onClick={() => props.deletePost(props.post.id)} className="delete_post_button">Delete</button> */}
-        {/* <div className="comment_children">
-
-        </div> */}
-        {/* <CreateCommentContainer postId={props.post.id} /> */}
         </div>
            
     )
 };
-
-// const mdp = dispatch => {
-//     return {
-//         deletePost: id => dispatch(deletePost(id))
-//     };
-// };
 
 export default CommentIndexItem;
