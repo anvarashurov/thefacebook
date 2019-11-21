@@ -1,6 +1,3 @@
-// import PostDropdownContainer from '../post/post_dropdown_container';
-
-// import onClickOutside from "react-onclickoutside";
 import LogoutContainer from './logout_container';
 import PendingFriendContainer from '../profile/friend/pending_friend_container';
 
