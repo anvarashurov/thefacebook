@@ -6,14 +6,24 @@ import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
-    let friendReceived = [];
+    let currentUser;
     
-    currentUser.friendRequestReceivedFromIds.forEach( senderId => {
-        friendReceived.push(state.entities.users[senderId]);
-    })
+    if(typeof ownProps.currentUser === 'undefined') {
+        currentUser = state.entities.users[state.session.currentUserId];
+    } else {
+        currentUser = state.entities.users[ownProps.currentUser];
+    }
+
+    let friendReceived = [];
+    debugger
+    if(currentUser.friendRequestReceivedFromIds.length > 0) {
+        currentUser.friendRequestReceivedFromIds.forEach( senderId => {
+            friendReceived.push(state.entities.users[senderId]);
+        })
+    }
 
     return {
-        currentUser: state.entities.users[state.session.currentUserId],
+        currentUser,
         users: Object.values(state.entities.users),
         friendReceived,
     }

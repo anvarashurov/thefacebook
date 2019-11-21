@@ -6,6 +6,8 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user 
       login!(@user)
+      # TODO BUG: when you log out, refresh, then login and press "friends" on navbar, its error. 
+      #current_user = @user
       # give path to show (where Jbuilder lives)
       render "api/users/show" # user exists
     else

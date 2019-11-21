@@ -12,6 +12,7 @@ class Dropdown extends React.Component {
         // this.renderDropdown = this.renderDropdown.bind(this);
     }
 
+    // TODO BUG
     handleClickOutside() {
         this.props.hideDropdown();
     }
@@ -32,7 +33,7 @@ class Dropdown extends React.Component {
                 // debugger
                 component = (
                     <div className="friend_dropdown">
-                        <PendingFriendContainer />
+                        <PendingFriendContainer currentUser={this.props.componentId}/>
                     </div>
                 )
                 break;
