@@ -67,7 +67,7 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
         )
     } else {
         homeTag = (
-            <td> Works at
+            <td> From
                 <span>
                     {hometown}
                 </span>
@@ -82,7 +82,7 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
         )
     } else {
         relTag = (
-            <td> Works at
+            <td>
                 <span>
                     {relStatus}
                 </span>
