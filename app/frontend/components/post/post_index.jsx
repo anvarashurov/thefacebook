@@ -12,7 +12,6 @@ class PostIndex extends React.Component {
     }
 
     componentWillUpdate(nextProps) {
-        debugger
         if (this.state.allLikesArr.length !== nextProps.allLikesArr.length) {
             this.setState({ allLikesArr: nextProps.allLikesArr });
         }
@@ -33,6 +32,7 @@ class PostIndex extends React.Component {
         const users = this.props.allUsersObj;
         
         const posts = this.props.postsToShowArr.slice(0).reverse().map((post) => {
+            
             let likers = [];
             
             if(post.likerIds.length !== 0) {

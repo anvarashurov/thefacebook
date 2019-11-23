@@ -15,10 +15,9 @@ class PostIndexItem extends React.Component {
         super(props);
 
         this.state = {
-            post: this.props.post,
             likerIds: this.props.likerIds,
-            postLikers: this.props.likers,
-            likeTag: "",
+            // postLikers: this.props.likers,
+            // likeTag: "",
         }
 
         this.formatHour = this.formatHour.bind(this);
@@ -41,28 +40,30 @@ class PostIndexItem extends React.Component {
     handleLike() {
         debugger
         // if user has liked then deleteLike
-        if(this.state.post.likerIds.includes(this.props.currentUser.id)) {
+        if(this.props.post.likerIds.includes(this.props.currentUser.id)) {
             debugger
             for(let i = 0; i < this.props.allLikes.length; i++) {
-                if(this.props.allLikes[i].likerId === this.props.currentUser.id) {
+                if(this.props.allLikes[i].likerId === this.props.currentUser.id
+                    && this.props.allLikes[i].likeableId === this.props.post.id) {
+                        debugger
                     this.props.deleteLike(this.props.allLikes[i].id);
                 }
             }
         } 
         // if user has NOT liked, then createLike
         else {
-            let tempLikers = this.state.postLikers;
-            this.props.createLike({ likeable_id: this.state.post.id, likeable_type: 'Post' });
-            tempLikers.push(currentUser);
-            this.setState({postLikers: tempLikers});
-            return this.setState({post: this.state.post});
+            // let tempLikers = this.state.postLikers;
+            return this.props.createLike({ likeable_id: this.props.post.id, likeable_type: 'Post' });
+            // tempLikers.push(currentUser);
+            // this.setState({postLikers: tempLikers});
+            // return this.setState({post: this.props.post});
         }
     }
 
     render() {
 
         let likeIcon;
-        if (this.state.post.likerIds.includes(this.props.currentUser.id)) {
+        if (this.props.post.likerIds.includes(this.props.currentUser.id)) {
             likeIcon = window.likeblue;
         } else {
             likeIcon = window.like
@@ -78,7 +79,7 @@ class PostIndexItem extends React.Component {
         }
 
         // likes counter
-        const numLikes = this.state.post.likeIds.length;
+        const numLikes = this.props.post.likeIds.length;
         let likesTag;
         let others;
         let unlike = "Like"
@@ -91,7 +92,7 @@ class PostIndexItem extends React.Component {
 
         if (numLikes === 1) {
             debugger
-            if(this.state.post.likerIds[0] === this.props.currentUser.id) {
+            if(this.props.post.likerIds[0] === this.props.currentUser.id) {
                 unlike = "Unlike";
                 likesTag = (
                     <div className="like_count_container">
@@ -113,7 +114,7 @@ class PostIndexItem extends React.Component {
             }
         // numLikes + " " + "Like";
         } else if (numLikes > 1) {
-            if (this.state.post.likerIds.includes(this.props.currentUser.id)) {
+            if (this.props.post.likerIds.includes(this.props.currentUser.id)) {
                 unlike = "Unlike";
                 likesTag = (
                     <div className="like_count_container">

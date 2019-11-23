@@ -3,7 +3,7 @@ import { RECEIVE_POST } from "../actions/post_actions";
 import { RECEIVE_ALL_USERS } from "../actions/user_actions";
 import { RECEIVE_COMMENT } from "../actions/comment_actions";
 import {merge} from 'lodash';
-
+import {REMOVE_LIKE} from '../actions/like_actions';
 // lodash wrapper error
 
 const UsersReducer = (oldState = {}, action) => {
@@ -18,6 +18,8 @@ const UsersReducer = (oldState = {}, action) => {
     case RECEIVE_COMMENT:
       oldState[action.comment.authorId].authoredCommentIds.push(action.comment.id);
       return oldState;
+    // case REMOVE_LIKE:
+
     default:
       return oldState;
   }

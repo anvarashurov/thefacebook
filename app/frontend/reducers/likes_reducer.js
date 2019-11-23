@@ -6,15 +6,15 @@ const likesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     
     switch(action.type) {
-        case RECEIVE_ALL_LIKES:
-             
+        case RECEIVE_ALL_LIKES:   
             return action.likes;
         case RECEIVE_LIKE:
-            return merge({}, oldState, { [action.type.id]: action.like });
+            return merge({}, oldState, { [action.like.id]: action.like });
         case REMOVE_LIKE:
             debugger
             let newState = merge({}, oldState);
-            delete newState[action.like.likeId];
+            delete newState[action.like.id];
+            debugger
             return newState;
         default:
             return oldState;

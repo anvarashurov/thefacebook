@@ -10,16 +10,17 @@ const mapStateToProps = (state, ownProps) => {
     const allLikesArr = Object.values(state.entities.likes).filter(like => {
         return like.likeableType === 'Post';
     });
-    let currentUser = state.entities.users[state.session.currentUserId];
+    
     let posts = Object.values(state.entities.posts);
     
+    let currentUser = state.entities.users[state.session.currentUserId];
     
     let postsToShowArr = [];
     let profileOwner;
     let source;
 
     if(ownProps.source === 'homepage') {     
-        // Current User Friends Posts
+        // current user's friends' posts
         profileOwner = currentUser;
         for (let i = 0; i < posts.length; i++) {
             if (currentUser.friendIds.includes(posts[i].authorId)) {
@@ -28,11 +29,12 @@ const mapStateToProps = (state, ownProps) => {
         }
         source = 'homepage';
     } else {
-        // Profile Owner posts
+        // profile owner posts
         profileOwner = state.entities.users[parseInt(ownProps.match.path.slice(7))];
         let myId = parseInt(profileOwner.id); 
 
         for (let i = 0; i < posts.length; i++) {
+            // profile owner is a receiver in both cases
             if ((posts[i].authorId === myId && posts[i].receiverId === myId) ||
                 (posts[i].receiverId === myId && posts[i].authorId !== myId)) {
                 postsToShowArr.push(posts[i]);
@@ -43,16 +45,18 @@ const mapStateToProps = (state, ownProps) => {
     return {
         currentUser,
         profileOwner,
-        postsToShowArr,
         allUsersArr: Object.values(state.entities.users),
         allUsersObj: state.entities.users,
+        
+        postsToShowArr,
+
         allLikesArr,
         source,
    }
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchPosts: () => dispatch(fetchPosts()),
+    fetchPosts:    () => dispatch(fetchPosts()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
     fetchAllLikes: () => dispatch(fetchAllLikes()),
 })
