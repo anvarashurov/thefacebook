@@ -240,9 +240,10 @@ class PostIndexItem extends React.Component {
                     <div className="post_footer">
                         <div className="like_comment_container">
                             <li>
+                                <button onClick={this.handleLike}>
                                 <img src={likeIcon}/> 
                                 {/* TODO How to know if liked or no */}
-                                <button onClick={this.handleLike}>
+                               
                                     {unlike}
                                 </button>
                             </li>

@@ -116,6 +116,14 @@
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    width: 190px;
+}
+
+.like_comment_container button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 42px;
 }
 
 .like_comment_container li {
@@ -124,6 +132,7 @@
     align-items: center;
     height: 42px;
 }
+
 
 .like_comment_container > li {
     margin-left: 50px;
