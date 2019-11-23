@@ -4,8 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
-    
+        
     let currentUser = state.entities.users[state.session.currentUserId];
     let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
     // this is when modal is opened from Homepage

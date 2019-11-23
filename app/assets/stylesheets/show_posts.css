@@ -171,3 +171,34 @@
     width: 100%;
     /* object-fit: cover; */
 }
+
+/* 
+
+TODO LIKES
+
+
+*/
+
+.like_count_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.like_count_container > img {
+    width: 17px;
+    height: 17px;
+    padding: 3px;
+    margin-left: 5px;
+}
+
+.like_count_text {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #606770;
+    cursor: pointer;
+}
+
+.like_count_text:hover {
+    text-decoration: underline;
+}

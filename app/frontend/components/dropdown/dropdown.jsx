@@ -20,14 +20,12 @@ class Dropdown extends React.Component {
         
         switch (this.props.component) {
             case 'logout':
-                // debugger
                 component = (
                     <div className="logout_dropdown">
                         <LogoutContainer />
                     </div>)
                 break;
             case 'friend':
-                // debugger
                 component = (
                     <div className="friend_dropdown">
                         <PendingFriendContainer currentUser={this.props.componentId}/>
@@ -39,7 +37,6 @@ class Dropdown extends React.Component {
             // case 'post_options':
 
             default:
-                // debugger
                 component = null;
                 break;
         }

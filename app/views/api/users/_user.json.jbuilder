@@ -12,8 +12,6 @@ json.coverPhotoUrl user.coverPhoto.attached? ? url_for(user.coverPhoto) : "https
 
 #careful
 
-#debugger
-
 json.photosUrl user.photos.map {|file| url_for(file)}
 
 friendRequestSentToIds = []
@@ -35,3 +33,5 @@ json.friendIds friendIds
 
 json.friendRequestSentToIds friendRequestSentToIds
 json.friendRequestReceivedFromIds friendRequestReceivedFromIds
+
+json.likedPostIds user.liked_post_ids

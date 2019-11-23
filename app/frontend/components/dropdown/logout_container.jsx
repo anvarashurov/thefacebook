@@ -19,7 +19,6 @@ class LogoutContainer extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <button id="logout_button" onClick={this.handleLogout}>
                 Log out

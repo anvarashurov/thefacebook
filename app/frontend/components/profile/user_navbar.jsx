@@ -100,7 +100,7 @@ class UserNavbar extends React.Component {
 }
 
 const msp = (state) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.currentUserId],
         dropdown: state.ui.dropdown,

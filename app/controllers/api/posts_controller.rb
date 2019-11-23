@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
     end
     def index
         # TODO: Figure out the usage of "includes"
-        # debugger
+        # 
         @posts = Post.all
         if @posts
             render '/api/posts/index'
@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
     end
     
     # def update
-    #     debugger
+    #     
     #     @post = Post.find(params[:id])
     #     if @post 
     #         @post.update_attributes(params[:post][:content])

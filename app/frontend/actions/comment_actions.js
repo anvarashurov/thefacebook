@@ -7,8 +7,8 @@ export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const createComment = comment => dispatch => {
     return APICommentUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 }
-export const fetchComments = comments => dispatch => {
-    return APICommentUtil.fetchComments(comments).then(comments => dispatch(receiveComments(comments)))
+export const fetchComments = () => dispatch => {
+    return APICommentUtil.fetchComments().then(comments => dispatch(receiveComments(comments)))
 }
 export const fetchComment = commentId => dispatch => {
     return APICommentUtil.fetchComment(commentId).then(comment => dispatch(receiveComment(comment)))

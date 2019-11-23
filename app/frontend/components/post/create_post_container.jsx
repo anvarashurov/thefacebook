@@ -5,15 +5,12 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    
-    // debugger
-    
+        
     let currentUser = state.entities.users[state.session.currentUserId];
     
     let profileOwner;
 
     if(typeof ownProps.profileOwner !== 'undefined'){
-        debugger
         profileOwner = ownProps.profileOwner;
     } else {
         profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];

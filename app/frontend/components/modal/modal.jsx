@@ -56,7 +56,6 @@ class Modal extends React.Component {
                 )
                 break;
             case 'view_image':
-                // debugger
                 component = (
                     <div className="view_image_modal" onClick={e => e.stopPropagation()}>
                         <ViewImage imageUrl={this.props.modal.imageUrl} closeModal={this.props.closeModal}/>

@@ -32,13 +32,29 @@ class User < ApplicationRecord
   has_many :friend_requests_received,
         class_name: "Friend",
         foreign_key: :friend_receiver,
-        primary_key: :id
+        primary_key: :id 
 
   has_one_attached :profilePhoto
   has_one_attached :coverPhoto
   
   has_many_attached :photos
   # has_one_attached :video
+
+  has_many :likes,
+    class_name: "Like",
+    foreign_key: :liker_id,
+    primary_key: :id,
+    dependent: :destroy
+  
+  has_many :liked_post,
+    through: :likes,
+    source: :likeable,
+    source_type: 'Post'
+
+  # has_many :liked_comment,
+  #   through: :likes,
+  #   source: :likeable,
+  #   source_type: 'Comment'
 
   # def friends 
   #   Friend.where("(friend_sender = ? OR friend_receiver = ?) AND status = ?", self.id, self.id, true)

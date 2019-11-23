@@ -1,21 +1,31 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deletePost } from '../../actions/post_actions';
+
 import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItemContainer from "../comment/comment_index_item_container";
 
-const PostIndexItem = (props) => {
-    const numComments = props.post.commentIds.length;
-    let output;
+import { openModal } from '../../actions/modal_actions';
+import { deletePost } from '../../actions/post_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
-    if (numComments === 1) {
-        output = numComments + " " + "Comment";
-    } else if (numComments > 1) {
-        output = numComments + " " + "Comments";
+class PostIndexItem extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            post: this.props.post,
+            likerIds: this.props.likerIds,
+            postLikers: this.props.likers,
+            likeTag: "",
+        }
+
+        this.formatHour = this.formatHour.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     }
 
-    function formatHour(date) {
+    formatHour(date) {
         let allMonths = "January February March April May June July August September October November December".split(" ");
         let month = allMonths[date.getMonth()];
         let hours = date.getHours();
@@ -28,123 +38,254 @@ const PostIndexItem = (props) => {
         return strTime;
     }
 
-    let date = new Date(props.post.extra);
-    
-    let timeOfPost = formatHour(date);
-
-    let url;
-    if(props.post.photoURL) {
-        url = (
-            <button onClick={() => props.openModal({ type: 'view_image', imageUrl: props.post.photoURL })}>
-                <div className="post_image">
-                    <img src={props.post.photoURL} alt="T" />
-                </div>
-            </button>
-        )
-        
-    }
-    let postOptions;
-
-    if(props.post.authorId === props.currentUser.id) {
-        postOptions = (
-        <div className="post_options">
-            <button onClick={() => props.openModal({type: 'edit_post', post: props.post})}>
-                <img src={window.edit} alt=""/>
-            </button>
-            <button onClick={() => props.deletePost(props.post.id)}>
-                <img src={window.bin} alt=""/>
-            </button>
-        </div>
-        )
-    } else { postOptions = null }
-
-    let authors;
-    let postAuthor;
-    let postReceiver;
-    debugger
-    
-    if(props.post.receiverId !== props.post.authorId) {
+    handleLike() {
         debugger
-        for(let i = 0; i < props.users.length; i++) {
-            if(props.users[i].id === props.post.authorId) {
-                postAuthor = props.users[i];
+        // if user has liked then deleteLike
+        if(this.state.post.likerIds.includes(this.props.currentUser.id)) {
+            debugger
+            for(let i = 0; i < this.props.allLikes.length; i++) {
+                if(this.props.allLikes[i].likerId === this.props.currentUser.id) {
+                    this.props.deleteLike(this.props.allLikes[i].id);
+                }
             }
-            if(props.users[i].id === props.post.receiverId) {
-                postReceiver = props.users[i];
-            }
+        } 
+        // if user has NOT liked, then createLike
+        else {
+            let tempLikers = this.state.postLikers;
+            this.props.createLike({ likeable_id: this.state.post.id, likeable_type: 'Post' });
+            tempLikers.push(currentUser);
+            this.setState({postLikers: tempLikers});
+            return this.setState({post: this.state.post});
         }
-        authors = (
-            <div className="authors">
-               <Link to={`/users/${postAuthor.id}`}>
-                    <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} &#62; </span>
-                </Link>
-                <Link to={`/users/${postReceiver.id}`}>
-                    <span className="post_author">{postReceiver.first_name + " " + postReceiver.last_name}</span>
-                </Link>
-            </div>
-        )
-    } else {
-        for (let i = 0; i < props.users.length; i++) {
-            if (props.users[i].id === props.post.authorId) {
-                postAuthor = props.users[i];
-            }
-        }
-        authors = (
-            <Link to={`/users/${postAuthor.id}`}>
-                <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name}</span>
-            </Link>
-        )
     }
+
+    render() {
+
+        let likeIcon;
+        if (this.state.post.likerIds.includes(this.props.currentUser.id)) {
+            likeIcon = window.likeblue;
+        } else {
+            likeIcon = window.like
+        }
+        
+        let commentsTag;
+        const numComments = this.props.post.commentIds.length;
+
+        if (numComments === 1) {
+            commentsTag = numComments + " " + "Comment";
+        } else if (numComments > 1) {
+            commentsTag = numComments + " " + "Comments";
+        }
+
+        // likes counter
+        const numLikes = this.state.post.likeIds.length;
+        let likesTag;
+        let others;
+
+        if(numLikes - 1 === 1) {
+            others = "Other";
+        } else {
+            others = "Others";
+        }
+
+        if (numLikes === 1) {
+            debugger
+            if(this.state.post.likerIds[0] === this.props.currentUser.id) {
+                likesTag = (
+                    <div className="like_count_container">
+                        <img src={window.likecount} />
+                        <span className="like_count_text">
+                            You
+                        </span>
+                    </div>
+                )
+            } else {
+                likesTag = (
+                    <div className="like_count_container">
+                        <img src={window.likecount} />
+                        <span className="like_count_text">
+                            1
+                        </span>
+                    </div>
+                )
+            }
+        // numLikes + " " + "Like";
+        } else if (numLikes > 1) {
+            if (this.state.post.likerIds.includes(this.props.currentUser.id)) {
+                likesTag = (
+                    <div className="like_count_container">
+                        <img src={window.likecount} />
+                        <span className="like_count_text">
+                            You and {numLikes - 1} {others}
+                        </span>
+                    </div>
+                )
+            } else {
+                likesTag = (
+                    <div className="like_count_container">
+                        <img src={window.likecount} />
+                        <span className="like_count_text">
+                            {numLikes}
+                        </span>
+                    </div>
+                )
+            }
+        }
+
+        let timeOfPost = this.formatHour(new Date(this.props.post.extra));
+
+        // this accounts for Post with Photo
+        let url;
+        if(this.props.post.photoURL) {
+            url = (
+                <button onClick={() => this.props.openModal({ type: 'view_image', imageUrl: this.props.post.photoURL })}>
+                    <div className="post_image">
+                        <img src={this.props.post.photoURL} alt="T" />
+                    </div>
+                </button>
+            )
+            
+        }
+
+        // this accounts for Edit or Delete Operation if post owner is specific user
+        let postOptions;
+        if(this.props.post.authorId === this.props.currentUser.id) {
+            postOptions = (
+            <div className="post_options">
+                <button onClick={() => this.props.openModal({type: 'edit_post', post: this.props.post})}>
+                    <img src={window.edit} alt=""/>
+                </button>
+                <button onClick={() => this.props.deletePost(this.props.post.id)}>
+                    <img src={window.bin} alt=""/>
+                </button>
+            </div>
+            )
+        } else { 
+            postOptions = null 
+        }
+
+        // Posting to other's wall
+        let authors;
+        let postAuthor;
+        let postReceiver;
+        
+        if(this.props.post.receiverId !== this.props.post.authorId) {
+            for(let i = 0; i < this.props.allUsersArr.length; i++) {
+                if(this.props.allUsersArr[i].id === this.props.post.authorId) {
+                    debugger
+                    postAuthor = this.props.allUsersArr[i];
+                }
+                if(this.props.allUsersArr[i].id === this.props.post.receiverId) {
+                    postReceiver = this.props.allUsersArr[i];
+                }
+            }
+            authors = (
+                <div className="authors">
+                <Link to={`/users/${postAuthor.id}`}>
+                        <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} &#62; </span>
+                    </Link>
+                    <Link to={`/users/${postReceiver.id}`}>
+                        <span className="post_author">{postReceiver.first_name + " " + postReceiver.last_name}</span>
+                    </Link>
+                </div>
+            )
+            // TODO: CLICKING PROFILE PHOTO GETS ME TO THE PROFILE FFS
+        } else {
+            for (let i = 0; i < this.props.allUsersArr.length; i++) {
+                if (this.props.allUsersArr[i].id === this.props.post.authorId) {
+                    debugger
+                    postAuthor = this.props.allUsersArr[i];
+                }
+            }
+            authors = (
+                <Link to={`/users/${postAuthor.id}`}>
+                    <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name}</span>
+                </Link>
+            )
+        }
     
-    return (
-        <>
-            <div className="one_post">
-                <div className="one_post_left_child">
-                    <div>
-                        <Link to={`/users/${postAuthor.id}`}>
-                            <img className="post_author_profile" src={postAuthor.profilePhotoUrl}/>
-                        </Link>
-                        <div className="name_date_container">
-                            {authors}
-                            <span>
-                                {timeOfPost}
-                            </span>
+        // HTML
+        return (
+            <>
+                <div className="one_post">
+                    <div className="one_post_left_child">
+                        <div>
+                            <Link to={`/users/${postAuthor.id}`}>
+                                <img className="post_author_profile" src={postAuthor.profilePhotoUrl}/>
+                            </Link>
+                            <div className="name_date_container">
+                                {authors}
+                                <span>
+                                    {timeOfPost}
+                                </span>
+                            </div>
+                        </div>
+                        { postOptions }
+                    </div>
+                    <span className="post_content">{this.props.post.content}</span>
+                    {/* url is a terrible name for SHOWING PHOTO of post if it exists */}
+                    {url}
+                    {/* number of comments */}
+                    <div className="num_comments">
+                        {commentsTag} 
+                    </div>
+                    {/* number of likes */}
+                    <div className="num_likes">
+                        {likesTag}
+                    </div>
+
+                    <div className="post_footer">
+                        <div className="like_comment_container">
+                            <li>
+                                <img src={likeIcon}/> 
+                                {/* TODO How to know if liked or no */}
+                                <button onClick={this.handleLike}>
+                                    Like
+                                </button>
+                            </li>
+                            <li>
+                                <img src={window.comment}/>
+                                <span>
+                                    Comment
+                                </span>
+                            </li>
                         </div>
                     </div>
-                    { postOptions }
-                </div>
-                <span className="post_content">{props.post.content}</span>
-                {url}
-                <div className="num_comments">
-                    {output} 
+                    <CommentIndexItemContainer postId={this.props.post.id}/>
+                    <CreateCommentContainer postId={this.props.post.id}/>
                 </div>
             
-                <div className="post_footer">
-                    <div className="like_comment_container">
-                        <li>
-                            <img src={window.like}/>                            
-                            <span>Like</span>
-                        </li>
-                        <li>
-                            <img src={window.comment}/>
-                            <span>
-                                Comment
-                            </span>
-                        </li>
-                    </div>
-                </div>
-                <CommentIndexItemContainer postId={props.post.id}/>
-                <CreateCommentContainer postId={props.post.id}/>
-            </div>
+            </>
+        )
+    }
+}
+
+const msp = (state, ownProps) => {
+
+    return {
+        post: ownProps.post,
+        source: ownProps.source,
+        likers: ownProps.likers,
+        allLikes: ownProps.allLikes,
         
-        </>
-    )
-};
+        currentUser: ownProps.currentUser,
+        profileOwner: ownProps.profileOwner,
+        
+        allUsersArr: ownProps.allUsersArr,
+        allUsersObj: ownProps.allUsersObj, 
+        
+        likerIds: ownProps.likerIds,
+    }
+}
 
 const mdp = dispatch => {
     return {
-        deletePost: id => dispatch(deletePost(id))
+        openModal: (str) => dispatch(openModal(str)),
+        deletePost: (postId) => dispatch(deletePost(postId)),
+        
+        createLike: (like) => dispatch(createLike(like)),
+        deleteLike: (likeId) => dispatch(deleteLike(likeId)),
     };
 };
 
-export default withRouter(connect(null, mdp)(PostIndexItem));
+export default withRouter(connect(msp, mdp)(PostIndexItem));

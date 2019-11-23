@@ -16,6 +16,14 @@ class Post < ApplicationRecord
         foreign_key: :post_id,
         primary_key: :id
 
+    has_many :likes,
+        as: :likeable,
+        dependent: :destroy
+
+    has_many :liker,
+        through: :likes,
+        source: :user
+
     # has one or has many assoc
     has_one_attached :photo
 end
