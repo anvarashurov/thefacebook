@@ -81,6 +81,7 @@ class PostIndexItem extends React.Component {
         const numLikes = this.state.post.likeIds.length;
         let likesTag;
         let others;
+        let unlike;
 
         if(numLikes - 1 === 1) {
             others = "Other";
@@ -91,6 +92,7 @@ class PostIndexItem extends React.Component {
         if (numLikes === 1) {
             debugger
             if(this.state.post.likerIds[0] === this.props.currentUser.id) {
+                unlike = "Unlike";
                 likesTag = (
                     <div className="like_count_container">
                         <img src={window.likecount} />
@@ -112,6 +114,7 @@ class PostIndexItem extends React.Component {
         // numLikes + " " + "Like";
         } else if (numLikes > 1) {
             if (this.state.post.likerIds.includes(this.props.currentUser.id)) {
+                unlike = "Unlike";
                 likesTag = (
                     <div className="like_count_container">
                         <img src={window.likecount} />
@@ -240,7 +243,7 @@ class PostIndexItem extends React.Component {
                                 <img src={likeIcon}/> 
                                 {/* TODO How to know if liked or no */}
                                 <button onClick={this.handleLike}>
-                                    Like
+                                    {unlike}
                                 </button>
                             </li>
                             <li>
