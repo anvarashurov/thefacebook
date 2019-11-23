@@ -81,7 +81,7 @@ class PostIndexItem extends React.Component {
         const numLikes = this.state.post.likeIds.length;
         let likesTag;
         let others;
-        let unlike;
+        let unlike = "Like"
 
         if(numLikes - 1 === 1) {
             others = "Other";
