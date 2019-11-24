@@ -5,7 +5,7 @@
 
 .view_image img {
     width: 100%;
-    max-height: 600px;
+    max-height: 800px;
     object-fit: cover;
 }
 

@@ -31,6 +31,7 @@ const mdp = dispatch => {
         createFriendRequest: (user1, user2) => dispatch(createFriendRequest(user1, user2)),
         deleteFriendRequest: (user1, user2) => dispatch(deleteFriendRequest(user1, user2)),
         openModal: (str) => dispatch(openModal(str)),
+        
     }
 }
 

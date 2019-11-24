@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CreatePost from './create_post';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
+import { updateUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
         
@@ -30,7 +31,8 @@ const mapDispatchToProps = dispatch => {
         deletePost: postId => dispatch(deletePost(postId)),
         openModal: (str) => dispatch(openModal(str)),
         closeModal: () => dispatch(closeModal()),
-    }
+        updateUser: (user) => dispatch(updateUser(user))
+    }        
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreatePost));

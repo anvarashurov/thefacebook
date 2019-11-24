@@ -43,13 +43,13 @@ class UploadPhoto extends React.Component {
 
                 const photos = this.state.photos;
                 photos.push(file);
-
+                debugger
                 const urls = this.state.urls;
-                urls.push(fileReader.result);
-                // debugger
-                this.setState({ photos, urls })
-
-                // debugger
+                fileReader.onloadend = () => {
+                    urls.push(fileReader.result);
+                    this.setState({ photos, urls });
+                };
+                debugger
             }
         }
         // debugger
@@ -79,7 +79,18 @@ class UploadPhoto extends React.Component {
     }
 
     render() {
-
+        
+        const multiplePhotos = this.state.urls.map((url, idx) => {
+            debugger
+            return (
+            <div key={idx} className="single_photo_preview">
+                {/* <button onClick={() => this.props.openModal({ type: 'view_image', imageUrl: url })}> */}
+                    <img src={url} alt=""/>
+                {/* </button> */}
+            </div>
+            )
+        })
+        debugger
         return (
             <div className="upload_photo">
                 <form onSubmit={this.handleSubmit}>
@@ -107,8 +118,10 @@ class UploadPhoto extends React.Component {
                     />
                     {/* Upload Photos Button */}
                     <input id="upload_photo_button" type="submit" value="Upload" />
-                
                 </form>
+                <div className="preview_photo_upload">
+                    {multiplePhotos}
+                </div>
             </div>
         )
     }

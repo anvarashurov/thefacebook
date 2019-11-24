@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: column;
     width: 514px;
+    height: auto;
 }
 
 .one_post {
+    
     min-height: 101px;
+
     width: 510px;
     background-color: white;
     margin-top: 5px;

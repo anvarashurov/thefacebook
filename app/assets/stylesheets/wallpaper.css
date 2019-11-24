@@ -18,6 +18,11 @@
     margin-left: 67px;
     align-items: center;
 }
+.wallpaper_container button {
+    height: 328px;
+    width: 851px;
+}
+
 
 /* 'a' tag is involved because it contains 2 things */
 .wallpaper_overlay {

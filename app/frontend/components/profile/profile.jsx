@@ -65,8 +65,12 @@ class Profile extends React.Component {
                                 </div>
                             </div>
                             <div className="create_and_show_posts">
-                                <CreatePostContainer profileOwner={this.props.profileOwner} fetchPosts={this.props.fetchPosts} />
-                                <PostIndexItemContainer postOwner={this.props.profileOwner.id} currentUser={this.props.currentUser} />                                
+                                <div>
+                                    <CreatePostContainer profileOwner={this.props.profileOwner} fetchPosts={this.props.fetchPosts} />
+                                </div>
+                                <div>
+                                    <PostIndexItemContainer postOwner={this.props.profileOwner.id} currentUser={this.props.currentUser} />                                
+                                </div>
                             </div>
                         </Route>
                         <Route path={`/users/${this.props.profileOwner.id}/about`}>

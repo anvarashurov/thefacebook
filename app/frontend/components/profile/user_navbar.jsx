@@ -34,17 +34,18 @@ class UserNavbar extends React.Component {
         return (
             <div className="main_nav">
                 <div className="profile_nav">
-                    <a href="/">
-                        <span className="profile_nav_logo">
-                            <img src={window.facebookIcon} alt="facebook logo"/>
-                        </span>
-                    </a>
                     <div className="profile_nav_search">
+                        <a href="/">
+                            <span className="profile_nav_logo">
+                                <img src={window.facebookIcon} alt="facebook logo" />
+                            </span>
+                        </a>
                         <form>
-                            <input type="text" className="profile_nav_search" name="search" placeholder={this.props.currentUser.first_name + " " + this.props.currentUser.last_name}/>
-                            <button>
+                            {/* TODO {this.props.currentUser.first_name + " " + this.props.currentUser.last_name} */}
+                            <input type="text" className="profile_nav_search" name="search" placeholder="Implementing this feature is a plan for the future..."/>
+                            {/* <button>
                                 <img src={window.questionIcon} />
-                            </button>
+                            </button> */}
                         </form>
                     </div>
                     <div className="profile_nav_navigation">
@@ -71,7 +72,7 @@ class UserNavbar extends React.Component {
                                 {/* <Link to={`/users/${this.props.currentUser.id}/friendships`}> */}
                                     {/* TODO: Button will remove Display: none  */}
                                     {/* <button onClick={handleClick()}> */}
-                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)}>
+                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)} onBlur={this.props.hideDropdown}>
                                         <img src={window.friendIcon} alt="friends icon" />
                                     </button>
                                 {/* </Link> */}
@@ -85,7 +86,7 @@ class UserNavbar extends React.Component {
                         </div>
                         <div className="question_and_more">
                             <span className="dropdown"> 
-                                <button onClick={this.handleClick('logout')}>
+                                <button onClick={this.handleClick('logout')} onBlur={this.props.hideDropdown}>
                                     <img src={window.dropdownIcon} alt="drop down icon"/>
                                 </button>
                             </span>

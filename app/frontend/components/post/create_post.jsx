@@ -41,6 +41,7 @@ class CreatePost extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
+        const formData2 = new FormData();
         formData.append('post[content]', this.state.content);
         // reeiverId is 0 meaning this post was made on their own wall.
         if(this.props.profileOwner.id === this.props.currentUser.id) {
@@ -50,8 +51,10 @@ class CreatePost extends React.Component {
         }
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
+            formData2.append('user[photos][]',this.state.photoFile);
         }
-        return this.props.createPost(formData).then(() => this.props.closeModal());
+        this.props.createPost(formData).then(() => this.props.closeModal());
+        this.props.updateUser(formData2, this.props.profileOwner.id === this.props.currentUser.id ? this.props.currentUser : this.props.profileOwner);
     }
 
     handleChange() {
@@ -115,7 +118,7 @@ class CreatePost extends React.Component {
                         <input id="create_post_button" type="submit" value="Post"/>
                         
                         {/* TODO: Work on Displaying Image before posting */}
-                        {/* {createPostImg} */}
+                        {createPostImg}
                 </form>
             </div>
         )

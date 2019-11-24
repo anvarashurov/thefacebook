@@ -19,8 +19,8 @@
 }
 
 .create_post_modal_homepage {
-  top: 12.5%;
-  left: 44.3%;
+  top: 12.4%;
+  left: 45.6%;
   transform: translate(-50%, -50%);
   position: relative;
   width: 510px;
@@ -59,8 +59,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  width: 630px;
-  height: 900px;
+  width: 800px;
+  height: 800px;
   box-sizing: border-box;
 }
 

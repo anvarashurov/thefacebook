@@ -19,7 +19,7 @@
     flex-direction: row;
     /* justify-content: flex-start; */
     position: relative;
-    left: -173px;
+    left: -148px;
     margin-top: 10px;
 } 
 
@@ -40,8 +40,13 @@
 .name_and_create_post img {
     width: 25px;
     height: 25px;
+    /* border-radius: 50%; */
+    /* margin:5px; */
+}
+
+.homepage_left_child img {
     border-radius: 50%;
-    margin:5px;
+    margin: 7px;
 }
 
 .name_and_create_post a {

@@ -68,3 +68,22 @@
 .upload_photo > form > input {
     height: 3px;
 }
+
+.preview_photo_upload {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.single_photo_preview {
+    width: 100px;
+    height: 100px;
+}
+
+.single_photo_preview > img {
+    height: 100%;
+    width: 100%;
+    border: 1px dotted blue;
+    padding: 1px;
+}

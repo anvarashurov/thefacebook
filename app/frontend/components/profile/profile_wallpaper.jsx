@@ -56,12 +56,16 @@ class ProfileWallpaper extends React.Component {
         return (
             <div className="body_content">
                 <div className="wallpaper_container">
-                    <img src={this.props.profileOwner.coverPhotoUrl} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
+                    <button onClick={() => this.props.openModal({ type: 'view_image', imageUrl: this.props.profileOwner.coverPhotoUrl })}>
+                        <img src={this.props.profileOwner.coverPhotoUrl} alt="wallpaper" style={{width:'851px', height:'328px'}}/>
+                    </button>
                 </div>
                 <div className="wallpaper_overlay">
                     <div className="picture_and_name">
                         <div className="profile_picture">
-                            <img src={this.props.profileOwner.profilePhotoUrl} alt="profile picture" style={{ width: '168px', height: '168px' }} />
+                            <button onClick={() => this.props.openModal({ type: 'view_image', imageUrl: this.props.profileOwner.profilePhotoUrl })}>
+                                <img src={this.props.profileOwner.profilePhotoUrl} alt="profile picture" style={{ width: '168px', height: '168px' }} />
+                            </button>
                         </div>
                         <div className="profile_name">
                             <Link to={`/users/${this.props.profileOwner.id}/`}>{this.props.profileOwner.first_name + " " + this.props.profileOwner.last_name}</Link>
