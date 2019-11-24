@@ -17,6 +17,7 @@ class PendingFriend extends React.Component {
                     updateFriendRequest={this.props.updateFriendRequest}
                     deleteFriendsRequest={this.props.deleteFriendsRequest}
                     currentUser={this.props.currentUser}
+                    hideDropdown = {this.props.hideDropdown}
                     />
         })
 

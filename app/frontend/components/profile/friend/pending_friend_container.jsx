@@ -2,7 +2,7 @@ import { updateFriendRequest, deleteFriendReqest } from '../../../actions/friend
 import { fetchAllUsers } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
 import PendingFriend from './pending_friend';
-import { closeModal } from '../../../actions/modal_actions';
+import { hideDropdown } from '../../../actions/dropdowns_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => {
         updateFriendRequest: (user1, user2) => dispatch(updateFriendRequest(user1, user2)),
         deleteFriendRequest: (user1, user2) => dispatch(deleteFriendRequest(user1, user2)),        
         fetchAllUsers: () => dispatch(fetchAllUsers()),
-        closeModal: () => dispatch(closeModal()),
+        hideDropdown: () => dispatch(hideDropdown()),
     }
 }
 

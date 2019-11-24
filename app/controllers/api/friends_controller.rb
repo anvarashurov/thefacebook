@@ -16,10 +16,12 @@ class Api::FriendsController < ApplicationController
     def update
         @friend = current_user.friend_requests_received.find_by(friend_sender: params[:id])
         if @friend
+            # @friend.destroy
             if @friend.status == "PENDING"
-                # @friend.destroy
-                @friend.status = "APPROVED"
-                @friend.save!
+                @friend.destroy
+                @new = Friend.new(friend_params)
+                @new.status = "APPROVED"
+                @new.save!
                 @user = current_user
                 render 'api/users/show'
             end

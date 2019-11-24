@@ -11,7 +11,13 @@ const UsersReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_USERS:
       return action.users;
     case RECEIVE_CURRENT_USER:
-      return merge({}, oldState, { [action.user.id]: action.user });
+      debugger
+      let newState = Object.assign({}, oldState);
+      delete newState[action.user.id];
+      newState[action.user.id] = action.user;
+      debugger
+      return newState;
+      // return merge({}, oldState, { [action.user.id]: action.user });
     case RECEIVE_POST:
       oldState[action.post.authorId].authoredPostIds.push(action.post.id);
       return oldState;

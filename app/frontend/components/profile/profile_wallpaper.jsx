@@ -5,35 +5,46 @@ class ProfileWallpaper extends React.Component {
     // TODO This needs to be dynamic 
     constructor(props) {
         super(props);
-        this.state = this.props.text;
+        debugger
+        this.state = {
+            text: this.props.text,
+        }
+        debugger
         this.handleFriendOp = this.handleFriendOp.bind(this);
     }
- 
+    
     handleFriendOp() {
-            if(this.state === 'Add Friend') {
+        debugger
+            if(this.state.text === 'Add Friend') {
     
-                this.props.createFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Remove Request'));      
-            } else if(this.state === 'Remove Request') {
+                this.props.createFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Remove Request'}));      
+            } else if(this.state.text === 'Remove Request') {
     
-                this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Add Friend'));
+                this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Add Friend'}));
             } else {
-                this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState('Add Friend' ));
+                debugger
+                this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Add Friend'}));
             }
     }
 
     render() {
+
+        debugger
         
         let editProfileOrAddFriend;
 
         if (this.props.profileOwner.id === this.props.currentUser.id) {
+            debugger
             editProfileOrAddFriend = (
                 <button onClick={() => this.props.openModal({ type: "edit_profile", profileOwner: null })}>Update Profile</button>
             )
         } else {
 
+            debugger
+
             editProfileOrAddFriend = (
                 <button onClick={this.handleFriendOp}>
-                    {this.state}
+                    {this.props.text}
                 </button>
             )
         }

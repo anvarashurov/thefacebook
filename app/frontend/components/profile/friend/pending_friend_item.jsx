@@ -27,12 +27,12 @@ const PendingFriendItem = (props) => {
                 </div>
                 <div className="single_friend_child_right">
                     {/* TODO CLOSE THE GODDAMN MODAL */}
-                    <button id="add_friend_button" onClick={() => props.updateFriendRequest(props.currentUser.id, props.user.id).then( () => props.closeModal)}>
+                    <button id="add_friend_button" onClick={() => props.updateFriendRequest(props.currentUser.id, props.user.id).then(props.hideDropdown)}>
                         <span>
                             Add Friend
                         </span>
                     </button>
-                    <button id="remove_friend_button" onClick={() => props.deleteFriendRequest(props.currentUser.id, props.user.id)}> 
+                    <button id="remove_friend_button" onClick={() => props.deleteFriendRequest(props.currentUser.id, props.user.id).then(props.hideDropdown)}> 
                         <span>
                             Remove
                         </span>

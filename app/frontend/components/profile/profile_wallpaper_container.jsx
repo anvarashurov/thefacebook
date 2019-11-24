@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
 
     let profileOwner = state.entities.users[parseInt(ownProps.location.pathname.slice(7))];
     let currentUser = state.entities.users[state.session.currentUserId];
+    
     let text;
 
     if(currentUser.friendIds.includes(profileOwner.id)) {
@@ -17,7 +18,7 @@ const msp = (state, ownProps) => {
     } else {
         text = "Add Friend";
     }
-
+    
     return {
         profileOwner,
         currentUser,

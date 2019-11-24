@@ -96,9 +96,12 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
         if(currentUser.id === profileOwner.id) {
             introButton = "Add Bio";
             introText = (
+                <>
+                <img src={window.commentIcon} alt="C" />
                 <span className="add_bio_message">
                     Update Profile to add more info about yourself.
                 </span>
+                </>
                 )
         } else {
             introText = ( 
@@ -125,7 +128,6 @@ const OwnerBio = ({ profileOwner, currentUser, openModal }) => {
                 <span className="intro">Intro</span>
             </div>
             <div className="thought_icon_and_text">
-                <img src={window.commentIcon} alt="C"/>
                 {introText}
                 <button id="intro_button" onClick={() => openModal({type: "edit_profile"})}>{introButton}</button>
             </div>
