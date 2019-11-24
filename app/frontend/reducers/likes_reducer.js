@@ -11,10 +11,10 @@ const likesReducer = (oldState = {}, action) => {
         case RECEIVE_LIKE:
             return merge({}, oldState, { [action.like.id]: action.like });
         case REMOVE_LIKE:
-            debugger
+            // debugger
             let newState = merge({}, oldState);
             delete newState[action.like.id];
-            debugger
+            // debugger
             return newState;
         default:
             return oldState;

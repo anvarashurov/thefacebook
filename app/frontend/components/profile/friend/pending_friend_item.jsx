@@ -6,7 +6,7 @@ const PendingFriendItem = (props) => {
 
     return(
 
-        <>
+        <div>
             <div className="single_friend">
                 <div className="single_friend_left_child">
                     <span className="friend_img_container">
@@ -39,7 +39,7 @@ const PendingFriendItem = (props) => {
                     </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

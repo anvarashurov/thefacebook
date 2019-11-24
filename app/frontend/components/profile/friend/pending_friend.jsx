@@ -22,7 +22,7 @@ class PendingFriend extends React.Component {
         })
 
         return (
-            <div className="friendship_tab">
+            <div className="friendship_tab" tabIndex="0" onBlur={this.props.hideDropdown}>
                 <div className="friendship_tab_text">
                     <span>
                         Friend Requests

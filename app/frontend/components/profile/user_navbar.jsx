@@ -72,7 +72,7 @@ class UserNavbar extends React.Component {
                                 {/* <Link to={`/users/${this.props.currentUser.id}/friendships`}> */}
                                     {/* TODO: Button will remove Display: none  */}
                                     {/* <button onClick={handleClick()}> */}
-                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)} onBlur={this.props.hideDropdown}>
+                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)} >
                                         <img src={window.friendIcon} alt="friends icon" />
                                     </button>
                                 {/* </Link> */}
@@ -86,7 +86,7 @@ class UserNavbar extends React.Component {
                         </div>
                         <div className="question_and_more">
                             <span className="dropdown"> 
-                                <button onClick={this.handleClick('logout')} onBlur={this.props.hideDropdown}>
+                                <button onClick={this.handleClick('logout')}>
                                     <img src={window.dropdownIcon} alt="drop down icon"/>
                                 </button>
                             </span>

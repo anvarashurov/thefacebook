@@ -38,14 +38,14 @@ class PostIndexItem extends React.Component {
     }
 
     handleLike() {
-        debugger
+        // debugger
         // if user has liked then deleteLike
         if(this.props.post.likerIds.includes(this.props.currentUser.id)) {
-            debugger
+            // debugger
             for(let i = 0; i < this.props.allLikes.length; i++) {
                 if(this.props.allLikes[i].likerId === this.props.currentUser.id
                     && this.props.allLikes[i].likeableId === this.props.post.id) {
-                        debugger
+                        // debugger
                     this.props.deleteLike(this.props.allLikes[i].id);
                 }
             }
@@ -91,7 +91,7 @@ class PostIndexItem extends React.Component {
         }
 
         if (numLikes === 1) {
-            debugger
+            // debugger
             if(this.props.post.likerIds[0] === this.props.currentUser.id) {
                 unlike = "Unlike";
                 likesTag = (
@@ -176,7 +176,7 @@ class PostIndexItem extends React.Component {
         if(this.props.post.receiverId !== this.props.post.authorId) {
             for(let i = 0; i < this.props.allUsersArr.length; i++) {
                 if(this.props.allUsersArr[i].id === this.props.post.authorId) {
-                    debugger
+                    // debugger
                     postAuthor = this.props.allUsersArr[i];
                 }
                 if(this.props.allUsersArr[i].id === this.props.post.receiverId) {
@@ -197,7 +197,7 @@ class PostIndexItem extends React.Component {
         } else {
             for (let i = 0; i < this.props.allUsersArr.length; i++) {
                 if (this.props.allUsersArr[i].id === this.props.post.authorId) {
-                    debugger
+                    // debugger
                     postAuthor = this.props.allUsersArr[i];
                 }
             }

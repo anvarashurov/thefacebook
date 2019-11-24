@@ -20,7 +20,7 @@ class LogoutContainer extends React.Component {
 
     render() {
         return (
-            <button id="logout_button" onClick={this.handleLogout}>
+            <button id="logout_button" onClick={this.handleLogout} >
                 Log out
             </button>
         )

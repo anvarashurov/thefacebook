@@ -12,6 +12,8 @@ const mapStateToProps = (state, ownProps) => {
         friends.push(state.entities.users[friendId]);
     })
 
+    // debugger
+
     let onlyNine = null;
 
     if(ownProps.onlyNine) {

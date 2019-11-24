@@ -26,23 +26,23 @@ const PostsReducer = (oldState = {}, action) => {
             delete newState[action.postId];
             return newState;
         case REMOVE_LIKE:
-            debugger
+            // debugger
             let secondNewState = Object.assign({}, oldState);
-            debugger
+            // debugger
             for (let i = 0; i < secondNewState[action.like.likeableId].likeIds.length; i++) {
-                debugger
+                // debugger
                 if (secondNewState[action.like.likeableId].likeIds[i] === action.like.id) {
-                    debugger
+                    // debugger
                     secondNewState[action.like.likeableId].likeIds.splice(i, 1);
-                    debugger
+                    // debugger
                 }
                 if (secondNewState[action.like.likeableId].likerIds[i] === action.like.likerId) {
-                    debugger
+                    // debugger
                     secondNewState[action.like.likeableId].likerIds.splice(i, 1);
-                    debugger
+                    // debugger
                 }
             }
-            debugger
+            // debugger
             return secondNewState;
         default:
             return oldState;
