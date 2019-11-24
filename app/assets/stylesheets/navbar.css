@@ -52,7 +52,7 @@
     border-bottom-left-radius: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px; 
-    outline: 1px solid rgb(0,0,0,0);
+    /* outline: 1px solid rgb(0,0,0,0); */
 }
 /* 
 .profile_nav_search > form {
