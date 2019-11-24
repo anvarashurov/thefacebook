@@ -71,9 +71,9 @@
 
 /* styling of individuals */
 
-.profile_picture {
+.profile_picture > button {
     position: relative;
-    top: 50px;
+    top: 48px;
     left: -15px;
     overflow: hidden;
     border-radius: 50%;
