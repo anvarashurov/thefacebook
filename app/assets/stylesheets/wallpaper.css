@@ -119,8 +119,16 @@
     align-items: center;
 }
 
+.edit_profile_container > button {
+    height: 23px;
+    width: 100px;
+    text-align: center;
+}
+
 .edit_profile_container:hover {
     background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(49, 86, 207);
+    border-radius: 2px;
 }
 
 .activity_log {

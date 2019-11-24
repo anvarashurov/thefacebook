@@ -42,9 +42,13 @@ class ProfileWallpaper extends React.Component {
 
             debugger
 
+            let klass = this.props.text.split(" ").join("");
+
             editProfileOrAddFriend = (
                 <button onClick={this.handleFriendOp}>
-                    {this.props.text}
+                    <span className={'friend_button_' + klass}>
+                        {this.props.text}
+                    </span>
                 </button>
             )
         }
