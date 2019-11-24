@@ -72,7 +72,7 @@ class UserNavbar extends React.Component {
                                     {/* TODO: Button will remove Display: none  */}
                                     {/* <button onClick={handleClick()}> */}
                                     <button onClick={this.handleClick('friend', this.props.currentUser.id)}>
-                                        <img src={window.friendIcon} alt="friends icon"/>
+                                        <img src={window.friendIcon} alt="friends icon" />
                                     </button>
                                 {/* </Link> */}
                                 {/* </Link> */}
