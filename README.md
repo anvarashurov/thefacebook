@@ -59,7 +59,7 @@ You will be able to share your own posts very soon! </p>
 
 <h3> Honestly... this is getting super lengthy. Can we just go with GIF? Thank you. </h3>
 
-![friend adding](https://gifyu.com/image/v4uL)
+[![thefacebook.gif](https://s5.gifyu.com/images/thefacebook.gif)](https://gifyu.com/image/v4uL)
 
 <p> Whoops that one took longer than I thought! </p>
 
