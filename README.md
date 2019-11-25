@@ -11,7 +11,7 @@ to this wonderful platform and kindly requests you to sign up!!!!! </p>
 
 ![Sign up page](https://i.imgur.com/5hSwJS1.png)
 
-<p> If you have intelligently filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt function which is kindly provided by Rails Gang to our disposal. </p>
+<p> If you have filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt function which is kindly provided by Rails Gang to our disposal. </p>
 
 Here is your Home Page: 
 
@@ -26,13 +26,15 @@ Here is your Home Page:
 
 ![profile page](https://i.imgur.com/AchPnEO.png)
 
-<p> Note how awesome of a user experinece it is to view changes before saving them. That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p>
+<p> Note how awesome of a user experinece it is to view changes before saving them.</p>
+ <!-- That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p> -->
 
-<p> But, what can be cooler than John Locke adding you as a friend? Yaay.
+<p> What can be cooler than John Locke adding you as a friend? Yaay.
 
 ![friend adding](https://i.imgur.com/kljdmzu.png)
 
-<p> Several things happening above. A stranger can add you as a friend. When that happens, you will get a Friend Request Notification showing how many pending friendships you have. RESPOND TO THEM IMMEDIATELY. PLEASE. </p>
+<p> Several things happening above. A stranger can add you as a friend. When that happens, you will get a Friend Request Notification showing how many pending friendships you have. </p>
+<!-- RESPOND TO THEM IMMEDIATELY. PLEASE. </p> -->
 
 ![friend adding](https://i.imgur.com/CvTn3a5.png)
 
