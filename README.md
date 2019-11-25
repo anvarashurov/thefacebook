@@ -17,11 +17,12 @@ Here is your Home Page:
 
 ![home page](https://i.imgur.com/2aS7ohv.png)
 
-<p> Fast forward </p>
+<!-- <p> Fast forward. </p> -->
 
 <!--  I really do not want to compete with L.I.Tolstoy in number of characters written per Volume. Phew. </p> <span>Fun Edit: I actually tried to read <em> Anna Karenina </em> while skipping classes. </span> -->
 
-<p>Essentially, if you head towards your profile page and click "Update Profile" button, then you are free to upload your own Profile and Wallpaper photos! Also, do you forget to add a cool Bio! Something deep pertaining life, existance, and mortality is always welcome. Upload row nature photos! It's a command. </p>
+<p>Essentially, if you head towards your profile page and click "Update Profile" button, then you are free to upload your own Profile and Wallpaper photos! Also, do you forget to add a cool Bio! Something deep pertaining life, existance, and mortality is always welcome. </p>
+ <!-- Upload row nature photos! It's a command. -->
 
 ![profile page](https://i.imgur.com/AchPnEO.png)
 
