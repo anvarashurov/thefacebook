@@ -31,6 +31,17 @@ class UserNavbar extends React.Component {
     }
 
     render() {
+
+        let tinyNotif = null;
+
+        if(this.props.currentUser.friendRequestReceivedFromIds.length !== 0) {
+            tinyNotif = (
+                <span>
+                    {this.props.currentUser.friendRequestReceivedFromIds.length}
+                </span>
+            )
+        } 
+
         return (
             <div className="main_nav">
                 <div className="profile_nav">
@@ -67,17 +78,10 @@ class UserNavbar extends React.Component {
                             </span>
                         </div>
                         <div className="friends_messages_nots">
-                            <span> 
-                                {/* <Link to={`/users/${this.props.currentUser.id}/`}>  */}
-                                {/* <Link to={`/users/${this.props.currentUser.id}/friendships`}> */}
-                                    {/* TODO: Button will remove Display: none  */}
-                                    {/* <button onClick={handleClick()}> */}
-                                    <button onClick={this.handleClick('friend', this.props.currentUser.id)} >
-                                        <img src={window.friendIcon} alt="friends icon" />
-                                    </button>
-                                {/* </Link> */}
-                                {/* </Link> */}
-                            </span>
+                            <button onClick={this.handleClick('friend', this.props.currentUser.id)} >
+                                <img src={window.friendIcon} alt="friends icon" />
+                                {tinyNotif}
+                            </button>
                             <span> 
                                 <Link to={`/users/${this.props.currentUser.id}/`}>
                                     <img src={window.messageIcon} alt="messages icon"/>

@@ -142,6 +142,27 @@
     margin-left: 8px;
 }
 
+.friends_messages_nots button {
+    display: flex;
+    flex-direction: row;
+}
+
+.friends_messages_nots button span {
+    position: relative;
+    left: -6px;
+    top: -8px;
+    font-size: 12px;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    width: 11px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
 .friends_messages_nots span {
     margin: 0px 4px 0px 4px;
 }
