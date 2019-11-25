@@ -11,7 +11,9 @@ to this wonderful platform and kindly requests you to sign up!!!!! </p>
 
 ![Sign up page](https://i.imgur.com/5hSwJS1.png)
 
-<p> If you have filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt function which is kindly provided by Rails Gang to our disposal. </p>
+<p> If you have filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt function. </p>
+ 
+ <!-- which is kindly provided by Rails Gang to our disposal. </p> -->
 
 Here is your Home Page: 
 
@@ -29,7 +31,9 @@ Here is your Home Page:
 <p> Note how awesome of a user experinece it is to view changes before saving them.</p>
  <!-- That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p> -->
 
-<p> What can be cooler than John Locke adding you as a friend? Yaay.
+<p> What can be cooler than John Locke adding you as a friend?
+ 
+ <!-- Yaay. -->
 
 ![friend adding](https://i.imgur.com/kljdmzu.png)
 
@@ -59,7 +63,8 @@ You will be able to share your own posts very soon! </p>
 
 ![friend adding](https://i.imgur.com/1dtVSzN.png)
 
-### Honestly... this is getting super lengthy. Can we just go with GIF? Thank you.
+### Watch it all in action:
+<!-- Honestly... this is getting super lengthy. Can we just go with GIF? Thank you. -->
 
 <!-- [![thefacebook.gif](https://s5.gifyu.com/images/thefacebook.gif)](https://gifyu.com/image/v4uL) -->
 
@@ -88,8 +93,8 @@ You will be able to share your own posts very soon! </p>
     - NewsAPI to show latest World news
     - It's hard to stop. Facebook has many awesome features!
 
-+ Future for me:
-    - Personally, sky's the lim... When I am not watching high quality Premier League matches or listening to Le'Professeur's philosophy on human value and trust, I would love to explore the behind the scenes of a modern search engine. Specifically, how data is crawled, stored, fetched, indexed, optimized, and so on. I do have high level understanding of how things are managed but nothing is more valuable than getting the practical knowledge obtained through gettings hands dirty. To me, that is the short term record to hit and building thefacebook has slightly increased my chances of understanding more complex concepts... 
+<!-- + Future for me:
+    - Personally, sky's the lim... When I am not watching high quality Premier League matches or listening to Le'Professeur's philosophy on human value and trust, I would love to explore the behind the scenes of a modern search engine. Specifically, how data is crawled, stored, fetched, indexed, optimized, and so on. I do have high level understanding of how things are managed but nothing is more valuable than getting the practical knowledge obtained through gettings hands dirty. To me, that is the short term record to hit and building thefacebook has slightly increased my chances of understanding more complex concepts... -->
 
 ## Thanks for stopping! 
 
