@@ -180,9 +180,11 @@ class PostIndexItem extends React.Component {
             }
             authors = (
                 <div className="authors">
-                <Link to={`/users/${postAuthor.id}`}>
-                        <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} &#62; </span>
+                    <Link to={`/users/${postAuthor.id}`}>
+                     {/* &#62; */}
+                        <span className="post_author">{postAuthor.first_name + " " + postAuthor.last_name} </span>
                     </Link>
+                    <img src={window.arrow} alt="" style={{width: '11px', height: '9px'}}/>
                     <Link to={`/users/${postReceiver.id}`}>
                         <span className="post_author">{postReceiver.first_name + " " + postReceiver.last_name}</span>
                     </Link>

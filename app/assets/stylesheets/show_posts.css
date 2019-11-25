@@ -159,10 +159,15 @@
 .authors {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .authors a span {
     margin-right: 3px;
+}
+
+.authors img {
+    margin: 0px 5px 0px 5px;
 }
 
 .post_options {
