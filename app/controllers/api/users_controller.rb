@@ -17,13 +17,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  #   month = params[:user][:birthday][:month] 
-  #   day = params[:user][:birthday][:day] 
-  #   year = params[:user][:birthday][:year]
-  #   if((month && day) && year)
-  #     @user.birthday = month + "/" + day + "/" + year
-  #   end
-
   def index
     @users = User.all
     if @users 
@@ -47,19 +40,6 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages 
     end 
 
-    # @user = User.find(current_user.id)
-    
-    # if @user
-    #   @user.first_name = params[:first_name]
-    #   @user.last_name = params[:last_name]  
-    #   if @user.save 
-    #     render "api/users/show"
-    #   else
-    #     render ["Unable to update user details"], status: 401
-    #   end
-    # else
-    #   render ["User not found"], status: 404
-    # end
   end
 
   def user_params

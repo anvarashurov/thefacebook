@@ -12,7 +12,7 @@
   - User Authentication
     - 
 
-remove // debuggers
+remove // s
 etc
 
 node js

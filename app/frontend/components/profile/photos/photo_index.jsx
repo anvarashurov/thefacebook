@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 class PhotoIndex extends React.Component {
 
     constructor(props) {
-        // debugger
+        // 
         super(props);
     }
 
@@ -21,7 +21,7 @@ class PhotoIndex extends React.Component {
         }
         if(profileOwnerPhotos.length !== 0) {
             fotos = profileOwnerPhotos.map((photoUrl, idx) => {
-                // debugger
+                // 
                 return (
                     <div className="single_photo" key={idx}>
                         {/* TODO: onclick open modal to show individual photo */}
@@ -39,7 +39,7 @@ class PhotoIndex extends React.Component {
             uploadPhotos = "Upload Photos";
         }
 
-        // debugger
+        // 
         return (
             <div className="photos_sidebar_container">
                 <div className="photos_text">

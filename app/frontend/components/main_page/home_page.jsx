@@ -8,7 +8,6 @@ const HomePage = ({currentUser, pathname}) => {
     // 
     let pages;
     if (pathname === "/") {
-        // debugger
         pages = (
             <div className="home_page_body">
                 <div className="name_and_create_post">

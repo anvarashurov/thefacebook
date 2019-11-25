@@ -27,7 +27,6 @@ class EditProfile extends React.Component {
     }
 
     updateField(field) {
-        // debugger
         return e => {
             this.setState({ [field]: e.target.value })
         }

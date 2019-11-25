@@ -35,16 +35,6 @@ class CommentIndex extends React.Component {
                 }
             }
 
-
-            let commentLikes = [];
-
-            // if (comment.likerIds.length !== 0) {
-            //     for (let i = 0; i < comment.likerIds.length; i++) {
-            //         commentLikes.push(users[comment.likerIds[i]]);
-            //     }
-            // }
-
-
             return <CommentIndexItem 
                 key={idx} 
                 likerIds={comment.likerIds}

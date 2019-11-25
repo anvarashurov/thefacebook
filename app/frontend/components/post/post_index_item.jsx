@@ -38,15 +38,12 @@ class PostIndexItem extends React.Component {
     }
 
     handleLike() {
-        // debugger
         // if user has liked then deleteLike
         if(this.props.post.likerIds.includes(this.props.currentUser.id)) {
-            // debugger
-            for(let i = 0; i < this.props.allLikes.length; i++) {
+                for(let i = 0; i < this.props.allLikes.length; i++) {
                 if(this.props.allLikes[i].likerId === this.props.currentUser.id
                     && this.props.allLikes[i].likeableId === this.props.post.id) {
-                        // debugger
-                    this.props.deleteLike(this.props.allLikes[i].id);
+                                    this.props.deleteLike(this.props.allLikes[i].id);
                 }
             }
         } 
@@ -91,8 +88,7 @@ class PostIndexItem extends React.Component {
         }
 
         if (numLikes === 1) {
-            // debugger
-            if(this.props.post.likerIds[0] === this.props.currentUser.id) {
+                if(this.props.post.likerIds[0] === this.props.currentUser.id) {
                 unlike = "Unlike";
                 likesTag = (
                     <div className="like_count_container">
@@ -176,8 +172,7 @@ class PostIndexItem extends React.Component {
         if(this.props.post.receiverId !== this.props.post.authorId) {
             for(let i = 0; i < this.props.allUsersArr.length; i++) {
                 if(this.props.allUsersArr[i].id === this.props.post.authorId) {
-                    // debugger
-                    postAuthor = this.props.allUsersArr[i];
+                                postAuthor = this.props.allUsersArr[i];
                 }
                 if(this.props.allUsersArr[i].id === this.props.post.receiverId) {
                     postReceiver = this.props.allUsersArr[i];
@@ -197,8 +192,7 @@ class PostIndexItem extends React.Component {
         } else {
             for (let i = 0; i < this.props.allUsersArr.length; i++) {
                 if (this.props.allUsersArr[i].id === this.props.post.authorId) {
-                    // debugger
-                    postAuthor = this.props.allUsersArr[i];
+                                postAuthor = this.props.allUsersArr[i];
                 }
             }
             authors = (

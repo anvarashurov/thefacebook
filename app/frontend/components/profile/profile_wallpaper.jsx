@@ -5,16 +5,16 @@ class ProfileWallpaper extends React.Component {
     // TODO This needs to be dynamic 
     constructor(props) {
         super(props);
-        // debugger
+        // 
         this.state = {
             text: this.props.text,
         }
-        // debugger
+        // 
         this.handleFriendOp = this.handleFriendOp.bind(this);
     }
     
     handleFriendOp() {
-        // debugger
+        // 
             if(this.props.text === 'Add Friend') {
     
                 this.props.createFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Remove Request'}));      
@@ -22,25 +22,25 @@ class ProfileWallpaper extends React.Component {
     
                 this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Add Friend'}));
             } else {
-                // debugger
+                // 
                 this.props.deleteFriendRequest(this.props.currentUser.id, this.props.profileOwner.id).then(() => this.setState({text: 'Add Friend'}));
             }
     }
 
     render() {
 
-        // debugger
+        // 
         
         let editProfileOrAddFriend;
 
         if (this.props.profileOwner.id === this.props.currentUser.id) {
-            // debugger
+            // 
             editProfileOrAddFriend = (
                 <button onClick={() => this.props.openModal({ type: "edit_profile", profileOwner: null })}>Update Profile</button>
             )
         } else {
 
-            // debugger
+            // 
 
             let klass = this.props.text.split(" ").join("");
 

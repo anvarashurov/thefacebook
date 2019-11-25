@@ -10,24 +10,12 @@ class Api::PostsController < ApplicationController
     end
     def index
         # TODO: Figure out the usage of "includes"
-        # 
         @posts = Post.all
         if @posts
             render '/api/posts/index'
         end
     end
-    
-    # def update
-    #     
-    #     @post = Post.find(params[:id])
-    #     if @post 
-    #         @post.update_attributes(params[:post][:content])
-    #         render "api/posts/show"
-    #     else
-    #         render json: @post.errors.full_messages
-    #     end
-    # end
-
+   
     def show
         @post = Post.find(params[:id])
         if @post
@@ -50,7 +38,6 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id])
         if @post 
             @post.destroy
-            # @posts = Post.all
             render '/api/posts/show'
         else
             render json ['Post does not exist.']

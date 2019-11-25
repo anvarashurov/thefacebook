@@ -8,7 +8,7 @@ import PhotoIndex from './photo_index';
 import { openModal } from '../../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    // debugger 
+    //  
     let onlyNine= null;
     if(ownProps.onlyNine) {
         onlyNine = ownProps.onlyNine;

@@ -8,10 +8,7 @@ class LogoutContainer extends React.Component {
     constructor(props) {
         super(props);
         this.handleLogout = this.handleLogout.bind(this);
-        // this.state = {clicked: false};
     }
-
-    //  TODO: Click out side 
 
     handleLogout() {
         this.props.hideDropdown();

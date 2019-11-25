@@ -6,7 +6,6 @@ import React from 'react';
 class Dropdown extends React.Component {
     constructor(props) {
         super(props);
-        // this.renderDropdown = this.renderDropdown.bind(this);
     }
 
     // TODO BUG

@@ -29,30 +29,30 @@ class UploadPhoto extends React.Component {
         const files = e.currentTarget.files;
 
         if (files) {
-            // debugger
+            // 
             for (let i = 0; i < files.length; i++) {
 
                 const file = files[i];
                 const fileReader = new FileReader();
 
                 if (file) {
-                    // debugger
+                    // 
                     fileReader.readAsDataURL(file);
-                    // debugger
+                    // 
                 }
 
                 const photos = this.state.photos;
                 photos.push(file);
-                debugger
+                
                 const urls = this.state.urls;
                 fileReader.onloadend = () => {
                     urls.push(fileReader.result);
                     this.setState({ photos, urls });
                 };
-                debugger
+                
             }
         }
-        // debugger
+        // 
     }
 
     handleExit(e) {
@@ -61,15 +61,15 @@ class UploadPhoto extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
+        // 
         e.preventDefault();
         const formData = new FormData();
         const allPhotos = this.state.photos;
         for (let i = 0; i < allPhotos.length; i++) {
-            // debugger
+            // 
             formData.append('user[photos][]', allPhotos[i]);
         }
-        // debugger
+        // 
         // let currentUser = this.state.currentUser;
         // push history to new location
         return this.props.updateUser(formData, this.props.currentUser).then(() => { 
@@ -81,7 +81,7 @@ class UploadPhoto extends React.Component {
     render() {
         
         const multiplePhotos = this.state.urls.map((url, idx) => {
-            debugger
+            
             return (
             <div key={idx} className="single_photo_preview">
                 {/* <button onClick={() => this.props.openModal({ type: 'view_image', imageUrl: url })}> */}
@@ -90,7 +90,7 @@ class UploadPhoto extends React.Component {
             </div>
             )
         })
-        debugger
+        
         return (
             <div className="upload_photo">
                 <form onSubmit={this.handleSubmit}>

@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 
     let friendReceived = [];
-    // debugger
+    // 
     if(currentUser.friendRequestReceivedFromIds.length > 0) {
         currentUser.friendRequestReceivedFromIds.forEach( senderId => {
             friendReceived.push(state.entities.users[senderId]);
