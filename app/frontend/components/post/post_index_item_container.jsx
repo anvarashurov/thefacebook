@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import PostIndex from './post_index';
 import { fetchPosts } from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
 import {fetchAllUsers} from '../../actions/user_actions';
 import {fetchAllLikes } from '../../actions/like_actions';
+import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {
 

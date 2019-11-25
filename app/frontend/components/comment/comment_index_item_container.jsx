@@ -8,6 +8,10 @@ const mapStateToProps = (state, ownProps) => {
     let postComments = [];
     let postAuthors = [];
 
+    const allLikesArr = Object.values(state.entities.likes).filter(like => {
+        return like.likeableType === 'Comment';
+    });
+
     let comments = Object.values(state.entities.comments);
     let post = state.entities.posts[ownProps.postId];
     
@@ -22,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         postComments,
         postAuthors,
+        allLikesArr,
     }
 }
 

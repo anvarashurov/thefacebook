@@ -4,10 +4,19 @@ import CommentIndexItem from './comment_index_item';
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            allLikesArr: this.props.allLikesArr,
+        }
     }
     
     componentDidMount() {
         return this.props.fetchComments();
+    }
+
+    componentWillUpdate(nextProps) {
+        if (this.state.allLikesArr.length !== nextProps.allLikesArr.length) {
+            this.setState({ allLikesArr: nextProps.allLikesArr });
+        }
     }
 
     render() {
@@ -25,10 +34,25 @@ class CommentIndex extends React.Component {
                     commentAuthor = this.props.postAuthors[i];
                 }
             }
+
+
+            let commentLikes = [];
+
+            // if (comment.likerIds.length !== 0) {
+            //     for (let i = 0; i < comment.likerIds.length; i++) {
+            //         commentLikes.push(users[comment.likerIds[i]]);
+            //     }
+            // }
+
+
             return <CommentIndexItem 
                 key={idx} 
+                likerIds={comment.likerIds}
+                // commentLikes = {commentLikes}
                 comment={comment} 
-                commentOwner={commentAuthor} />
+                commentOwner={commentAuthor}
+                allLikes = {this.state.allLikesArr}
+                />
         })
 
         return (

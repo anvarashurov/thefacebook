@@ -51,11 +51,11 @@ class User < ApplicationRecord
     source: :likeable,
     source_type: 'Post'
 
-  # has_many :liked_comment,
-  #   through: :likes,
-  #   source: :likeable,
-  #   source_type: 'Comment'
-
+  has_many :liked_comment,
+    through: :likes,
+    source: :likeable,
+    source_type: 'Comment'
+    
   # def friends 
   #   Friend.where("(friend_sender = ? OR friend_receiver = ?) AND status = ?", self.id, self.id, true)
   # end

@@ -242,9 +242,7 @@ class PostIndexItem extends React.Component {
                         <div className="like_comment_container">
                             <li>
                                 <button onClick={this.handleLike}>
-                                <img src={likeIcon}/> 
-                                {/* TODO How to know if liked or no */}
-                               
+                                <img src={likeIcon}/>                               
                                     {unlike}
                                 </button>
                             </li>

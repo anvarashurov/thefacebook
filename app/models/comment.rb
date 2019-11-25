@@ -10,4 +10,12 @@ class Comment < ApplicationRecord
         foreign_key: :author_id, 
         primary_key: :id,
         class_name: :User
+
+    has_many :likes,
+        as: :likeable,
+        dependent: :destroy
+
+    has_many :liker,
+        through: :likes,
+        source: :user
 end

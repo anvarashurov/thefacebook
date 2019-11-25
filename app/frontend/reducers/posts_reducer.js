@@ -27,23 +27,27 @@ const PostsReducer = (oldState = {}, action) => {
             return newState;
         case REMOVE_LIKE:
             // debugger
-            let secondNewState = Object.assign({}, oldState);
-            // debugger
-            for (let i = 0; i < secondNewState[action.like.likeableId].likeIds.length; i++) {
+            if(action.like.likeableType === "Post") {
+                let secondNewState = Object.assign({}, oldState);
                 // debugger
-                if (secondNewState[action.like.likeableId].likeIds[i] === action.like.id) {
+                for (let i = 0; i < secondNewState[action.like.likeableId].likeIds.length; i++) {
                     // debugger
-                    secondNewState[action.like.likeableId].likeIds.splice(i, 1);
-                    // debugger
+                    if (secondNewState[action.like.likeableId].likeIds[i] === action.like.id) {
+                        // debugger
+                        secondNewState[action.like.likeableId].likeIds.splice(i, 1);
+                        // debugger
+                    }
+                    if (secondNewState[action.like.likeableId].likerIds[i] === action.like.likerId) {
+                        // debugger
+                        secondNewState[action.like.likeableId].likerIds.splice(i, 1);
+                        // debugger
+                    }
                 }
-                if (secondNewState[action.like.likeableId].likerIds[i] === action.like.likerId) {
-                    // debugger
-                    secondNewState[action.like.likeableId].likerIds.splice(i, 1);
-                    // debugger
-                }
-            }
             // debugger
-            return secondNewState;
+                return secondNewState;
+            } else {
+                return oldState;
+            }
         default:
             return oldState;
     }

@@ -171,3 +171,13 @@ one having display: none and the other showing the component.
 + Not Enough Expr
   - part time / volunteer
 + skill comes before projects sections
+
+
+
+TODOS TODOS TODOS:
+
+See who liked by clicking the number of likes under a post
+Implement and show likes for comments
+Reply to commment
+Edit comment
+Delete comment
