@@ -25,6 +25,67 @@ Here is your Home Page:
 
 <p> Note how awesome of a user experinece it is to view changes before saving them. That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p>
 
-<p> What can be cooler than John Locke adding you as a friend?
+<p> Also, what can be cooler than John Locke adding you as a friend?
 
-![friend adding](https://i.imgur.com/qKQ4uug.png)
+![friend adding](https://i.imgur.com/kljdmzu.png)
+
+<p> Several things happening above. A stranger can add you as a friend. When that happens, you will get a Friend Request Notification showing how many pending friendships you have. RESPOND TO THEM IMMEDIATELY. </p>
+
+![friend adding](https://i.imgur.com/CvTn3a5.png)
+
+<p> You may upload multiple photos! Avoid using personal ones. </p>
+
+![friend adding](https://i.imgur.com/gudnYFZ.png)
+
+<p> Make funny posts! </p>
+
+![friend adding](https://i.imgur.com/Npqv4QS.png)
+
+<p> Like your own post. Write your own comment under your own post. Don't forget to like your own commnet.
+You will be able to share your own post very soon! </p>
+
+![friend adding](https://i.imgur.com/I2Xvs4J.png)
+
+<p> Write to strangers! </p>
+
+![friend adding](https://i.imgur.com/qg0mfQD.png)
+
+<p> It will show up on their NewsFeed! No joke. </p>
+
+![friend adding](https://i.imgur.com/1dtVSzN.png)
+
+<h3> Honestly... this is getting super lengthy. Can we just go with GIF? Thank you. </h3>
+
+![friend adding](https://gifyu.com/image/v4uL)
+
+<p> Whoops that one took longer than I thought! </p>
+
+----------------------------
+
+<h3> That is it from me... for now </h3>
+
++ Tech used
+    - JS
+    - ReactJS
+    - Ruby on Rails
+    - PostgreSQL
+    - AWS
+    - Webpack
+    - ...
+    - ... It's hard to recall these things. But one thing for sure, I learned A LOT!
+
++ Future implementations
+    - Sharing Post
+    - Deleting / Editing Comments
+    - Showing the list of Likers via Modal
+    - NewsAPI to show latest World news
+    - It's hard to stop. Facebook has many awesome features!
+
++ Future for me:
+    - Personally, sky's the lim... Haha. When I am not watching high quality Premier League matches or listening to Le'Professeur's philosophy on human value and trust, I would love to explore the behind the scenes of a modern search engine. Specifically, how data is crawled, stored, fetched, indexed, optimized, and so on. I do have high level understanding of how things are managed but nothing is more valuable than getting the practical knowledge obtained through gettings hands dirty. To me, that is the short term record to hit and building thefacebook has slightly increased my chances of understanding more complex concepts... 
+
+<h2> Thanks for stopping! </h2>
+
+<p> I would love to hear your feedback: anvarashurov717 AT GoogleMail </p>
+
+<p> You got this. </p>
