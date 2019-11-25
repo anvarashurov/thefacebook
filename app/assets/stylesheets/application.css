@@ -100,6 +100,7 @@ LEFT BLANK INTENTIONALLY
     /* justify-content: center;
     align-content: center; */
     background-color: rgb(237, 240, 245);
+    min-height: 900px;
 }
 
 .welcome_page_header {
