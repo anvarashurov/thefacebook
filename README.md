@@ -9,4 +9,4 @@ As a new user, you first click <a href="http://thefacebook-aa.herokuapp.com/#/" 
 <p> If you are doing it right, then you are happily greeted by this fabulous landing page that warmly welcomes you 
 to this wonderful platform and kindly requests you to sign up! </p>
 
-![Sign up page](https://imgur.com/5hSwJS1)
+![Sign up page](https://i.imgur.com/5hSwJS1.png)
