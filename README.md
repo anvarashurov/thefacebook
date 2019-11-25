@@ -11,7 +11,7 @@ to this wonderful platform and kindly requests you to sign up!!!!! </p>
 
 ![Sign up page](https://i.imgur.com/5hSwJS1.png)
 
-<p> If you have intelligently filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt algorithm which is kindly provided by Rails Gang to our disposal. </p>
+<p> If you have intelligently filled out the required parts of the form, then congratulations!!! You are logged in!!! <span> Do not worry. Passwords are <strong> NOT </strong> being stored in plain text. They are encrypted using BCrypt function which is kindly provided by Rails Gang to our disposal. </p>
 
 Here is your Home Page: 
 
