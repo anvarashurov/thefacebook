@@ -32,21 +32,21 @@ class CommentIndexItem extends React.Component {
     }
 
     handleLike() {
-        debugger
+        // debugger
         // if user has liked then deleteLike
         if (this.props.comment.likerIds.includes(this.props.currentUser.id)) {
-            debugger
+            // debugger
             for (let i = 0; i < this.props.allLikes.length; i++) {
                 if (this.props.allLikes[i].likerId === this.props.currentUser.id
                     && this.props.allLikes[i].likeableId === this.props.comment.id) {
-                    debugger
+                    // debugger
                     this.props.deleteLike(this.props.allLikes[i].id);
                 }
             }
         }
         // if user has NOT liked, then createLike
         else {
-            debugger
+            // debugger
             // let tempLikers = this.state.commentLikers;
             return this.props.createLike({ likeable_id: this.props.comment.id, likeable_type: 'Comment' });
             // tempLikers.push(currentUser);
@@ -69,7 +69,7 @@ class CommentIndexItem extends React.Component {
 
     render() {
 
-        debugger
+        // debugger
         let commentCreatedAt = new Date(this.props.comment.createdAt);
         commentCreatedAt = this.formatHour(commentCreatedAt);
         // const [replyContainer, setReplyContainer] = useState(null);

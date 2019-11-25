@@ -19,7 +19,7 @@ class LandingPage extends React.Component {
         // can implement Ternary to get around it with condition being currentUser exists.
         let page;
         if (typeof this.props.currentUser !== 'undefined') {
-            debugger
+            // debugger
             page = (
                 <HomePage 
                     showDropdown={this.props.showDropdown} 
@@ -30,7 +30,7 @@ class LandingPage extends React.Component {
                     fetchPosts={this.props.fetchPosts}/>
             )
         } else {
-            debugger
+            // debugger
             page = (
                 <div className="landing_page">
                     <LandingPageNavbar />
