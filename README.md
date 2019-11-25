@@ -74,7 +74,6 @@ You will be able to share your own posts very soon! </p>
     - PostgreSQL
     - AWS
     - Webpack
-    - ...
     - ... It's hard to recall these things. But one thing for sure, I learned A LOT!
 
 + Future implementations
