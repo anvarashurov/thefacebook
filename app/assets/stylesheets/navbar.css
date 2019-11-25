@@ -161,6 +161,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .friends_messages_nots span {
