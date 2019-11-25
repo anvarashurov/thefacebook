@@ -28,11 +28,11 @@ Here is your Home Page:
 
 <p> Note how awesome of a user experinece it is to view changes before saving them. That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p>
 
-<p> Also, what can be cooler than John Locke adding you as a friend?
+<p> But, what can be cooler than John Locke adding you as a friend? Yaay.
 
 ![friend adding](https://i.imgur.com/kljdmzu.png)
 
-<p> Several things happening above. A stranger can add you as a friend. When that happens, you will get a Friend Request Notification showing how many pending friendships you have. RESPOND TO THEM IMMEDIATELY. </p>
+<p> Several things happening above. A stranger can add you as a friend. When that happens, you will get a Friend Request Notification showing how many pending friendships you have. RESPOND TO THEM IMMEDIATELY. PLEASE. </p>
 
 ![friend adding](https://i.imgur.com/CvTn3a5.png)
 
@@ -40,12 +40,12 @@ Here is your Home Page:
 
 ![friend adding](https://i.imgur.com/gudnYFZ.png)
 
-<p> Make funny posts! </p>
+<p> Always make funny posts! Don't forget to test edit, delete, and so on. </p>
 
 ![friend adding](https://i.imgur.com/Npqv4QS.png)
 
-<p> Like your own post. Write your own comment under your own post. Don't forget to like your own commnet.
-You will be able to share your own post very soon! </p>
+<p> Like your own posts. Write your own comments under your own posts. Don't forget to like your own commnets.
+You will be able to share your own posts very soon! </p>
 
 ![friend adding](https://i.imgur.com/I2Xvs4J.png)
 
