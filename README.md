@@ -1,6 +1,6 @@
-<h1> Welcome </h1>
+# Welcome
 
-<p> thefacebook is a single page web app that aims to .... ugh. You know what it should do very well. Let's just get on with it. </p>
+<p> thefacebook is a single page web app that aims to .... ugh. </p>
 
 <p>
 As a new user, you first click <a href="http://thefacebook-aa.herokuapp.com/#/" target="_blank"> thefacebook </a> to access the website. If you are still reading this and have not yet clicked then you essentially missed the whole purpose of this long sentence. Anyways... here is the long link for the patient ones: http://thefacebook-aa.herokuapp.com/
@@ -22,7 +22,7 @@ Here is your Home Page:
 <!--  I really do not want to compete with L.I.Tolstoy in number of characters written per Volume. Phew. </p> <span>Fun Edit: I actually tried to read <em> Anna Karenina </em> while skipping classes. </span> -->
 
 <p>Essentially, if you head towards your profile page and click "Update Profile" button, then you are free to upload your own Profile and Wallpaper photos! Also, do you forget to add a cool Bio! Something deep pertaining life, existance, and mortality is always welcome. </p>
- <!-- Upload row nature photos! It's a command. -->
+ <!-- Upload raw nature photos! It's a command. -->
 
 ![profile page](https://i.imgur.com/AchPnEO.png)
 
@@ -57,15 +57,18 @@ You will be able to share your own posts very soon! </p>
 
 ![friend adding](https://i.imgur.com/1dtVSzN.png)
 
-<h3> Honestly... this is getting super lengthy. Can we just go with GIF? Thank you. </h3>
+### Honestly... this is getting super lengthy. Can we just go with GIF? Thank you.
 
-[![thefacebook.gif](https://s5.gifyu.com/images/thefacebook.gif)](https://gifyu.com/image/v4uL)
+<!-- [![thefacebook.gif](https://s5.gifyu.com/images/thefacebook.gif)](https://gifyu.com/image/v4uL) -->
+
+<!-- <img src="/gif/thefacebook.gif?raw=true"> -->
+![GIF](app/assets/gif/thefacebook.gif)
 
 <p> Whoops that one took longer than I thought! </p>
 
 ----------------------------
 
-<h3> That is it from me... for now </h3>
+### That is it from me... for now 
 
 + Tech used
     - JS
@@ -84,9 +87,9 @@ You will be able to share your own posts very soon! </p>
     - It's hard to stop. Facebook has many awesome features!
 
 + Future for me:
-    - Personally, sky's the lim... Haha. When I am not watching high quality Premier League matches or listening to Le'Professeur's philosophy on human value and trust, I would love to explore the behind the scenes of a modern search engine. Specifically, how data is crawled, stored, fetched, indexed, optimized, and so on. I do have high level understanding of how things are managed but nothing is more valuable than getting the practical knowledge obtained through gettings hands dirty. To me, that is the short term record to hit and building thefacebook has slightly increased my chances of understanding more complex concepts... 
+    - Personally, sky's the lim... When I am not watching high quality Premier League matches or listening to Le'Professeur's philosophy on human value and trust, I would love to explore the behind the scenes of a modern search engine. Specifically, how data is crawled, stored, fetched, indexed, optimized, and so on. I do have high level understanding of how things are managed but nothing is more valuable than getting the practical knowledge obtained through gettings hands dirty. To me, that is the short term record to hit and building thefacebook has slightly increased my chances of understanding more complex concepts... 
 
-<h2> Thanks for stopping! </h2>
+## Thanks for stopping! 
 
 <p> I would love to hear your feedback: anvarashurov717 AT GoogleMail </p>
 
