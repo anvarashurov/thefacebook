@@ -71,7 +71,7 @@ You will be able to share your own posts very soon! </p>
 <!-- <img src="/gif/thefacebook.gif?raw=true"> -->
 ![GIF](app/assets/gif/thefacebook.gif)
 
-<p> Whoops that one took longer than I thought! </p>
+<!-- <p> Whoops that one took longer than I thought! </p> -->
 
 ----------------------------
 
