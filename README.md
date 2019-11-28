@@ -31,7 +31,7 @@ Here is your Home Page:
 <p> Note how awesome of a user experinece it is to view changes before saving them.</p>
  <!-- That's a lot of hard work, blood, and sweats! ... More like tears to be precise. </p> -->
 
-<p> What can be cooler than John Locke adding you as a friend?
+<p> And what can be cooler than John Locke adding you as a friend?
  
  <!-- Yaay. -->
 
