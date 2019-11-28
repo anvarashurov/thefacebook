@@ -50,7 +50,7 @@ Here is your Home Page:
 
 ![friend adding](https://i.imgur.com/Npqv4QS.png)
 
-<p> Like your own posts. Write your own comments under your own posts. Don't forget to like your own commnets.
+<p> Like your own posts. Write your own comments under your own posts. Don't forget to like your own comments.
 You will be able to share your own posts very soon! </p>
 
 ![friend adding](https://i.imgur.com/I2Xvs4J.png)
