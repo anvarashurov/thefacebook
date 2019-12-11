@@ -3,7 +3,7 @@
 <p> thefacebook is a single page web app that aims to .... ugh. </p>
 
 <p>
-As a new user, you first click <a href="http://thefacebook-aa.herokuapp.com/#/" target="_blank"> thefacebook </a> to access the website. If you are still reading this and have not yet clicked then you essentially missed the whole purpose of this long sentence. Anyways... here is the long link for the patient ones: http://thefacebook-aa.herokuapp.com/
+As a new user, you first click <a href="http://thefacebook-aa.herokuapp.com/#/" target="_blank"> thefacebook </a> to access the website. <!-- If you are still reading this and have not yet clicked then you essentially missed the whole purpose of this long sentence. --> <!--Anyways... --> Here is the long link <!-- for the patient ones-->: http://thefacebook-aa.herokuapp.com/
 </p>
 
 <p> If you are doing it right, then you are happily greeted by this fabulous landing page that warmly welcomes you 
