@@ -24,19 +24,19 @@ const HomePage = ({currentUser, pathname}) => {
                                 Feed
                             </span>
                         </a>
-                        <a href="https://www.linkedin.com/in/antoxaaa7/" target='_blank'>
+                        <a href="https://www.linkedin.com/in/anvarashurov/" target='_blank'>
                             <img src={window.linkedin} alt=""/> 
                             <span>
                                 Likedin
                             </span> 
                         </a>
-                        <a href="https://angel.co/antoxaaa7" target='_blank'>
+                        <a href="https://angel.co/anvarashurov" target='_blank'>
                             <img src={window.angellist} alt=""/>
                             <span>
                                 Angel List
                             </span>
                         </a>
-                        <a href="https://github.com/antox7" target='_blank'>
+                        <a href="https://github.com/anvarashurov" target='_blank'>
                             <img src={window.github} alt=""/>
                             <span>
                                 Github
