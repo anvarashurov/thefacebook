@@ -30,12 +30,12 @@ const HomePage = ({currentUser, pathname}) => {
                                 Likedin
                             </span> 
                         </a>
-                        <a href="https://angel.co/anvarashurov" target='_blank'>
+                        {/* <a href="https://angel.co/anvarashurov" target='_blank'>
                             <img src={window.angellist} alt=""/>
                             <span>
                                 Angel List
                             </span>
-                        </a>
+                        </a> */}
                         <a href="https://github.com/anvarashurov" target='_blank'>
                             <img src={window.github} alt=""/>
                             <span>
